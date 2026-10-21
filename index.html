@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>등록 야영장 검색</title>
+  <meta name="description" content="한국관광공사 등록 야영장 이름의 상대 검색 관심도. 망상오토캠핑리조트 = 1, 기간 2025-10-01~2026-09-30.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#filters">검색 조건으로 이동</a>
+  <header class="mast">
+    <p class="eyebrow"><span class="blaze" aria-hidden="true"></span>등록부 이름 기준</p>
+    <h1>등록 야영장 검색</h1>
+    <p class="deck">등록된 야영장 이름을 고르고, 그 이름의 상대 관심도를 확인합니다.</p>
+  </header>
+  <main>
+    <noscript>
+      <p class="caution">목록을 거르려면 자바스크립트가 필요합니다.</p>
+    </noscript>
+
+    <form id="filters" aria-describedby="count">
+      <div class="field">
+        <label for="sido">시도</label>
+        <select id="sido" name="sido">
+          <option value="">전체</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="sigungu">시군구</label>
+        <select id="sigungu" name="sigungu" disabled aria-describedby="sigungu-help">
+          <option value="">전체</option>
+        </select>
+        <p id="sigungu-help" class="help">시도를 고르면 시군구를 고를 수 있습니다.</p>
+      </div>
+      <div class="field">
+        <label for="q">이름 또는 지역</label>
+        <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" enterkeyhint="search">
+      </div>
+      <div class="actions">
+        <button type="button" id="clear" class="secondary">조건 지우기</button>
+      </div>
+    </form>
+
+    <section class="about" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="sr-only">관심도와 등록부</h2>
+      <dl class="facts">
+        <div>
+          <dt>관심도</dt>
+          <dd>망상오토캠핑리조트 = 1</dd>
+        </div>
+        <div>
+          <dt>기간</dt>
+          <dd>2025-10-01부터 2026-09-30까지</dd>
+        </div>
+        <div>
+          <dt>조회일</dt>
+          <dd>2026-10-21</dd>
+        </div>
+        <div class="wide">
+          <dt>등록부</dt>
+          <dd>공공데이터포털 <a href="https://www.data.go.kr/data/15037499/fileData.do">data.go.kr 15037499</a>, 파일 2026-09-23. 등록 행 4,672개 가운데 추세가 있는 이름 3,729개를 보여 줍니다. 추세가 비어 있던 이름 891개는 이 목록에 없습니다.</dd>
+        </div>
+      </dl>
+      <p class="caution"><strong>주의.</strong> 보물섬, 오로라, 테르메덴, 라라랜드, 국립중앙과학관, 애플망고, 포레스트, 소풍처럼 짧은 이름은 그 야영장이 아닌 검색이 함께 섞입니다.</p>
+    </section>
+
+    <p id="count">목록을 불러오는 중입니다.</p>
+    <p id="live" class="sr-only" aria-live="polite"></p>
+
+    <section id="top" aria-labelledby="top-heading" hidden>
+      <div class="top-head">
+        <h2 id="top-heading">이 조건의 상위 10</h2>
+        <p id="top-note">막대 길이는 여기 1위의 관심도를 기준으로 합니다.</p>
+      </div>
+      <ol id="top-list"></ol>
+    </section>
+
+    <div class="table-wrap">
+      <table id="result-table" role="table">
+        <caption>등록 이름 순위. 한 번에 50개 이름을 보여 줍니다. 같은 이름은 그 문자열의 등록 행 수이고, 지역은 서로 다른 곳만 한 번씩 보여 줍니다.</caption>
+        <thead role="rowgroup">
+          <tr role="row">
+            <th role="columnheader" scope="col">순위</th>
+            <th role="columnheader" scope="col">등록 이름</th>
+            <th role="columnheader" scope="col">지역</th>
+            <th role="columnheader" scope="col">상대 관심도</th>
+            <th role="columnheader" scope="col">같은 이름</th>
+          </tr>
+        </thead>
+        <tbody id="rows" role="rowgroup"></tbody>
+      </table>
+    </div>
+
+    <nav class="pager" id="pager" aria-label="쪽 이동" hidden>
+      <button type="button" id="prev">이전</button>
+      <p class="page-field">
+        <label for="page">쪽</label>
+        <input id="page" type="number" inputmode="numeric" min="1" value="1">
+        <span id="page-total">/ 1</span>
+      </p>
+      <p id="range"></p>
+      <button type="button" id="next">다음</button>
+    </nav>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

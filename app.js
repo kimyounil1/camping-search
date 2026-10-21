@@ -245,7 +245,7 @@ function currentList() {
     if (estimate === "yes" && !item.estimated) {
       return false;
     }
-    if (estimate === "no" && !(item.hasFacility && !item.estimated)) {
+    if (estimate === "no" && item.estimated) {
       return false;
     }
     return true;
@@ -344,6 +344,9 @@ function indutyCell(item) {
 }
 
 function estimateCell(item) {
+  if (item.facilities.length === 0) {
+    return cell("고캠핑 API에 없음", "개별 화장실 추정");
+  }
   return labeledCell(
     "개별 화장실 추정",
     facilityStack(item, (facility) => {

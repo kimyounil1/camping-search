@@ -25,30 +25,31 @@ const SIDO_ORDER = [
 ];
 
 const form = document.querySelector("#filters");
-const sidoEl = document.querySelector("#sido");
-const sigunguEl = document.querySelector("#sigungu");
+const sidoChoices = document.querySelector("#sido-choices");
+const sigunguGroup = document.querySelector("#sigungu-group");
+const sigunguChoices = document.querySelector("#sigungu-choices");
 const sigunguHelp = document.querySelector("#sigungu-help");
+const sigunguAll = document.querySelector("#sigungu-all");
 const queryEl = document.querySelector("#q");
-const indutyEl = document.querySelector("#induty");
-const estimateEl = document.querySelector("#estimate");
+const indutyChoices = document.querySelector("#induty-choices");
+const estimateChoices = document.querySelector("#estimate-choices");
 const clearBtn = document.querySelector("#clear");
 const countEl = document.querySelector("#count");
 const liveEl = document.querySelector("#live");
 const topSection = document.querySelector("#top");
 const topHeading = document.querySelector("#top-heading");
 const topList = document.querySelector("#top-list");
-const rowsEl = document.querySelector("#rows");
+const resultList = document.querySelector("#result-list");
+const resultEmpty = document.querySelector("#result-empty");
+const resultsSection = document.querySelector("#results");
 const pager = document.querySelector("#pager");
 const prevBtn = document.querySelector("#prev");
 const nextBtn = document.querySelector("#next");
 const pageInput = document.querySelector("#page");
 const pageTotal = document.querySelector("#page-total");
 const rangeEl = document.querySelector("#range");
-const table = document.querySelector("#result-table");
-
 const numberFormat = new Intl.NumberFormat("ko-KR");
-const COLUMN_COUNT = 12;
-const EMPTY = "—";
+const CAMP_PAGE = "https://www.gocamping.or.kr/bsite/camp/info/read.do?c_no=";
 
 let groups = [];
 let page = 1;
@@ -147,7 +148,29 @@ function collapseFacilities(item) {
   return present.map((entry) => ({ ...entry.facility, regionLabel: entry.region }));
 }
 
-function fillSido() {
+function checkedValues(container) {
+  return [...container.querySelectorAll("input:checked")].map((input) => input.value);
+}
+
+function placeKey(place) {
+  return `${place.sido}\t${place.sigungu}`;
+}
+
+function choiceBox(name, value, label, checked) {
+  const choice = document.createElement("label");
+  choice.className = "choice";
+  const input = document.createElement("input");
+  input.type = "checkbox";
+  input.name = name;
+  input.value = value;
+  input.checked = checked;
+  const text = document.createElement("span");
+  text.textContent = label;
+  choice.append(input, text);
+  return choice;
+}
+
+function orderedSidos() {
   const present = new Set();
   for (const item of groups) {
     for (const place of item.places) {
@@ -165,73 +188,76 @@ function fillSido() {
   const rest = [...present].filter((name) => !used.has(name));
   rest.sort((a, b) => a.localeCompare(b, "ko"));
   ordered.push(...rest);
+  return ordered;
+}
 
-  const current = sidoEl.value;
-  sidoEl.replaceChildren();
-  const all = document.createElement("option");
-  all.value = "";
-  all.textContent = "전체";
-  sidoEl.append(all);
-  for (const name of ordered) {
-    const option = document.createElement("option");
-    option.value = name;
-    option.textContent = name;
-    sidoEl.append(option);
+function fillSido() {
+  const current = new Set(checkedValues(sidoChoices));
+  sidoChoices.replaceChildren();
+  for (const name of orderedSidos()) {
+    sidoChoices.append(choiceBox("sido", name, name, current.has(name)));
   }
-  if ([...sidoEl.options].some((option) => option.value === current)) {
-    sidoEl.value = current;
-  }
+  fillSigungu();
 }
 
 function fillSigungu() {
-  const sido = sidoEl.value;
-  sigunguEl.replaceChildren();
-  const all = document.createElement("option");
-  all.value = "";
-  all.textContent = "전체";
-  sigunguEl.append(all);
-  if (!sido) {
-    sigunguEl.disabled = true;
-    sigunguEl.value = "";
+  const sidos = checkedValues(sidoChoices);
+  const previous = new Set(checkedValues(sigunguChoices));
+  sigunguChoices.replaceChildren();
+  if (sidos.length === 0) {
+    sigunguGroup.disabled = true;
     sigunguHelp.hidden = false;
+    sigunguAll.hidden = true;
     return;
   }
-  const names = new Set();
+  const pairs = [];
+  const seen = new Set();
   for (const item of groups) {
     for (const place of item.places) {
-      if (place.sido === sido && place.sigungu) {
-        names.add(place.sigungu);
+      if (!sidos.includes(place.sido) || !place.sigungu) {
+        continue;
       }
+      const key = placeKey(place);
+      if (seen.has(key)) {
+        continue;
+      }
+      seen.add(key);
+      pairs.push({ sido: place.sido, sigungu: place.sigungu, key });
     }
   }
-  const sorted = [...names].sort((a, b) => a.localeCompare(b, "ko"));
-  for (const name of sorted) {
-    const option = document.createElement("option");
-    option.value = name;
-    option.textContent = name;
-    sigunguEl.append(option);
+  const sidoIndex = new Map(sidos.map((name, index) => [name, index]));
+  pairs.sort((a, b) => {
+    const bySido = sidoIndex.get(a.sido) - sidoIndex.get(b.sido);
+    if (bySido !== 0) {
+      return bySido;
+    }
+    return a.sigungu.localeCompare(b.sigungu, "ko");
+  });
+  const showSido = sidos.length > 1;
+  for (const pair of pairs) {
+    const label = showSido ? `${pair.sido} ${pair.sigungu}` : pair.sigungu;
+    sigunguChoices.append(choiceBox("sigungu", pair.key, label, previous.has(pair.key)));
   }
-  sigunguEl.disabled = false;
+  sigunguGroup.disabled = false;
   sigunguHelp.hidden = true;
+  sigunguAll.hidden = false;
 }
 
 function currentList() {
-  const sido = sidoEl.value;
-  const sigungu = sigunguEl.disabled ? "" : sigunguEl.value;
+  const sidos = checkedValues(sidoChoices);
+  const sigunguKeys = sigunguGroup.disabled ? [] : checkedValues(sigunguChoices);
   const query = normalize(queryEl.value);
-  const induty = indutyEl.value;
-  const estimate = estimateEl.value;
+  const types = checkedValues(indutyChoices);
+  const estimates = checkedValues(estimateChoices);
   return groups.filter((item) => {
-    if (sido) {
-      const hit = item.places.some((place) => {
-        if (place.sido !== sido) {
-          return false;
-        }
-        if (sigungu && place.sigungu !== sigungu) {
-          return false;
-        }
-        return true;
-      });
+    if (sidos.length > 0) {
+      const hit = item.places.some((place) => sidos.includes(place.sido));
+      if (!hit) {
+        return false;
+      }
+    }
+    if (sigunguKeys.length > 0) {
+      const hit = item.places.some((place) => sigunguKeys.includes(placeKey(place)));
       if (!hit) {
         return false;
       }
@@ -239,13 +265,13 @@ function currentList() {
     if (query && !item.haystack.includes(query)) {
       return false;
     }
-    if (induty && !item.types.includes(induty)) {
+    if (types.length > 0 && !types.some((type) => item.types.includes(type))) {
       return false;
     }
-    if (estimate === "yes" && !item.estimated) {
+    if (estimates.length === 1 && estimates[0] === "yes" && !item.estimated) {
       return false;
     }
-    if (estimate === "no" && item.estimated) {
+    if (estimates.length === 1 && estimates[0] === "no" && item.estimated) {
       return false;
     }
     return true;
@@ -272,123 +298,71 @@ function summaryText(list, start, end) {
   return `${count}. ${numberFormat.format(start)}–${numberFormat.format(end)}번째를 보는 중입니다.`;
 }
 
-function labeledCell(label, valueNode, className) {
-  const td = document.createElement("td");
-  td.setAttribute("role", "cell");
+function interiorText(facility) {
+  if (!facility) {
+    return "";
+  }
+  const parts = [];
+  if (facility.glampInnerFclty) {
+    parts.push(`글램핑 ${facility.glampInnerFclty}`);
+  }
+  if (facility.caravInnerFclty) {
+    parts.push(`카라반 ${facility.caravInnerFclty}`);
+  }
+  return parts.join(" · ");
+}
+
+function fact(label, valueNode) {
+  const row = document.createElement("p");
+  row.className = "fact";
   const labelEl = document.createElement("span");
-  labelEl.className = "cell-label";
+  labelEl.className = "fact-label";
   labelEl.textContent = label;
-  td.append(labelEl, valueNode);
-  if (className) {
-    td.className = className;
-  }
-  return td;
+  row.append(labelEl, valueNode);
+  return row;
 }
 
-function cell(text, label, className) {
-  const value = document.createElement("span");
-  value.className = "cell-value";
-  value.textContent = text;
-  return labeledCell(label, value, className);
+function textValue(text) {
+  const span = document.createElement("span");
+  span.className = "fact-value";
+  span.textContent = text;
+  return span;
 }
 
-function regionCell(item) {
-  const list = document.createElement("ul");
-  list.className = "regions";
-  for (const region of item.regions) {
-    const li = document.createElement("li");
-    li.textContent = region;
-    list.append(li);
-  }
-  return labeledCell("지역", list);
-}
-
-function facilityStack(item, render) {
-  const wrap = document.createElement("div");
-  wrap.className = "facility-stack";
-  if (item.facilities.length === 0) {
-    wrap.textContent = EMPTY;
-    return wrap;
-  }
-  for (const facility of item.facilities) {
-    const block = document.createElement("div");
-    block.className = "facility-block";
-    if (facility.regionLabel) {
-      const where = document.createElement("div");
-      where.className = "facility-where";
-      where.textContent = facility.regionLabel;
-      block.append(where);
-    }
-    block.append(render(facility));
-    if (facility.locationNote) {
-      const note = document.createElement("div");
-      note.className = "facility-note";
-      note.textContent = `고캠핑 위치 ${facility.locationNote}`;
-      block.append(note);
-    }
-    wrap.append(block);
-  }
-  return wrap;
-}
-
-function plainFacility(item, textFor) {
-  return facilityStack(item, (facility) => {
+function nameValue(name, contentId) {
+  if (!contentId) {
     const span = document.createElement("span");
-    span.textContent = textFor(facility);
+    span.className = "fact-value result-name";
+    span.textContent = name;
     return span;
-  });
-}
-
-function indutyCell(item) {
-  return labeledCell("업종", plainFacility(item, (facility) => facility.induty || EMPTY));
-}
-
-function estimateCell(item) {
-  if (item.facilities.length === 0) {
-    return cell("고캠핑 API에 없음", "개별 화장실 추정");
   }
-  return labeledCell(
-    "개별 화장실 추정",
-    facilityStack(item, (facility) => {
-      const span = document.createElement("span");
-      span.textContent = facility.estimated ? "추정" : "아님";
-      if (facility.estimated) {
-        span.className = "is-estimate";
-      }
-      return span;
-    }),
-  );
+  const link = document.createElement("a");
+  link.className = "fact-value result-name";
+  link.href = `${CAMP_PAGE}${encodeURIComponent(contentId)}`;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.append(document.createTextNode(name));
+  const hint = document.createElement("span");
+  hint.className = "sr-only";
+  hint.textContent = " 고캠핑에서 새 탭으로 열기";
+  link.append(hint);
+  return link;
 }
 
-function basisCell(item) {
-  return labeledCell(
-    "추정 근거",
-    plainFacility(item, (facility) => (facility.basis && facility.basis.length ? facility.basis.join("·") : EMPTY)),
+function placeBlock(item, index) {
+  const facility = item.regionFacilities[index];
+  const contentId = facility && facility.contentId ? String(facility.contentId).trim() : "";
+  const block = document.createElement("div");
+  block.className = "place";
+  block.append(
+    fact("등록 이름", nameValue(item.name, contentId)),
+    fact("위치", textValue(item.regions[index])),
   );
-}
-
-function countCell(item, label, field) {
-  return labeledCell(
-    label,
-    plainFacility(item, (facility) => numberFormat.format(facility[field])),
-    "num",
-  );
-}
-
-function innerCell(item) {
-  return labeledCell(
-    "내부시설",
-    plainFacility(item, (facility) => {
-      const parts = [];
-      if (facility.glampInnerFclty) {
-        parts.push(`글램핑 ${facility.glampInnerFclty}`);
-      }
-      if (facility.caravInnerFclty) {
-        parts.push(`카라반 ${facility.caravInnerFclty}`);
-      }
-      return parts.length ? parts.join(" · ") : EMPTY;
-    }),
-  );
+  const interior = interiorText(facility);
+  if (interior) {
+    block.append(fact("내부시설", textValue(interior)));
+  }
+  return block;
 }
 
 function renderTop(list) {
@@ -442,7 +416,7 @@ function renderTop(list) {
   }
 }
 
-function renderTable(list, immediate) {
+function renderResults(list, immediate) {
   const pages = Math.max(1, Math.ceil(list.length / PAGE_SIZE) || 1);
   if (!Number.isFinite(page)) {
     page = 1;
@@ -455,42 +429,40 @@ function renderTable(list, immediate) {
     page = pages;
   }
 
-  rowsEl.replaceChildren();
+  resultList.replaceChildren();
   if (list.length === 0) {
-    const tr = document.createElement("tr");
-    tr.setAttribute("role", "row");
-    const td = document.createElement("td");
-    td.setAttribute("role", "cell");
-    td.colSpan = COLUMN_COUNT;
-    td.className = "empty";
-    td.textContent = "조건에 맞는 등록 이름이 없습니다. 시도나 검색어를 바꿔 보세요.";
-    tr.append(td);
-    rowsEl.append(tr);
+    resultEmpty.hidden = false;
+    resultList.hidden = true;
     pager.hidden = true;
     announce(summaryText(list, 0, 0), immediate);
     return;
   }
 
+  resultEmpty.hidden = true;
+  resultList.hidden = false;
   const start = (page - 1) * PAGE_SIZE;
   const slice = list.slice(start, start + PAGE_SIZE);
   for (const item of slice) {
-    const tr = document.createElement("tr");
-    tr.setAttribute("role", "row");
-    tr.append(
-      cell(String(item.rank), "순위", "num"),
-      cell(item.name, "등록 이름", "name"),
-      regionCell(item),
-      indutyCell(item),
-      cell(item.interestText, "상대 관심도", "num"),
-      cell(String(item.sameNameRows), "같은 이름", "num"),
-      estimateCell(item),
-      countCell(item, "화장실 수", "toiletCo"),
-      countCell(item, "전체 사이트", "totalSites"),
-      countCell(item, "자동차 사이트", "autoSiteCo"),
-      basisCell(item),
-      innerCell(item),
-    );
-    rowsEl.append(tr);
+    const li = document.createElement("li");
+    li.className = "result";
+    const rank = document.createElement("p");
+    rank.className = "result-rank";
+    const rankLabel = document.createElement("span");
+    rankLabel.className = "fact-label";
+    rankLabel.textContent = "순위";
+    const badge = document.createElement("span");
+    badge.className = "rank-badge";
+    badge.append(document.createTextNode(String(item.rank)));
+    const unit = document.createElement("span");
+    unit.className = "sr-only";
+    unit.textContent = "위";
+    badge.append(unit);
+    rank.append(rankLabel, badge);
+    li.append(rank);
+    for (let index = 0; index < item.regions.length; index += 1) {
+      li.append(placeBlock(item, index));
+    }
+    resultList.append(li);
   }
 
   const end = start + slice.length;
@@ -508,12 +480,12 @@ function render(options) {
   const immediate = Boolean(options && options.immediate);
   const list = currentList();
   renderTop(list);
-  renderTable(list, immediate);
+  renderResults(list, immediate);
 }
 
 function scrollToTable() {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  table.scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" });
+  resultsSection.scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" });
 }
 
 form.addEventListener("submit", (event) => {
@@ -522,13 +494,14 @@ form.addEventListener("submit", (event) => {
   render({ immediate: true });
 });
 
-sidoEl.addEventListener("change", () => {
-  fillSigungu();
-  page = 1;
-  render({ immediate: true });
-});
-
-sigunguEl.addEventListener("change", () => {
+form.addEventListener("change", (event) => {
+  const input = event.target;
+  if (!(input instanceof HTMLInputElement) || input.type !== "checkbox") {
+    return;
+  }
+  if (input.name === "sido") {
+    fillSigungu();
+  }
   page = 1;
   render({ immediate: true });
 });
@@ -538,25 +511,20 @@ queryEl.addEventListener("input", () => {
   render({ immediate: false });
 });
 
-indutyEl.addEventListener("change", () => {
-  page = 1;
-  render({ immediate: true });
-});
-
-estimateEl.addEventListener("change", () => {
-  page = 1;
-  render({ immediate: true });
-});
-
 clearBtn.addEventListener("click", () => {
-  sidoEl.value = "";
+  for (const input of form.querySelectorAll('input[type="checkbox"]')) {
+    input.checked = false;
+  }
   queryEl.value = "";
-  indutyEl.value = "";
-  estimateEl.value = "";
   fillSigungu();
   page = 1;
   render({ immediate: true });
-  sidoEl.focus();
+  const firstSido = sidoChoices.querySelector("input");
+  if (firstSido) {
+    firstSido.focus();
+  } else {
+    queryEl.focus();
+  }
 });
 
 prevBtn.addEventListener("click", () => {
@@ -576,17 +544,6 @@ pageInput.addEventListener("change", () => {
   render({ immediate: true });
   scrollToTable();
 });
-
-const narrowQuery = window.matchMedia("(max-width: 800px)");
-const tableHead = document.querySelector("thead");
-
-function syncTableHead() {
-  tableHead.toggleAttribute("aria-hidden", narrowQuery.matches);
-}
-
-narrowQuery.addEventListener("change", syncTableHead);
-window.addEventListener("resize", syncTableHead);
-syncTableHead();
 
 async function init() {
   try {

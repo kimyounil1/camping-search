@@ -23,43 +23,39 @@
       <p class="caution">목록을 거르려면 자바스크립트가 필요합니다.</p>
     </noscript>
 
-    <form id="filters" aria-describedby="count">
-      <div class="field">
-        <label for="sido">시도</label>
-        <select id="sido" name="sido">
-          <option value="">전체</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="sigungu">시군구</label>
-        <select id="sigungu" name="sigungu" disabled aria-describedby="sigungu-help">
-          <option value="">전체</option>
-        </select>
+    <form id="filters" aria-describedby="count filter-hint">
+      <p id="filter-hint" class="help">각 묶음은 고르지 않으면 전체입니다. 한 묶음 안에서는 고른 값 중 하나만 맞아도 되고, 묶음끼리는 모두 맞아야 합니다.</p>
+      <fieldset class="choice-group" id="sido-group">
+        <legend>시도</legend>
+        <div class="choices" id="sido-choices"></div>
+      </fieldset>
+      <fieldset class="choice-group" id="sigungu-group" disabled>
+        <legend>시군구</legend>
+        <div class="choices" id="sigungu-choices"></div>
         <p id="sigungu-help" class="help">시도를 고르면 시군구를 고를 수 있습니다.</p>
-      </div>
-      <div class="field">
+        <p id="sigungu-all" class="help" hidden>고르지 않으면 선택한 시도 전체입니다.</p>
+      </fieldset>
+      <div class="field field-search">
         <label for="q">이름 또는 지역</label>
         <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" enterkeyhint="search">
       </div>
-      <div class="field">
-        <label for="induty">업종</label>
-        <select id="induty" name="induty">
-          <option value="">전체</option>
-          <option>일반야영장</option>
-          <option>자동차야영장</option>
-          <option>글램핑</option>
-          <option>카라반</option>
-          <option>캠프닉</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="estimate">개별 화장실 추정</label>
-        <select id="estimate" name="estimate">
-          <option value="">전체</option>
-          <option value="yes">추정</option>
-          <option value="no">추정 아님</option>
-        </select>
-      </div>
+      <fieldset class="choice-group" id="induty-group">
+        <legend>업종</legend>
+        <div class="choices" id="induty-choices">
+          <label class="choice"><input type="checkbox" name="induty" value="일반야영장"><span>일반야영장</span></label>
+          <label class="choice"><input type="checkbox" name="induty" value="자동차야영장"><span>자동차야영장</span></label>
+          <label class="choice"><input type="checkbox" name="induty" value="글램핑"><span>글램핑</span></label>
+          <label class="choice"><input type="checkbox" name="induty" value="카라반"><span>카라반</span></label>
+          <label class="choice"><input type="checkbox" name="induty" value="캠프닉"><span>캠프닉</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="choice-group" id="estimate-group">
+        <legend>개별 화장실 추정</legend>
+        <div class="choices" id="estimate-choices">
+          <label class="choice"><input type="checkbox" name="estimate" value="yes"><span>추정</span></label>
+          <label class="choice"><input type="checkbox" name="estimate" value="no"><span>추정 아님</span></label>
+        </div>
+      </fieldset>
       <div class="actions">
         <button type="button" id="clear" class="secondary">조건 지우기</button>
       </div>
@@ -104,29 +100,11 @@
       <ol id="top-list"></ol>
     </section>
 
-    <p class="scroll-hint">열이 많으면 표를 옆으로 움직입니다.</p>
-    <div class="table-wrap">
-      <table id="result-table" role="table">
-        <caption>등록 이름 순위. 한 번에 50개 이름을 보여 줍니다. 같은 이름은 그 문자열의 등록 행 수이고, 지역은 서로 다른 곳만 한 번씩 보여 줍니다. 업종과 개별 화장실 추정은 고캠핑 시설 정보입니다.</caption>
-        <thead role="rowgroup">
-          <tr role="row">
-            <th role="columnheader" scope="col">순위</th>
-            <th role="columnheader" scope="col">등록 이름</th>
-            <th role="columnheader" scope="col">지역</th>
-            <th role="columnheader" scope="col">업종</th>
-            <th role="columnheader" scope="col">상대 관심도</th>
-            <th role="columnheader" scope="col">같은 이름</th>
-            <th role="columnheader" scope="col">개별 화장실 추정</th>
-            <th role="columnheader" scope="col">화장실 수</th>
-            <th role="columnheader" scope="col">전체 사이트</th>
-            <th role="columnheader" scope="col">자동차 사이트</th>
-            <th role="columnheader" scope="col">추정 근거</th>
-            <th role="columnheader" scope="col">내부시설</th>
-          </tr>
-        </thead>
-        <tbody id="rows" role="rowgroup"></tbody>
-      </table>
-    </div>
+    <section id="results" aria-labelledby="results-heading">
+      <h2 id="results-heading" class="sr-only">검색 결과</h2>
+      <p id="result-empty" class="empty" hidden>조건에 맞는 등록 이름이 없습니다. 시도나 검색어를 바꿔 보세요.</p>
+      <ul id="result-list" class="results"></ul>
+    </section>
 
     <nav class="pager" id="pager" aria-label="쪽 이동" hidden>
       <button type="button" id="prev">이전</button>

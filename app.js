@@ -29,6 +29,8 @@ const sidoEl = document.querySelector("#sido");
 const sigunguEl = document.querySelector("#sigungu");
 const sigunguHelp = document.querySelector("#sigungu-help");
 const queryEl = document.querySelector("#q");
+const indutyEl = document.querySelector("#induty");
+const estimateEl = document.querySelector("#estimate");
 const clearBtn = document.querySelector("#clear");
 const countEl = document.querySelector("#count");
 const liveEl = document.querySelector("#live");
@@ -45,6 +47,8 @@ const rangeEl = document.querySelector("#range");
 const table = document.querySelector("#result-table");
 
 const numberFormat = new Intl.NumberFormat("ko-KR");
+const COLUMN_COUNT = 12;
+const EMPTY = "—";
 
 let groups = [];
 let page = 1;
@@ -87,6 +91,7 @@ function groupRows(rows) {
         interest: Number(row.interest),
         sameNameRows: row.same_name_rows,
         regions: [],
+        regionFacilities: [],
         seen: new Set(),
       };
       map.set(row.name, item);
@@ -94,17 +99,52 @@ function groupRows(rows) {
     if (!item.seen.has(row.region)) {
       item.seen.add(row.region);
       item.regions.push(row.region);
+      item.regionFacilities.push(row.facility || null);
     }
   }
 
   const list = [];
   for (const item of map.values()) {
     item.places = item.regions.map(splitRegion);
-    item.haystack = normalize(`${item.name} ${item.regions.join(" ")}`);
+    item.facilities = collapseFacilities(item);
+    item.hasFacility = item.facilities.length > 0;
+    item.estimated = item.facilities.some((facility) => facility.estimated);
+    item.types = [];
+    const notes = [];
+    for (const facility of item.facilities) {
+      for (const type of facility.types || []) {
+        if (!item.types.includes(type)) {
+          item.types.push(type);
+        }
+      }
+      if (facility.locationNote) {
+        notes.push(facility.locationNote);
+      }
+    }
+    item.haystack = normalize(`${item.name} ${item.regions.join(" ")} ${notes.join(" ")}`);
     list.push(item);
   }
   list.sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name, "ko"));
   return list;
+}
+
+function collapseFacilities(item) {
+  const present = [];
+  for (let index = 0; index < item.regions.length; index += 1) {
+    const facility = item.regionFacilities[index];
+    if (!facility) {
+      continue;
+    }
+    present.push({ region: item.regions[index], facility });
+  }
+  if (present.length === 0) {
+    return [];
+  }
+  const ids = new Set(present.map((entry) => entry.facility.contentId));
+  if (ids.size === 1) {
+    return [present[0].facility];
+  }
+  return present.map((entry) => ({ ...entry.facility, regionLabel: entry.region }));
 }
 
 function fillSido() {
@@ -179,9 +219,8 @@ function currentList() {
   const sido = sidoEl.value;
   const sigungu = sigunguEl.disabled ? "" : sigunguEl.value;
   const query = normalize(queryEl.value);
-  if (!sido && !sigungu && !query) {
-    return groups;
-  }
+  const induty = indutyEl.value;
+  const estimate = estimateEl.value;
   return groups.filter((item) => {
     if (sido) {
       const hit = item.places.some((place) => {
@@ -198,6 +237,15 @@ function currentList() {
       }
     }
     if (query && !item.haystack.includes(query)) {
+      return false;
+    }
+    if (induty && !item.types.includes(induty)) {
+      return false;
+    }
+    if (estimate === "yes" && !item.estimated) {
+      return false;
+    }
+    if (estimate === "no" && !(item.hasFacility && !item.estimated)) {
       return false;
     }
     return true;
@@ -253,6 +301,91 @@ function regionCell(item) {
     list.append(li);
   }
   return labeledCell("지역", list);
+}
+
+function facilityStack(item, render) {
+  const wrap = document.createElement("div");
+  wrap.className = "facility-stack";
+  if (item.facilities.length === 0) {
+    wrap.textContent = EMPTY;
+    return wrap;
+  }
+  for (const facility of item.facilities) {
+    const block = document.createElement("div");
+    block.className = "facility-block";
+    if (facility.regionLabel) {
+      const where = document.createElement("div");
+      where.className = "facility-where";
+      where.textContent = facility.regionLabel;
+      block.append(where);
+    }
+    block.append(render(facility));
+    if (facility.locationNote) {
+      const note = document.createElement("div");
+      note.className = "facility-note";
+      note.textContent = `고캠핑 위치 ${facility.locationNote}`;
+      block.append(note);
+    }
+    wrap.append(block);
+  }
+  return wrap;
+}
+
+function plainFacility(item, textFor) {
+  return facilityStack(item, (facility) => {
+    const span = document.createElement("span");
+    span.textContent = textFor(facility);
+    return span;
+  });
+}
+
+function indutyCell(item) {
+  return labeledCell("업종", plainFacility(item, (facility) => facility.induty || EMPTY));
+}
+
+function estimateCell(item) {
+  return labeledCell(
+    "개별 화장실 추정",
+    facilityStack(item, (facility) => {
+      const span = document.createElement("span");
+      span.textContent = facility.estimated ? "추정" : "아님";
+      if (facility.estimated) {
+        span.className = "is-estimate";
+      }
+      return span;
+    }),
+  );
+}
+
+function basisCell(item) {
+  return labeledCell(
+    "추정 근거",
+    plainFacility(item, (facility) => (facility.basis && facility.basis.length ? facility.basis.join("·") : EMPTY)),
+  );
+}
+
+function countCell(item, label, field) {
+  return labeledCell(
+    label,
+    plainFacility(item, (facility) => numberFormat.format(facility[field])),
+    "num",
+  );
+}
+
+function innerCell(item) {
+  return labeledCell(
+    "내부시설",
+    plainFacility(item, (facility) => {
+      const parts = [];
+      if (facility.glampInnerFclty) {
+        parts.push(`글램핑 ${facility.glampInnerFclty}`);
+      }
+      if (facility.caravInnerFclty) {
+        parts.push(`카라반 ${facility.caravInnerFclty}`);
+      }
+      return parts.length ? parts.join(" · ") : EMPTY;
+    }),
+  );
 }
 
 function renderTop(list) {
@@ -325,7 +458,7 @@ function renderTable(list, immediate) {
     tr.setAttribute("role", "row");
     const td = document.createElement("td");
     td.setAttribute("role", "cell");
-    td.colSpan = 5;
+    td.colSpan = COLUMN_COUNT;
     td.className = "empty";
     td.textContent = "조건에 맞는 등록 이름이 없습니다. 시도나 검색어를 바꿔 보세요.";
     tr.append(td);
@@ -344,8 +477,15 @@ function renderTable(list, immediate) {
       cell(String(item.rank), "순위", "num"),
       cell(item.name, "등록 이름", "name"),
       regionCell(item),
+      indutyCell(item),
       cell(item.interestText, "상대 관심도", "num"),
       cell(String(item.sameNameRows), "같은 이름", "num"),
+      estimateCell(item),
+      countCell(item, "화장실 수", "toiletCo"),
+      countCell(item, "전체 사이트", "totalSites"),
+      countCell(item, "자동차 사이트", "autoSiteCo"),
+      basisCell(item),
+      innerCell(item),
     );
     rowsEl.append(tr);
   }
@@ -395,9 +535,21 @@ queryEl.addEventListener("input", () => {
   render({ immediate: false });
 });
 
+indutyEl.addEventListener("change", () => {
+  page = 1;
+  render({ immediate: true });
+});
+
+estimateEl.addEventListener("change", () => {
+  page = 1;
+  render({ immediate: true });
+});
+
 clearBtn.addEventListener("click", () => {
   sidoEl.value = "";
   queryEl.value = "";
+  indutyEl.value = "";
+  estimateEl.value = "";
   fillSigungu();
   page = 1;
   render({ immediate: true });

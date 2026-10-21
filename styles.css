@@ -328,13 +328,21 @@ h2 {
   background: var(--moss);
 }
 
+.scroll-hint {
+  margin: 0;
+  font-weight: 600;
+}
+
 .table-wrap {
+  overflow-x: auto;
   background: var(--panel);
   border: 1px solid var(--line);
+  -webkit-overflow-scrolling: touch;
 }
 
 table {
   width: 100%;
+  min-width: 76rem;
   border-collapse: collapse;
 }
 
@@ -389,6 +397,20 @@ tbody tr:nth-child(even) td {
   margin-top: 0.2rem;
 }
 
+.facility-stack {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.facility-where,
+.facility-note {
+  font-size: 0.92rem;
+}
+
+.is-estimate {
+  font-weight: 700;
+}
+
 td.empty {
   text-align: left;
   white-space: normal;
@@ -440,9 +462,18 @@ td.empty {
     font-size: 2.15rem;
   }
 
+  .scroll-hint {
+    display: none;
+  }
+
   .table-wrap {
+    overflow: visible;
     background: transparent;
     border: 0;
+  }
+
+  table {
+    min-width: 0;
   }
 
   table,
@@ -477,7 +508,7 @@ td.empty {
 
   td {
     display: grid;
-    grid-template-columns: 6.8rem minmax(0, 1fr);
+    grid-template-columns: 7.4rem minmax(0, 1fr);
     gap: 0.25rem 0.65rem;
     align-items: start;
     border-bottom: 0;

@@ -225,8 +225,8 @@
       "total": 0,
       "visitor": 0,
       "blog": 0,
-      "placeId": "32769745",
-      "url": "https://m.place.naver.com/place/32769745/home",
+      "placeId": null,
+      "url": null,
       "matchedQuery": "유성구 국립중앙과학관 캠핑장",
       "updatedAt": "2026-10-22"
     }
@@ -3856,6 +3856,15 @@
       "intro": "농업회사법인 다온숲 주식회사는 세종시 전동면에 자리 잡고 있다. 세종시청을 기점으로 자동차에 몸을 싣고 세종로, 허만석로를 번갈아 달리면 닿는다. 도착까지 걸리는 시간은 40분 안팎이다. 캠핑장이 송학산과 조천천 인근에 위치한 덕분에 더없이 자연친화적인 캠핑을 만끽할 수 있다. 캠핑장에는 글램핑 17개 동을 운영하고 있다. 객실 내부에는 침대, 에어컨, 소파, 화장실, 샤워장이 있다. 객실 밖 전용 데크에는 바비큐 시설 등을 배치했다. 이곳의 장점 가운데 하나는 부대시설을 알차게 마련했다는 것이다. 한여름의 무더위를 해소하기 안성맞춤인 수영장 3곳, 여러 음료를 판매하는 카페, 대규모 인원을 위한 무대 광장, 캠핑에 필요한 먹을거리 등을 판매하는 매점, 조만간 운영할 예정인 레스토랑 등 즐길 거리가 차고 넘친다. 캠핑장과 가까운 거리에 베어트리파크, 고복저수지, 비암사 등의 관광지도 있어 연계 여행이 가능하다.",
       "lineIntro": "숲으로 둘러싸인 자연 그대로의 글램핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 2703,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1210638481",
+      "url": "https://m.place.naver.com/place/1210638481/home",
+      "matchedQuery": "세종 다온숲 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -3886,7 +3895,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 37.2567873,
-    "lng": 126.45058
+    "lng": 126.45058,
+    "naverReview": {
+      "total": 2993,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1029588660",
+      "url": "https://m.place.naver.com/place/1029588660/home",
+      "matchedQuery": "옹진군 글램하이 글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 98,
@@ -3915,7 +3933,16 @@
       "animalCmgCl": ""
     },
     "lat": 37.751777222026,
-    "lng": 127.495084057943
+    "lng": 127.495084057943,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "가평군 카이프리미엄글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 99,
@@ -3944,7 +3971,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.66271801722,
-    "lng": 126.510914870365
+    "lng": 126.510914870365,
+    "naverReview": {
+      "total": 978,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "13421526",
+      "url": "https://m.place.naver.com/place/13421526/home",
+      "matchedQuery": "부안군 고사포야영장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 100,
@@ -3975,7 +4011,16 @@
       "featureNm": ""
     },
     "lat": 37.8718936,
-    "lng": 127.282304
+    "lng": 127.282304,
+    "naverReview": {
+      "total": 11200000,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1678194441",
+      "url": "https://m.place.naver.com/place/1678194441/home",
+      "matchedQuery": "포천시 숲에서 만난 바다 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 101,
@@ -4004,7 +4049,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 36.781872,
-    "lng": 127.2303981
+    "lng": 127.2303981,
+    "naverReview": {
+      "total": 867,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "13452289",
+      "url": "https://m.place.naver.com/place/13452289/home",
+      "matchedQuery": "천안시 독립기념관 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 102,
@@ -4030,6 +4084,15 @@
       "intro": "영화마을로 유명했던 구둔역 뒤편에 위치하고 있다. 일신역과도 지척이고 동여주 나들목에서도 가깝다. 이곳은 캠핑을 많이 다니신 주인장의 철학이 묻어 있는 캠핑장이다. 평소 캠핑을 많이 다니면서 느꼈던 불편한 점, 아쉬운 점을 고려해 각 사이트마다 마치 정원 안에서 캠핑을 하고 있다는 느낌을 받을 수 있도록 설계하였다. 때문에 캠핑장이 허허벌판에 데크만 올려놓은 느낌이 아니라 하나의 조경시설처럼 느껴진다. 잘 가꿔진 정원안에 각자의 집을 짓는다는 기분이다. 그래서 사이트 마다 서로 마주치지 않고 독립적으로 지낼 수 있다. 샤워장과 개수대도 호텔급이지만 특히 화장실은 장애인, 임산부, 유아 등 사회적 약자들도 쉽게 이용할 수 있도록 해 놓았다.",
       "lineIntro": "영화마을 구둔역 뒤 소규모 럭셔리 캠핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 175,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1737351244",
+      "url": "https://m.place.naver.com/place/1737351244/home",
+      "matchedQuery": "양평군 더 포레스트 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -4059,7 +4122,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 38.3427782244919,
-    "lng": 128.513160351671
+    "lng": 128.513160351671,
+    "naverReview": {
+      "total": 1791,
+      "visitor": 4637,
+      "blog": 0,
+      "placeId": "13083822",
+      "url": "https://m.place.naver.com/place/13083822/home",
+      "matchedQuery": "고성군 송지호 오토 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 104,
@@ -4090,7 +4162,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.1156146470814,
-    "lng": 127.308034920208
+    "lng": 127.308034920208,
+    "naverReview": {
+      "total": 346,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1162550635",
+      "url": "https://m.place.naver.com/place/1162550635/home",
+      "matchedQuery": "용인시 캠프1361 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 105,
@@ -4120,7 +4201,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 37.2570984,
-    "lng": 126.5169094
+    "lng": 126.5169094,
+    "naverReview": {
+      "total": 1104,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1801904002",
+      "url": "https://m.place.naver.com/place/1801904002/home",
+      "matchedQuery": "온더비치 글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 106,
@@ -4148,6 +4238,15 @@
       "intro": "경기도 가평군 청평면 청평호에 위치한다. 글램핑장은 청평호 조망이 가능하도록 설계되어 있고 동일업체가 운영 중인 수상레저를 포함한 고급 대단위 글램핑 시설이다 청평면 시내에서 접근이 쉬우며 최근 가평대교 개통으로 대도시 인접 접근성이 용이한 고급스런 글램핑 시설이다. 청평역을 이용한 대중교통 수단으로 접근이 가능하고 호명산, 새덕산 등이 접해있어 호수와 숲을 품은 휴양시설로 4계절 아름다운 경치를 감상 할 수 있다. 연계 관광코스로는 아침고요 수목원과 인근 쁘띠프랑스가 있다. 글랜핑 사이트는 28동으로 가각 타입별로 특징적인 시설을 하고 있으며 레져 시설과 함께 묶은 패키지 상품도 이용할 수 있다. 글램핑 사이트는 국제 디자인 어워드인 레드닷 어워드 등 유수 디자인상을 2016, 2017년 연속 수상하는 등 독특함과 함께 미학적인 아름다움을 고객이 편하게 쉴 수 있도록 기능과 안전성을 중시하고 있다. 사이트 내 이용시설 구성품 및 내부 샤워실 청결상태 양호하다.",
       "lineIntro": "청평호를 품은 국내 최대 수상레저 리조트 럭셔리 글램핑",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 946,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1245282868",
+      "url": "https://m.place.naver.com/place/1245282868/home",
+      "matchedQuery": "가평군 캠프통 아일랜드 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -4178,7 +4277,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.199915,
-    "lng": 128.1941257
+    "lng": 128.1941257,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "진주시 월아산 자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 108,
@@ -4210,7 +4318,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 36.1260059,
-    "lng": 127.349072
+    "lng": 127.349072,
+    "naverReview": {
+      "total": 1720,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1313197273",
+      "url": "https://m.place.naver.com/place/1313197273/home",
+      "matchedQuery": "금산군 대둔산 캠핑랜드",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 109,
@@ -4238,6 +4355,15 @@
       "intro": "○위치 : 경기도 가평군 청평면 청평댐 인근에 위치한 마이다스 리조트 단지 내에 위치한다. 호명산과 청평호와 북한강의 지류인 조종천이 인접해있어 중인 각종 엑티비티 시설을 갖춘 대단위 캠핑 시설이다 ○접근성 : ‘청평자연휴양림’ 입구에 위치하며 대중교통 수단으로 접근이 다양하고 특히 집입로는 봄에 벚꽃 터널을 이루어 드라이브로도 제격이다. 청평댐 아래 신청평대교를 통하여 집입이 가능하고 글램핑 객실과 수영장에서는 청평호가 시원하게 조망되며 가을에는 운두산, 오도산의 아름다운 단풍을 감상할 수 있다. ○사이트정보 : 카바나 스타일의 글램핑 5동과 리조트로서 각종 부대시설이 준비되어 있다, 어린이를 위한 키즈잼 놀이시설, 비움하우스, 미니 동물원이 있어 이용이 가능하다. 사이트 뒤편으로는 수영장이 설치되어 있어 연계이용이 가능하며 넓은 면적의 원형풀장이다. 사이트내에는 대형 프로젝션빔과 하만카돈사의 스피커를 이용하여 영화와 음악을 즐기면 자연속에서 힐링의 감동을 더 할 수 있도록 이용객들에게 편의성을 제공한다.",
       "lineIntro": "청평의 아름다운 자연속에서, 영상과 음악이 어우러지는 아늑한 글램핑",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 4,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "가평군 헤스티아 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -4267,7 +4393,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.6289889,
-    "lng": 127.5122394
+    "lng": 127.5122394,
+    "naverReview": {
+      "total": 1027,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1378780447",
+      "url": "https://m.place.naver.com/place/1378780447/home",
+      "matchedQuery": "가평군 글램탐다오 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 111,
@@ -4295,6 +4430,15 @@
       "intro": "금호강 오토캠핑장은 대구시 북구에 자리했다. 대구시청을 기점으로 8Km가량 떨어졌다. 자동차를 타고 태평로, 신천대로, 동북로를 차례로 거치면 닿는다. 도착까지 걸리는 시간은 20분 안팎이다. 캠핑장은 수려한 풍광 덕에 연중 사람들의 발길이 끊이지 않는 금호강 코앞에 터를 잡았다. 이 덕분에 도시에서 자연친화적인 캠핑을 만끽할 수 있다. 게다가 잘 정비된 자전거길과 산책로가 공존하고 있어 캠핑 외 즐길 거리가 많다. 캠핑장에는 자동차 야영장 16면을 마련했다. 바닥은 잔디와 블록이 결합한 형태이며, 사이트 크기는 가로 9.5m 세로 9.5m다. 무엇보다 사이트 간 거리가 멀어 프라이빗한 캠핑이 가능하다. 아울러 모든 시설을 수시로 관리하는 덕택에 한눈에 봐도 깔끔하다. 개인 카라반과 트레일러 동반 입장도 가능하다. 남녀를 구분해 마련한 화장실과 샤워실은 2개소며, 대규모 개수대는 1개소다.",
       "lineIntro": "금호강에 둥지 튼 깔끔하고 프라이빗한 캠핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 398,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1388770690",
+      "url": "https://m.place.naver.com/place/1388770690/home",
+      "matchedQuery": "북구 금호강 오토캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -4324,7 +4468,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 35.6352049662152,
-    "lng": 129.049331204251
+    "lng": 129.049331204251,
+    "naverReview": {
+      "total": 1415,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1672123059",
+      "url": "https://m.place.naver.com/place/1672123059/home",
+      "matchedQuery": "더캠프 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 113,
@@ -4354,7 +4507,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.6358864,
-    "lng": 126.9158491
+    "lng": 126.9158491,
+    "naverReview": {
+      "total": 265,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1577907888",
+      "url": "https://m.place.naver.com/place/1577907888/home",
+      "matchedQuery": "은평구 앵봉산 가족캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 114,
@@ -4386,7 +4548,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 38.0753194,
-    "lng": 127.2480882
+    "lng": 127.2480882,
+    "naverReview": {
+      "total": 412,
+      "visitor": 412,
+      "blog": 0,
+      "placeId": "1185540064",
+      "url": "https://m.place.naver.com/place/1185540064/home",
+      "matchedQuery": "포천시 캠프다온 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 115,
@@ -4415,6 +4586,15 @@
       "intro": "대회산 내에 위치한 이 캠핑장은 39,669m2규모로 오토캠핑장 150면과 글램핑시설 5동을 수용할 수 있는 대형캠핑장이다. 캠핑장사이트 구획도 무려 A~J까지 구분이 되어 있다. J는 가장 최근에 생긴 사이트인데 J사이트에는 잔디가 깔려 있고 넓은 잔디밭에서 가벼운 스포츠활동을 즐길 수 있다. 나머지 구역은 모두 파쇄석이다. 잔디광장 옆에는 조그만 연못이 있다. 관상용으로 들어가지는 못하지만 개구리들을 볼 수 있다. 겨울철에만 운영하는 대형 눈썰매 시설이 있어 겨울철 캠핑을 즐기는 이들은 눈밭을 가르는 재미를 느낄 수 있다. 시설도 시설이지만 다양한 행사, 체험프로그램을 진행해 다양한 재미를 선사해준다. 참고로 이곳은 매너타임이 있어 꼭 지켜줘야 하는데, 밤 11시 30분이되면 다른 캠퍼들을 위해 정숙해야 하고 자정이 되면 소등 및 취침모드다. 12시가 되면 관리자가 각 구역을 돌며 마무리하니까 지키도록 하자.",
       "lineIntro": "텃밭종류만 해도 여러 가지인 대회산캠핑장에서 자연학습과 캠핑을!",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 635,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "33085516",
+      "url": "https://m.place.naver.com/place/33085516/home",
+      "matchedQuery": "포천시 대회산캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -4447,7 +4627,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.2633423,
-    "lng": 126.4497582
+    "lng": 126.4497582,
+    "naverReview": {
+      "total": 1411,
+      "visitor": 810,
+      "blog": 0,
+      "placeId": "1474358371",
+      "url": "https://m.place.naver.com/place/1474358371/home",
+      "matchedQuery": "캠프 노마드 글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 117,
@@ -4476,7 +4665,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 35.2179424,
-    "lng": 128.998423
+    "lng": 128.998423,
+    "naverReview": {
+      "total": 580,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1813363736",
+      "url": "https://m.place.naver.com/place/1813363736/home",
+      "matchedQuery": "북구 화명 오토캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 118,
@@ -4505,7 +4703,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 36.4235175034587,
-    "lng": 127.118768521238
+    "lng": 127.118768521238,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "공주시 공주산림휴양마을 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 119,
@@ -4534,7 +4741,16 @@
       "animalCmgCl": ""
     },
     "lat": 35.9505220342164,
-    "lng": 129.139785057272
+    "lng": 129.139785057272,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "경주시 시에스타 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 120,
@@ -4563,7 +4779,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 37.3034292019919,
-    "lng": 128.260796789888
+    "lng": 128.260796789888,
+    "naverReview": {
+      "total": 261,
+      "visitor": 107,
+      "blog": 0,
+      "placeId": "1001315027",
+      "url": "https://m.place.naver.com/place/1001315027/home",
+      "matchedQuery": "베이스 캠프 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 121,
@@ -4595,7 +4820,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.8343179,
-    "lng": 128.8735922
+    "lng": 128.8735922,
+    "naverReview": {
+      "total": 366,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1055236451",
+      "url": "https://m.place.naver.com/place/1055236451/home",
+      "matchedQuery": "강릉시 베이스캠프 글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 121,
@@ -4621,6 +4855,15 @@
       "intro": "",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 261,
+      "visitor": 107,
+      "blog": 0,
+      "placeId": "1001315027",
+      "url": "https://m.place.naver.com/place/1001315027/home",
+      "matchedQuery": "베이스캠프 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -4650,7 +4893,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 37.7817231514579,
-    "lng": 127.365534749972
+    "lng": 127.365534749972,
+    "naverReview": {
+      "total": 486,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1551698634",
+      "url": "https://m.place.naver.com/place/1551698634/home",
+      "matchedQuery": "가평군 선택적고립캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 123,
@@ -4679,7 +4931,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.0636086951349,
-    "lng": 126.75649755191
+    "lng": 126.75649755191,
+    "naverReview": {
+      "total": 537,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "32769739",
+      "url": "https://m.place.naver.com/place/32769739/home",
+      "matchedQuery": "남구 승촌보캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 124,
@@ -4711,7 +4972,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 35.8857674,
-    "lng": 129.2882486
+    "lng": 129.2882486,
+    "naverReview": {
+      "total": 556,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1885082624",
+      "url": "https://m.place.naver.com/place/1885082624/home",
+      "matchedQuery": "경주시 밤부 사운드 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 125,
@@ -4739,6 +5009,15 @@
       "intro": "거제자연휴양림은 노자산 자락에 위치한 완만한 경사의 휴양림으로 가족단위로 캠핑과 산림욕을 즐길 수 있는 곳이다. 이곳에는 57개의 캠핑 데크를 비롯해 숲속의집, 등산로, 산책로, 화장실, 취사장, 운동시설 등이 잘 가꾸어져 있으며, 등산로 곳곳에서 만나는 전망대에서 멀리 한려해상국립공원을 비롯해 대마도까지 보이는 아름다운 바다 경치가 펼쳐진다. 휴양림 내부는 천천히 걸으면 2시간 정도 소요되는데, 몸과 마음 치유에 효과가 있다는 피톤치드가 풍부한 숲 속을 거니는 것도 여행의 색다른 묘미가 된다. 캠핑장비가 없다면 다양한 숙박시설을 이용해도 된다. 취사도구는 물론 개별 화장실까지 갖춘 원룸식, 콘도식의 다양한 숙박시설이 있고, 텐트를 편리하게 설치할 수 있는 평상형 데크가 여러 개 준비되어 있어서, 매월 1일 인터넷 예약이 시작될 때마다 금세 매진이 된다. 휴양림 내에서 자연을 벗 삼아 즐기는 것만으로도 충분히 즐거운 휴가이지만, 학동몽돌해수욕장, 구조라해수욕장, 어촌민속전시관 등 다양한 관광지가 가까이에 있어서, 휴양림 내에 숙박을 이용하면서 거제도 일대를 관광하기에 유용하다. 가족단위 이외에도 학생 등 단체 숙박도 가능하여 거제를 방문하는 관광객들에게 자연 친화적인 휴양지로 각광받고 있다.",
       "lineIntro": "거제자연휴양림은 노자산 자락에 위치한 완만한 경사의 휴양림으로 가족단위로 캠핑과 산림욕을 즐길 수 있는 곳이다.",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 293,
+      "visitor": 267,
+      "blog": 0,
+      "placeId": "32769365",
+      "url": "https://m.place.naver.com/place/32769365/home",
+      "matchedQuery": "거제시 거제자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -4768,7 +5047,16 @@
       "animalCmgCl": ""
     },
     "lat": 35.0060359946256,
-    "lng": 128.483105101464
+    "lng": 128.483105101464,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "고성군 피야드고성 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 127,
@@ -4797,7 +5085,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 33.2988968261301,
-    "lng": 126.374210809075
+    "lng": 126.374210809075,
+    "naverReview": {
+      "total": 351,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1219386852",
+      "url": "https://m.place.naver.com/place/1219386852/home",
+      "matchedQuery": "서귀포시 에가톳 캐빈 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 128,
@@ -4826,7 +5123,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 35.3545101,
-    "lng": 128.7593248
+    "lng": 128.7593248,
+    "naverReview": {
+      "total": 1083,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "32769673",
+      "url": "https://m.place.naver.com/place/32769673/home",
+      "matchedQuery": "밀양시 밀양아리랑 오토캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 129,
@@ -4854,6 +5160,15 @@
       "intro": "강원도 지역의 동해 해변에서 가장 긴 백사장을 보유하고 있는 맹방해수욕장 바로 옆 해송숲에 조성된 국민여가 캠핑장이다. 해송을 훼손하지 않고 친환경 건축공법을 이용해 자연 그대로를 보존하면서도 캠핑에 최적화된 환경을 제공하는 곳으로 공공캠핑장의 모범사례로 알려져 있다. 맹방비치캠핑장은 스마트 캠핑 시스템을 도입하여 출입관리에서부터 화장실등 편의시설 이용까지 온라인 시스템을 통해 간편하게 이용할 수 있도록 설계되었다. 때문 이곳에서는 주차장 및 화장실을 이용하는 전용키를 발급받아야 한다.캠핑장에서 해변쪽 이면도로를 건너면 바로 해수욕장이고 오른편으로는 마읍천이 흘러 민물과 바다를 함께 즐길 수 있다.",
       "lineIntro": "명사십리 해변을 바라보는 친환경 국민여가캠핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 564,
+      "visitor": 564,
+      "blog": 0,
+      "placeId": "1454265978",
+      "url": "https://m.place.naver.com/place/1454265978/home",
+      "matchedQuery": "삼척시 맹방 비치캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -4886,7 +5201,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.6305059379123,
-    "lng": 127.510029849375
+    "lng": 127.510029849375,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "가평군 메종드글램 글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 131,
@@ -4917,7 +5241,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.4159895804724,
-    "lng": 127.427285590273
+    "lng": 127.427285590273,
+    "naverReview": {
+      "total": 93,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1644270895",
+      "url": "https://m.place.naver.com/place/1644270895/home",
+      "matchedQuery": "여주시 휴림 카라반",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 132,
@@ -4946,7 +5279,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 37.0097946541387,
-    "lng": 128.048546701559
+    "lng": 128.048546701559,
+    "naverReview": {
+      "total": 1531,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1423727582",
+      "url": "https://m.place.naver.com/place/1423727582/home",
+      "matchedQuery": "충주시 캠핑808",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 133,
@@ -4975,7 +5317,16 @@
       "animalCmgCl": ""
     },
     "lat": 36.282449737847,
-    "lng": 129.375152121322
+    "lng": 129.375152121322,
+    "naverReview": {
+      "total": 59,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "33860987",
+      "url": "https://m.place.naver.com/place/33860987/home",
+      "matchedQuery": "장사해수욕장 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 134,
@@ -5001,6 +5352,15 @@
       "intro": "",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 148,
+      "visitor": 7,
+      "blog": 0,
+      "placeId": "1311571130",
+      "url": "https://m.place.naver.com/place/1311571130/home",
+      "matchedQuery": "유성구 하기숲 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -5030,7 +5390,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.9058141954421,
-    "lng": 127.814204579871
+    "lng": 127.814204579871,
+    "naverReview": {
+      "total": 142,
+      "visitor": 239,
+      "blog": 0,
+      "placeId": "30820939",
+      "url": "https://m.place.naver.com/place/30820939/home",
+      "matchedQuery": "덕유산 자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 136,
@@ -5061,7 +5430,16 @@
       "animalCmgCl": ""
     },
     "lat": 35.6110814076738,
-    "lng": 128.772365826924
+    "lng": 128.772365826924,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "청도군 세모 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 137,
@@ -5090,7 +5468,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.0795251,
-    "lng": 128.6022969
+    "lng": 128.6022969,
+    "naverReview": {
+      "total": 1179,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1194351231",
+      "url": "https://m.place.naver.com/place/1194351231/home",
+      "matchedQuery": "김삿갓계곡캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 138,
@@ -5119,7 +5506,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.6686289,
-    "lng": 128.0542099
+    "lng": 128.0542099,
+    "naverReview": {
+      "total": 172,
+      "visitor": 116,
+      "blog": 0,
+      "placeId": "21688749",
+      "url": "https://m.place.naver.com/place/21688749/home",
+      "matchedQuery": "합천군 오도산 자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 139,
@@ -5148,7 +5544,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.737558,
-    "lng": 127.1284768
+    "lng": 127.1284768,
+    "naverReview": {
+      "total": 34,
+      "visitor": 34,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "경기 짱아 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 140,
@@ -5178,7 +5583,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.7090812,
-    "lng": 128.5496911
+    "lng": 128.5496911,
+    "naverReview": {
+      "total": 76,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "32769685",
+      "url": "https://m.place.naver.com/place/32769685/home",
+      "matchedQuery": "경북 청도자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 141,
@@ -5208,7 +5622,16 @@
       "featureNm": ""
     },
     "lat": 37.7204274042757,
-    "lng": 126.945772725049
+    "lng": 126.945772725049,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "양주시 양주잼잼 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 142,
@@ -5237,7 +5660,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.3520154775934,
-    "lng": 129.33329264895
+    "lng": 129.33329264895,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "울주군 카라카리조트 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 143,
@@ -5270,7 +5702,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 37.8449407054843,
-    "lng": 127.353468463938
+    "lng": 127.353468463938,
+    "naverReview": {
+      "total": 818,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1181099792",
+      "url": "https://m.place.naver.com/place/1181099792/home",
+      "matchedQuery": "가평군 루체른 글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 144,
@@ -5299,7 +5740,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 35.3223988,
-    "lng": 128.3298669
+    "lng": 128.3298669,
+    "naverReview": {
+      "total": 1486,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1494855007",
+      "url": "https://m.place.naver.com/place/1494855007/home",
+      "matchedQuery": "함안군 강주학교캠프 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 145,
@@ -5331,7 +5781,16 @@
       "featureNm": ""
     },
     "lat": 37.2673983,
-    "lng": 126.9386874
+    "lng": 126.9386874,
+    "naverReview": {
+      "total": 1346,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1137448421",
+      "url": "https://m.place.naver.com/place/1137448421/home",
+      "matchedQuery": "수원시 솔내음 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 145,
@@ -5360,7 +5819,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 35.839270791899,
-    "lng": 127.688871383496
+    "lng": 127.688871383496,
+    "naverReview": {
+      "total": 1346,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1137448421",
+      "url": "https://m.place.naver.com/place/1137448421/home",
+      "matchedQuery": "솔내음 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 146,
@@ -5389,7 +5857,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 37.1880139,
-    "lng": 128.1331513
+    "lng": 128.1331513,
+    "naverReview": {
+      "total": 119,
+      "visitor": 40,
+      "blog": 0,
+      "placeId": "1374713648",
+      "url": "https://m.place.naver.com/place/1374713648/home",
+      "matchedQuery": "제천시 솔내음캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 147,
@@ -5418,7 +5895,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 36.7504829,
-    "lng": 126.1345572
+    "lng": 126.1345572,
+    "naverReview": {
+      "total": 896,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "21892891",
+      "url": "https://m.place.naver.com/place/21892891/home",
+      "matchedQuery": "태안군 어은돌오토캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 148,
@@ -5444,6 +5930,15 @@
       "intro": "",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "영월군 숲속의 작은집 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -5473,7 +5968,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.7619161313223,
-    "lng": 129.365474770506
+    "lng": 129.365474770506,
+    "naverReview": {
+      "total": 41,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "30820651",
+      "url": "https://m.place.naver.com/place/30820651/home",
+      "matchedQuery": "경주시 토함산자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 150,
@@ -5506,7 +6010,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 36.9126462,
-    "lng": 126.8133919
+    "lng": 126.8133919,
+    "naverReview": {
+      "total": 1171,
+      "visitor": 1171,
+      "blog": 0,
+      "placeId": "1739438377",
+      "url": "https://m.place.naver.com/place/1739438377/home",
+      "matchedQuery": "당진시 서해랑83 카라반",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 151,
@@ -5536,7 +6049,16 @@
       "featureNm": ""
     },
     "lat": 37.2559514520782,
-    "lng": 126.524510252637
+    "lng": 126.524510252637,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "옹진군 선재담 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 152,
@@ -5564,6 +6086,15 @@
       "intro": "매봉산 천상의 숲 숲속야영장은 매봉산 바람의 언덕과 인접해 있어 탁트인 배추밭을 감상할 수 있는 야영장입니다. 숲속야영장 사방으로 뻗어나가는 숲길에서 아늑한 자연을 느낄 수 있습니다. 치유의 숲에 위치한 치유센터에서는 방문객을 위한 치유프로그램인 요가, 온열치료 등을 운영하고 있습니다.",
       "lineIntro": "자연과 쉼을 만나는 천상의 숲",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 113,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "2076420033",
+      "url": "https://m.place.naver.com/place/2076420033/home",
+      "matchedQuery": "태백시 매봉산 천상의 숲 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -5595,7 +6126,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 37.2569570436018,
-    "lng": 126.449991864348
+    "lng": 126.449991864348,
+    "naverReview": {
+      "total": 1570,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1558737495",
+      "url": "https://m.place.naver.com/place/1558737495/home",
+      "matchedQuery": "옹진군 메리글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 154,
@@ -5625,7 +6165,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 38.0746871235999,
-    "lng": 127.224690957713
+    "lng": 127.224690957713,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "포천시 해든 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 155,
@@ -5651,6 +6200,15 @@
       "intro": "",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 3086,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1961081783",
+      "url": "https://m.place.naver.com/place/1961081783/home",
+      "matchedQuery": "제천시 청풍호반 오토캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -5679,6 +6237,15 @@
       "intro": "",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 2258,
+      "visitor": 1706,
+      "blog": 0,
+      "placeId": "35296495",
+      "url": "https://m.place.naver.com/place/35296495/home",
+      "matchedQuery": "원주시 캄파슬로우 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -5708,7 +6275,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 36.9240998,
-    "lng": 127.3901695
+    "lng": 127.3901695,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "진천군 생거진천 자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 158,
@@ -5737,7 +6313,16 @@
       "animalCmgCl": ""
     },
     "lat": 37.7150188890391,
-    "lng": 126.353493533992
+    "lng": 126.353493533992,
+    "naverReview": {
+      "total": 12,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1429632983",
+      "url": "https://m.place.naver.com/place/1429632983/home",
+      "matchedQuery": "강화군 사토안 카라반",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 159,
@@ -5763,6 +6348,15 @@
       "intro": "",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 1013,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "379208899",
+      "url": "https://m.place.naver.com/place/379208899/home",
+      "matchedQuery": "캐빈 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -5790,6 +6384,15 @@
       "intro": "안양 평촌 도심속에 위치한 최근접 캠핑장이며, 관악산 줄기에 위치하여 숲속 힐링을 할수 있는 캠핑장",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 957,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1675159931",
+      "url": "https://m.place.naver.com/place/1675159931/home",
+      "matchedQuery": "안양시 안양 산마을캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -5823,6 +6426,15 @@
       "intro": "파인트리 오토캠핑장은 오토캠핑, 펜션, 글램핑을 운영하고 있는 곳이다. 펜션은 4인용, 8인용으로 나뉘어져 있으며 특히 8인용은 황토방펜션이라 황토벽돌로 지어져 자고 일어나면 개운함을 느낄 수 있다. 글램핑장은 룸에 개별화장실 유무사항에 따라 룸이 나뉘며 각 집마다 그네의자가 있다는 것이 특징이다. 이곳은 캠핑장 이름처럼 소나무가 많은데 소나무가 숲을 이뤄 한여름에도 시원한 나무그늘아래 더위를 피할 수 있다. 또한 옆으로 경치 좋은 계곡 하류에 위치해 있어 물놀이를 즐길 수 있다. 수심은 성인 가슴팍까지 오는 정도라 다이빙도 즐길 수 있으며 맑은 물에 사는 물고기와 고동이 많아 수렵과 채집의 재미도 느낄 수 있다. 참고로 파인트리 캠핑장은 반려동물 출입이 가능하고 실제로도 캠핑장 내에 사장님이 키우는 강아지가 있어 맑은 공기 속에서 강아지들이 놀 수 있다. 실제로 사장님은 친절하시고 유쾌한 성격이라 이용객들의 사장님 칭찬이 많으니 불친절한 캠핑장 사장님께 질린 분들이라면 이곳을 방문해보자.",
       "lineIntro": "소나무 사이로 우거진 그늘을 느끼며 캠핑할 수 있는 곳",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 1552,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "21672980",
+      "url": "https://m.place.naver.com/place/21672980/home",
+      "matchedQuery": "포천시 파인트리 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -5854,7 +6466,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.8208748845652,
-    "lng": 127.520924550024
+    "lng": 127.520924550024,
+    "naverReview": {
+      "total": 2333,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "12958117",
+      "url": "https://m.place.naver.com/place/12958117/home",
+      "matchedQuery": "가평군 자라섬 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 163,
@@ -5883,7 +6504,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.6113333162471,
-    "lng": 126.452610073585
+    "lng": 126.452610073585,
+    "naverReview": {
+      "total": 676,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "13419371",
+      "url": "https://m.place.naver.com/place/13419371/home",
+      "matchedQuery": "강화군 함허동천야영장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 164,
@@ -5915,7 +6545,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 36.7616613845152,
-    "lng": 127.000256919343
+    "lng": 127.000256919343,
+    "naverReview": {
+      "total": 594,
+      "visitor": 594,
+      "blog": 0,
+      "placeId": "1649250309",
+      "url": "https://m.place.naver.com/place/1649250309/home",
+      "matchedQuery": "스테이 그린 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 165,
@@ -5946,7 +6585,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.4790587232166,
-    "lng": 126.831450514464
+    "lng": 126.831450514464,
+    "naverReview": {
+      "total": 613,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1993115840",
+      "url": "https://m.place.naver.com/place/1993115840/home",
+      "matchedQuery": "구로구 천왕산 가족캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 166,
@@ -5975,7 +6623,16 @@
       "animalCmgCl": ""
     },
     "lat": 37.7794961,
-    "lng": 127.1415921
+    "lng": 127.1415921,
+    "naverReview": {
+      "total": 422,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1882694331",
+      "url": "https://m.place.naver.com/place/1882694331/home",
+      "matchedQuery": "포천시 트멍 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 167,
@@ -6006,7 +6663,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 36.8874641980115,
-    "lng": 126.754016805341
+    "lng": 126.754016805341,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "당진시 아마존스테이 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 168,
@@ -6036,7 +6702,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 37.7649682515393,
-    "lng": 127.394326598057
+    "lng": 127.394326598057,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "가평군 페르마타 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 169,
@@ -6065,7 +6740,16 @@
       "animalCmgCl": ""
     },
     "lat": 36.1013298,
-    "lng": 128.7684592
+    "lng": 128.7684592,
+    "naverReview": {
+      "total": 487,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1160694632",
+      "url": "https://m.place.naver.com/place/1160694632/home",
+      "matchedQuery": "군위군 하늘구니 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 170,
@@ -6093,6 +6777,15 @@
       "intro": "봉식이놀이터는 경북 청도군 풍각면에 자리 잡고 있다. 청도군청을 기점으로 22km가량 떨어졌다. 자동차에 몸을 싣고 도주관로, 청려로, 봉수길을 차례로 달리면 닿는다. 도착까지 소요되는 시간은 35분 안팎이다. 시골길을 달리다 맞닥뜨리는 이곳은 숲속에 둥지 튼 글램핑장이다. 두 가지 유형의 글램핑 객실 29개 동을 마련했는데, 크기의 차이일 뿐 구비 품목은 대동소이하다. 글램핑 객실 내부에는 침대, 침구류, 에어컨을 비치했다. 객실 외부 전용 공간은 냉장고, 전자레인지, 의자 일체형 캠핑 테이블 등으로 채웠다. 반려동물은 소형견일지라도 동반 입장이 불가능하다. 캠핑장은 사계절 내내 쉬지 않고 운영하며, 예약은 전화, 온라인 예약 대기, 온라인 실시간, 현장 접수로 받는다. 캠핑장 주변에 비슬산 자연휴양림, 그레이스 CC 등이 있다. 청도군청 방면으로 나가면 음식점도 많다.",
       "lineIntro": "숲속에 둥지 튼 글램핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 2742,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "35781576",
+      "url": "https://m.place.naver.com/place/35781576/home",
+      "matchedQuery": "청도군 봉식이놀이터 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -6121,6 +6814,15 @@
       "intro": "산중호걸캠핑장은 포천 이동면 도평에서 철원으로 넘어가는 고갯길인 약사령 아래쪽에 위치하고 있다. 청정계곡으로 소문난 약사동계곡 안쪽이다. 약사령 고개 정상에서 철원쪽으로 내려가면 고개 끝지점 오른편에 빨간지붕 건물옆으로 준희네 매점이 있다. 매점 앞으로 우회전해 300여미터를 더 들어가면 캠핑장이다. 캠핑장은 두 개의 산 사이 협곡에 그림처럼 펼쳐져 있다. 글램핑과 카라반으로 구성 캠핑장은 구역이름도 호랑이마을로 정했다. 계곡옆 숲속에 있는 텐트는 숲 호랑이 마을. 잔디마당 옆에 위치한 텐트는 평원호랑이마을 식이다.",
       "lineIntro": "약사동계곡에 위치한 청정지역 카라반&글램핑",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 4,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "포천시 산중호걸 글램핑",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -6150,7 +6852,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 36.6070675,
-    "lng": 126.2911585
+    "lng": 126.2911585,
+    "naverReview": {
+      "total": 1171,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1204099271",
+      "url": "https://m.place.naver.com/place/1204099271/home",
+      "matchedQuery": "태안군 태안노을숲캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 173,
@@ -6178,6 +6889,15 @@
       "intro": "맑은 공기와 계곡이 바로 옆에 있는 그자리 야영장. 애견과 함께 놀수 있는 운동장도 있어 자유롭게 놀수 있다",
       "lineIntro": "애견과 함께 놀수 있는 캠핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 796,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1776094070",
+      "url": "https://m.place.naver.com/place/1776094070/home",
+      "matchedQuery": "홍천군 그자리 야영장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -6207,7 +6927,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 34.9501689730525,
-    "lng": 128.05761079768
+    "lng": 128.05761079768,
+    "naverReview": {
+      "total": 2,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "사천시 사천 케이블카 자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 175,
@@ -6241,7 +6970,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 36.3940748,
-    "lng": 129.4148126
+    "lng": 129.4148126,
+    "naverReview": {
+      "total": 1108,
+      "visitor": 778,
+      "blog": 0,
+      "placeId": "1665168305",
+      "url": "https://m.place.naver.com/place/1665168305/home",
+      "matchedQuery": "스페이스 영덕 글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 176,
@@ -6270,6 +7008,15 @@
       "intro": "염전해변캠핑장은 경북 울진군 근남면 수산리에 자리 잡았다. 울진군청을 기점으로 3km가량 떨어졌다. 자동차를 타고 강변로와 엑스포로를 번갈아 달리면 닿는다. 도착까지 걸리는 시간은 5분 안팎이다. 캠핑장은 울진 앞바다를 한눈에 담을 수 있는 공간에 위치했다. 캠핑장에는 데크로 이뤄진 오토캠핑 사이트 19면, 잔디블록이 깔린 일반캠핑 사이트 8면, 카라반 4대가 마련돼 있다. 카라반 내부에는 일상생활이 가능할 정도의 시설이 완비돼 있다. 주변에는 망양정해수욕장과 울진왕피천공원이 있어 연계 여행에 나서기 좋다.",
       "lineIntro": "울진 앞바다가 눈앞에 펼쳐지는 곳",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 232,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "20435427",
+      "url": "https://m.place.naver.com/place/20435427/home",
+      "matchedQuery": "울진군 염전해변캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -6301,7 +7048,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 35.2238949,
-    "lng": 128.8792575
+    "lng": 128.8792575,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1057198623",
+      "url": "https://m.place.naver.com/place/1057198623/home",
+      "matchedQuery": "경남 도시별장 글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 178,
@@ -6330,7 +7086,16 @@
       "animalCmgCl": ""
     },
     "lat": 37.7721148994295,
-    "lng": 126.927692711111
+    "lng": 126.927692711111,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "파주시 마장호수 휴 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 178,
@@ -6359,7 +7124,16 @@
       "animalCmgCl": ""
     },
     "lat": 37.7721148994295,
-    "lng": 126.927692711111
+    "lng": 126.927692711111,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "파주시 마장호수 휴 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 179,
@@ -6388,7 +7162,16 @@
       "animalCmgCl": ""
     },
     "lat": 35.6330942480209,
-    "lng": 128.850388468467
+    "lng": 128.850388468467,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "청도군 캠프스테이 청도 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 180,
@@ -6417,7 +7200,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 37.3639934,
-    "lng": 128.4702695
+    "lng": 128.4702695,
+    "naverReview": {
+      "total": 4021,
+      "visitor": 2767,
+      "blog": 0,
+      "placeId": "1066273967",
+      "url": "https://m.place.naver.com/place/1066273967/home",
+      "matchedQuery": "산너미목장 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 181,
@@ -6443,6 +7235,15 @@
       "intro": "문복산 캠핑장은 경북 경주시 산내면에 자리 잡고 있다. 경주시청을 기점으로 46km가량 떨어졌다. 자동차에 몸을 싣고 건포산업로, 단석로, 문복로를 차례로 달리면 닿는다. 도착까지 소요되는 시간은 1시간 안팎이다. 이곳은 문복산 기슭에 터를 잡은 덕분에 청정한 자연의 이로움을 마음껏 만끽할 수 있다. 게다가 계절마다 변하는 풍광이 두 눈을 즐겁게 해준다. 캠핑장에는 일반 야영장 70면을 마련했다. 파쇄석 50면은 가로 10m 세로 7m, 데크 20면은 가로 6m 세로 6m로 이뤄졌다. 오후 10시부터 오전 7시까지 매너 모드, 밤 12시부터는 취침 모드다. 3팀 초과 예약이 불가능하며, 한 사이트 당 어른 2명, 어린이 2명, 차량 1대를 기준으로 한다. 전 구역 해먹 설치가 불가능하며, 흡연은 정해진 구역에서만 가능하다. 캠핑장 주변에 국립 운문산 자연휴양림, 가지산 도립공원 등이 있어 연계관광이 손쉽다. 주변에 여러 음식점이 있어 식도락의 즐거움도 누릴 수 있다.",
       "lineIntro": "문복산 기슭에 둥지 튼 깔끔한 캠핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 781,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "31077885",
+      "url": "https://m.place.naver.com/place/31077885/home",
+      "matchedQuery": "문복산 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -6472,7 +7273,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 37.9471385,
-    "lng": 128.6633315
+    "lng": 128.6633315,
+    "naverReview": {
+      "total": 2384,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "35069816",
+      "url": "https://m.place.naver.com/place/35069816/home",
+      "matchedQuery": "양양캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 183,
@@ -6505,7 +7315,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 36.0021191,
-    "lng": 128.5760873
+    "lng": 128.5760873,
+    "naverReview": {
+      "total": 1143,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "38281467",
+      "url": "https://m.place.naver.com/place/38281467/home",
+      "matchedQuery": "칠곡군 팔공산글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 184,
@@ -6534,7 +7353,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 37.4550879,
-    "lng": 127.2350577
+    "lng": 127.2350577,
+    "naverReview": {
+      "total": 2,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "광주시 남한산성 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 185,
@@ -6565,7 +7393,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 36.643919,
-    "lng": 126.661849
+    "lng": 126.661849,
+    "naverReview": {
+      "total": 307,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1024188012",
+      "url": "https://m.place.naver.com/place/1024188012/home",
+      "matchedQuery": "홍성군 내포캠핑스퀘어",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 186,
@@ -6598,7 +7435,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 33.3400879,
-    "lng": 126.395049
+    "lng": 126.395049,
+    "naverReview": {
+      "total": 2,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "제주 스타빌 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 187,
@@ -6624,6 +7470,15 @@
       "intro": "옥성 자연휴양림은 경북 구미시 옥성면에 자리 잡고 있다. 구미시청을 기점으로 30km가량 떨어졌다. 자동차에 몸을 싣고 선산대로, 낙동대로, 선상동로를 차례로 달리면 닿는다. 도착까지 걸리는 시간은 45분 안팎이다. 이곳은 구미의 대표 관광지 가운데 하나인 옥성자연휴양림 내에 위치했다. 이 덕분에 청량감 가득한 캠핑을 만끽할 수 있다. 캠핑장에는 일반 야영장 64면을 마련했다. 바닥은 모두 데크로 이뤄졌으며, 사이트 크기는 가로 3.2m 세로 3.2m다. 전기와 화로 사용이 불가능하며, 취사는 데크나 취사장 주변에서만 허용한다. 캠핑장 입장은 사용일 오후 1시이고, 퇴장은 다음날 오후 1시다. 평일과 주말 모두 운영하지만, 산불 조심 기간인 매년 11월부터 이듬해 5월까지 휴장에 돌입한다. 캠핑장 인근에 금오민속박물관, 일선리고택 문화재마을 등의 관광지가 있다. 관광지 주변에 여러 음식점이 있어 식도락의 즐거움도 만끽할 수 있다.",
       "lineIntro": "청량감 가득한 공간에서 즐기는 캠핑",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 17,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "32769724",
+      "url": "https://m.place.naver.com/place/32769724/home",
+      "matchedQuery": "옥성 자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -6650,6 +7505,15 @@
       "intro": "몽산포 오션 캠핑장은 충남 태안군 남면에 자리했다. 태안군청을 기점으로 10Km가량 떨어졌다. 자동차를 타고 서해로, 안면대로, 몽산포길을 차례로 거치면 닿는다. 도착까지 걸리는 시간은 20분 안팎이다. 캠핑장은 몽산포해수욕장 코앞에 위치한 덕분에 태안 앞바다의 기막힌 풍광을 배경으로 캠핑을 만끽할 수 있다. 이뿐만이 아니다. 해변까지 접근하기 편해 한여름 무더위를 해수욕으로 날리기 제격이다. 이곳은 이미 카라반 캠핑장의 성지로 소문나 전국 각지에서 많은 캠퍼가 모인다. 최대 300면의 사이트를 마련했는데, 정해진 규격이 없다는 것이 매력적이다. 대단위 캠핑장인 만큼 화장실 8개소, 샤워실 4개소, 개수대 4개소가 곳곳에 있다. 관리소에서는 릴선과 화로대를 대여해준다. 반려동물은 대형견도 동반 입장할 수 있다. 단, 입마개와 목줄은 필수라는 점을 잊지 말자.",
       "lineIntro": "카라반 성지로 이름 높은 해변 앞 캠핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 1561,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "36779274",
+      "url": "https://m.place.naver.com/place/36779274/home",
+      "matchedQuery": "태안군 몽산포오션캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -6679,7 +7543,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 36.0237262729757,
-    "lng": 127.669737641204
+    "lng": 127.669737641204,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "무주군 무주 향로산 자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 190,
@@ -6708,7 +7581,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.1022902684787,
-    "lng": 127.325609524449
+    "lng": 127.325609524449,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "안성시 하우스플레이랩 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 191,
@@ -6737,7 +7619,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 36.9507426629036,
-    "lng": 126.622729112701
+    "lng": 126.622729112701,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "당진시 참숯골 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 192,
@@ -6772,7 +7663,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.8990501,
-    "lng": 127.3467722
+    "lng": 127.3467722,
+    "naverReview": {
+      "total": 803,
+      "visitor": 803,
+      "blog": 0,
+      "placeId": "1861819247",
+      "url": "https://m.place.naver.com/place/1861819247/home",
+      "matchedQuery": "가평군 인더풀 글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 193,
@@ -6802,7 +7702,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.7477368023778,
-    "lng": 127.742487534032
+    "lng": 127.742487534032,
+    "naverReview": {
+      "total": 658,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "32769838",
+      "url": "https://m.place.naver.com/place/32769838/home",
+      "matchedQuery": "춘천시 춘천숲자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 194,
@@ -6829,6 +7738,15 @@
       "intro": "해발500고지 청정지역에 위치하며 360도 영남알프스 뷰를 담고 있는 최적의 힐링 공간입니다. 캠핑장최초 초대형 인피니티풀과 마운틴뷰 개별자쿠지를 보유한 럭셔리글램핑과 넓은 부지의 오토캠핑 사이트로 이루어져 있습니다.",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 618,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1811949242",
+      "url": "https://m.place.naver.com/place/1811949242/home",
+      "matchedQuery": "울주군 라포레소호 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -6857,6 +7775,15 @@
       "intro": "사계절 내내 이용 가능한 온수 수영장과 독채로 운영되는 객실까지 호텔 같은 편안함을 추구하는 글램핑장이다. 텐트 앞을 관통하는 수영장, 텐트마다 설치된 100인치 스크린, 에어컨, 복층구조의 글램핑 객실은 캠핑이라기보다는 호텔에 가깝다. 저녁이면 다양한 조명으로 글램핑장의 또 다른 분위기를 느낄 수 있다. 숙소와 바비큐장이 분리되어 있어, 식사 후에도 숙소는 고기 냄새 없이 쾌적하다. 글램핑장에서 차로 5분 거리에 대형마트가 있어 식재료 등 쇼핑도 쉽다.",
       "lineIntro": "대형 호텔급 수영장과 편의시설을 갖춘 럭셔리 글램핑",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 834,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1085472116",
+      "url": "https://m.place.naver.com/place/1085472116/home",
+      "matchedQuery": "가평군 노마드글램핑",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -6886,7 +7813,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 34.6713506019658,
-    "lng": 126.617141835673
+    "lng": 126.617141835673,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "해남군 흑석산 자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 197,
@@ -6915,7 +7851,16 @@
       "animalCmgCl": ""
     },
     "lat": 37.163555583214,
-    "lng": 126.957632266368
+    "lng": 126.957632266368,
+    "naverReview": {
+      "total": 202,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1535140770",
+      "url": "https://m.place.naver.com/place/1535140770/home",
+      "matchedQuery": "화성시 반달곰이 살던 숲 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 198,
@@ -6943,6 +7888,15 @@
       "intro": "마검포 힐링 캠핑장은 충남 태안군 남면에 위치했다. 태안군청을 기점으로 안면대로와 곰섬로를 지나면 닿는다. 도착까지 소요시간은 30분가량이다. 이곳은 태안의 대표 관광지 가운데 하나인 마검포해변 바로 앞에 자리 잡고 있다. 해변이 가까운 덕택에 해수욕은 물론 캠핑장에서 마련한 해루질 체험도 가능하다. 캠핑장에는 글램핑 13개 동과 일반 야영장 9면을 마련했다. 글램핑 객실 내부에는 침대, 냉난방기, 냉장고, 취사도구, 조리도구 등을 갖춰 일상생활이 가능할 정도다. 외부 데크에는 릴렉스 체어와 바비큐 시설을 구비했다. 일반 야영장은 데크로 이뤄졌으며, 가로 6m 세로 6m, 가로 4m, 세로 9m 크기의 두 종류다. 트레일러 동반 입장은 가능하지만, 카라반은 출입이 불가능하다. 캠핑장 자체가 마검포해변에 있으며, 인근에는 드르니항, 네이처월드 등 관광지가 즐비하다. 캠핑장 주변에 해산물 전문점 등 음식점도 많다.",
       "lineIntro": "마검포해변에서 만끽하는 글램핑&캠핑",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 4734,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "32389081",
+      "url": "https://m.place.naver.com/place/32389081/home",
+      "matchedQuery": "태안군 마검포 힐링캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -6972,7 +7926,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 37.9695114,
-    "lng": 127.1505417
+    "lng": 127.1505417,
+    "naverReview": {
+      "total": 540,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "36528712",
+      "url": "https://m.place.naver.com/place/36528712/home",
+      "matchedQuery": "포천시 나무새 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 200,
@@ -7001,7 +7964,16 @@
       "animalCmgCl": ""
     },
     "lat": 36.6727927231369,
-    "lng": 127.040235869074
+    "lng": 127.040235869074,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "천안시 빌라몬테 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 201,
@@ -7028,6 +8000,15 @@
       "intro": "경기도 양주시 기산리의 양주송천캠핑장은 캠핑장과 함께 펜션, 음식점을 겸하고 있어 이용이 매우 편리하다. 안고령계곡 바로 옆에 위치해 계곡 물놀이가 가능하고 여름철엔 야외수영장이 마련된다. 양주송천캠핑장은 약 50여 개의 사이트를 펼칠 수 있다. 캠핑사이트는 데크사이트와 파쇄석사이트로 구분된다. 캠핑장 입구가 데크사이트, 매점 안쪽이 파쇄석사이트다. 어느 쪽에서든 계곡으로 내려가 물놀이를 즐길 수 있다. 여름철 계곡 옆으로 평상이 마련되어 있어 휴식이 가능하다. 편의시설은 샤워장, 개수대, 남녀화장실과 간이매점, 족구장, 트램폴린 등이 갖춰져 있다. 그밖에 펜션과 방갈로 시설이 갖춰져 있어 선택이 가능하다. 캠핑장이 음식점을 겸하고 있어 식사주문도 가능하다.",
       "lineIntro": "마장호수와 안고령계곡이 만나는 송천캠핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 6,
+      "visitor": 6,
+      "blog": 0,
+      "placeId": "1799180175",
+      "url": "https://m.place.naver.com/place/1799180175/home",
+      "matchedQuery": "양주시 양주송천캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -7055,6 +8036,15 @@
       "intro": "장항오토캠핑장은 충남 서천군 장항읍에 자리 잡았다. 서천군청을 기점으로 8Km가량 떨어졌다. 자동차를 타고 충절로, 장항산단북로, 장항산단로를 차례로 거치면 닿는다. 도착까지 걸리는 시간은 15분 안팎이다. 캠핑장은 서천 해변 앞에 위치했는데, 송림숲이 둘러싸고 있어 더없이 자연친화적이다. 송림 아래 텐트를 설치하고 바다 경치에 빠져 여유를 즐기기 안성맞춤이다. 바다의 짠내를 맡으며 해변 산책로를 거닐어도, 송림숲의 피톤치드를 만끽해도, 이도저도 아니면 그저 멍만 때리고 있어도 좋을 캠핑장이다. 캠핑장에는 자동차 야영장 34면을 마련했으며, 30면은 데크, 4면은 잔디다. 화장실과 샤워실을 남녀를 구분해 총 2개소며, 개수대는 1개소다. 수시로 관리하는 덕분에 항상 깔끔함을 유지하고 있다. 개인 카라반과 트레일러 동반 입장이 가능하다. 관리소에서는 릴선과 화로대를 대여해준다.",
       "lineIntro": "해변 송림숲이 그림처럼 아름다운 캠핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 495,
+      "visitor": 495,
+      "blog": 0,
+      "placeId": "1186854900",
+      "url": "https://m.place.naver.com/place/1186854900/home",
+      "matchedQuery": "서천군 장항오토캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -7084,7 +8074,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.4592422,
-    "lng": 126.8607682
+    "lng": 126.8607682,
+    "naverReview": {
+      "total": 1078,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "35413727",
+      "url": "https://m.place.naver.com/place/35413727/home",
+      "matchedQuery": "광명시 광명도덕산캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 204,
@@ -7112,6 +8111,15 @@
       "intro": "뇌운계곡글램핑은 평창에 위치한 해발 600미터의 뇌운계곡에 있는 글램핑과 레저 체험을 함께 즐길 수 있는 캠핑장이다. 사이트는 총 7개인데, 4개는 글램핑 텐트, 3개는 몽골 텐트에 투명 돔 키친이 있다. 특히 몽골텐트는 천창이 투명하게 되어 있어 텐트 안에서도 하늘을 볼 수 있다. 텐트 내부의 집기들도 신경을 많이 써서 감성 캠핑을 즐기기 좋다. 또한 계곡에서의 래프팅, 패들 보드, 카약 강습은 물론 산악 오토바이, 숲속 서바이벌 게임 등 즐길 거리가 많다.",
       "lineIntro": "레저체험을 함께 즐길 수 있는 뇌운계곡 글램핑",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 376,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1224500867",
+      "url": "https://m.place.naver.com/place/1224500867/home",
+      "matchedQuery": "뇌운계곡글램핑",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -7138,6 +8146,15 @@
       "intro": "",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "부여군 만수산 자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -7166,6 +8183,15 @@
       "intro": "영주호 오토캠핑장은 경북 영주시 평은면에 자리 잡고 있다. 영주시청을 기점으로 14km가량 떨어졌다. 자동차를 타고 구성로, 경북대로, 문평로를 번갈아 달리면 닿는다. 도착까지 걸리는 시간은 25분 안팎이다. 이곳은 영주댐과 영주호의 수려한 경관을 배경으로 캠핑을 즐길 수 있다. 캠핑장에는 자동차 야영장 130면, 카라반 18대를 마련했다. 자동차 야영장의 바닥 형태와 개수는 파쇄적 80면, 데크 50면이다. 카라반 객실 내부는 침대, 냉난방기, TV, 냉장고, 취사도구, 조리도구, 화장실, 샤워실 등 일상생활을 해도 지장이 없을 물품과 시설로 채웠다. 카라반 외부 전용 공간에는 파라솔과 의자 일체형 테이블을 설치해 바비큐를 즐길 수 있다. 캠핑장은 사계절 내내 운영하며, 예약은 온라인 실시간으로 가능하다. 캠핑장이 안동, 봉화, 예천, 문경 등 경북 지역의 중심에 있어 연계관광이 손쉽다. 영주시청 방면으로 나가면 여러 음식점이 성업 중이다.",
       "lineIntro": "영주호에 자리한 산자수명한 캠핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 302,
+      "visitor": 139,
+      "blog": 0,
+      "placeId": "1104119634",
+      "url": "https://m.place.naver.com/place/1104119634/home",
+      "matchedQuery": "영주시 영주호오토캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -7195,7 +8221,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.0167678,
-    "lng": 127.0206434
+    "lng": 127.0206434,
+    "naverReview": {
+      "total": 561,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1051104324",
+      "url": "https://m.place.naver.com/place/1051104324/home",
+      "matchedQuery": "평택시 소풍정원 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 208,
@@ -7221,6 +8256,15 @@
       "intro": "구수곡 자연휴양림은 경북 울진군 북면에 자리 잡고 있다. 울진군청을 기점으로 14km가량 떨어졌다. 자동차에 몸을 싣고 하죽로, 하당1길, 십이령로를 번갈아 달리면 닿는다. 도착까지 걸리는 시간은 20분 안팎이다. 이곳은 싱그러움 가득한 숲의 기운을 온몸으로 체감할 수 있는 자연휴양림 내에 위치했다. 이 덕택에 숲이 주는 이로움을 만끽하며 자연친화적 캠핑을 만끽하려는 이들의 발길이 끊이지 않는다. 캠핑장에는 일반 야영장 40면을 마련했다. 바닥 형태는 모두 데크로 이뤄졌다. 사이트 크기와 개수는 가로 4m 세로 4m 10면, 가로 3.3m 세로 3.7m 30면이다. 개인 트레일러나 카라반 입장은 불가능하다. 평일과 주말 모두 운영하며 매년 11월부터 이듬해 4월까지 휴장에 돌입한다. 캠핑장 주변에 용소폭포, 후정해변, 죽변항, 봉평해변 등이 있어 연계관광이 용이하다. 해변 인근에 싱싱한 해산물을 파는 음식점도 즐비하다.",
       "lineIntro": "휴양림에 터를 잡은 자연친화적 캠핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 164,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "11491002",
+      "url": "https://m.place.naver.com/place/11491002/home",
+      "matchedQuery": "구수곡 자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -7250,7 +8294,16 @@
       "animalCmgCl": ""
     },
     "lat": 37.9923046270908,
-    "lng": 126.889815368771
+    "lng": 126.889815368771,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "연천군 임진강 햇살 글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 210,
@@ -7279,7 +8332,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.0069756,
-    "lng": 128.0510243
+    "lng": 128.0510243,
+    "naverReview": {
+      "total": 270,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1750722062",
+      "url": "https://m.place.naver.com/place/1750722062/home",
+      "matchedQuery": "충주시 퀸스타운캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 211,
@@ -7307,6 +8369,15 @@
       "intro": "솔향기 캠핑장은 충남 태안군 소원면에 자리했다. 태안군청을 기점으로 16Km가량 떨어졌다. 자동차를 타고 군청 10길, 서해로를 차례로 거치면 닿는다. 도착까지 걸리는 시간은 25분 안팎이다. 캠핑장은 태안의 대표 관광지 가운데 하나인 만리포해수욕장 인근 산속에 터를 잡았다. 산속이지만 국도 바로 옆 짧은 비탈길 하나만 오르면 자연친화적인 캠핑장이 눈앞에 펼쳐진다. 게다가 한여름 무더위를 해수욕을 날리기에 제격인 해변이 지척이라는 것도 강점이다. 캠핑장에는 데크의 삼면에 울타리를 설치한 일반야영장 33면을 마련했다. 사이트 간격이 넓어 프라이빗한 캠핑이 가능하다. 화장실과 샤워실은 남녀를 구분해 총 2개소며, 개수대도 2개소다. 개인 카라반과 트레일러 동반 입장이 가능한데, 이 경우 관리소에 사전 확인 절차를 밟아야 한다. 관리소에서는 텐트부터 침낭까지 거의 모든 캠핑 용품을 대여해준다.",
       "lineIntro": "힐링에 제격인 만리포해변 인근 산속 캠핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 2392,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "35413658",
+      "url": "https://m.place.naver.com/place/35413658/home",
+      "matchedQuery": "솔향기캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -7336,7 +8407,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.1387868220706,
-    "lng": 127.063699079738
+    "lng": 127.063699079738,
+    "naverReview": {
+      "total": 254,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "38015591",
+      "url": "https://m.place.naver.com/place/38015591/home",
+      "matchedQuery": "맑음터공원 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 213,
@@ -7364,7 +8444,16 @@
       "featureNm": ""
     },
     "lat": 36.6744104,
-    "lng": 127.4477438
+    "lng": 127.4477438,
+    "naverReview": {
+      "total": 273,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "17785308",
+      "url": "https://m.place.naver.com/place/17785308/home",
+      "matchedQuery": "청주시 문암생태공원 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 214,
@@ -7392,6 +8481,15 @@
       "intro": "더무빙 카라반은 부산 기장의 바다와 해수욕장이 인접하여 아름다운 경치를 가지고 있는 작고 앙증맞은 카라반이 옹기종기 모여 있는 리조트형 캠핑장이다. 보면 볼수록 너무 예쁘고 마치 소인국에 온 것 같은 느낌을 주는 캠핑장이다. 카라반에는 수건, 생수, 스피커, 전기포트, 미니냉장고, 에어컨, 침대, 입실할 때 주는 캠핑용품세트(버너랑 각종 식기류가 들어있다)가 있다. 화장실과 샤워장, 개수대는 깨끗한 공용시설을 이용하면 된다. 공용시설 안에는 냉장고가 있어 각종 소스류, 조미료 등 주방에서 필요한 기구들은 다 있다. 샤워장 안에도 폼클렌징, 바디워시, 샴푸, 린스,치약 등 다 준비되어 있다. 제빙기가 있어 얼음은 얼마든지 먹을 수 있다. 옥상에도 카라반이 올망졸망 모여 있어, 둘러보는 재미가 쏠쏠하다. 옥상에서 바라보는 바다 뷰는 환상 그 자체이며, 일출까지 꼭 보길 추천한다. 요즘 부산에서 가장 핫플레이스로 떠오른 웨이브온 커피가 바로 옆에 있어 커피도 마시며 캠핑을 즐길 수 있다. 해먹에 누워 밤하늘을 보고 있으면 반짝반짝한 조명과 밤바다의 운치까지 더해져 지상낙원이 따로 없다. DSLR, 핸프폰 거치 가능한 삼각대와 아기의자를 대여해주고 있다.",
       "lineIntro": "바닷가 소인국으로 여행을 떠나자. 더무빙 카라반을 타고.",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 967,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "38481501",
+      "url": "https://m.place.naver.com/place/38481501/home",
+      "matchedQuery": "기장군 더무빙카라반",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -7421,7 +8519,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.248555,
-    "lng": 128.1687676
+    "lng": 128.1687676,
+    "naverReview": {
+      "total": 748,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "15276453",
+      "url": "https://m.place.naver.com/place/15276453/home",
+      "matchedQuery": "원주시 원주두리캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 216,
@@ -7450,7 +8557,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.7471543,
-    "lng": 127.350715
+    "lng": 127.350715,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "가평군 클라우드 나인 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 217,
@@ -7479,7 +8595,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 36.1578942977857,
-    "lng": 126.512315230785
+    "lng": 126.512315230785,
+    "naverReview": {
+      "total": 128,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1985941989",
+      "url": "https://m.place.naver.com/place/1985941989/home",
+      "matchedQuery": "바다내음 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 218,
@@ -7508,7 +8633,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.0892776,
-    "lng": 128.3772088
+    "lng": 128.3772088,
+    "naverReview": {
+      "total": 374,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1497095354",
+      "url": "https://m.place.naver.com/place/1497095354/home",
+      "matchedQuery": "고성군 옥수온천캠핑랜드",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 219,
@@ -7537,7 +8671,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.3641085697092,
-    "lng": 128.273403033281
+    "lng": 128.273403033281,
+    "naverReview": {
+      "total": 462,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "13300333",
+      "url": "https://m.place.naver.com/place/13300333/home",
+      "matchedQuery": "영월군 영월키즈캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 220,
@@ -7566,7 +8709,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.5419122,
-    "lng": 128.5649672
+    "lng": 128.5649672,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "창녕군 화왕산자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 221,
@@ -7594,6 +8746,15 @@
       "intro": "오시유는 충남 천안시 동남구에 자리했다. 천안군청을 기점으로 27Km가량 떨어졌다. 자동차를 타고 온천대로, 세종평택로, 광풍로를 차례로 거치면 닿는다. 도착까지 걸리는 시간은 50분 안팎이다. 광덕산을 향하는 가파른 비탈길을 올라가면 눈앞에 펼쳐진다. 식당이 자리한 공간에 주차를 하고 아래로 내려가면 아담한 카라반이 있다. 캠핑장에는 카라반 11대를 마련했다. 카라반 내부에는 침대, 침구류, 소파, TV, 냉장고, 에어컨, 식기류, 취사도구, 개수대, 화장실, 샤워실이 있다. 외부 전용 데크에는 그늘막 아래 테이블과 의자를 설치했다. 관리소에서 일반 및 음식물 종량제 봉투를 구매 후 종류별로 분리수거를 해야 한다.",
       "lineIntro": "산속에 자리한 아담한 카라반 캠핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 655,
+      "visitor": 655,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "오시유 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -7620,6 +8781,15 @@
       "intro": "",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 3595,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1126871443",
+      "url": "https://m.place.naver.com/place/1126871443/home",
+      "matchedQuery": "시흥시 물왕숲캠핑파크",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -7649,7 +8819,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 34.5151967,
-    "lng": 126.6861219
+    "lng": 126.6861219,
+    "naverReview": {
+      "total": 92,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "38257191",
+      "url": "https://m.place.naver.com/place/38257191/home",
+      "matchedQuery": "주작산자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 224,
@@ -7677,6 +8856,15 @@
       "intro": "강천산캠핑(뜨란채)는 강천산 캠핑리조트에 있는 캠핑장으로 카라반, 펜션, 식당이 함께 운영되고 있다. 펜션은 10객실, 카라반은 7대고 4인~최대 6명까지 가족단위로 이용할 수 있다. 카라반은 5평의 면적임에도 이 모든 게 들어가는 것이 가능할까 싶을 정도로 웬만한 캠핑시설을 다 갖추고 있다. 침실은 메인침실과 2층짜리 간이 침실이 있으며 신발장과 필수 주방도구 등이 있어 몸만 와도 좋을 정도로 편리하다. ‘뜨란채’라는 이름으로 유명한 식당은 굴비한정식, 생선구이 등을 판매한다. 밑반찬을 제철음식으로 구성해 계절별로 조금씩 변화를 준다. 이곳은 숙박을 하는 손님들을 위해 조식 서비스가 되는데 하루 전 예약을 하면 1인 8,000원 가격에 뜨란채 식당에서 ‘가정식밥상‘을 먹을 수 있다. 조식시간은 오전 9시~10시다. 식당 옆에는 카페가 있는데 식당서 식사를 하면 커피 할인권을 주니 공기 좋은 테라스에서 커피를 할인받아 마셔보자.",
       "lineIntro": "숙박, 식사 모두 해결되는 강천산캠핑(뜨란채)에서 보내는 편한 하루",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "순창군 뜨란채 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -7709,7 +8897,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.848943566633,
-    "lng": 127.669698242361
+    "lng": 127.669698242361,
+    "naverReview": {
+      "total": 1451,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1014146537",
+      "url": "https://m.place.naver.com/place/1014146537/home",
+      "matchedQuery": "춘천시 덕두글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 226,
@@ -7735,6 +8932,15 @@
       "intro": "",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "태백시 태백 눈꽃 야영장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -7764,7 +8970,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.8585034104351,
-    "lng": 126.872567316849
+    "lng": 126.872567316849,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "파주시 outside 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 228,
@@ -7793,7 +9008,16 @@
       "animalCmgCl": ""
     },
     "lat": 36.7041255662755,
-    "lng": 127.838037696894
+    "lng": 127.838037696894,
+    "naverReview": {
+      "total": 281,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "500691515",
+      "url": "https://m.place.naver.com/place/500691515/home",
+      "matchedQuery": "괴산군 따봄스테이 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 229,
@@ -7826,7 +9050,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 35.7529930481061,
-    "lng": 128.623998596835
+    "lng": 128.623998596835,
+    "naverReview": {
+      "total": 839,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1140977117",
+      "url": "https://m.place.naver.com/place/1140977117/home",
+      "matchedQuery": "달성군 라운드힐 905 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 230,
@@ -7855,7 +9088,16 @@
       "animalCmgCl": ""
     },
     "lat": 37.6692855553105,
-    "lng": 128.126255685032
+    "lng": 128.126255685032,
+    "naverReview": {
+      "total": 150,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1306286004",
+      "url": "https://m.place.naver.com/place/1306286004/home",
+      "matchedQuery": "강원 우니메이카 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 231,
@@ -7883,6 +9125,15 @@
       "intro": "오류캠핑장은 경북 경주시 감포읍에 자리 잡았다. 경주시청을 기점으로 35km가량 떨어졌다. 자동차에 몸을 싣고 경감로, 토함산로, 31번 국도를 번갈아 달리면 닿는다. 도착까지 걸리는 시간은 50분 안팎이다. 이곳은 경주를 대표하는 해변 가운데 하나인 오류고아라해변 앞에 터를 잡았다. 이 덕택에 여름철이면 해수욕과 더불어 캠핑을 즐기려는 이들의 발길이 끊이지 않는다. 캠핑장에는 일반 야영장 8면과 카라반 28대를 마련했다. 일반 야영장 바닥은 모두 자갈로 이뤄졌다. 개인 트레일러와 개인 카라반 동반 입장은 불가능하다. 카라반 내부는 침대, 에어컨, 냉장고, 개수대, 취사도구, 식기류, 화장실, 샤워실 등 일상생활을 해도 무리가 없을 물품과 시설로 들어찼다. 캠핑장은 연중 쉬지 않고 운영한다. 캠핑장이 자리한 오류고아라해변을 비롯해 나정고운모래해변, 양포항 등 주변 관광자원이 풍부하다. 가까운 거리에 여러 음식점도 성업 중이다.",
       "lineIntro": "오류고아라해변에서 해수욕과 캠핑을",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 309,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "33831725",
+      "url": "https://m.place.naver.com/place/33831725/home",
+      "matchedQuery": "경주시 오류캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -7909,6 +9160,15 @@
       "intro": "",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 680,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "33704418",
+      "url": "https://m.place.naver.com/place/33704418/home",
+      "matchedQuery": "원주시 원주키즈캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -7939,7 +9199,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.5332095,
-    "lng": 127.0880246
+    "lng": 127.0880246,
+    "naverReview": {
+      "total": 915,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1352369186",
+      "url": "https://m.place.naver.com/place/1352369186/home",
+      "matchedQuery": "정읍시 풍경소리캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 234,
@@ -7968,7 +9237,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 36.0184355,
-    "lng": 126.7385344
+    "lng": 126.7385344,
+    "naverReview": {
+      "total": 744,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1891460242",
+      "url": "https://m.place.naver.com/place/1891460242/home",
+      "matchedQuery": "서천군 서천 국민여가 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 235,
@@ -7997,7 +9275,16 @@
       "animalCmgCl": ""
     },
     "lat": 36.3121953450123,
-    "lng": 127.353697577121
+    "lng": 127.353697577121,
+    "naverReview": {
+      "total": 66,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "2023061006",
+      "url": "https://m.place.naver.com/place/2023061006/home",
+      "matchedQuery": "도심 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 236,
@@ -8029,7 +9316,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 36.9413171769658,
-    "lng": 126.991546702427
+    "lng": 126.991546702427,
+    "naverReview": {
+      "total": 3515,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1663208258",
+      "url": "https://m.place.naver.com/place/1663208258/home",
+      "matchedQuery": "평택시 글램핑 봄",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 237,
@@ -8058,7 +9354,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 38.1663719,
-    "lng": 127.1877272
+    "lng": 127.1877272,
+    "naverReview": {
+      "total": 312,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "34754378",
+      "url": "https://m.place.naver.com/place/34754378/home",
+      "matchedQuery": "포천시 담터오지캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 238,
@@ -8087,7 +9392,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 36.0537718,
-    "lng": 127.8268382
+    "lng": 127.8268382,
+    "naverReview": {
+      "total": 9,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "32769480",
+      "url": "https://m.place.naver.com/place/32769480/home",
+      "matchedQuery": "민주지산자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 239,
@@ -8116,7 +9430,16 @@
       "animalCmgCl": ""
     },
     "lat": 35.9868722,
-    "lng": 128.5742267
+    "lng": 128.5742267,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "칠곡군 그라디언트 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 240,
@@ -8145,7 +9468,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.6824139543599,
-    "lng": 126.533669638663
+    "lng": 126.533669638663,
+    "naverReview": {
+      "total": 161,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1303899894",
+      "url": "https://m.place.naver.com/place/1303899894/home",
+      "matchedQuery": "부안군 변산오토캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 241,
@@ -8176,7 +9508,16 @@
       "animalCmgCl": ""
     },
     "lat": 37.8551282,
-    "lng": 127.5090231
+    "lng": 127.5090231,
+    "naverReview": {
+      "total": 923,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1710899492",
+      "url": "https://m.place.naver.com/place/1710899492/home",
+      "matchedQuery": "아워 포레스트 글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 242,
@@ -8206,7 +9547,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.6019885,
-    "lng": 129.4625747
+    "lng": 129.4625747,
+    "naverReview": {
+      "total": 365,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1326689211",
+      "url": "https://m.place.naver.com/place/1326689211/home",
+      "matchedQuery": "북구 강동오토캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 243,
@@ -8238,7 +9588,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.968322683522,
-    "lng": 127.411642760517
+    "lng": 127.411642760517,
+    "naverReview": {
+      "total": 143,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "2058076525",
+      "url": "https://m.place.naver.com/place/2058076525/home",
+      "matchedQuery": "가평군 스테이지 캠핑앤풀빌라",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 244,
@@ -8266,6 +9625,15 @@
       "intro": "청주키즈캠핑장은 충북 청주시 상당구 낭성면에 위치했다. 청주시청을 기점으로 우암산로와 갈산무성길을 차례로 거치면 닿는다. 도착까지 걸리는 시간은 25분가량이다. 캠핑장은 폐교를 리모델링했다. 이 때문에 어른들은 옛 추억에, 아이들은 신기함에 들뜬다. 이곳의 가장 주목할 만한 장점은 어린이 전용이라고 여겨질 정도로 아이들을 위한 부대시설이 많다는 것이다. 수영장, 놀이방, 오락실 등 어린이들이 열광하는 즐길 거리가 가득하다. 캠핑장은 파쇄석 43면을 마련했다. 가로 7m 세로 11m로 사이트가 널찍하다. 간격도 넓은 편이라 프라이빗한 캠핑이 가능하다. 개인 카라반과 트레일러 출입도 허용하며, 이 경우 이용료는 일반캠핑장과 동일하다. 캠핑장 인근에는 청주백제유물전시관, 상당산성 등이 있어 연계관광이 용이하다. 청주시청 방면으로 나가면 음식점이 즐비해 맘에 드는 먹을거리를 선택할 수 있다.",
       "lineIntro": "폐교를 리모델링해 만든 어린이 특화 캠핑장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 372,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "38676935",
+      "url": "https://m.place.naver.com/place/38676935/home",
+      "matchedQuery": "청주시 청주키즈캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -8297,7 +9665,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.0771392,
-    "lng": 128.6053621
+    "lng": 128.6053621,
+    "naverReview": {
+      "total": 221,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1945028175",
+      "url": "https://m.place.naver.com/place/1945028175/home",
+      "matchedQuery": "단양군 캠프우아 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 246,
@@ -8326,7 +9703,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 37.0230838,
-    "lng": 127.8619248
+    "lng": 127.8619248,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "충주시 탄금호 피크닉 공원 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 247,
@@ -8352,6 +9738,15 @@
       "intro": "",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 774,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "13418193",
+      "url": "https://m.place.naver.com/place/13418193/home",
+      "matchedQuery": "계방산 오토캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -8381,7 +9776,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 38.3017339,
-    "lng": 128.5464673
+    "lng": 128.5464673,
+    "naverReview": {
+      "total": 478,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "38447627",
+      "url": "https://m.place.naver.com/place/38447627/home",
+      "matchedQuery": "고성군 백도오토캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 249,
@@ -8410,7 +9814,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.0901044,
-    "lng": 128.7130461
+    "lng": 128.7130461,
+    "naverReview": {
+      "total": 463,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "11555071",
+      "url": "https://m.place.naver.com/place/11555071/home",
+      "matchedQuery": "영월군 느티나무 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 249,
@@ -8439,7 +9852,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.0901044,
-    "lng": 128.7130461
+    "lng": 128.7130461,
+    "naverReview": {
+      "total": 463,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "11555071",
+      "url": "https://m.place.naver.com/place/11555071/home",
+      "matchedQuery": "느티나무 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 250,
@@ -8468,7 +9890,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 36.9893838866104,
-    "lng": 128.961041120525
+    "lng": 128.961041120525,
+    "naverReview": {
+      "total": 1260,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1383766957",
+      "url": "https://m.place.naver.com/place/1383766957/home",
+      "matchedQuery": "봉화군 봉화별캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 251,
@@ -8494,6 +9925,15 @@
       "intro": "홍천강 발원지 상류에 위치하며 산과 풍부한 수량이 있는 용오름계곡 바로 옆에 있는 캠핑장 입니다. 전국 계곡캠핑장 중에 손에 꼽힐정도로 아름다운 계곡과 피톤치드가 뿜어져 나오는 소나무 그늘 아래 35개 사이트를 운영하고 있으며 데크사이트와 마사토 사이트가 있으며 캠핑카,카라반 진입도 가능합니다. 전 사이트 전기 사용이 가능하며 산과 계곡이 함께 조화를 이루어 마치 휴양림에 온것 같은 느낌을 주는 곳 입니다. 주변 관광지로는 마을내에 있는 마리소리 악기박박물관, 홍천9경의 하나인 \"미약골\", 척야산문화수목원, 태기산전망대(풍력발전)이 있습니다.",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 1291,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1337327290",
+      "url": "https://m.place.naver.com/place/1337327290/home",
+      "matchedQuery": "홍천군 용오름캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -8525,7 +9965,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 35.3877433978985,
-    "lng": 126.991476460588
+    "lng": 126.991476460588,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "담양군 담양리사숲속마을 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 253,
@@ -8551,6 +10000,15 @@
       "intro": "",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 547,
+      "visitor": 547,
+      "blog": 0,
+      "placeId": "2092941714",
+      "url": "https://m.place.naver.com/place/2092941714/home",
+      "matchedQuery": "평택시 평택캠핑성",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -8583,7 +10041,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 36.1385162,
-    "lng": 127.396926
+    "lng": 127.396926,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1058993971",
+      "url": "https://m.place.naver.com/place/1058993971/home",
+      "matchedQuery": "금산군 스테이 인터뷰 금산 카라반",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 255,
@@ -8614,7 +10081,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 35.3717762362809,
-    "lng": 129.279975369128
+    "lng": 129.279975369128,
+    "naverReview": {
+      "total": 921,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1965179127",
+      "url": "https://m.place.naver.com/place/1965179127/home",
+      "matchedQuery": "울산 힐링빌리지 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 256,
@@ -8643,7 +10119,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 38.0910275,
-    "lng": 127.3913733
+    "lng": 127.3913733,
+    "naverReview": {
+      "total": 433,
+      "visitor": 433,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "포천시 포천계곡캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 257,
@@ -8672,7 +10157,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 34.9234153655485,
-    "lng": 128.301477675963
+    "lng": 128.301477675963,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "고성군 블루웨일 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 258,
@@ -8701,7 +10195,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 37.6539801322415,
-    "lng": 127.705664820505
+    "lng": 127.705664820505,
+    "naverReview": {
+      "total": 368,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1363223268",
+      "url": "https://m.place.naver.com/place/1363223268/home",
+      "matchedQuery": "홍천군 오도치 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 259,
@@ -8727,6 +10230,15 @@
       "intro": "하늘아래 캠핑장은 산 위에 위치해있어 깨끗한 연천 하늘을 보며 캠핑이 가능한 캠핑장입니다.",
       "lineIntro": "환상적인 하늘 뷰",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 433,
+      "visitor": 433,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "경기 하늘아래 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -8759,7 +10271,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 36.8873191460121,
-    "lng": 126.200997270995
+    "lng": 126.200997270995,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "태안군 캠프 해놀 글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 261,
@@ -8788,7 +10309,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 36.1053940110565,
-    "lng": 128.778924200313
+    "lng": 128.778924200313,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "군위군 자연닮은치유정원 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 262,
@@ -8817,7 +10347,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.6600549644546,
-    "lng": 128.007530114146
+    "lng": 128.007530114146,
+    "naverReview": {
+      "total": 371,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1850613600",
+      "url": "https://m.place.naver.com/place/1850613600/home",
+      "matchedQuery": "거창군 거창한 밤 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 263,
@@ -8849,7 +10388,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.3889764108127,
-    "lng": 126.962566453393
+    "lng": 126.962566453393,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "담양군 하이글루 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 264,
@@ -8880,7 +10428,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.6762165,
-    "lng": 126.9646347
+    "lng": 126.9646347,
+    "naverReview": {
+      "total": 258,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1069441862",
+      "url": "https://m.place.naver.com/place/1069441862/home",
+      "matchedQuery": "고양시 북한산 사기막야영장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 265,
@@ -8910,7 +10467,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.5338423,
-    "lng": 127.0819153
+    "lng": 127.0819153,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "정읍시 정읍로하스캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 266,
@@ -8940,7 +10506,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.2589748934839,
-    "lng": 128.905611904458
+    "lng": 128.905611904458,
+    "naverReview": {
+      "total": 153,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "2071114857",
+      "url": "https://m.place.naver.com/place/2071114857/home",
+      "matchedQuery": "김해시 가야달빛야영장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 267,
@@ -8969,7 +10544,16 @@
       "animalCmgCl": ""
     },
     "lat": 36.6817472257152,
-    "lng": 127.983258489227
+    "lng": 127.983258489227,
+    "naverReview": {
+      "total": 12,
+      "visitor": 239,
+      "blog": 0,
+      "placeId": "2013460061",
+      "url": "https://m.place.naver.com/place/2013460061/home",
+      "matchedQuery": "별보러가자 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 268,
@@ -8999,7 +10583,16 @@
       "featureNm": ""
     },
     "lat": 37.6894493,
-    "lng": 127.3726809
+    "lng": 127.3726809,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "가평군 스페인마을 풀램핑 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 269,
@@ -9025,6 +10618,15 @@
       "intro": "",
       "lineIntro": "",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 1044,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "35877977",
+      "url": "https://m.place.naver.com/place/35877977/home",
+      "matchedQuery": "연천군 나린오토캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -9054,7 +10656,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 37.3562916060931,
-    "lng": 126.998610976752
+    "lng": 126.998610976752,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "의왕시 오매기744 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 271,
@@ -9083,7 +10694,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.1013382274468,
-    "lng": 128.601982223355
+    "lng": 128.601982223355,
+    "naverReview": {
+      "total": 838,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1498876088",
+      "url": "https://m.place.naver.com/place/1498876088/home",
+      "matchedQuery": "창원시 헤리티지글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 272,
@@ -9112,7 +10732,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 38.1580288001044,
-    "lng": 127.193229549968
+    "lng": 127.193229549968,
+    "naverReview": {
+      "total": 70,
+      "visitor": 70,
+      "blog": 0,
+      "placeId": "38627869",
+      "url": "https://m.place.naver.com/place/38627869/home",
+      "matchedQuery": "영월군 별빛캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 272,
@@ -9141,7 +10770,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 38.1580288001044,
-    "lng": 127.193229549968
+    "lng": 127.193229549968,
+    "naverReview": {
+      "total": 97,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "21638161",
+      "url": "https://m.place.naver.com/place/21638161/home",
+      "matchedQuery": "별빛캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 273,
@@ -9170,7 +10808,16 @@
       "animalCmgCl": ""
     },
     "lat": 34.8352047,
-    "lng": 128.544085
+    "lng": 128.544085,
+    "naverReview": {
+      "total": 545,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1456856433",
+      "url": "https://m.place.naver.com/place/1456856433/home",
+      "matchedQuery": "거제시 산달바다 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 274,
@@ -9203,7 +10850,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 36.7490814605777,
-    "lng": 126.228002780212
+    "lng": 126.228002780212,
+    "naverReview": {
+      "total": 626,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1462050113",
+      "url": "https://m.place.naver.com/place/1462050113/home",
+      "matchedQuery": "더빌리지캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 275,
@@ -9236,7 +10892,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 35.665634626666,
-    "lng": 126.514656588182
+    "lng": 126.514656588182,
+    "naverReview": {
+      "total": 570,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1268518680",
+      "url": "https://m.place.naver.com/place/1268518680/home",
+      "matchedQuery": "부안군 보니타 카라반",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 276,
@@ -9267,7 +10932,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 35.7733483172153,
-    "lng": 129.16893265339
+    "lng": 129.16893265339,
+    "naverReview": {
+      "total": 445,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1170873944",
+      "url": "https://m.place.naver.com/place/1170873944/home",
+      "matchedQuery": "경주시 캠프어게인 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 277,
@@ -9299,7 +10973,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 37.9897026,
-    "lng": 127.354165
+    "lng": 127.354165,
+    "naverReview": {
+      "total": 3901,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1401697528",
+      "url": "https://m.place.naver.com/place/1401697528/home",
+      "matchedQuery": "포천시 글래머스글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 278,
@@ -9328,7 +11011,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 34.9095361431864,
-    "lng": 128.155528428461
+    "lng": 128.155528428461,
+    "naverReview": {
+      "total": 294,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1868118010",
+      "url": "https://m.place.naver.com/place/1868118010/home",
+      "matchedQuery": "고성군 상족암오토캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 279,
@@ -9357,7 +11049,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 36.9758361790207,
-    "lng": 128.020916889977
+    "lng": 128.020916889977,
+    "naverReview": {
+      "total": 1959,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "630396859",
+      "url": "https://m.place.naver.com/place/630396859/home",
+      "matchedQuery": "충주시 충주카누캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 280,
@@ -9386,7 +11087,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.5882856634583,
-    "lng": 127.678939166187
+    "lng": 127.678939166187,
+    "naverReview": {
+      "total": 499,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1123101983",
+      "url": "https://m.place.naver.com/place/1123101983/home",
+      "matchedQuery": "함양군 대봉캠핑랜드",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 281,
@@ -9415,7 +11125,16 @@
       "animalCmgCl": ""
     },
     "lat": 37.7889632569814,
-    "lng": 126.352820413592
+    "lng": 126.352820413592,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "강화군 달모루 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 282,
@@ -9445,7 +11164,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.508576,
-    "lng": 128.0148684
+    "lng": 128.0148684,
+    "naverReview": {
+      "total": 434,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1594628469",
+      "url": "https://m.place.naver.com/place/1594628469/home",
+      "matchedQuery": "합천군 합천글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 283,
@@ -9476,7 +11204,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 38.0517308026397,
-    "lng": 127.384474414108
+    "lng": 127.384474414108,
+    "naverReview": {
+      "total": 2329,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1826493985",
+      "url": "https://m.place.naver.com/place/1826493985/home",
+      "matchedQuery": "백운계곡캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 283,
@@ -9507,7 +11244,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 38.0517308026397,
-    "lng": 127.384474414108
+    "lng": 127.384474414108,
+    "naverReview": {
+      "total": 2329,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1826493985",
+      "url": "https://m.place.naver.com/place/1826493985/home",
+      "matchedQuery": "백운계곡캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 284,
@@ -9539,7 +11285,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 37.8463503,
-    "lng": 127.3536065
+    "lng": 127.3536065,
+    "naverReview": {
+      "total": 873,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1979503648",
+      "url": "https://m.place.naver.com/place/1979503648/home",
+      "matchedQuery": "가평군 가평다온캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 285,
@@ -9572,7 +11327,16 @@
       "animalCmgCl": "가능(소형견)"
     },
     "lat": 36.5643444,
-    "lng": 128.3007398
+    "lng": 128.3007398,
+    "naverReview": {
+      "total": 264,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1366183946",
+      "url": "https://m.place.naver.com/place/1366183946/home",
+      "matchedQuery": "예천군 삼강나루캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 286,
@@ -9606,7 +11370,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.8873298001549,
-    "lng": 127.363278686059
+    "lng": 127.363278686059,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "가평군 스타로드 글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 287,
@@ -9635,7 +11408,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 37.9860295,
-    "lng": 128.750316
+    "lng": 128.750316,
+    "naverReview": {
+      "total": 236,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1251329411",
+      "url": "https://m.place.naver.com/place/1251329411/home",
+      "matchedQuery": "양양군 북분솔밭캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 288,
@@ -9662,6 +11444,15 @@
       "intro": "용인에 위치한 관광농원 캠핑장으로, 구 느티나무 캠핑장이 최근 리모델링하여 개장하였다. 서울에서 접근성이 좋고, 어린이들이 즐길 거리가 다양한 곳이라, 가족 단위 캠핑족들이 많이 찾는다. 총 4개의 구역이 나눠지는데, 그중 B 사이트만 데크이고, 나머지는 파쇄석이다. 잔디밭 놀이터, 모래 놀이터, 동물 텃밭 체험장, 원두막, 성인용과 어린이용 수영장, 잣나무 숲속 산책로 등의 시설을 갖추고 있다. 캠핑이 아니라도 당일 오두막이나 평상을 이용할 수 있어 편리하다.",
       "lineIntro": "양지파인리조트 인근에 위치한 체험거리 많은 야영장",
       "featureNm": ""
+    },
+    "naverReview": {
+      "total": 1219,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1202918454",
+      "url": "https://m.place.naver.com/place/1202918454/home",
+      "matchedQuery": "용인시 젤코바 캠핑장",
+      "updatedAt": "2026-10-22"
     }
   },
   {
@@ -9691,7 +11482,16 @@
       "animalCmgCl": ""
     },
     "lat": 36.0611010735493,
-    "lng": 128.651140936234
+    "lng": 128.651140936234,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "군위군 유토스테이 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 290,

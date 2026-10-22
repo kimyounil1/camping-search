@@ -1535,29 +1535,6 @@ function routeSummaryForPlace(place, useShortOrigin) {
   return `${startLabel} → ${place.name} · ${formatRouteMetrics(metrics.seconds, metrics.meters)}`;
 }
 
-function firstCoordPlace(list) {
-  for (const item of list) {
-    for (let index = 0; index < item.regions.length; index += 1) {
-      const point = item.coords[index];
-      if (!point) {
-        continue;
-      }
-      const facility = item.regionFacilities[index];
-      const rawId = facility && facility.contentId ? String(facility.contentId).trim() : "";
-      return {
-        rank: item.rank,
-        name: item.name,
-        region: item.regions[index],
-        lat: point.lat,
-        lng: point.lng,
-        contentId: /^\d+$/.test(rawId) ? rawId : "",
-        naverReview: item.naverReview || null,
-      };
-    }
-  }
-  return null;
-}
-
 function placeInList(place, list) {
   if (!place) {
     return false;
@@ -1715,12 +1692,13 @@ function ensureAutoRoute(list) {
   if (selectedRoutePlace && !placeInList(selectedRoutePlace, sorted)) {
     selectedRoutePlace = null;
   }
-  const target = selectedRoutePlace || firstCoordPlace(sorted);
+  const target = selectedRoutePlace;
   if (!target) {
     activeRoutePlace = null;
     activeRouteMetrics = null;
     clearRoutePolyline();
     updateOriginUi();
+    renderResults(sorted, true);
     return;
   }
   activeRoutePlace = target;

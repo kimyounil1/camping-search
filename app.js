@@ -46,6 +46,7 @@ const mapCount = document.querySelector("#map-count");
 const mapEmpty = document.querySelector("#map-empty");
 const originPill = document.querySelector("#origin-pill");
 const originLabel = document.querySelector("#origin-label");
+const originNavLink = document.querySelector("#origin-nav-link");
 const clearOriginBtn = document.querySelector("#clear-origin");
 const pager = document.querySelector("#pager");
 const prevBtn = document.querySelector("#prev");
@@ -562,6 +563,16 @@ function focusPlaceOnMap(item, index) {
   if (phoneQuery.matches && browse && browse.dataset.snap === "max") {
     setSnap("mid");
   }
+  if (origin) {
+    selectedRoutePlace = place;
+    activeRoutePlace = place;
+    if (campInfo) {
+      campInfo.close();
+    }
+    renderResults(orderedList(currentList()), true);
+    drawDrivingRoute(place, { fitBounds: true });
+    return;
+  }
   const current = ensureMap();
   if (!current) {
     return;
@@ -585,8 +596,21 @@ function focusPlaceOnMap(item, index) {
 function placeBlock(item, index, chipGroups, matchIndex) {
   const facility = item.regionFacilities[index];
   const contentId = facility && facility.contentId ? String(facility.contentId).trim() : "";
+  const placeRef = {
+    rank: item.rank,
+    name: item.name,
+    region: item.regions[index],
+    lat: item.coords[index] ? item.coords[index].lat : NaN,
+    lng: item.coords[index] ? item.coords[index].lng : NaN,
+  };
+  const isRouteTarget = Boolean(
+    origin &&
+    activeRoutePlace &&
+    activeRoutePlace.name === item.name &&
+    activeRoutePlace.region === item.regions[index],
+  );
   const block = document.createElement("div");
-  block.className = "place";
+  block.className = isRouteTarget ? "place is-active-route" : "place";
   if (item.coords[index]) {
     block.dataset.hasCoord = "true";
     block.addEventListener("click", (event) => {
@@ -630,6 +654,26 @@ function placeBlock(item, index, chipGroups, matchIndex) {
 
   line1.append(left, right);
   block.append(line1);
+
+  if (isRouteTarget) {
+    const routeBar = document.createElement("div");
+    routeBar.className = "route-active-bar";
+    const summaryPill = document.createElement("span");
+    summaryPill.className = "route-summary-pill";
+    summaryPill.textContent = routeSummaryForPlace(placeRef, true);
+    routeBar.append(summaryPill);
+    const navHref = naverDirectionsUrl(placeRef);
+    if (navHref) {
+      const navLink = document.createElement("a");
+      navLink.className = "route-nav-btn";
+      navLink.href = navHref;
+      navLink.target = "_blank";
+      navLink.rel = "noopener noreferrer";
+      navLink.textContent = "네이버 지도 길찾기 ↗";
+      routeBar.append(navLink);
+    }
+    block.append(routeBar);
+  }
 
   const subParts = [];
   if (chipGroups.length > 0 && index === matchIndex) {
@@ -732,7 +776,13 @@ function renderResults(list, immediate) {
   const slice = list.slice(start, start + PAGE_SIZE);
   for (const item of slice) {
     const li = document.createElement("li");
-    li.className = "result";
+    const hasActiveRoute = Boolean(
+      origin &&
+      activeRoutePlace &&
+      activeRoutePlace.name === item.name &&
+      item.regions.includes(activeRoutePlace.region),
+    );
+    li.className = hasActiveRoute ? "result is-active-route" : "result";
     const matchIndex = matchingPlaceIndex(item, chipGroups);
     for (let index = 0; index < item.regions.length; index += 1) {
       li.append(placeBlock(item, index, chipGroups, matchIndex));
@@ -754,6 +804,7 @@ function renderResults(list, immediate) {
 const PIN_LIMIT = 100;
 const TABLE_COORD_LIMIT = 300;
 const DRIVING_TABLE = "https://router.project-osrm.org/table/v1/driving/";
+const DRIVING_ROUTE = "https://router.project-osrm.org/route/v1/driving/";
 let campMap = null;
 let campMarkers = [];
 let campInfo = null;
@@ -769,6 +820,16 @@ let travelSignature = "";
 let travelToken = 0;
 let travelTimer = 0;
 let travelAbort = null;
+let selectedRoutePlace = null;
+let activeRoutePlace = null;
+let activeRouteMetrics = null;
+let routeCasingLine = null;
+let routeMainLine = null;
+let routeDestMarker = null;
+let routeToken = 0;
+let routeAbort = null;
+let routeSignature = "";
+let routeBoundsLast = null;
 let blockOriginClick = false;
 let geocoderReady = null;
 let dockPlace = null;
@@ -950,14 +1011,19 @@ function infoHtml(place) {
   const name = `<p class="map-place-name">${escapeHtml(place.name)}</p>`;
   const region = `<p class="map-place-region">${escapeHtml(place.region)}</p>`;
   const review = reviewHtml(place.naverReview);
-  const travel = travelText(place);
+  const summary = origin ? routeSummaryForPlace(place, true) : "";
+  const travel = summary || travelText(place);
   const time = travel ? `<p class="map-place-time">${escapeHtml(travel)}</p>` : "";
+  const navUrl = origin ? naverDirectionsUrl(place) : "";
+  const navBtn = navUrl
+    ? `<a class="route-nav-btn map-nav-link" href="${escapeHtml(navUrl)}" target="_blank" rel="noopener noreferrer">네이버 지도 길찾기 ↗</a>`
+    : "";
   if (!place.contentId) {
-    return `<div class="map-card">${name}${region}${review}${time}</div>`;
+    return `<div class="map-card">${name}${region}${review}${time}${navBtn}</div>`;
   }
   const href = `${CAMP_PAGE}${place.contentId}`;
   const link = `<a class="map-link" href="${href}" target="_blank" rel="noopener noreferrer">고캠핑에서 보기<span class="sr-only">, ${escapeHtml(place.name)}</span></a>`;
-  return `<div class="map-card">${name}${region}${review}${time}${link}</div>`;
+  return `<div class="map-card">${name}${region}${review}${time}<div class="map-card-links">${navBtn}${link}</div></div>`;
 }
 
 function pinPlaces(list) {
@@ -1032,6 +1098,19 @@ function renderMap(list) {
     window.naver.maps.Event.addListener(marker, "click", () => {
       holdOriginClick();
       dockPlace = place;
+      if (origin) {
+        selectedRoutePlace = place;
+        activeRoutePlace = place;
+        renderResults(orderedList(currentList()), true);
+        drawDrivingRoute(place, { fitBounds: true });
+        if (phoneQuery.matches && browse && browse.dataset.snap === "min") {
+          if (campInfo) {
+            campInfo.close();
+          }
+          showMarkerDock(place);
+        }
+        return;
+      }
       if (phoneQuery.matches && browse && browse.dataset.snap === "min") {
         if (campInfo) {
           campInfo.close();
@@ -1047,6 +1126,10 @@ function renderMap(list) {
   }
   if (origin) {
     bounds.extend(new window.naver.maps.LatLng(origin.lat, origin.lng));
+  }
+  if (origin && routeBoundsLast && routeMainLine) {
+    current.fitBounds(routeBoundsLast, { top: 44, right: 32, bottom: 28, left: 32 });
+    return;
   }
   if (shown.length === 1 && !origin) {
     current.setCenter(bounds.getCenter());
@@ -1402,10 +1485,257 @@ function syncSort() {
   }
 }
 
+function toWebMercator(lng, lat) {
+  const x = (Number(lng) * 20037508.34) / 180;
+  const rad = ((90 + Number(lat)) * Math.PI) / 360;
+  const y = (Math.log(Math.tan(rad)) / (Math.PI / 180)) * (20037508.34 / 180);
+  return { x: x.toFixed(2), y: y.toFixed(2) };
+}
+
+function naverDirectionsUrl(place) {
+  if (!origin || !place || !Number.isFinite(place.lat) || !Number.isFinite(place.lng)) {
+    return "";
+  }
+  const start = toWebMercator(origin.lng, origin.lat);
+  const end = toWebMercator(place.lng, place.lat);
+  const startName = encodeURIComponent(origin.label && origin.label !== "선택한 지점" ? origin.label : "출발지");
+  const endName = encodeURIComponent(place.name);
+  return `https://map.naver.com/p/directions/${start.x},${start.y},${startName},,/${end.x},${end.y},${endName},,/-/car`;
+}
+
+function formatRouteMetrics(seconds, meters) {
+  const rounded = Math.round(seconds / 60);
+  const minutes = seconds > 0 ? Math.max(1, rounded) : 0;
+  const hours = Math.floor(minutes / 60);
+  const rest = minutes % 60;
+  let timeText = `${minutes}분`;
+  if (hours > 0) {
+    timeText = rest === 0 ? `${hours}시간` : `${hours}시간 ${rest}분`;
+  }
+  const km = meters / 1000;
+  const kmText = km >= 100 ? `${Math.round(km)}km` : `${(Math.round(km * 10) / 10).toFixed(1)}km`;
+  return `${timeText} (${kmText})`;
+}
+
+function routeSummaryForPlace(place, useShortOrigin) {
+  if (!origin || !place) {
+    return "";
+  }
+  const key = travelKey(place);
+  const metrics = activeRouteMetrics && activeRouteMetrics.key === key
+    ? activeRouteMetrics
+    : travelTimes.get(key);
+  const hasCustomLabel = Boolean(origin.label && origin.label !== "선택한 지점");
+  const startLabel = useShortOrigin
+    ? (hasCustomLabel ? `출발지(${origin.label})` : "출발지")
+    : (hasCustomLabel ? origin.label : "출발지");
+  if (!metrics) {
+    return `${startLabel} → ${place.name}`;
+  }
+  return `${startLabel} → ${place.name} · ${formatRouteMetrics(metrics.seconds, metrics.meters)}`;
+}
+
+function firstCoordPlace(list) {
+  for (const item of list) {
+    for (let index = 0; index < item.regions.length; index += 1) {
+      const point = item.coords[index];
+      if (!point) {
+        continue;
+      }
+      const facility = item.regionFacilities[index];
+      const rawId = facility && facility.contentId ? String(facility.contentId).trim() : "";
+      return {
+        rank: item.rank,
+        name: item.name,
+        region: item.regions[index],
+        lat: point.lat,
+        lng: point.lng,
+        contentId: /^\d+$/.test(rawId) ? rawId : "",
+        naverReview: item.naverReview || null,
+      };
+    }
+  }
+  return null;
+}
+
+function placeInList(place, list) {
+  if (!place) {
+    return false;
+  }
+  return list.some((item) => item.name === place.name && item.regions.includes(place.region));
+}
+
+function clearRoutePolyline() {
+  routeToken += 1;
+  routeSignature = "";
+  routeBoundsLast = null;
+  if (routeAbort) {
+    routeAbort.abort();
+    routeAbort = null;
+  }
+  if (routeCasingLine) {
+    routeCasingLine.setMap(null);
+    routeCasingLine = null;
+  }
+  if (routeMainLine) {
+    routeMainLine.setMap(null);
+    routeMainLine = null;
+  }
+  if (routeDestMarker) {
+    routeDestMarker.setMap(null);
+    routeDestMarker = null;
+  }
+}
+
+async function drawDrivingRoute(place, options) {
+  if (!origin || !place || !Number.isFinite(place.lat) || !Number.isFinite(place.lng)) {
+    return;
+  }
+  const fitBounds = !options || options.fitBounds !== false;
+  activeRoutePlace = place;
+  updateOriginUi();
+  const sig = `${formatCoord(origin.lng, origin.lat)};${formatCoord(place.lng, place.lat)}`;
+  const current = ensureMap();
+  if (sig === routeSignature && routeMainLine && current) {
+    if (fitBounds && routeBoundsLast) {
+      current.fitBounds(routeBoundsLast, { top: 44, right: 32, bottom: 28, left: 32 });
+    }
+    return;
+  }
+  routeSignature = sig;
+  const token = ++routeToken;
+  if (routeAbort) {
+    routeAbort.abort();
+  }
+  const controller = new AbortController();
+  routeAbort = controller;
+  try {
+    const response = await fetch(`${DRIVING_ROUTE}${sig}?overview=full&geometries=geojson`, {
+      signal: controller.signal,
+    });
+    if (token !== routeToken) {
+      return;
+    }
+    if (!response.ok) {
+      throw new Error("http");
+    }
+    const data = await response.json();
+    if (token !== routeToken) {
+      return;
+    }
+    const route = data && Array.isArray(data.routes) ? data.routes[0] : null;
+    const coords = route && route.geometry && Array.isArray(route.geometry.coordinates)
+      ? route.geometry.coordinates
+      : null;
+    if (!coords || coords.length < 2) {
+      throw new Error("geometry");
+    }
+    const key = travelKey(place);
+    if (typeof route.duration === "number" && typeof route.distance === "number") {
+      activeRouteMetrics = { key, seconds: route.duration, meters: route.distance };
+      if (!travelTimes.has(key)) {
+        travelTimes.set(key, { seconds: route.duration, meters: route.distance });
+      }
+    }
+    const mapInstance = ensureMap();
+    if (mapInstance) {
+      if (routeCasingLine) {
+        routeCasingLine.setMap(null);
+      }
+      if (routeMainLine) {
+        routeMainLine.setMap(null);
+      }
+      if (routeDestMarker) {
+        routeDestMarker.setMap(null);
+      }
+      const path = coords.map(([lng, lat]) => new window.naver.maps.LatLng(lat, lng));
+      routeCasingLine = new window.naver.maps.Polyline({
+        map: mapInstance,
+        path,
+        strokeColor: "#ffffff",
+        strokeOpacity: 0.96,
+        strokeWeight: 9,
+        strokeLineCap: "round",
+        strokeLineJoin: "round",
+        zIndex: 120,
+      });
+      routeMainLine = new window.naver.maps.Polyline({
+        map: mapInstance,
+        path,
+        strokeColor: "#2563eb",
+        strokeOpacity: 0.96,
+        strokeWeight: 5,
+        strokeLineCap: "round",
+        strokeLineJoin: "round",
+        zIndex: 121,
+      });
+      const destPos = new window.naver.maps.LatLng(place.lat, place.lng);
+      routeDestMarker = new window.naver.maps.Marker({
+        position: destPos,
+        map: mapInstance,
+        zIndex: 21000,
+        title: place.name,
+        icon: {
+          content: `<div class="dest-pin"><span class="dest-pin-dot"></span><span class="dest-pin-label">${escapeHtml(place.name)}</span></div>`,
+          anchor: new window.naver.maps.Point(11, 11),
+        },
+      });
+      window.naver.maps.Event.addListener(routeDestMarker, "click", () => {
+        holdOriginClick();
+      });
+      const bounds = new window.naver.maps.LatLngBounds();
+      bounds.extend(new window.naver.maps.LatLng(origin.lat, origin.lng));
+      bounds.extend(destPos);
+      for (const pt of path) {
+        bounds.extend(pt);
+      }
+      routeBoundsLast = bounds;
+      if (fitBounds) {
+        mapInstance.fitBounds(bounds, { top: 44, right: 32, bottom: 28, left: 32 });
+      }
+    }
+  } catch (error) {
+    if (error && error.name === "AbortError") {
+      return;
+    }
+    if (token !== routeToken) {
+      return;
+    }
+  }
+  updateOriginUi();
+  renderResults(orderedList(currentList()), true);
+  refreshOpenCampCard();
+}
+
+function ensureAutoRoute(list) {
+  if (!origin) {
+    return;
+  }
+  const sorted = orderedList(list);
+  if (selectedRoutePlace && !placeInList(selectedRoutePlace, sorted)) {
+    selectedRoutePlace = null;
+  }
+  const target = selectedRoutePlace || firstCoordPlace(sorted);
+  if (!target) {
+    activeRoutePlace = null;
+    activeRouteMetrics = null;
+    clearRoutePolyline();
+    updateOriginUi();
+    return;
+  }
+  activeRoutePlace = target;
+  renderResults(sorted, true);
+  drawDrivingRoute(target, { fitBounds: true });
+}
+
 function updateOriginUi() {
   if (!origin) {
     if (originPill) {
       originPill.hidden = true;
+    }
+    if (originNavLink) {
+      originNavLink.hidden = true;
+      originNavLink.removeAttribute("href");
     }
     originLabel.textContent = "출발지 없음";
     clearOriginBtn.hidden = true;
@@ -1415,6 +1745,18 @@ function updateOriginUi() {
     originPill.hidden = false;
   }
   clearOriginBtn.hidden = false;
+  if (activeRoutePlace) {
+    originLabel.textContent = routeSummaryForPlace(activeRoutePlace, false);
+    const navHref = naverDirectionsUrl(activeRoutePlace);
+    if (originNavLink && navHref) {
+      originNavLink.href = navHref;
+      originNavLink.hidden = false;
+    }
+    return;
+  }
+  if (originNavLink) {
+    originNavLink.hidden = true;
+  }
   if (travelState === "loading") {
     originLabel.textContent = `출발지 ${origin.label} · 계산 중`;
     return;
@@ -1439,7 +1781,7 @@ function clickHitsMarker(event) {
   if (!target || typeof target.closest !== "function") {
     return false;
   }
-  return Boolean(target.closest(".origin-pin, #camp-map [title]"));
+  return Boolean(target.closest(".origin-pin, .dest-pin, #camp-map [title]"));
 }
 
 function placeOriginMarker() {
@@ -1539,6 +1881,8 @@ function resolveOriginLabel() {
           originMarker.setTitle(label);
         }
         updateOriginUi();
+        renderResults(orderedList(currentList()), true);
+        refreshOpenCampCard();
       });
     } catch {
       return;
@@ -1552,6 +1896,10 @@ function setOrigin(lat, lng) {
   }
   originToken += 1;
   origin = { lat, lng, label: "선택한 지점" };
+  selectedRoutePlace = null;
+  activeRoutePlace = null;
+  activeRouteMetrics = null;
+  clearRoutePolyline();
   sortMode = "time";
   travelTimes = new Map();
   travelState = "loading";
@@ -1572,6 +1920,10 @@ function clearOrigin() {
     travelAbort.abort();
     travelAbort = null;
   }
+  selectedRoutePlace = null;
+  activeRoutePlace = null;
+  activeRouteMetrics = null;
+  clearRoutePolyline();
   origin = null;
   travelTimes = new Map();
   travelState = "idle";
@@ -1581,6 +1933,7 @@ function clearOrigin() {
     originMarker.setMap(null);
     originMarker = null;
   }
+  pinKey = "\0";
   syncSort();
   updateOriginUi();
   page = 1;
@@ -1593,6 +1946,9 @@ function scheduleTravel(list) {
   }
   const signature = pinSignature(list);
   if (signature === travelSignature) {
+    if (travelState === "ready") {
+      ensureAutoRoute(list);
+    }
     return;
   }
   travelSignature = signature;
@@ -1601,7 +1957,7 @@ function scheduleTravel(list) {
   updateOriginUi();
   travelTimer = window.setTimeout(() => {
     requestTravel();
-  }, 300);
+  }, 80);
 }
 
 async function requestTravel() {
@@ -1616,8 +1972,7 @@ async function requestTravel() {
   if (pins.length === 0) {
     travelTimes = new Map();
     travelState = "ready";
-    updateOriginUi();
-    renderResults(orderedList(currentList()), true);
+    ensureAutoRoute(currentList());
     refreshOpenCampCard();
     return;
   }
@@ -1670,8 +2025,7 @@ async function requestTravel() {
     travelTimes = new Map();
     travelState = "error";
   }
-  updateOriginUi();
-  renderResults(orderedList(currentList()), true);
+  ensureAutoRoute(currentList());
   refreshOpenCampCard();
 }
 

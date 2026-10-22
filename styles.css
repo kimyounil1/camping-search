@@ -653,6 +653,63 @@ a.result-name {
   text-overflow: ellipsis;
 }
 
+.result.is-active-route {
+  border-color: #2563eb;
+  background: #f5f9ff;
+  box-shadow: inset 3px 0 0 #2563eb;
+}
+
+.route-active-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 0.45rem;
+  margin-top: 0.2rem;
+  padding-top: 0.18rem;
+  border-top: 1px dashed #bfdbfe;
+  min-width: 0;
+}
+
+.route-summary-pill {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  padding: 0.08rem 0.42rem;
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+  border-radius: 999px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.route-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 0.1rem 0.48rem;
+  background: #03c75a;
+  color: #ffffff;
+  border: 1px solid #029e47;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.route-nav-btn:hover {
+  background: #02b150;
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .empty {
   margin: 0;
   padding: 0.9rem 1rem;
@@ -752,6 +809,45 @@ a.result-name {
   border-radius: 50%;
   background: var(--blaze);
   box-shadow: 0 0 0 2px var(--blaze);
+}
+
+.dest-pin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transform: translate(0, -4px);
+}
+
+.dest-pin-dot {
+  width: 22px;
+  height: 22px;
+  box-sizing: border-box;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #2563eb;
+  box-shadow: 0 0 0 2px #1d4ed8;
+  flex: 0 0 auto;
+}
+
+.dest-pin-label {
+  padding: 0.12rem 0.45rem;
+  background: rgba(37, 99, 235, 0.96);
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(16, 35, 28, 0.25);
+}
+
+.map-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
 }
 
 #map-count {

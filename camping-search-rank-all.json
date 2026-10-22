@@ -220,7 +220,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 36.3754845,
-    "lng": 127.3751836
+    "lng": 127.3751836,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "유성구 국립중앙과학관 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 6,
@@ -249,7 +258,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.368483,
-    "lng": 129.3532858
+    "lng": 129.3532858,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "울주군 애플망고 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 7,
@@ -278,7 +296,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.6684137181605,
-    "lng": 129.398285158187
+    "lng": 129.398285158187,
+    "naverReview": {
+      "total": 306,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1968082766",
+      "url": "https://m.place.naver.com/place/1968082766/home",
+      "matchedQuery": "리틀 포레스트 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 8,
@@ -307,7 +334,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.8538186,
-    "lng": 127.508954
+    "lng": 127.508954,
+    "naverReview": {
+      "total": 3845,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1703286819",
+      "url": "https://m.place.naver.com/place/1703286819/home",
+      "matchedQuery": "포레스트 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 9,
@@ -336,7 +372,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.3148737194702,
-    "lng": 127.267844163237
+    "lng": 127.267844163237,
+    "naverReview": {
+      "total": 717,
+      "visitor": 459,
+      "blog": 0,
+      "placeId": "32769748",
+      "url": "https://m.place.naver.com/place/32769748/home",
+      "matchedQuery": "용인시 용인자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 10,
@@ -367,7 +412,16 @@
       "featureNm": ""
     },
     "lat": 35.9228913,
-    "lng": 129.2899191
+    "lng": 129.2899191,
+    "naverReview": {
+      "total": 453,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1784643244",
+      "url": "https://m.place.naver.com/place/1784643244/home",
+      "matchedQuery": "경주시 소풍 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 10,
@@ -375,7 +429,16 @@
     "region": "충청북도 진천군",
     "interest": 1.8896,
     "same_name_rows": 2,
-    "facility": null
+    "facility": null,
+    "naverReview": {
+      "total": 1528,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1279696767",
+      "url": "https://m.place.naver.com/place/1279696767/home",
+      "matchedQuery": "진천군 소풍 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 11,
@@ -404,7 +467,16 @@
       "featureNm": ""
     },
     "lat": 37.3267138,
-    "lng": 128.2658526
+    "lng": 128.2658526,
+    "naverReview": {
+      "total": 59,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "386335168",
+      "url": "https://m.place.naver.com/place/386335168/home",
+      "matchedQuery": "영월군 풍경 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 12,
@@ -432,7 +504,16 @@
       "featureNm": ""
     },
     "lat": 37.8898855,
-    "lng": 127.1371604
+    "lng": 127.1371604,
+    "naverReview": {
+      "total": 457,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1316541824",
+      "url": "https://m.place.naver.com/place/1316541824/home",
+      "matchedQuery": "경기 동두천 자연휴양림 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 13,
@@ -466,7 +547,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 37.8920434,
-    "lng": 126.7447929
+    "lng": 126.7447929,
+    "naverReview": {
+      "total": 1573,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1847361140",
+      "url": "https://m.place.naver.com/place/1847361140/home",
+      "matchedQuery": "파주시 평화누리캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 14,
@@ -495,7 +585,16 @@
       "animalCmgCl": ""
     },
     "lat": 37.6345859807983,
-    "lng": 126.374654787234
+    "lng": 126.374654787234,
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "강화군 브라운 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 15,
@@ -524,7 +623,16 @@
       "animalCmgCl": "불가능"
     },
     "lat": 35.8917547443898,
-    "lng": 129.291147937382
+    "lng": 129.291147937382,
+    "naverReview": {
+      "total": 1,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "url": null,
+      "matchedQuery": "경주시 라온 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 16,
@@ -558,7 +666,16 @@
       "animalCmgCl": "가능"
     },
     "lat": 36.8556847,
-    "lng": 126.9807073
+    "lng": 126.9807073,
+    "naverReview": {
+      "total": 1406,
+      "visitor": 668,
+      "blog": 0,
+      "placeId": "1780108077",
+      "url": "https://m.place.naver.com/place/1780108077/home",
+      "matchedQuery": "아산스파포레 글램핑",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 17,
@@ -588,7 +705,16 @@
       "featureNm": ""
     },
     "lat": 36.9387184,
-    "lng": 126.3826019
+    "lng": 126.3826019,
+    "naverReview": {
+      "total": 2703,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1210638481",
+      "url": "https://m.place.naver.com/place/1210638481/home",
+      "matchedQuery": "다온 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 18,
@@ -616,7 +742,16 @@
       "featureNm": ""
     },
     "lat": 37.2982221,
-    "lng": 128.144393
+    "lng": 128.144393,
+    "naverReview": {
+      "total": 292,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "36909255",
+      "url": "https://m.place.naver.com/place/36909255/home",
+      "matchedQuery": "강원 반딧불이 캠핑장",
+      "updatedAt": "2026-10-22"
+    }
   },
   {
     "rank": 19,

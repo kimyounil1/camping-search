@@ -44,6 +44,7 @@ const resultsSection = document.querySelector("#results");
 const browse = document.querySelector("#browse");
 const mapCount = document.querySelector("#map-count");
 const mapEmpty = document.querySelector("#map-empty");
+const originPill = document.querySelector("#origin-pill");
 const originLabel = document.querySelector("#origin-label");
 const clearOriginBtn = document.querySelector("#clear-origin");
 const pager = document.querySelector("#pager");
@@ -63,8 +64,10 @@ const filterSheet = document.querySelector("#filter-sheet");
 const applyFiltersBtn = document.querySelector("#apply-filters");
 const closeFiltersBtn = document.querySelector("#close-filters");
 const activeFilters = document.querySelector("#active-filters");
-const viewListBtn = document.querySelector("#view-list");
-const viewMapBtn = document.querySelector("#view-map");
+const sheetGrabber = document.querySelector("#sheet-grabber");
+const sheetHandle = document.querySelector("#sheet-handle");
+const listSheetScroll = document.querySelector("#list-sheet-scroll");
+const snapButtons = [...document.querySelectorAll("[data-snap-target]")];
 const markerDock = document.querySelector("#marker-dock");
 const sheetPanel = document.querySelector("#sheet-panel");
 const sheetBackdrop = document.querySelector("#sheet-backdrop");
@@ -476,7 +479,7 @@ function summaryText(list, start, end) {
   if (list.length === 0) {
     return count;
   }
-  return `${count}. ${numberFormat.format(start)}–${numberFormat.format(end)}번째를 보는 중입니다.`;
+  return `${count} (${numberFormat.format(start)}–${numberFormat.format(end)})`;
 }
 
 function interiorText(facility) {
@@ -493,32 +496,15 @@ function interiorText(facility) {
   return parts.join(" · ");
 }
 
-function fact(label, valueNode) {
-  const row = document.createElement("p");
-  row.className = "fact";
-  const labelEl = document.createElement("span");
-  labelEl.className = "fact-label";
-  labelEl.textContent = label;
-  row.append(labelEl, valueNode);
-  return row;
-}
-
-function textValue(text) {
-  const span = document.createElement("span");
-  span.className = "fact-value";
-  span.textContent = text;
-  return span;
-}
-
 function nameValue(name, contentId) {
   if (!contentId) {
     const span = document.createElement("span");
-    span.className = "fact-value result-name";
+    span.className = "result-name";
     span.textContent = name;
     return span;
   }
   const link = document.createElement("a");
-  link.className = "fact-value result-name";
+  link.className = "result-name";
   link.href = `${CAMP_PAGE}${encodeURIComponent(contentId)}`;
   link.target = "_blank";
   link.rel = "noopener noreferrer";
@@ -532,13 +518,16 @@ function nameValue(name, contentId) {
 
 function reviewValue(naverReview) {
   const wrap = document.createElement("span");
-  wrap.className = "fact-value review-value-wrap";
+  wrap.className = "review-value-wrap";
 
   const countBadge = document.createElement("span");
   countBadge.className = "review-count-badge";
   const total = Number(naverReview.total || 0).toLocaleString("ko-KR");
   const visitor = naverReview.visitor ? Number(naverReview.visitor).toLocaleString("ko-KR") : null;
-  countBadge.textContent = visitor ? `네이버 리뷰 ${total}개 (방문자 ${visitor})` : `네이버 리뷰 ${total}개`;
+  countBadge.textContent = `네이버 리뷰 ${total}`;
+  if (visitor) {
+    countBadge.title = `네이버 리뷰 ${total}개 (방문자 ${visitor})`;
+  }
   wrap.append(countBadge);
 
   if (naverReview.url) {
@@ -553,32 +542,113 @@ function reviewValue(naverReview) {
   return wrap;
 }
 
+function focusPlaceOnMap(item, index) {
+  const point = item.coords[index];
+  if (!point) {
+    return;
+  }
+  const facility = item.regionFacilities[index];
+  const rawId = facility && facility.contentId ? String(facility.contentId).trim() : "";
+  const place = {
+    rank: item.rank,
+    name: item.name,
+    region: item.regions[index],
+    lat: point.lat,
+    lng: point.lng,
+    contentId: /^\d+$/.test(rawId) ? rawId : "",
+    naverReview: item.naverReview || null,
+  };
+  dockPlace = place;
+  if (phoneQuery.matches && browse && browse.dataset.snap === "max") {
+    setSnap("mid");
+  }
+  const current = ensureMap();
+  if (!current) {
+    return;
+  }
+  const position = new window.naver.maps.LatLng(place.lat, place.lng);
+  current.setCenter(position);
+  if (typeof current.getZoom === "function" && current.getZoom() < 11) {
+    current.setZoom(11);
+  }
+  if (campInfo) {
+    const matched = campMarkers.find((entry) => entry.__placeKey === `${place.name}\t${place.region}`);
+    campInfo.setContent(infoHtml(place));
+    if (matched) {
+      campInfo.open(current, matched);
+    } else {
+      campInfo.open(current, position);
+    }
+  }
+}
+
 function placeBlock(item, index, chipGroups, matchIndex) {
   const facility = item.regionFacilities[index];
   const contentId = facility && facility.contentId ? String(facility.contentId).trim() : "";
   const block = document.createElement("div");
   block.className = "place";
-  block.append(
-    fact("등록 이름", nameValue(item.name, contentId)),
-    fact("위치", textValue(item.regions[index])),
-  );
+  if (item.coords[index]) {
+    block.dataset.hasCoord = "true";
+    block.addEventListener("click", (event) => {
+      const target = event.target;
+      if (target && typeof target.closest === "function" && target.closest("a, button")) {
+        return;
+      }
+      focusPlaceOnMap(item, index);
+    });
+  }
+
+  const line1 = document.createElement("div");
+  line1.className = "row-main";
+
+  const left = document.createElement("div");
+  left.className = "row-left";
+  if (index === 0) {
+    const badge = document.createElement("span");
+    badge.className = "rank-badge row-rank";
+    badge.textContent = `#${item.rank}`;
+    left.append(badge);
+  }
+  left.append(nameValue(item.name, contentId));
+  const regionEl = document.createElement("span");
+  regionEl.className = "row-region";
+  regionEl.textContent = item.regions[index];
+  left.append(regionEl);
+
+  const right = document.createElement("div");
+  right.className = "row-right";
+  const travel = travelText({ name: item.name, region: item.regions[index] });
+  if (travel) {
+    const travelBadge = document.createElement("span");
+    travelBadge.className = "travel-badge";
+    travelBadge.textContent = travel;
+    right.append(travelBadge);
+  }
   if (item.naverReview && (item.naverReview.total > 0 || item.naverReview.url)) {
-    block.append(fact("네이버 리뷰", reviewValue(item.naverReview)));
+    right.append(reviewValue(item.naverReview));
   }
-  const interior = interiorText(facility);
-  if (interior) {
-    block.append(fact("내부시설", textValue(interior)));
-  }
+
+  line1.append(left, right);
+  block.append(line1);
+
+  const subParts = [];
   if (chipGroups.length > 0 && index === matchIndex) {
     const excerpt = cardExcerpt(facility, chipGroups);
     if (excerpt) {
-      block.append(fact("문구", textValue(excerpt)));
+      subParts.push(excerpt);
     }
   }
-  const travel = travelText({ name: item.name, region: item.regions[index] });
-  if (travel) {
-    block.append(fact("이동", textValue(travel)));
+  const interior = interiorText(facility);
+  if (interior) {
+    subParts.push(interior);
   }
+  if (subParts.length > 0) {
+    const line2 = document.createElement("p");
+    line2.className = "row-sub";
+    line2.textContent = subParts.join(" · ");
+    block.append(line2);
+  }
+
   return block;
 }
 
@@ -663,20 +733,6 @@ function renderResults(list, immediate) {
   for (const item of slice) {
     const li = document.createElement("li");
     li.className = "result";
-    const rank = document.createElement("p");
-    rank.className = "result-rank";
-    const rankLabel = document.createElement("span");
-    rankLabel.className = "fact-label";
-    rankLabel.textContent = "순위";
-    const badge = document.createElement("span");
-    badge.className = "rank-badge";
-    badge.append(document.createTextNode(String(item.rank)));
-    const unit = document.createElement("span");
-    unit.className = "sr-only";
-    unit.textContent = "위";
-    badge.append(unit);
-    rank.append(rankLabel, badge);
-    li.append(rank);
     const matchIndex = matchingPlaceIndex(item, chipGroups);
     for (let index = 0; index < item.regions.length; index += 1) {
       li.append(placeBlock(item, index, chipGroups, matchIndex));
@@ -814,9 +870,6 @@ function mapWidth() {
 }
 
 function relayoutMap(refit) {
-  if (phoneQuery.matches && browse.dataset.view !== "map") {
-    return;
-  }
   const current = ensureMap();
   if (!current) {
     return;
@@ -859,7 +912,7 @@ function showMarkerDock(place) {
   const close = document.createElement("button");
   close.type = "button";
   close.className = "secondary dock-close";
-  close.textContent = "카드 닫기";
+  close.textContent = "닫기";
   close.addEventListener("click", () => {
     hideMarkerDock();
   });
@@ -871,9 +924,8 @@ function refreshOpenCampCard() {
   if (!dockPlace) {
     return;
   }
-  if (phoneQuery.matches) {
+  if (phoneQuery.matches && browse && browse.dataset.snap === "min") {
     showMarkerDock(dockPlace);
-    return;
   }
   if (campInfo && typeof campInfo.getMap === "function" && campInfo.getMap()) {
     campInfo.setContent(infoHtml(dockPlace));
@@ -942,9 +994,6 @@ function renderMap(list) {
   } else {
     mapCount.textContent = `핀 ${numberFormat.format(shown.length)}곳`;
   }
-  if (phoneQuery.matches && browse.dataset.view !== "map") {
-    return;
-  }
   const current = ensureMap();
   if (!current) {
     mapCount.textContent = "지도를 불러오지 못했습니다.";
@@ -979,10 +1028,11 @@ function renderMap(list) {
       title: `${place.name}, ${place.region}`,
       zIndex: Math.max(1, 10000 - place.rank),
     });
+    marker.__placeKey = `${place.name}\t${place.region}`;
     window.naver.maps.Event.addListener(marker, "click", () => {
       holdOriginClick();
       dockPlace = place;
-      if (phoneQuery.matches) {
+      if (phoneQuery.matches && browse && browse.dataset.snap === "min") {
         if (campInfo) {
           campInfo.close();
         }
@@ -1002,7 +1052,7 @@ function renderMap(list) {
     current.setCenter(bounds.getCenter());
     current.setZoom(13);
   } else {
-    current.fitBounds(bounds, 48);
+    current.fitBounds(bounds, 32);
   }
 }
 
@@ -1017,6 +1067,10 @@ function render(options) {
 }
 
 function scrollToTable() {
+  if (phoneQuery.matches && listSheetScroll) {
+    listSheetScroll.scrollTop = 0;
+    return;
+  }
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   (browse || resultsSection).scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" });
 }
@@ -1167,22 +1221,18 @@ function closeFilterSheet() {
   sheetReturnFocus = null;
 }
 
-function syncShell() {
-  document.body.classList.toggle("view-map", phoneQuery.matches && browse.dataset.view === "map");
-}
-
-function setView(view) {
-  if (view !== "list" && view !== "map") {
+function setSnap(snap) {
+  if (snap !== "min" && snap !== "mid" && snap !== "max") {
     return;
   }
-  browse.dataset.view = view;
-  viewListBtn.setAttribute("aria-pressed", view === "list" ? "true" : "false");
-  viewMapBtn.setAttribute("aria-pressed", view === "map" ? "true" : "false");
-  syncShell();
-  if (view === "list") {
+  browse.dataset.snap = snap;
+  for (const button of snapButtons) {
+    button.setAttribute("aria-pressed", button.dataset.snapTarget === snap ? "true" : "false");
+  }
+  if (snap !== "min") {
     hideMarkerDock();
   }
-  relayoutMap(view === "map");
+  relayoutMap(false);
 }
 
 openFiltersBtn.addEventListener("click", () => {
@@ -1211,13 +1261,46 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-viewListBtn.addEventListener("click", () => {
-  setView("list");
-});
+for (const button of snapButtons) {
+  button.addEventListener("click", () => {
+    setSnap(button.dataset.snapTarget);
+  });
+}
 
-viewMapBtn.addEventListener("click", () => {
-  setView("map");
-});
+if (sheetHandle) {
+  sheetHandle.addEventListener("click", () => {
+    const current = browse.dataset.snap || "mid";
+    const next = current === "mid" ? "max" : current === "max" ? "min" : "mid";
+    setSnap(next);
+  });
+}
+
+if (sheetGrabber) {
+  let dragStartY = null;
+  sheetGrabber.addEventListener("touchstart", (event) => {
+    if (!phoneQuery.matches || !event.touches || event.touches.length !== 1) {
+      return;
+    }
+    dragStartY = event.touches[0].clientY;
+  }, { passive: true });
+  sheetGrabber.addEventListener("touchend", (event) => {
+    if (dragStartY === null || !event.changedTouches || event.changedTouches.length === 0) {
+      dragStartY = null;
+      return;
+    }
+    const deltaY = event.changedTouches[0].clientY - dragStartY;
+    dragStartY = null;
+    if (Math.abs(deltaY) < 28) {
+      return;
+    }
+    const current = browse.dataset.snap || "mid";
+    if (deltaY < 0) {
+      setSnap(current === "min" ? "mid" : "max");
+    } else {
+      setSnap(current === "max" ? "mid" : "min");
+    }
+  }, { passive: true });
+}
 
 phoneQuery.addEventListener("change", () => {
   if (phoneQuery.matches) {
@@ -1227,9 +1310,9 @@ phoneQuery.addEventListener("change", () => {
   } else {
     notesEl.open = true;
     closeFilterSheet();
+    hideMarkerDock();
   }
-  syncShell();
-  relayoutMap(!phoneQuery.matches || browse.dataset.view === "map");
+  relayoutMap(true);
 });
 
 if (!phoneQuery.matches) {
@@ -1321,20 +1404,26 @@ function syncSort() {
 
 function updateOriginUi() {
   if (!origin) {
+    if (originPill) {
+      originPill.hidden = true;
+    }
     originLabel.textContent = "출발지 없음";
     clearOriginBtn.hidden = true;
     return;
   }
+  if (originPill) {
+    originPill.hidden = false;
+  }
   clearOriginBtn.hidden = false;
   if (travelState === "loading") {
-    originLabel.textContent = `출발지 ${origin.label}. 계산 중입니다.`;
+    originLabel.textContent = `출발지 ${origin.label} · 계산 중`;
     return;
   }
   if (travelState === "error") {
-    originLabel.textContent = `출발지 ${origin.label}. 이동 시간을 가져오지 못했습니다.`;
+    originLabel.textContent = `출발지 ${origin.label} · 시간 오류`;
     return;
   }
-  originLabel.textContent = `출발지 ${origin.label}. ${numberFormat.format(travelTimes.size)}곳`;
+  originLabel.textContent = `출발지 ${origin.label} · ${numberFormat.format(travelTimes.size)}곳`;
 }
 
 function holdOriginClick() {

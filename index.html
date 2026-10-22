@@ -48,10 +48,6 @@
             <option value="time">이동 시간 짧은 순</option>
           </select>
         </label>
-        <div class="view-switch" role="group" aria-label="보기">
-          <button type="button" id="view-list" aria-pressed="true">목록</button>
-          <button type="button" id="view-map" aria-pressed="false">지도</button>
-        </div>
       </div>
     </div>
 
@@ -131,87 +127,97 @@
       </div>
     </div>
 
-    <p id="count">목록을 불러오는 중입니다.</p>
     <p id="live" class="sr-only" aria-live="polite"></p>
 
-    <div class="browse" id="browse" data-view="list">
+    <div class="browse" id="browse" data-snap="mid">
       <section id="map-panel" class="map-panel" aria-labelledby="map-heading">
-        <div class="map-copy">
-          <div class="map-head">
-            <h2 id="map-heading">지도</h2>
-            <p id="map-count">지도를 준비하는 중입니다.</p>
-          </div>
-          <p id="map-note">좌표가 있는 장소만 핀으로 표시합니다. 한 번에 최대 100곳입니다.</p>
-          <p id="travel-note">지도를 누르면 출발지가 됩니다. 이동 시간은 실시간 교통을 반영하지 않은 도로 예상입니다.</p>
-          <div class="origin-row">
-            <p id="origin-label">출발지 없음</p>
-            <button type="button" id="clear-origin" class="secondary" hidden>출발지 지우기</button>
-          </div>
-        </div>
+        <h2 id="map-heading" class="sr-only">지도</h2>
         <div class="map-stage">
           <div id="camp-map" role="region" aria-label="검색 결과 지도"></div>
+          <div id="origin-pill" class="origin-pill" hidden>
+            <span id="origin-label">출발지 없음</span>
+            <button type="button" id="clear-origin" class="secondary">출발지 지우기</button>
+          </div>
           <div id="marker-dock" class="marker-dock" hidden></div>
         </div>
         <p id="map-empty" class="empty" hidden>이 조건에서 좌표가 있는 장소가 없습니다.</p>
       </section>
 
-      <div class="browse-list">
-        <section id="results" aria-labelledby="results-heading">
-          <h2 id="results-heading" class="sr-only">검색 결과</h2>
-          <p id="result-empty" class="empty" hidden>조건에 맞는 등록 이름이 없습니다. 시도나 검색어를 바꿔 보세요.</p>
-          <ul id="result-list" class="results"></ul>
-        </section>
+      <div class="browse-list" id="list-sheet">
+        <div class="list-sheet-bar" id="sheet-grabber">
+          <button type="button" id="sheet-handle" class="sheet-handle" aria-label="목록 높이 전환">
+            <span class="sheet-grip" aria-hidden="true"></span>
+          </button>
+          <div class="list-sheet-meta">
+            <p id="count">목록을 불러오는 중입니다.</p>
+            <div class="snap-controls" role="group" aria-label="목록 시트 크기">
+              <button type="button" id="snap-min" data-snap-target="min" aria-pressed="false">접힘</button>
+              <button type="button" id="snap-mid" data-snap-target="mid" aria-pressed="true">중간</button>
+              <button type="button" id="snap-max" data-snap-target="max" aria-pressed="false">펼침</button>
+            </div>
+          </div>
+        </div>
+        <div class="list-sheet-scroll" id="list-sheet-scroll">
+          <section id="results" aria-labelledby="results-heading">
+            <h2 id="results-heading" class="sr-only">검색 결과</h2>
+            <p id="result-empty" class="empty" hidden>조건에 맞는 등록 이름이 없습니다. 시도나 검색어를 바꿔 보세요.</p>
+            <ul id="result-list" class="results"></ul>
+          </section>
 
-        <nav class="pager" id="pager" aria-label="쪽 이동" hidden>
-          <button type="button" id="prev">이전</button>
-          <p class="page-field">
-            <label for="page">쪽</label>
-            <input id="page" type="number" inputmode="numeric" min="1" value="1">
-            <span id="page-total">/ 1</span>
-          </p>
-          <p id="range"></p>
-          <button type="button" id="next">다음</button>
-        </nav>
+          <nav class="pager" id="pager" aria-label="쪽 이동" hidden>
+            <button type="button" id="prev">이전</button>
+            <p class="page-field">
+              <label for="page">쪽</label>
+              <input id="page" type="number" inputmode="numeric" min="1" value="1">
+              <span id="page-total">/ 1</span>
+            </p>
+            <p id="range"></p>
+            <button type="button" id="next">다음</button>
+          </nav>
+
+          <details class="notes" id="notes">
+            <summary>자료 설명과 상위 10</summary>
+            <section id="top" aria-labelledby="top-heading" hidden>
+              <div class="top-head">
+                <h2 id="top-heading">이 조건의 상위 10</h2>
+                <p id="top-note">막대 길이는 여기 1위의 관심도를 기준으로 합니다.</p>
+              </div>
+              <ol id="top-list"></ol>
+            </section>
+            <section class="about" aria-labelledby="about-heading">
+              <h2 id="about-heading" class="sr-only">관심도와 등록부</h2>
+              <p id="map-count" class="caution">지도를 준비하는 중입니다.</p>
+              <p id="map-note" class="caution">좌표가 있는 장소만 핀으로 표시합니다. 한 번에 최대 100곳입니다.</p>
+              <p id="travel-note" class="caution">지도를 누르면 출발지가 됩니다. 이동 시간은 실시간 교통을 반영하지 않은 도로 예상입니다.</p>
+              <dl class="facts">
+                <div>
+                  <dt>관심도</dt>
+                  <dd>망상오토캠핑리조트 = 1</dd>
+                </div>
+                <div>
+                  <dt>기간</dt>
+                  <dd>2025-10-01부터 2026-09-30까지</dd>
+                </div>
+                <div>
+                  <dt>조회일</dt>
+                  <dd>2026-10-21</dd>
+                </div>
+                <div class="wide">
+                  <dt>등록부</dt>
+                  <dd>공공데이터포털 <a href="https://www.data.go.kr/data/15037499/fileData.do">data.go.kr 15037499</a>, 파일 2026-09-23. 등록 행 4,672개 가운데 추세가 있는 이름 3,729개를 보여 줍니다. 추세가 비어 있던 이름 891개는 이 목록에 없습니다.</dd>
+                </div>
+                <div class="wide">
+                  <dt>고캠핑 시설</dt>
+                  <dd>한국관광공사 고캠핑 정보 조회서비스, <a href="https://www.data.go.kr/data/15101933/openapi.do">data.go.kr 15101933</a>, 2026-10-21 조회. 그 조회에 없는 이름은 고캠핑 웹사이트 캠핑장 안내에서 2026-10-21에 보완했습니다. 업종은 고캠핑의 업종과 주요시설입니다. 처음 목록은 전체이고, 자동차야영장만 미리 골라 두지 않습니다. 소개와 시설 문구는 2026-10-22에 같은 서비스에서 다시 읽어, 웹사이트로 둔 소개는 바꾸지 않고 나머지 행에만 넣었습니다.</dd>
+                </div>
+              </dl>
+              <p class="caution"><strong>개별 화장실 추정.</strong> 이 표시는 네이버 장소 태그가 아니고, 확인된 개별 화장실도 아닙니다. 화장실 수가 전체 사이트 수의 80% 이상이면 비율입니다. 한줄소개, 소개, 특징에 개별화장실, 개별 화장실, 개별욕실, 개별 욕실, 개별샤워, 개별 샤워, 프라이빗이 있으면 키워드입니다. 전체 사이트는 일반, 자동차, 글램핑, 카라반, 개인 카라반 수를 더하고 빈 값은 0입니다. 글램핑 내부시설과 카라반 내부시설은 시설 문구로만 보여 주며, 그 문구만으로는 추정하지 않습니다.</p>
+              <p class="caution"><strong>주의.</strong> 보물섬, 오로라, 테르메덴, 라라랜드, 국립중앙과학관, 애플망고, 포레스트, 소풍처럼 짧은 이름은 그 야영장이 아닌 검색이 함께 섞입니다.</p>
+            </section>
+          </details>
+        </div>
       </div>
     </div>
-
-    <details class="notes" id="notes">
-      <summary>자료 설명과 상위 10</summary>
-      <section id="top" aria-labelledby="top-heading" hidden>
-        <div class="top-head">
-          <h2 id="top-heading">이 조건의 상위 10</h2>
-          <p id="top-note">막대 길이는 여기 1위의 관심도를 기준으로 합니다.</p>
-        </div>
-        <ol id="top-list"></ol>
-      </section>
-      <section class="about" aria-labelledby="about-heading">
-        <h2 id="about-heading" class="sr-only">관심도와 등록부</h2>
-        <dl class="facts">
-          <div>
-            <dt>관심도</dt>
-            <dd>망상오토캠핑리조트 = 1</dd>
-          </div>
-          <div>
-            <dt>기간</dt>
-            <dd>2025-10-01부터 2026-09-30까지</dd>
-          </div>
-          <div>
-            <dt>조회일</dt>
-            <dd>2026-10-21</dd>
-          </div>
-          <div class="wide">
-            <dt>등록부</dt>
-            <dd>공공데이터포털 <a href="https://www.data.go.kr/data/15037499/fileData.do">data.go.kr 15037499</a>, 파일 2026-09-23. 등록 행 4,672개 가운데 추세가 있는 이름 3,729개를 보여 줍니다. 추세가 비어 있던 이름 891개는 이 목록에 없습니다.</dd>
-          </div>
-          <div class="wide">
-            <dt>고캠핑 시설</dt>
-            <dd>한국관광공사 고캠핑 정보 조회서비스, <a href="https://www.data.go.kr/data/15101933/openapi.do">data.go.kr 15101933</a>, 2026-10-21 조회. 그 조회에 없는 이름은 고캠핑 웹사이트 캠핑장 안내에서 2026-10-21에 보완했습니다. 업종은 고캠핑의 업종과 주요시설입니다. 처음 목록은 전체이고, 자동차야영장만 미리 골라 두지 않습니다. 소개와 시설 문구는 2026-10-22에 같은 서비스에서 다시 읽어, 웹사이트로 둔 소개는 바꾸지 않고 나머지 행에만 넣었습니다.</dd>
-          </div>
-        </dl>
-        <p class="caution"><strong>개별 화장실 추정.</strong> 이 표시는 네이버 장소 태그가 아니고, 확인된 개별 화장실도 아닙니다. 화장실 수가 전체 사이트 수의 80% 이상이면 비율입니다. 한줄소개, 소개, 특징에 개별화장실, 개별 화장실, 개별욕실, 개별 욕실, 개별샤워, 개별 샤워, 프라이빗이 있으면 키워드입니다. 전체 사이트는 일반, 자동차, 글램핑, 카라반, 개인 카라반 수를 더하고 빈 값은 0입니다. 글램핑 내부시설과 카라반 내부시설은 시설 문구로만 보여 주며, 그 문구만으로는 추정하지 않습니다.</p>
-        <p class="caution"><strong>주의.</strong> 보물섬, 오로라, 테르메덴, 라라랜드, 국립중앙과학관, 애플망고, 포레스트, 소풍처럼 짧은 이름은 그 야영장이 아닌 검색이 함께 섞입니다.</p>
-      </section>
-    </details>
   </main>
   <dialog id="update-modal" class="modal">
     <div class="modal-card">

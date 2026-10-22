@@ -44,6 +44,8 @@ const resultsSection = document.querySelector("#results");
 const browse = document.querySelector("#browse");
 const mapCount = document.querySelector("#map-count");
 const mapEmpty = document.querySelector("#map-empty");
+const originLabel = document.querySelector("#origin-label");
+const clearOriginBtn = document.querySelector("#clear-origin");
 const pager = document.querySelector("#pager");
 const prevBtn = document.querySelector("#prev");
 const nextBtn = document.querySelector("#next");
@@ -436,7 +438,6 @@ function currentList() {
     return true;
   });
 
-  const sortMode = sortSelect ? sortSelect.value : "interest";
   if (sortMode === "review") {
     filtered.sort((a, b) => b.reviewTotal - a.reviewTotal || a.rank - b.rank || a.name.localeCompare(b.name, "ko"));
   } else {
@@ -561,6 +562,10 @@ function placeBlock(item, index, chipGroups, matchIndex) {
       block.append(fact("문구", textValue(excerpt)));
     }
   }
+  const travel = travelText({ name: item.name, region: item.regions[index] });
+  if (travel) {
+    block.append(fact("이동", textValue(travel)));
+  }
   return block;
 }
 
@@ -678,11 +683,25 @@ function renderResults(list, immediate) {
 }
 
 const PIN_LIMIT = 100;
+const TABLE_COORD_LIMIT = 300;
+const DRIVING_TABLE = "https://router.project-osrm.org/table/v1/driving/";
 let campMap = null;
 let campMarkers = [];
 let campInfo = null;
 let mapBroken = false;
 let pinKey = "\0";
+let origin = null;
+let originMarker = null;
+let originToken = 0;
+let sortMode = "interest";
+let travelTimes = new Map();
+let travelState = "idle";
+let travelSignature = "";
+let travelToken = 0;
+let travelTimer = 0;
+let travelAbort = null;
+let blockOriginClick = false;
+let geocoderReady = null;
 
 function mapsReady() {
   return Boolean(window.naver && window.naver.maps && typeof window.naver.maps.Map === "function");
@@ -713,9 +732,19 @@ function ensureMap() {
       borderColor: "#b7c9bf",
       borderWidth: 1,
     });
-    window.naver.maps.Event.addListener(campMap, "click", () => {
+    window.naver.maps.Event.addListener(campMap, "click", (event) => {
       campInfo.close();
+      if (blockOriginClick || clickHitsMarker(event)) {
+        blockOriginClick = false;
+        return;
+      }
+      const coord = event && event.coord;
+      if (!coord || typeof coord.lat !== "function" || typeof coord.lng !== "function") {
+        return;
+      }
+      setOrigin(coord.lat(), coord.lng());
     });
+    loadGeocoder();
   } catch (error) {
     mapBroken = true;
     return null;
@@ -744,12 +773,14 @@ function escapeHtml(value) {
 function infoHtml(place) {
   const name = `<p class="map-place-name">${escapeHtml(place.name)}</p>`;
   const region = `<p class="map-place-region">${escapeHtml(place.region)}</p>`;
+  const travel = travelText(place);
+  const time = travel ? `<p class="map-place-time">${escapeHtml(travel)}</p>` : "";
   if (!place.contentId) {
-    return `<div class="map-card">${name}${region}</div>`;
+    return `<div class="map-card">${name}${region}${time}</div>`;
   }
   const href = `${CAMP_PAGE}${place.contentId}`;
   const link = `<a class="map-link" href="${href}" target="_blank" rel="noopener noreferrer">고캠핑에서 보기<span class="sr-only">, ${escapeHtml(place.name)}</span></a>`;
-  return `<div class="map-card">${name}${region}${link}</div>`;
+  return `<div class="map-card">${name}${region}${time}${link}</div>`;
 }
 
 function pinPlaces(list) {
@@ -820,12 +851,16 @@ function renderMap(list) {
       zIndex: Math.max(1, 10000 - place.rank),
     });
     window.naver.maps.Event.addListener(marker, "click", () => {
+      holdOriginClick();
       campInfo.setContent(infoHtml(place));
       campInfo.open(current, marker);
     });
     campMarkers.push(marker);
   }
-  if (shown.length === 1) {
+  if (origin) {
+    bounds.extend(new window.naver.maps.LatLng(origin.lat, origin.lng));
+  }
+  if (shown.length === 1 && !origin) {
     current.setCenter(bounds.getCenter());
     current.setZoom(13);
   } else {
@@ -837,8 +872,9 @@ function render(options) {
   const immediate = Boolean(options && options.immediate);
   const list = currentList();
   renderTop(list);
-  renderResults(list, immediate);
+  renderResults(orderedList(list), immediate);
   renderMap(list);
+  scheduleTravel(list);
 }
 
 function scrollToTable() {
@@ -864,6 +900,20 @@ form.addEventListener("change", (event) => {
 queryEl.addEventListener("input", () => {
   page = 1;
   render({ immediate: false });
+});
+
+if (sortSelect) {
+  sortSelect.addEventListener("change", () => {
+    const value = sortSelect.value;
+    sortMode = value === "review" || value === "time" ? value : "interest";
+    page = 1;
+    render({ immediate: true });
+    scrollToTable();
+  });
+}
+
+clearOriginBtn.addEventListener("click", () => {
+  clearOrigin();
 });
 
 clearBtn.addEventListener("click", () => {
@@ -899,14 +949,6 @@ pageInput.addEventListener("change", () => {
   scrollToTable();
 });
 
-if (sortSelect) {
-  sortSelect.addEventListener("change", () => {
-    page = 1;
-    render({ immediate: true });
-    scrollToTable();
-  });
-}
-
 if (openUpdateModalBtn && updateModal) {
   openUpdateModalBtn.addEventListener("click", () => {
     updateModal.showModal();
@@ -926,6 +968,355 @@ if (updateModal) {
     }
   });
 }
+
+function travelKey(place) {
+  return `${place.name}\t${place.region}`;
+}
+
+function travelText(place) {
+  const travel = travelTimes.get(travelKey(place));
+  if (!travel) {
+    return "";
+  }
+  return formatTravel(travel);
+}
+
+function formatTravel(travel) {
+  const rounded = Math.round(travel.seconds / 60);
+  const minutes = travel.seconds > 0 ? Math.max(1, rounded) : 0;
+  const hours = Math.floor(minutes / 60);
+  const rest = minutes % 60;
+  let timeText = `${minutes}분`;
+  if (hours > 0) {
+    timeText = rest === 0 ? `${hours}시간` : `${hours}시간 ${rest}분`;
+  }
+  const km = travel.meters / 1000;
+  const kmText = km >= 100 ? `${Math.round(km)}km` : `${(Math.round(km * 10) / 10).toFixed(1)}km`;
+  return `${timeText} · ${kmText}`;
+}
+
+function bestSeconds(item) {
+  let best = null;
+  for (let index = 0; index < item.regions.length; index += 1) {
+    const travel = travelTimes.get(travelKey({ name: item.name, region: item.regions[index] }));
+    if (!travel) {
+      continue;
+    }
+    if (best === null || travel.seconds < best) {
+      best = travel.seconds;
+    }
+  }
+  return best;
+}
+
+function orderedList(list) {
+  if (sortMode !== "time") {
+    return list;
+  }
+  return list.slice().sort((a, b) => {
+    const left = bestSeconds(a);
+    const right = bestSeconds(b);
+    if (left === null && right === null) {
+      return a.rank - b.rank;
+    }
+    if (left === null) {
+      return 1;
+    }
+    if (right === null) {
+      return -1;
+    }
+    if (left !== right) {
+      return left - right;
+    }
+    return a.rank - b.rank;
+  });
+}
+
+function drivingPins(list) {
+  return pinPlaces(list).slice(0, Math.min(PIN_LIMIT, TABLE_COORD_LIMIT - 1));
+}
+
+function pinSignature(list) {
+  return drivingPins(list)
+    .map((place) => `${place.name}\t${place.region}\t${place.lat}\t${place.lng}`)
+    .join("\n");
+}
+
+function formatCoord(lng, lat) {
+  return `${Number(lng).toFixed(6)},${Number(lat).toFixed(6)}`;
+}
+
+function syncSort() {
+  if (sortSelect) {
+    sortSelect.value = sortMode;
+  }
+}
+
+function updateOriginUi() {
+  if (!origin) {
+    originLabel.textContent = "출발지 없음";
+    clearOriginBtn.hidden = true;
+    return;
+  }
+  clearOriginBtn.hidden = false;
+  if (travelState === "loading") {
+    originLabel.textContent = `출발지 ${origin.label}. 계산 중입니다.`;
+    return;
+  }
+  if (travelState === "error") {
+    originLabel.textContent = `출발지 ${origin.label}. 이동 시간을 가져오지 못했습니다.`;
+    return;
+  }
+  originLabel.textContent = `출발지 ${origin.label}. ${numberFormat.format(travelTimes.size)}곳`;
+}
+
+function holdOriginClick() {
+  blockOriginClick = true;
+  window.setTimeout(() => {
+    blockOriginClick = false;
+  }, 0);
+}
+
+function clickHitsMarker(event) {
+  const domEvent = event && (event.domEvent || event.originalEvent);
+  const target = domEvent && domEvent.target;
+  if (!target || typeof target.closest !== "function") {
+    return false;
+  }
+  return Boolean(target.closest(".origin-pin, #camp-map [title]"));
+}
+
+function placeOriginMarker() {
+  const current = ensureMap();
+  if (!current || !origin) {
+    return;
+  }
+  const position = new window.naver.maps.LatLng(origin.lat, origin.lng);
+  if (!originMarker) {
+    originMarker = new window.naver.maps.Marker({
+      position,
+      map: current,
+      zIndex: 20000,
+      title: origin.label,
+      icon: {
+        content: '<div class="origin-pin"></div>',
+        size: new window.naver.maps.Size(22, 22),
+        anchor: new window.naver.maps.Point(11, 11),
+      },
+    });
+    window.naver.maps.Event.addListener(originMarker, "click", () => {
+      holdOriginClick();
+    });
+    return;
+  }
+  originMarker.setPosition(position);
+  originMarker.setMap(current);
+  originMarker.setTitle(origin.label);
+}
+
+function loadGeocoder() {
+  if (geocoderReady) {
+    return geocoderReady;
+  }
+  geocoderReady = new Promise((resolve) => {
+    const started = Date.now();
+    const timer = window.setInterval(() => {
+      const service = window.naver && window.naver.maps && window.naver.maps.Service;
+      if (service && typeof service.reverseGeocode === "function") {
+        window.clearInterval(timer);
+        resolve(true);
+        return;
+      }
+      if (!mapsReady() || Date.now() - started > 4000) {
+        window.clearInterval(timer);
+        resolve(false);
+      }
+    }, 50);
+  });
+  return geocoderReady;
+}
+
+function labelFromGeocode(response) {
+  const results = response && response.v2 && Array.isArray(response.v2.results) ? response.v2.results : [];
+  const addr = results.find((item) => item.name === "addr") || results[0];
+  if (!addr || !addr.region) {
+    return "";
+  }
+  const parts = ["area2", "area3", "area4"]
+    .map((key) => addr.region[key] && addr.region[key].name)
+    .filter(Boolean);
+  const land = addr.land || {};
+  if (land.number1) {
+    parts.push(land.number2 ? `${land.number1}-${land.number2}` : String(land.number1));
+  }
+  return parts.join(" ");
+}
+
+function resolveOriginLabel() {
+  const token = originToken;
+  const here = origin;
+  if (!here) {
+    return;
+  }
+  loadGeocoder().then((ready) => {
+    if (!ready || token !== originToken || origin !== here) {
+      return;
+    }
+    const service = window.naver.maps.Service;
+    const orders = service.OrderType
+      ? [service.OrderType.ADDR, service.OrderType.ROAD_ADDR].filter(Boolean).join(",")
+      : "addr,roadaddr";
+    try {
+      service.reverseGeocode({
+        coords: new window.naver.maps.LatLng(here.lat, here.lng),
+        orders,
+      }, (status, response) => {
+        if (token !== originToken || origin !== here) {
+          return;
+        }
+        const label = labelFromGeocode(response);
+        if (!label || status === 500) {
+          return;
+        }
+        origin.label = label;
+        if (originMarker) {
+          originMarker.setTitle(label);
+        }
+        updateOriginUi();
+      });
+    } catch {
+      return;
+    }
+  });
+}
+
+function setOrigin(lat, lng) {
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+    return;
+  }
+  originToken += 1;
+  origin = { lat, lng, label: "선택한 지점" };
+  sortMode = "time";
+  travelTimes = new Map();
+  travelState = "loading";
+  travelSignature = "";
+  syncSort();
+  updateOriginUi();
+  placeOriginMarker();
+  page = 1;
+  render({ immediate: true });
+  resolveOriginLabel();
+}
+
+function clearOrigin() {
+  originToken += 1;
+  travelToken += 1;
+  window.clearTimeout(travelTimer);
+  if (travelAbort) {
+    travelAbort.abort();
+    travelAbort = null;
+  }
+  origin = null;
+  travelTimes = new Map();
+  travelState = "idle";
+  travelSignature = "";
+  sortMode = "interest";
+  if (originMarker) {
+    originMarker.setMap(null);
+    originMarker = null;
+  }
+  syncSort();
+  updateOriginUi();
+  page = 1;
+  render({ immediate: true });
+}
+
+function scheduleTravel(list) {
+  if (!origin) {
+    return;
+  }
+  const signature = pinSignature(list);
+  if (signature === travelSignature) {
+    return;
+  }
+  travelSignature = signature;
+  window.clearTimeout(travelTimer);
+  travelState = "loading";
+  updateOriginUi();
+  travelTimer = window.setTimeout(() => {
+    requestTravel();
+  }, 300);
+}
+
+async function requestTravel() {
+  if (!origin) {
+    return;
+  }
+  const pins = drivingPins(currentList());
+  const token = ++travelToken;
+  if (travelAbort) {
+    travelAbort.abort();
+  }
+  if (pins.length === 0) {
+    travelTimes = new Map();
+    travelState = "ready";
+    updateOriginUi();
+    renderResults(orderedList(currentList()), true);
+    return;
+  }
+  const controller = new AbortController();
+  travelAbort = controller;
+  const coords = [formatCoord(origin.lng, origin.lat)];
+  for (const place of pins) {
+    coords.push(formatCoord(place.lng, place.lat));
+  }
+  try {
+    const response = await fetch(`${DRIVING_TABLE}${coords.join(";")}?sources=0&annotations=duration,distance`, {
+      signal: controller.signal,
+    });
+    if (token !== travelToken) {
+      return;
+    }
+    if (!response.ok) {
+      throw new Error("http");
+    }
+    const data = await response.json();
+    if (token !== travelToken) {
+      return;
+    }
+    if (!data || data.code !== "Ok" || !Array.isArray(data.durations) || !Array.isArray(data.durations[0])) {
+      throw new Error("route");
+    }
+    const durations = data.durations[0];
+    const distances = data.distances && Array.isArray(data.distances[0]) ? data.distances[0] : [];
+    const next = new Map();
+    pins.forEach((place, index) => {
+      const seconds = durations[index + 1];
+      const meters = distances[index + 1];
+      if (typeof seconds !== "number" || !Number.isFinite(seconds)) {
+        return;
+      }
+      if (typeof meters !== "number" || !Number.isFinite(meters)) {
+        return;
+      }
+      next.set(travelKey(place), { seconds, meters });
+    });
+    travelTimes = next;
+    travelState = "ready";
+  } catch (error) {
+    if (error && error.name === "AbortError") {
+      return;
+    }
+    if (token !== travelToken) {
+      return;
+    }
+    travelTimes = new Map();
+    travelState = "error";
+  }
+  updateOriginUi();
+  renderResults(orderedList(currentList()), true);
+}
+
 
 async function init() {
   try {

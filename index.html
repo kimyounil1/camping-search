@@ -25,6 +25,7 @@
         <select id="sort-select" aria-label="결과 정렬">
           <option value="interest">관심도 높은 순</option>
           <option value="review">네이버 리뷰 많은 순</option>
+          <option value="time">이동 시간 짧은 순</option>
         </select>
       </div>
       <button type="button" id="open-update-modal" class="btn-review-update">
@@ -151,6 +152,11 @@
           <p id="map-count">지도를 준비하는 중입니다.</p>
         </div>
         <p id="map-note">좌표가 있는 장소만 핀으로 표시합니다. 한 번에 최대 100곳입니다.</p>
+        <p id="travel-note">지도를 누르면 출발지가 됩니다. 이동 시간은 실시간 교통을 반영하지 않은 도로 예상입니다.</p>
+        <div class="origin-row">
+          <p id="origin-label">출발지 없음</p>
+          <button type="button" id="clear-origin" class="secondary" hidden>출발지 지우기</button>
+        </div>
         <div id="camp-map" role="region" aria-label="검색 결과 지도"></div>
         <p id="map-empty" class="empty" hidden>이 조건에서 좌표가 있는 장소가 없습니다.</p>
       </section>
@@ -201,7 +207,7 @@
       </div>
     </div>
   </dialog>
-  <script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=87xq6182ef"></script>
+  <script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=87xq6182ef&submodules=geocoder"></script>
   <script src="app.js"></script>
 </body>
 </html>

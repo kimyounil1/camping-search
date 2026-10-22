@@ -525,6 +525,44 @@ a.fact-value {
   margin-top: 0.25rem;
 }
 
+#travel-note {
+  margin: 0.25rem 0 0;
+}
+
+#travel-note,
+#origin-label {
+  overflow-wrap: anywhere;
+}
+
+.origin-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.75rem;
+  margin-top: 0.55rem;
+  min-width: 0;
+}
+
+#origin-label {
+  margin: 0;
+  min-width: 0;
+  flex: 1 1 12rem;
+}
+
+#clear-origin {
+  flex: 0 0 auto;
+}
+
+.origin-pin {
+  width: 22px;
+  height: 22px;
+  box-sizing: border-box;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--blaze);
+  box-shadow: 0 0 0 2px var(--blaze);
+}
+
 #map-count {
   color: var(--moss);
   font-weight: 700;
@@ -557,7 +595,8 @@ a.fact-value {
   font-weight: 700;
 }
 
-.map-place-region {
+.map-place-region,
+.map-place-time {
   margin-top: 0.15rem;
   color: var(--moss);
 }

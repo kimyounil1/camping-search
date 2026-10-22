@@ -255,7 +255,11 @@ def main():
         region = item.get("region", "")
 
         # 이어하기 검사: 이미 naverReview가 있고 force가 아니면 스킵
-        if not args.force and item.get("naverReview") and item["naverReview"].get("total", 0) > 0:
+        if not args.force and item.get("naverReview") and (
+            item["naverReview"].get("total", 0) > 0
+            or item["naverReview"].get("placeId")
+            or item["naverReview"].get("updatedAt") == today_str
+        ):
             skipped_count += 1
             continue
 

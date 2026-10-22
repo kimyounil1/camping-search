@@ -688,3 +688,228 @@ a.fact-value {
     scroll-behavior: auto !important;
   }
 }
+
+/* 네이버 리뷰 연동 및 컨트롤 바 스타일 */
+.review-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.8rem;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  font-size: 0.88rem;
+}
+
+.review-badge-header {
+  font-weight: 700;
+  color: #03c75a;
+  letter-spacing: -0.02em;
+}
+
+.review-updated-text {
+  font-size: 0.8rem;
+  color: #c9d1d9;
+}
+
+.sort-box {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+}
+
+.sort-box label {
+  color: #e6edf3;
+  font-size: 0.84rem;
+}
+
+.sort-box select {
+  padding: 0.3rem 0.6rem;
+  background: #161b22;
+  color: #f0f6fc;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  font-size: 0.84rem;
+  cursor: pointer;
+}
+
+.btn-review-update {
+  padding: 0.35rem 0.75rem;
+  background: #238636;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-review-update:hover {
+  background: #2ea043;
+}
+
+/* 개별 캠핑장 카드 내 네이버 리뷰 표시 */
+.review-value-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.review-count-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.55rem;
+  background: #e6f7ee;
+  color: #007a34;
+  border: 1px solid #b7ebd0;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.review-link-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.55rem;
+  background: #f0f6fc;
+  color: #0969da;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.review-link-btn:hover {
+  background: #e1e7ec;
+  text-decoration: underline;
+}
+
+/* 최신화 모달 다이얼로그 */
+.modal {
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  max-width: 520px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(2px);
+}
+
+.modal-card {
+  background: #ffffff;
+  color: #1f2328;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: #f6f8fa;
+  border-bottom: 1px solid #d0d7de;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1f2328;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #656d76;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+}
+
+.modal-close:hover {
+  color: #1f2328;
+}
+
+.modal-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.modal-desc {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #424a53;
+  margin: 0;
+}
+
+.modal-section {
+  padding: 0.9rem;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-section h3 {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #0969da;
+}
+
+.modal-section p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #57606a;
+  line-height: 1.45;
+}
+
+.btn-action-link {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.5rem 0.9rem;
+  background: #0969da;
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.btn-action-link:hover {
+  background: #0550ae;
+}
+
+.help-text {
+  font-size: 0.78rem;
+  color: #656d76;
+}
+
+.code-box {
+  margin: 0;
+  padding: 0.6rem 0.8rem;
+  background: #1f2328;
+  color: #f0f6fc;
+  border-radius: 6px;
+  font-size: 0.84rem;
+  overflow-x: auto;
+}

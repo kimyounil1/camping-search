@@ -50,6 +50,11 @@ const nextBtn = document.querySelector("#next");
 const pageInput = document.querySelector("#page");
 const pageTotal = document.querySelector("#page-total");
 const rangeEl = document.querySelector("#range");
+const sortSelect = document.querySelector("#sort-select");
+const openUpdateModalBtn = document.querySelector("#open-update-modal");
+const closeUpdateModalBtn = document.querySelector("#close-update-modal");
+const updateModal = document.querySelector("#update-modal");
+const reviewUpdatedText = document.querySelector("#review-updated-text");
 const numberFormat = new Intl.NumberFormat("ko-KR");
 const CAMP_PAGE = "https://www.gocamping.or.kr/bsite/camp/info/read.do?c_no=";
 const TEXT_KEYS = ["intro", "lineIntro", "featureNm", "glampInnerFclty", "caravInnerFclty", "sbrsCl"];
@@ -119,12 +124,17 @@ function groupRows(rows) {
         interestText: Number(row.interest).toFixed(4),
         interest: Number(row.interest),
         sameNameRows: row.same_name_rows,
+        naverReview: row.naverReview || null,
         regions: [],
         regionFacilities: [],
         coords: [],
         seen: new Set(),
       };
       map.set(row.name, item);
+    } else if (!item.naverReview && row.naverReview) {
+      item.naverReview = row.naverReview;
+    } else if (item.naverReview && row.naverReview && (row.naverReview.total || 0) > (item.naverReview.total || 0)) {
+      item.naverReview = row.naverReview;
     }
     if (!item.seen.has(row.region)) {
       item.seen.add(row.region);
@@ -152,6 +162,7 @@ function groupRows(rows) {
         notes.push(facility.locationNote);
       }
     }
+    item.reviewTotal = item.naverReview ? (item.naverReview.total || 0) : 0;
     item.haystack = normalize(`${item.name} ${item.regions.join(" ")} ${notes.join(" ")}`);
     list.push(item);
   }
@@ -400,7 +411,7 @@ function currentList() {
   const types = checkedValues(indutyChoices);
   const estimates = checkedValues(estimateChoices);
   const chipGroups = activeChipGroups();
-  return groups.filter((item) => {
+  const filtered = groups.filter((item) => {
     if (sidos.length > 0) {
       const hit = item.places.some((place) => sidos.includes(place.sido));
       if (!hit) {
@@ -424,6 +435,14 @@ function currentList() {
     }
     return true;
   });
+
+  const sortMode = sortSelect ? sortSelect.value : "interest";
+  if (sortMode === "review") {
+    filtered.sort((a, b) => b.reviewTotal - a.reviewTotal || a.rank - b.rank || a.name.localeCompare(b.name, "ko"));
+  } else {
+    filtered.sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name, "ko"));
+  }
+  return filtered;
 }
 
 function announce(text, immediate) {
@@ -497,6 +516,29 @@ function nameValue(name, contentId) {
   return link;
 }
 
+function reviewValue(naverReview) {
+  const wrap = document.createElement("span");
+  wrap.className = "fact-value review-value-wrap";
+
+  const countBadge = document.createElement("span");
+  countBadge.className = "review-count-badge";
+  const total = Number(naverReview.total || 0).toLocaleString("ko-KR");
+  const visitor = naverReview.visitor ? Number(naverReview.visitor).toLocaleString("ko-KR") : null;
+  countBadge.textContent = visitor ? `네이버 리뷰 ${total}개 (방문자 ${visitor})` : `네이버 리뷰 ${total}개`;
+  wrap.append(countBadge);
+
+  if (naverReview.url) {
+    const link = document.createElement("a");
+    link.className = "review-link-btn";
+    link.href = naverReview.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "네이버 지도 ↗";
+    wrap.append(link);
+  }
+  return wrap;
+}
+
 function placeBlock(item, index, chipGroups, matchIndex) {
   const facility = item.regionFacilities[index];
   const contentId = facility && facility.contentId ? String(facility.contentId).trim() : "";
@@ -506,6 +548,9 @@ function placeBlock(item, index, chipGroups, matchIndex) {
     fact("등록 이름", nameValue(item.name, contentId)),
     fact("위치", textValue(item.regions[index])),
   );
+  if (item.naverReview && (item.naverReview.total > 0 || item.naverReview.url)) {
+    block.append(fact("네이버 리뷰", reviewValue(item.naverReview)));
+  }
   const interior = interiorText(facility);
   if (interior) {
     block.append(fact("내부시설", textValue(interior)));
@@ -854,6 +899,34 @@ pageInput.addEventListener("change", () => {
   scrollToTable();
 });
 
+if (sortSelect) {
+  sortSelect.addEventListener("change", () => {
+    page = 1;
+    render({ immediate: true });
+    scrollToTable();
+  });
+}
+
+if (openUpdateModalBtn && updateModal) {
+  openUpdateModalBtn.addEventListener("click", () => {
+    updateModal.showModal();
+  });
+}
+
+if (closeUpdateModalBtn && updateModal) {
+  closeUpdateModalBtn.addEventListener("click", () => {
+    updateModal.close();
+  });
+}
+
+if (updateModal) {
+  updateModal.addEventListener("click", (event) => {
+    if (event.target === updateModal) {
+      updateModal.close();
+    }
+  });
+}
+
 async function init() {
   try {
     const response = await fetch(resourceUrl("camping-search-rank-all.json"));
@@ -865,6 +938,19 @@ async function init() {
       throw new Error("shape");
     }
     groups = groupRows(rows);
+
+    let latestDate = "";
+    for (const row of rows) {
+      if (row.naverReview && row.naverReview.updatedAt) {
+        if (!latestDate || row.naverReview.updatedAt > latestDate) {
+          latestDate = row.naverReview.updatedAt;
+        }
+      }
+    }
+    if (latestDate && reviewUpdatedText) {
+      reviewUpdatedText.textContent = `기준: ${latestDate}`;
+    }
+
     fillSido();
     render({ immediate: true });
   } catch {

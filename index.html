@@ -100,23 +100,38 @@
       <ol id="top-list"></ol>
     </section>
 
-    <section id="results" aria-labelledby="results-heading">
-      <h2 id="results-heading" class="sr-only">검색 결과</h2>
-      <p id="result-empty" class="empty" hidden>조건에 맞는 등록 이름이 없습니다. 시도나 검색어를 바꿔 보세요.</p>
-      <ul id="result-list" class="results"></ul>
-    </section>
+    <div class="browse" id="browse">
+      <section id="map-panel" class="map-panel" aria-labelledby="map-heading">
+        <div class="map-head">
+          <h2 id="map-heading">지도</h2>
+          <p id="map-count">지도를 준비하는 중입니다.</p>
+        </div>
+        <p id="map-note">좌표가 있는 장소만 핀으로 표시합니다. 한 번에 최대 100곳입니다.</p>
+        <div id="camp-map" role="region" aria-label="검색 결과 지도"></div>
+        <p id="map-empty" class="empty" hidden>이 조건에서 좌표가 있는 장소가 없습니다.</p>
+      </section>
 
-    <nav class="pager" id="pager" aria-label="쪽 이동" hidden>
-      <button type="button" id="prev">이전</button>
-      <p class="page-field">
-        <label for="page">쪽</label>
-        <input id="page" type="number" inputmode="numeric" min="1" value="1">
-        <span id="page-total">/ 1</span>
-      </p>
-      <p id="range"></p>
-      <button type="button" id="next">다음</button>
-    </nav>
+      <div class="browse-list">
+        <section id="results" aria-labelledby="results-heading">
+          <h2 id="results-heading" class="sr-only">검색 결과</h2>
+          <p id="result-empty" class="empty" hidden>조건에 맞는 등록 이름이 없습니다. 시도나 검색어를 바꿔 보세요.</p>
+          <ul id="result-list" class="results"></ul>
+        </section>
+
+        <nav class="pager" id="pager" aria-label="쪽 이동" hidden>
+          <button type="button" id="prev">이전</button>
+          <p class="page-field">
+            <label for="page">쪽</label>
+            <input id="page" type="number" inputmode="numeric" min="1" value="1">
+            <span id="page-total">/ 1</span>
+          </p>
+          <p id="range"></p>
+          <button type="button" id="next">다음</button>
+        </nav>
+      </div>
+    </div>
   </main>
+  <script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=87xq6182ef"></script>
   <script src="app.js"></script>
 </body>
 </html>

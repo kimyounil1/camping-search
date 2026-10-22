@@ -42,6 +42,9 @@ const topList = document.querySelector("#top-list");
 const resultList = document.querySelector("#result-list");
 const resultEmpty = document.querySelector("#result-empty");
 const resultsSection = document.querySelector("#results");
+const browse = document.querySelector("#browse");
+const mapCount = document.querySelector("#map-count");
+const mapEmpty = document.querySelector("#map-empty");
 const pager = document.querySelector("#pager");
 const prevBtn = document.querySelector("#prev");
 const nextBtn = document.querySelector("#next");
@@ -93,6 +96,7 @@ function groupRows(rows) {
         sameNameRows: row.same_name_rows,
         regions: [],
         regionFacilities: [],
+        coords: [],
         seen: new Set(),
       };
       map.set(row.name, item);
@@ -101,6 +105,7 @@ function groupRows(rows) {
       item.seen.add(row.region);
       item.regions.push(row.region);
       item.regionFacilities.push(row.facility || null);
+      item.coords.push(placeCoord(row));
     }
   }
 
@@ -127,6 +132,15 @@ function groupRows(rows) {
   }
   list.sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name, "ko"));
   return list;
+}
+
+function placeCoord(row) {
+  const lat = Number(row.lat);
+  const lng = Number(row.lng);
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+    return null;
+  }
+  return { lat, lng };
 }
 
 function collapseFacilities(item) {
@@ -476,16 +490,173 @@ function renderResults(list, immediate) {
   announce(summaryText(list, start + 1, end), immediate);
 }
 
+const PIN_LIMIT = 100;
+let campMap = null;
+let campMarkers = [];
+let campInfo = null;
+let mapBroken = false;
+let pinKey = "\0";
+
+function mapsReady() {
+  return Boolean(window.naver && window.naver.maps && typeof window.naver.maps.Map === "function");
+}
+
+function ensureMap() {
+  if (campMap) {
+    return campMap;
+  }
+  if (mapBroken || !mapsReady()) {
+    return null;
+  }
+  const host = document.querySelector("#camp-map");
+  if (!host) {
+    return null;
+  }
+  try {
+    campMap = new window.naver.maps.Map(host, {
+      center: new window.naver.maps.LatLng(36.4, 127.8),
+      zoom: 7,
+      zoomControl: true,
+      zoomControlOptions: { position: window.naver.maps.Position.TOP_RIGHT },
+    });
+    campInfo = new window.naver.maps.InfoWindow({
+      content: "",
+      maxWidth: 280,
+      backgroundColor: "#ffffff",
+      borderColor: "#b7c9bf",
+      borderWidth: 1,
+    });
+    window.naver.maps.Event.addListener(campMap, "click", () => {
+      campInfo.close();
+    });
+  } catch (error) {
+    mapBroken = true;
+    return null;
+  }
+  return campMap;
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (char) => {
+    if (char === "&") {
+      return "&amp;";
+    }
+    if (char === "<") {
+      return "&lt;";
+    }
+    if (char === ">") {
+      return "&gt;";
+    }
+    if (char === "\"") {
+      return "&quot;";
+    }
+    return "&#39;";
+  });
+}
+
+function infoHtml(place) {
+  const name = `<p class="map-place-name">${escapeHtml(place.name)}</p>`;
+  const region = `<p class="map-place-region">${escapeHtml(place.region)}</p>`;
+  if (!place.contentId) {
+    return `<div class="map-card">${name}${region}</div>`;
+  }
+  const href = `${CAMP_PAGE}${place.contentId}`;
+  const link = `<a class="map-link" href="${href}" target="_blank" rel="noopener noreferrer">고캠핑에서 보기<span class="sr-only">, ${escapeHtml(place.name)}</span></a>`;
+  return `<div class="map-card">${name}${region}${link}</div>`;
+}
+
+function pinPlaces(list) {
+  const places = [];
+  for (const item of list) {
+    for (let index = 0; index < item.regions.length; index += 1) {
+      const point = item.coords[index];
+      if (!point) {
+        continue;
+      }
+      const facility = item.regionFacilities[index];
+      const rawId = facility && facility.contentId ? String(facility.contentId).trim() : "";
+      places.push({
+        rank: item.rank,
+        name: item.name,
+        region: item.regions[index],
+        lat: point.lat,
+        lng: point.lng,
+        contentId: /^\d+$/.test(rawId) ? rawId : "",
+      });
+    }
+  }
+  return places;
+}
+
+function renderMap(list) {
+  const places = pinPlaces(list);
+  const shown = places.slice(0, PIN_LIMIT);
+  if (shown.length === 0) {
+    mapCount.textContent = "표시할 핀이 없습니다.";
+  } else if (places.length > shown.length) {
+    mapCount.textContent = `핀 ${numberFormat.format(shown.length)}곳. 순위가 앞선 장소만 지도에 있습니다.`;
+  } else {
+    mapCount.textContent = `핀 ${numberFormat.format(shown.length)}곳`;
+  }
+  const current = ensureMap();
+  if (!current) {
+    mapCount.textContent = "지도를 불러오지 못했습니다.";
+    return;
+  }
+  const key = shown.map((place) => `${place.name}\t${place.region}\t${place.lat}\t${place.lng}`).join("\n");
+  if (key === pinKey) {
+    return;
+  }
+  pinKey = key;
+  for (const marker of campMarkers) {
+    marker.setMap(null);
+  }
+  campMarkers = [];
+  if (campInfo) {
+    campInfo.close();
+  }
+  if (shown.length === 0) {
+    mapEmpty.hidden = false;
+    current.setCenter(new window.naver.maps.LatLng(36.4, 127.8));
+    current.setZoom(7);
+    return;
+  }
+  mapEmpty.hidden = true;
+  const bounds = new window.naver.maps.LatLngBounds();
+  for (const place of shown) {
+    const position = new window.naver.maps.LatLng(place.lat, place.lng);
+    bounds.extend(position);
+    const marker = new window.naver.maps.Marker({
+      position,
+      map: current,
+      title: `${place.name}, ${place.region}`,
+      zIndex: Math.max(1, 10000 - place.rank),
+    });
+    window.naver.maps.Event.addListener(marker, "click", () => {
+      campInfo.setContent(infoHtml(place));
+      campInfo.open(current, marker);
+    });
+    campMarkers.push(marker);
+  }
+  if (shown.length === 1) {
+    current.setCenter(bounds.getCenter());
+    current.setZoom(13);
+  } else {
+    current.fitBounds(bounds, 48);
+  }
+}
+
 function render(options) {
   const immediate = Boolean(options && options.immediate);
   const list = currentList();
   renderTop(list);
   renderResults(list, immediate);
+  renderMap(list);
 }
 
 function scrollToTable() {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  resultsSection.scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" });
+  (browse || resultsSection).scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" });
 }
 
 form.addEventListener("submit", (event) => {

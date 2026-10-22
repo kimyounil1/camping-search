@@ -486,6 +486,88 @@ a.fact-value {
   border: 1px solid var(--line);
 }
 
+.browse {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.browse-list {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.map-panel {
+  min-width: 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 0.9rem 1rem 1rem;
+}
+
+.map-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+#map-note,
+#map-count {
+  margin: 0;
+}
+
+#map-note {
+  margin-top: 0.25rem;
+}
+
+#map-count {
+  color: var(--moss);
+  font-weight: 700;
+}
+
+#camp-map {
+  height: min(32vh, 260px);
+  min-height: 200px;
+  margin-top: 0.7rem;
+  background: #d5e3db;
+  overflow: hidden;
+}
+
+#map-empty {
+  margin-top: 0.7rem;
+}
+
+.map-card {
+  max-width: 15rem;
+  padding: 0.1rem 0.15rem 0.15rem;
+}
+
+.map-place-name,
+.map-place-region {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.map-place-name {
+  font-weight: 700;
+}
+
+.map-place-region {
+  margin-top: 0.15rem;
+  color: var(--moss);
+}
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 0.15rem;
+  color: var(--water);
+  font-weight: 700;
+}
+
 .pager {
   display: flex;
   flex-wrap: wrap;
@@ -508,6 +590,29 @@ a.fact-value {
   padding: 0.35rem 0.45rem;
   border: 2px solid var(--canopy);
   background: var(--panel);
+}
+
+@media (min-width: 960px) {
+  .browse {
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+    align-items: start;
+  }
+
+  .map-panel {
+    position: sticky;
+    top: 0.75rem;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .browse-list {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #camp-map {
+    height: min(72vh, 680px);
+  }
 }
 
 @media (max-width: 800px) {

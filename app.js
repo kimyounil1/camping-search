@@ -53,10 +53,19 @@ const pageInput = document.querySelector("#page");
 const pageTotal = document.querySelector("#page-total");
 const rangeEl = document.querySelector("#range");
 const sortSelect = document.querySelector("#sort-select");
-const openUpdateModalBtn = document.querySelector("#open-update-modal");
-const closeUpdateModalBtn = document.querySelector("#close-update-modal");
-const updateModal = document.querySelector("#update-modal");
-const reviewUpdatedText = document.querySelector("#review-updated-text");
+const openFiltersBtn = document.querySelector("#open-filters");
+const filterCountEl = document.querySelector("#filter-count");
+const filterSheet = document.querySelector("#filter-sheet");
+const applyFiltersBtn = document.querySelector("#apply-filters");
+const closeFiltersBtn = document.querySelector("#close-filters");
+const activeFilters = document.querySelector("#active-filters");
+const viewListBtn = document.querySelector("#view-list");
+const viewMapBtn = document.querySelector("#view-map");
+const markerDock = document.querySelector("#marker-dock");
+const sheetPanel = document.querySelector("#sheet-panel");
+const sheetBackdrop = document.querySelector("#sheet-backdrop");
+const notesEl = document.querySelector("#notes");
+const phoneQuery = window.matchMedia("(max-width: 959px)");
 const numberFormat = new Intl.NumberFormat("ko-KR");
 const CAMP_PAGE = "https://www.gocamping.or.kr/bsite/camp/info/read.do?c_no=";
 const TEXT_KEYS = ["intro", "lineIntro", "featureNm", "glampInnerFclty", "caravInnerFclty", "sbrsCl"];
@@ -126,17 +135,12 @@ function groupRows(rows) {
         interestText: Number(row.interest).toFixed(4),
         interest: Number(row.interest),
         sameNameRows: row.same_name_rows,
-        naverReview: row.naverReview || null,
         regions: [],
         regionFacilities: [],
         coords: [],
         seen: new Set(),
       };
       map.set(row.name, item);
-    } else if (!item.naverReview && row.naverReview) {
-      item.naverReview = row.naverReview;
-    } else if (item.naverReview && row.naverReview && (row.naverReview.total || 0) > (item.naverReview.total || 0)) {
-      item.naverReview = row.naverReview;
     }
     if (!item.seen.has(row.region)) {
       item.seen.add(row.region);
@@ -164,7 +168,6 @@ function groupRows(rows) {
         notes.push(facility.locationNote);
       }
     }
-    item.reviewTotal = item.naverReview ? (item.naverReview.total || 0) : 0;
     item.haystack = normalize(`${item.name} ${item.regions.join(" ")} ${notes.join(" ")}`);
     list.push(item);
   }
@@ -438,11 +441,7 @@ function currentList() {
     return true;
   });
 
-  if (sortMode === "review") {
-    filtered.sort((a, b) => b.reviewTotal - a.reviewTotal || a.rank - b.rank || a.name.localeCompare(b.name, "ko"));
-  } else {
-    filtered.sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name, "ko"));
-  }
+  filtered.sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name, "ko"));
   return filtered;
 }
 
@@ -517,29 +516,6 @@ function nameValue(name, contentId) {
   return link;
 }
 
-function reviewValue(naverReview) {
-  const wrap = document.createElement("span");
-  wrap.className = "fact-value review-value-wrap";
-
-  const countBadge = document.createElement("span");
-  countBadge.className = "review-count-badge";
-  const total = Number(naverReview.total || 0).toLocaleString("ko-KR");
-  const visitor = naverReview.visitor ? Number(naverReview.visitor).toLocaleString("ko-KR") : null;
-  countBadge.textContent = visitor ? `네이버 리뷰 ${total}개 (방문자 ${visitor})` : `네이버 리뷰 ${total}개`;
-  wrap.append(countBadge);
-
-  if (naverReview.url) {
-    const link = document.createElement("a");
-    link.className = "review-link-btn";
-    link.href = naverReview.url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = "네이버 지도 ↗";
-    wrap.append(link);
-  }
-  return wrap;
-}
-
 function placeBlock(item, index, chipGroups, matchIndex) {
   const facility = item.regionFacilities[index];
   const contentId = facility && facility.contentId ? String(facility.contentId).trim() : "";
@@ -549,9 +525,6 @@ function placeBlock(item, index, chipGroups, matchIndex) {
     fact("등록 이름", nameValue(item.name, contentId)),
     fact("위치", textValue(item.regions[index])),
   );
-  if (item.naverReview && (item.naverReview.total > 0 || item.naverReview.url)) {
-    block.append(fact("네이버 리뷰", reviewValue(item.naverReview)));
-  }
   const interior = interiorText(facility);
   if (interior) {
     block.append(fact("내부시설", textValue(interior)));
@@ -702,6 +675,9 @@ let travelTimer = 0;
 let travelAbort = null;
 let blockOriginClick = false;
 let geocoderReady = null;
+let dockPlace = null;
+let sheetReturnFocus = null;
+let mapResizeObserver = null;
 
 function mapsReady() {
   return Boolean(window.naver && window.naver.maps && typeof window.naver.maps.Map === "function");
@@ -738,12 +714,14 @@ function ensureMap() {
         blockOriginClick = false;
         return;
       }
+      hideMarkerDock();
       const coord = event && event.coord;
       if (!coord || typeof coord.lat !== "function" || typeof coord.lng !== "function") {
         return;
       }
       setOrigin(coord.lat(), coord.lng());
     });
+    watchMapSize(host);
     loadGeocoder();
   } catch (error) {
     mapBroken = true;
@@ -768,6 +746,98 @@ function escapeHtml(value) {
     }
     return "&#39;";
   });
+}
+
+function watchMapSize(host) {
+  if (mapResizeObserver || typeof ResizeObserver !== "function") {
+    return;
+  }
+  mapResizeObserver = new ResizeObserver(() => {
+    if (!campMap || mapBroken || typeof campMap.autoResize !== "function") {
+      return;
+    }
+    try {
+      campMap.autoResize();
+    } catch {
+      mapBroken = true;
+    }
+  });
+  mapResizeObserver.observe(host);
+}
+
+function mapWidth() {
+  if (!campMap || typeof campMap.getSize !== "function") {
+    return 0;
+  }
+  const size = campMap.getSize();
+  return size && typeof size.width === "number" ? size.width : 0;
+}
+
+function relayoutMap(refit) {
+  if (phoneQuery.matches && browse.dataset.view !== "map") {
+    return;
+  }
+  const current = ensureMap();
+  if (!current) {
+    return;
+  }
+  const before = mapWidth();
+  window.requestAnimationFrame(() => {
+    if (mapBroken) {
+      return;
+    }
+    try {
+      if (typeof current.autoResize === "function") {
+        current.autoResize();
+      }
+    } catch {
+      mapBroken = true;
+      return;
+    }
+    if (refit || before < 20) {
+      pinKey = "\0";
+      renderMap(currentList());
+    }
+  });
+}
+
+function hideMarkerDock() {
+  dockPlace = null;
+  if (!markerDock) {
+    return;
+  }
+  markerDock.hidden = true;
+  markerDock.replaceChildren();
+}
+
+function showMarkerDock(place) {
+  dockPlace = place;
+  if (!markerDock || !phoneQuery.matches) {
+    return;
+  }
+  markerDock.innerHTML = infoHtml(place);
+  const close = document.createElement("button");
+  close.type = "button";
+  close.className = "secondary dock-close";
+  close.textContent = "카드 닫기";
+  close.addEventListener("click", () => {
+    hideMarkerDock();
+  });
+  markerDock.append(close);
+  markerDock.hidden = false;
+}
+
+function refreshOpenCampCard() {
+  if (!dockPlace) {
+    return;
+  }
+  if (phoneQuery.matches) {
+    showMarkerDock(dockPlace);
+    return;
+  }
+  if (campInfo && typeof campInfo.getMap === "function" && campInfo.getMap()) {
+    campInfo.setContent(infoHtml(dockPlace));
+  }
 }
 
 function infoHtml(place) {
@@ -816,6 +886,9 @@ function renderMap(list) {
   } else {
     mapCount.textContent = `핀 ${numberFormat.format(shown.length)}곳`;
   }
+  if (phoneQuery.matches && browse.dataset.view !== "map") {
+    return;
+  }
   const current = ensureMap();
   if (!current) {
     mapCount.textContent = "지도를 불러오지 못했습니다.";
@@ -852,6 +925,15 @@ function renderMap(list) {
     });
     window.naver.maps.Event.addListener(marker, "click", () => {
       holdOriginClick();
+      dockPlace = place;
+      if (phoneQuery.matches) {
+        if (campInfo) {
+          campInfo.close();
+        }
+        showMarkerDock(place);
+        return;
+      }
+      hideMarkerDock();
       campInfo.setContent(infoHtml(place));
       campInfo.open(current, marker);
     });
@@ -871,6 +953,7 @@ function renderMap(list) {
 function render(options) {
   const immediate = Boolean(options && options.immediate);
   const list = currentList();
+  renderActiveFilters();
   renderTop(list);
   renderResults(orderedList(list), immediate);
   renderMap(list);
@@ -904,11 +987,9 @@ queryEl.addEventListener("input", () => {
 
 if (sortSelect) {
   sortSelect.addEventListener("change", () => {
-    const value = sortSelect.value;
-    sortMode = value === "review" || value === "time" ? value : "interest";
+    sortMode = sortSelect.value === "time" ? "time" : "interest";
     page = 1;
     render({ immediate: true });
-    scrollToTable();
   });
 }
 
@@ -949,24 +1030,133 @@ pageInput.addEventListener("change", () => {
   scrollToTable();
 });
 
-if (openUpdateModalBtn && updateModal) {
-  openUpdateModalBtn.addEventListener("click", () => {
-    updateModal.showModal();
-  });
+function choiceLabel(input) {
+  const choice = input.closest("label");
+  const text = choice && choice.querySelector("span");
+  return text ? text.textContent : input.value;
 }
 
-if (closeUpdateModalBtn && updateModal) {
-  closeUpdateModalBtn.addEventListener("click", () => {
-    updateModal.close();
-  });
+function renderActiveFilters() {
+  const checked = [...form.querySelectorAll('input[type="checkbox"]:checked')];
+  filterCountEl.textContent = String(checked.length);
+  openFiltersBtn.setAttribute("aria-label", checked.length > 0 ? `필터, ${checked.length}개 선택` : "필터");
+  activeFilters.replaceChildren();
+  if (checked.length === 0) {
+    activeFilters.hidden = true;
+    return;
+  }
+  activeFilters.hidden = false;
+  for (const input of checked) {
+    const label = choiceLabel(input);
+    const item = document.createElement("li");
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "filter-chip";
+    button.textContent = `${label} ×`;
+    button.setAttribute("aria-label", `${label} 해제`);
+    button.addEventListener("click", () => {
+      input.checked = false;
+      page = 1;
+      render({ immediate: true });
+    });
+    item.append(button);
+    activeFilters.append(item);
+  }
 }
 
-if (updateModal) {
-  updateModal.addEventListener("click", (event) => {
-    if (event.target === updateModal) {
-      updateModal.close();
-    }
-  });
+function openFilterSheet() {
+  if (!phoneQuery.matches) {
+    return;
+  }
+  sheetReturnFocus = document.activeElement;
+  filterSheet.classList.add("is-open");
+  document.body.classList.add("sheet-open");
+  openFiltersBtn.setAttribute("aria-expanded", "true");
+  sheetPanel.setAttribute("role", "dialog");
+  sheetPanel.setAttribute("aria-modal", "true");
+  closeFiltersBtn.focus();
+}
+
+function closeFilterSheet() {
+  const wasOpen = filterSheet.classList.contains("is-open");
+  filterSheet.classList.remove("is-open");
+  document.body.classList.remove("sheet-open");
+  openFiltersBtn.setAttribute("aria-expanded", "false");
+  sheetPanel.removeAttribute("role");
+  sheetPanel.removeAttribute("aria-modal");
+  if (wasOpen && sheetReturnFocus && typeof sheetReturnFocus.focus === "function") {
+    sheetReturnFocus.focus();
+  }
+  sheetReturnFocus = null;
+}
+
+function syncShell() {
+  document.body.classList.toggle("view-map", phoneQuery.matches && browse.dataset.view === "map");
+}
+
+function setView(view) {
+  if (view !== "list" && view !== "map") {
+    return;
+  }
+  browse.dataset.view = view;
+  viewListBtn.setAttribute("aria-pressed", view === "list" ? "true" : "false");
+  viewMapBtn.setAttribute("aria-pressed", view === "map" ? "true" : "false");
+  syncShell();
+  if (view === "list") {
+    hideMarkerDock();
+  }
+  relayoutMap(view === "map");
+}
+
+openFiltersBtn.addEventListener("click", () => {
+  if (filterSheet.classList.contains("is-open")) {
+    closeFilterSheet();
+    return;
+  }
+  openFilterSheet();
+});
+
+closeFiltersBtn.addEventListener("click", () => {
+  closeFilterSheet();
+});
+
+applyFiltersBtn.addEventListener("click", () => {
+  closeFilterSheet();
+});
+
+sheetBackdrop.addEventListener("click", () => {
+  closeFilterSheet();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && filterSheet.classList.contains("is-open")) {
+    closeFilterSheet();
+  }
+});
+
+viewListBtn.addEventListener("click", () => {
+  setView("list");
+});
+
+viewMapBtn.addEventListener("click", () => {
+  setView("map");
+});
+
+phoneQuery.addEventListener("change", () => {
+  if (phoneQuery.matches) {
+    notesEl.open = false;
+    closeFilterSheet();
+    hideMarkerDock();
+  } else {
+    notesEl.open = true;
+    closeFilterSheet();
+  }
+  syncShell();
+  relayoutMap(!phoneQuery.matches || browse.dataset.view === "map");
+});
+
+if (!phoneQuery.matches) {
+  notesEl.open = true;
 }
 
 function travelKey(place) {
@@ -1262,6 +1452,7 @@ async function requestTravel() {
     travelState = "ready";
     updateOriginUi();
     renderResults(orderedList(currentList()), true);
+    refreshOpenCampCard();
     return;
   }
   const controller = new AbortController();
@@ -1315,6 +1506,7 @@ async function requestTravel() {
   }
   updateOriginUi();
   renderResults(orderedList(currentList()), true);
+  refreshOpenCampCard();
 }
 
 
@@ -1329,19 +1521,6 @@ async function init() {
       throw new Error("shape");
     }
     groups = groupRows(rows);
-
-    let latestDate = "";
-    for (const row of rows) {
-      if (row.naverReview && row.naverReview.updatedAt) {
-        if (!latestDate || row.naverReview.updatedAt > latestDate) {
-          latestDate = row.naverReview.updatedAt;
-        }
-      }
-    }
-    if (latestDate && reviewUpdatedText) {
-      reviewUpdatedText.textContent = `기준: ${latestDate}`;
-    }
-
     fillSido();
     render({ immediate: true });
   } catch {

@@ -12,152 +12,138 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip" href="#filters">검색 조건으로 이동</a>
+  <a class="skip" href="#q">이름 검색으로 이동</a>
   <header class="mast">
     <p class="eyebrow"><span class="blaze" aria-hidden="true"></span>등록부 이름 기준</p>
     <h1>등록 야영장 검색</h1>
     <p class="deck">등록된 야영장 이름을 고르고, 그 이름의 상대 관심도를 확인합니다.</p>
-    <div class="review-bar">
-      <span class="review-badge-header">⭐ 네이버 리뷰 연동</span>
-      <span id="review-updated-text" class="review-updated-text"></span>
-      <div class="sort-box">
-        <label for="sort-select">정렬:</label>
-        <select id="sort-select" aria-label="결과 정렬">
-          <option value="interest">관심도 높은 순</option>
-          <option value="review">네이버 리뷰 많은 순</option>
-          <option value="time">이동 시간 짧은 순</option>
-        </select>
-      </div>
-      <button type="button" id="open-update-modal" class="btn-review-update">
-        🔄 리뷰 최신화
-      </button>
-    </div>
   </header>
   <main>
     <noscript>
       <p class="caution">목록을 거르려면 자바스크립트가 필요합니다.</p>
     </noscript>
 
-    <form id="filters" aria-describedby="count filter-hint">
-      <p id="filter-hint" class="help">각 묶음은 고르지 않으면 전체입니다. 한 묶음 안에서는 고른 값 중 하나만 맞아도 되고, 묶음끼리는 모두 맞아야 합니다.</p>
-      <fieldset class="choice-group" id="sido-group">
-        <legend>시도</legend>
-        <div class="choices" id="sido-choices"></div>
-      </fieldset>
+    <div class="finder">
       <div class="field field-search">
-        <label for="q">이름 또는 지역</label>
-        <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" enterkeyhint="search">
+        <label class="sr-only" for="q">이름 또는 지역</label>
+        <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" enterkeyhint="search" placeholder="이름 또는 지역">
       </div>
-      <fieldset class="choice-group" id="induty-group">
-        <legend>업종</legend>
-        <div class="choices" id="induty-choices">
-          <label class="choice"><input type="checkbox" name="induty" value="일반야영장"><span>일반야영장</span></label>
-          <label class="choice"><input type="checkbox" name="induty" value="자동차야영장"><span>자동차야영장</span></label>
-          <label class="choice"><input type="checkbox" name="induty" value="글램핑"><span>글램핑</span></label>
-          <label class="choice"><input type="checkbox" name="induty" value="카라반"><span>카라반</span></label>
-          <label class="choice"><input type="checkbox" name="induty" value="캠프닉"><span>캠프닉</span></label>
+      <ul id="active-filters" class="active-filters" hidden></ul>
+      <div class="finder-tools">
+        <button type="button" id="open-filters" class="secondary" aria-expanded="false" aria-controls="filter-sheet">
+          필터 <span id="filter-count">0</span>
+        </button>
+        <label class="sort-field">
+          <span>정렬</span>
+          <select id="sort-select">
+            <option value="interest">관심도</option>
+            <option value="time">이동 시간</option>
+          </select>
+        </label>
+        <div class="view-switch" role="group" aria-label="보기">
+          <button type="button" id="view-list" aria-pressed="true">목록</button>
+          <button type="button" id="view-map" aria-pressed="false">지도</button>
         </div>
-      </fieldset>
-      <fieldset class="choice-group" id="estimate-group">
-        <legend>개별 화장실 추정</legend>
-        <div class="choices" id="estimate-choices">
-          <label class="choice"><input type="checkbox" name="estimate" value="yes"><span>추정</span></label>
-          <label class="choice"><input type="checkbox" name="estimate" value="no"><span>추정 아님</span></label>
-        </div>
-      </fieldset>
-      <p id="chip-note" class="help">테마, 분위기, 시설은 소개와 시설 문구를 따릅니다.</p>
-      <fieldset class="choice-group" id="theme-group">
-        <legend>테마</legend>
-        <div class="choices" id="theme-choices">
-          <label class="choice"><input type="checkbox" name="theme" value="감성"><span>감성</span></label>
-          <label class="choice"><input type="checkbox" name="theme" value="프라이빗"><span>프라이빗</span></label>
-          <label class="choice"><input type="checkbox" name="theme" value="넓은간격"><span>넓은간격</span></label>
-          <label class="choice"><input type="checkbox" name="theme" value="오션뷰"><span>오션뷰</span></label>
-          <label class="choice"><input type="checkbox" name="theme" value="숲속"><span>숲속</span></label>
-          <label class="choice"><input type="checkbox" name="theme" value="해돋이"><span>해돋이</span></label>
-          <label class="choice"><input type="checkbox" name="theme" value="차박"><span>차박</span></label>
-          <label class="choice"><input type="checkbox" name="theme" value="장박"><span>장박</span></label>
-          <label class="choice"><input type="checkbox" name="theme" value="그늘"><span>그늘</span></label>
-          <label class="choice"><input type="checkbox" name="theme" value="매너타임"><span>매너타임</span></label>
-        </div>
-      </fieldset>
-      <fieldset class="choice-group" id="mood-group">
-        <legend>분위기</legend>
-        <div class="choices" id="mood-choices">
-          <label class="choice"><input type="checkbox" name="mood" value="깨끗한"><span>깨끗한</span></label>
-          <label class="choice"><input type="checkbox" name="mood" value="힐링"><span>힐링</span></label>
-          <label class="choice"><input type="checkbox" name="mood" value="조용한"><span>조용한</span></label>
-          <label class="choice"><input type="checkbox" name="mood" value="럭셔리"><span>럭셔리</span></label>
-          <label class="choice"><input type="checkbox" name="mood" value="모던"><span>모던</span></label>
-          <label class="choice"><input type="checkbox" name="mood" value="이색"><span>이색</span></label>
-        </div>
-      </fieldset>
-      <fieldset class="choice-group" id="amenity-group">
-        <legend>시설</legend>
-        <div class="choices" id="amenity-choices">
-          <label class="choice"><input type="checkbox" name="amenity" value="수영장"><span>수영장</span></label>
-          <label class="choice"><input type="checkbox" name="amenity" value="스파"><span>스파</span></label>
-          <label class="choice"><input type="checkbox" name="amenity" value="바비큐"><span>바비큐</span></label>
-          <label class="choice"><input type="checkbox" name="amenity" value="애견동반"><span>애견동반</span></label>
-        </div>
-      </fieldset>
-      <div class="actions">
-        <button type="button" id="clear" class="secondary">조건 지우기</button>
       </div>
-    </form>
+    </div>
 
-    <section class="about" aria-labelledby="about-heading">
-      <h2 id="about-heading" class="sr-only">관심도와 등록부</h2>
-      <dl class="facts">
-        <div>
-          <dt>관심도</dt>
-          <dd>망상오토캠핑리조트 = 1</dd>
+    <div id="filter-sheet" class="filter-sheet">
+      <div class="sheet-backdrop" id="sheet-backdrop"></div>
+      <div class="sheet-panel" id="sheet-panel" aria-labelledby="sheet-title">
+        <div class="sheet-head">
+          <h2 id="sheet-title">필터</h2>
+          <button type="button" id="close-filters" class="secondary">닫기</button>
         </div>
-        <div>
-          <dt>기간</dt>
-          <dd>2025-10-01부터 2026-09-30까지</dd>
-        </div>
-        <div>
-          <dt>조회일</dt>
-          <dd>2026-10-21</dd>
-        </div>
-        <div class="wide">
-          <dt>등록부</dt>
-          <dd>공공데이터포털 <a href="https://www.data.go.kr/data/15037499/fileData.do">data.go.kr 15037499</a>, 파일 2026-09-23. 등록 행 4,672개 가운데 추세가 있는 이름 3,729개를 보여 줍니다. 추세가 비어 있던 이름 891개는 이 목록에 없습니다.</dd>
-        </div>
-        <div class="wide">
-          <dt>고캠핑 시설</dt>
-          <dd>한국관광공사 고캠핑 정보 조회서비스, <a href="https://www.data.go.kr/data/15101933/openapi.do">data.go.kr 15101933</a>, 2026-10-21 조회. 그 조회에 없는 이름은 고캠핑 웹사이트 캠핑장 안내에서 2026-10-21에 보완했습니다. 업종은 고캠핑의 업종과 주요시설입니다. 처음 목록은 전체이고, 자동차야영장만 미리 골라 두지 않습니다. 소개와 시설 문구는 2026-10-22에 같은 서비스에서 다시 읽어, 웹사이트로 둔 소개는 바꾸지 않고 나머지 행에만 넣었습니다.</dd>
-        </div>
-      </dl>
-      <p class="caution"><strong>개별 화장실 추정.</strong> 이 표시는 네이버 장소 태그가 아니고, 확인된 개별 화장실도 아닙니다. 화장실 수가 전체 사이트 수의 80% 이상이면 비율입니다. 한줄소개, 소개, 특징에 개별화장실, 개별 화장실, 개별욕실, 개별 욕실, 개별샤워, 개별 샤워, 프라이빗이 있으면 키워드입니다. 전체 사이트는 일반, 자동차, 글램핑, 카라반, 개인 카라반 수를 더하고 빈 값은 0입니다. 글램핑 내부시설과 카라반 내부시설은 시설 문구로만 보여 주며, 그 문구만으로는 추정하지 않습니다.</p>
-      <p class="caution"><strong>주의.</strong> 보물섬, 오로라, 테르메덴, 라라랜드, 국립중앙과학관, 애플망고, 포레스트, 소풍처럼 짧은 이름은 그 야영장이 아닌 검색이 함께 섞입니다.</p>
-    </section>
+        <form id="filters" aria-describedby="filter-hint">
+          <div class="sheet-body">
+            <p id="filter-hint" class="help">각 묶음은 고르지 않으면 전체입니다. 한 묶음 안에서는 고른 값 중 하나만 맞아도 되고, 묶음끼리는 모두 맞아야 합니다.</p>
+            <fieldset class="choice-group" id="sido-group">
+              <legend>시도</legend>
+              <div class="choices" id="sido-choices"></div>
+            </fieldset>
+            <fieldset class="choice-group" id="induty-group">
+              <legend>업종</legend>
+              <div class="choices" id="induty-choices">
+                <label class="choice"><input type="checkbox" name="induty" value="일반야영장"><span>일반야영장</span></label>
+                <label class="choice"><input type="checkbox" name="induty" value="자동차야영장"><span>자동차야영장</span></label>
+                <label class="choice"><input type="checkbox" name="induty" value="글램핑"><span>글램핑</span></label>
+                <label class="choice"><input type="checkbox" name="induty" value="카라반"><span>카라반</span></label>
+                <label class="choice"><input type="checkbox" name="induty" value="캠프닉"><span>캠프닉</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="choice-group" id="estimate-group">
+              <legend>개별 화장실 추정</legend>
+              <div class="choices" id="estimate-choices">
+                <label class="choice"><input type="checkbox" name="estimate" value="yes"><span>추정</span></label>
+                <label class="choice"><input type="checkbox" name="estimate" value="no"><span>추정 아님</span></label>
+              </div>
+            </fieldset>
+            <p id="chip-note" class="help">테마, 분위기, 시설은 소개와 시설 문구를 따릅니다.</p>
+            <fieldset class="choice-group" id="theme-group">
+              <legend>테마</legend>
+              <div class="choices" id="theme-choices">
+                <label class="choice"><input type="checkbox" name="theme" value="감성"><span>감성</span></label>
+                <label class="choice"><input type="checkbox" name="theme" value="프라이빗"><span>프라이빗</span></label>
+                <label class="choice"><input type="checkbox" name="theme" value="넓은간격"><span>넓은간격</span></label>
+                <label class="choice"><input type="checkbox" name="theme" value="오션뷰"><span>오션뷰</span></label>
+                <label class="choice"><input type="checkbox" name="theme" value="숲속"><span>숲속</span></label>
+                <label class="choice"><input type="checkbox" name="theme" value="해돋이"><span>해돋이</span></label>
+                <label class="choice"><input type="checkbox" name="theme" value="차박"><span>차박</span></label>
+                <label class="choice"><input type="checkbox" name="theme" value="장박"><span>장박</span></label>
+                <label class="choice"><input type="checkbox" name="theme" value="그늘"><span>그늘</span></label>
+                <label class="choice"><input type="checkbox" name="theme" value="매너타임"><span>매너타임</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="choice-group" id="mood-group">
+              <legend>분위기</legend>
+              <div class="choices" id="mood-choices">
+                <label class="choice"><input type="checkbox" name="mood" value="깨끗한"><span>깨끗한</span></label>
+                <label class="choice"><input type="checkbox" name="mood" value="힐링"><span>힐링</span></label>
+                <label class="choice"><input type="checkbox" name="mood" value="조용한"><span>조용한</span></label>
+                <label class="choice"><input type="checkbox" name="mood" value="럭셔리"><span>럭셔리</span></label>
+                <label class="choice"><input type="checkbox" name="mood" value="모던"><span>모던</span></label>
+                <label class="choice"><input type="checkbox" name="mood" value="이색"><span>이색</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="choice-group" id="amenity-group">
+              <legend>시설</legend>
+              <div class="choices" id="amenity-choices">
+                <label class="choice"><input type="checkbox" name="amenity" value="수영장"><span>수영장</span></label>
+                <label class="choice"><input type="checkbox" name="amenity" value="스파"><span>스파</span></label>
+                <label class="choice"><input type="checkbox" name="amenity" value="바비큐"><span>바비큐</span></label>
+                <label class="choice"><input type="checkbox" name="amenity" value="애견동반"><span>애견동반</span></label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="sheet-actions">
+            <button type="button" id="clear" class="secondary">조건 지우기</button>
+            <button type="button" id="apply-filters">결과 보기</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <p id="count">목록을 불러오는 중입니다.</p>
     <p id="live" class="sr-only" aria-live="polite"></p>
 
-    <section id="top" aria-labelledby="top-heading" hidden>
-      <div class="top-head">
-        <h2 id="top-heading">이 조건의 상위 10</h2>
-        <p id="top-note">막대 길이는 여기 1위의 관심도를 기준으로 합니다.</p>
-      </div>
-      <ol id="top-list"></ol>
-    </section>
-
-    <div class="browse" id="browse">
+    <div class="browse" id="browse" data-view="list">
       <section id="map-panel" class="map-panel" aria-labelledby="map-heading">
-        <div class="map-head">
-          <h2 id="map-heading">지도</h2>
-          <p id="map-count">지도를 준비하는 중입니다.</p>
+        <div class="map-copy">
+          <div class="map-head">
+            <h2 id="map-heading">지도</h2>
+            <p id="map-count">지도를 준비하는 중입니다.</p>
+          </div>
+          <p id="map-note">좌표가 있는 장소만 핀으로 표시합니다. 한 번에 최대 100곳입니다.</p>
+          <p id="travel-note">지도를 누르면 출발지가 됩니다. 이동 시간은 실시간 교통을 반영하지 않은 도로 예상입니다.</p>
+          <div class="origin-row">
+            <p id="origin-label">출발지 없음</p>
+            <button type="button" id="clear-origin" class="secondary" hidden>출발지 지우기</button>
+          </div>
         </div>
-        <p id="map-note">좌표가 있는 장소만 핀으로 표시합니다. 한 번에 최대 100곳입니다.</p>
-        <p id="travel-note">지도를 누르면 출발지가 됩니다. 이동 시간은 실시간 교통을 반영하지 않은 도로 예상입니다.</p>
-        <div class="origin-row">
-          <p id="origin-label">출발지 없음</p>
-          <button type="button" id="clear-origin" class="secondary" hidden>출발지 지우기</button>
+        <div class="map-stage">
+          <div id="camp-map" role="region" aria-label="검색 결과 지도"></div>
+          <div id="marker-dock" class="marker-dock" hidden></div>
         </div>
-        <div id="camp-map" role="region" aria-label="검색 결과 지도"></div>
         <p id="map-empty" class="empty" hidden>이 조건에서 좌표가 있는 장소가 없습니다.</p>
       </section>
 
@@ -180,33 +166,45 @@
         </nav>
       </div>
     </div>
+
+    <details class="notes" id="notes">
+      <summary>자료 설명과 상위 10</summary>
+      <section id="top" aria-labelledby="top-heading" hidden>
+        <div class="top-head">
+          <h2 id="top-heading">이 조건의 상위 10</h2>
+          <p id="top-note">막대 길이는 여기 1위의 관심도를 기준으로 합니다.</p>
+        </div>
+        <ol id="top-list"></ol>
+      </section>
+      <section class="about" aria-labelledby="about-heading">
+        <h2 id="about-heading" class="sr-only">관심도와 등록부</h2>
+        <dl class="facts">
+          <div>
+            <dt>관심도</dt>
+            <dd>망상오토캠핑리조트 = 1</dd>
+          </div>
+          <div>
+            <dt>기간</dt>
+            <dd>2025-10-01부터 2026-09-30까지</dd>
+          </div>
+          <div>
+            <dt>조회일</dt>
+            <dd>2026-10-21</dd>
+          </div>
+          <div class="wide">
+            <dt>등록부</dt>
+            <dd>공공데이터포털 <a href="https://www.data.go.kr/data/15037499/fileData.do">data.go.kr 15037499</a>, 파일 2026-09-23. 등록 행 4,672개 가운데 추세가 있는 이름 3,729개를 보여 줍니다. 추세가 비어 있던 이름 891개는 이 목록에 없습니다.</dd>
+          </div>
+          <div class="wide">
+            <dt>고캠핑 시설</dt>
+            <dd>한국관광공사 고캠핑 정보 조회서비스, <a href="https://www.data.go.kr/data/15101933/openapi.do">data.go.kr 15101933</a>, 2026-10-21 조회. 그 조회에 없는 이름은 고캠핑 웹사이트 캠핑장 안내에서 2026-10-21에 보완했습니다. 업종은 고캠핑의 업종과 주요시설입니다. 처음 목록은 전체이고, 자동차야영장만 미리 골라 두지 않습니다. 소개와 시설 문구는 2026-10-22에 같은 서비스에서 다시 읽어, 웹사이트로 둔 소개는 바꾸지 않고 나머지 행에만 넣었습니다.</dd>
+          </div>
+        </dl>
+        <p class="caution"><strong>개별 화장실 추정.</strong> 이 표시는 네이버 장소 태그가 아니고, 확인된 개별 화장실도 아닙니다. 화장실 수가 전체 사이트 수의 80% 이상이면 비율입니다. 한줄소개, 소개, 특징에 개별화장실, 개별 화장실, 개별욕실, 개별 욕실, 개별샤워, 개별 샤워, 프라이빗이 있으면 키워드입니다. 전체 사이트는 일반, 자동차, 글램핑, 카라반, 개인 카라반 수를 더하고 빈 값은 0입니다. 글램핑 내부시설과 카라반 내부시설은 시설 문구로만 보여 주며, 그 문구만으로는 추정하지 않습니다.</p>
+        <p class="caution"><strong>주의.</strong> 보물섬, 오로라, 테르메덴, 라라랜드, 국립중앙과학관, 애플망고, 포레스트, 소풍처럼 짧은 이름은 그 야영장이 아닌 검색이 함께 섞입니다.</p>
+      </section>
+    </details>
   </main>
-  <dialog id="update-modal" class="modal">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h2>네이버 리뷰 최신화 안내</h2>
-        <button type="button" id="close-update-modal" class="modal-close" aria-label="닫기">×</button>
-      </div>
-      <div class="modal-body">
-        <p class="modal-desc">
-          캠핑장 리뷰 수는 주기적으로 변동되므로 <strong>GitHub Actions</strong> 또는 <strong>로컬 스크립트</strong>로 언제든지 최신 데이터로 업데이트할 수 있습니다.
-        </p>
-        <div class="modal-section">
-          <h3>방법 1. GitHub에서 원클릭으로 최신화 (권장)</h3>
-          <p>GitHub Actions 클라우드가 자동으로 네이버 리뷰를 크롤링하여 데이터를 갱신하고 사이트에 즉시 배포합니다.</p>
-          <a href="https://github.com/kimyounil1/camping-search/actions/workflows/update-reviews.yml" target="_blank" rel="noopener noreferrer" class="btn-action-link">
-            🚀 GitHub Actions 실행 페이지 열기 ↗
-          </a>
-          <span class="help-text">링크 이동 후 우측 상단의 <strong>[Run workflow]</strong> 파란색 버튼을 클릭하세요.</span>
-        </div>
-        <div class="modal-section">
-          <h3>방법 2. 로컬 PC에서 스크립트 직접 실행</h3>
-          <p>터미널에서 아래 명령어를 실행하면 즉시 수집하여 JSON을 갱신합니다.</p>
-          <pre class="code-box"><code>python3 scripts/update_naver_reviews.py</code></pre>
-        </div>
-      </div>
-    </div>
-  </dialog>
   <script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=87xq6182ef&submodules=geocoder"></script>
   <script src="app.js"></script>
 </body>

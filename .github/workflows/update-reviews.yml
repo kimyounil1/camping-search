@@ -26,7 +26,7 @@ jobs:
 
       - name: 네이버 리뷰 수 업데이트 실행
         run: |
-          python scripts/update_naver_reviews.py --delay 0.5 --save-interval 50
+          python scripts/update_naver_reviews.py --delay 2 --save-interval 50
 
       - name: 변경사항 커밋 및 푸시
         run: |

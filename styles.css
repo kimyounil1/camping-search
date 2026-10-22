@@ -126,8 +126,11 @@ main > * {
 }
 
 #filter-hint,
+#chip-note,
 #sido-group,
-#sigungu-group,
+#theme-group,
+#mood-group,
+#amenity-group,
 .field-search,
 .actions {
   grid-column: 1 / -1;

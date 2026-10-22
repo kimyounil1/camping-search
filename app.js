@@ -26,10 +26,9 @@ const SIDO_ORDER = [
 
 const form = document.querySelector("#filters");
 const sidoChoices = document.querySelector("#sido-choices");
-const sigunguGroup = document.querySelector("#sigungu-group");
-const sigunguChoices = document.querySelector("#sigungu-choices");
-const sigunguHelp = document.querySelector("#sigungu-help");
-const sigunguAll = document.querySelector("#sigungu-all");
+const themeChoices = document.querySelector("#theme-choices");
+const moodChoices = document.querySelector("#mood-choices");
+const amenityChoices = document.querySelector("#amenity-choices");
 const queryEl = document.querySelector("#q");
 const indutyChoices = document.querySelector("#induty-choices");
 const estimateChoices = document.querySelector("#estimate-choices");
@@ -53,6 +52,32 @@ const pageTotal = document.querySelector("#page-total");
 const rangeEl = document.querySelector("#range");
 const numberFormat = new Intl.NumberFormat("ko-KR");
 const CAMP_PAGE = "https://www.gocamping.or.kr/bsite/camp/info/read.do?c_no=";
+const TEXT_KEYS = ["intro", "lineIntro", "featureNm", "glampInnerFclty", "caravInnerFclty", "sbrsCl"];
+const ESTIMATE_KEYS = ["intro", "lineIntro", "featureNm"];
+const ESTIMATE_PHRASES = ["개별화장실", "개별욕실", "개별샤워", "프라이빗"];
+const PET_BLOCKS = ["애견불가", "반려동물불가", "반려견불가"];
+const CHIPS = {
+  감성: { phrases: ["감성"] },
+  프라이빗: { phrases: ["프라이빗"], estimated: true },
+  넓은간격: { phrases: ["넓은간격", "사이트간격", "사이트간거리", "간격이넓", "거리가멀", "거리가넓", "사이트사이"] },
+  오션뷰: { phrases: ["오션뷰", "바다전망", "바다뷰"] },
+  숲속: { phrases: ["숲속"] },
+  해돋이: { phrases: ["해돋이", "일출"] },
+  차박: { phrases: ["차박"] },
+  장박: { phrases: ["장박"] },
+  그늘: { phrases: ["그늘"] },
+  매너타임: { phrases: ["매너타임"] },
+  깨끗한: { phrases: ["깨끗", "청결", "깔끔"] },
+  힐링: { phrases: ["힐링"] },
+  조용한: { phrases: ["조용"] },
+  럭셔리: { phrases: ["럭셔리"] },
+  모던: { phrases: ["모던"] },
+  이색: { phrases: ["이색"] },
+  수영장: { phrases: ["수영장", "물놀이장"] },
+  스파: { phrases: ["스파", "찜질", "사우나"] },
+  바비큐: { phrases: ["바비큐", "바베큐", "그릴"] },
+  애견동반: { phrases: ["애견", "반려동물", "반려견"], pet: true },
+};
 
 let groups = [];
 let page = 1;
@@ -166,10 +191,6 @@ function checkedValues(container) {
   return [...container.querySelectorAll("input:checked")].map((input) => input.value);
 }
 
-function placeKey(place) {
-  return `${place.sido}\t${place.sigungu}`;
-}
-
 function choiceBox(name, value, label, checked) {
   const choice = document.createElement("label");
   choice.className = "choice";
@@ -211,67 +232,177 @@ function fillSido() {
   for (const name of orderedSidos()) {
     sidoChoices.append(choiceBox("sido", name, name, current.has(name)));
   }
-  fillSigungu();
 }
 
-function fillSigungu() {
-  const sidos = checkedValues(sidoChoices);
-  const previous = new Set(checkedValues(sigunguChoices));
-  sigunguChoices.replaceChildren();
-  if (sidos.length === 0) {
-    sigunguGroup.disabled = true;
-    sigunguHelp.hidden = false;
-    sigunguAll.hidden = true;
-    return;
+function compactWithMap(text) {
+  const source = String(text || "");
+  let compact = "";
+  const map = [];
+  for (let index = 0; index < source.length; index += 1) {
+    if (/\s/u.test(source[index])) {
+      continue;
+    }
+    map.push(index);
+    compact += source[index];
   }
-  const pairs = [];
-  const seen = new Set();
-  for (const item of groups) {
-    for (const place of item.places) {
-      if (!sidos.includes(place.sido) || !place.sigungu) {
-        continue;
+  return { source, compact, map };
+}
+
+function blockedRanges(compact) {
+  const ranges = [];
+  for (const block of PET_BLOCKS) {
+    let from = 0;
+    while (from < compact.length) {
+      const at = compact.indexOf(block, from);
+      if (at === -1) {
+        break;
       }
-      const key = placeKey(place);
-      if (seen.has(key)) {
-        continue;
-      }
-      seen.add(key);
-      pairs.push({ sido: place.sido, sigungu: place.sigungu, key });
+      ranges.push([at, at + block.length]);
+      from = at + block.length;
     }
   }
-  const sidoIndex = new Map(sidos.map((name, index) => [name, index]));
-  pairs.sort((a, b) => {
-    const bySido = sidoIndex.get(a.sido) - sidoIndex.get(b.sido);
-    if (bySido !== 0) {
-      return bySido;
-    }
-    return a.sigungu.localeCompare(b.sigungu, "ko");
-  });
-  const showSido = sidos.length > 1;
-  for (const pair of pairs) {
-    const label = showSido ? `${pair.sido} ${pair.sigungu}` : pair.sigungu;
-    sigunguChoices.append(choiceBox("sigungu", pair.key, label, previous.has(pair.key)));
+  return ranges;
+}
+
+function rangeBlocked(start, end, ranges) {
+  return ranges.some(([from, to]) => start < to && end > from);
+}
+
+function excerptAround(packed, start, length) {
+  const originStart = packed.map[start];
+  const originEnd = packed.map[start + length - 1] + 1;
+  const from = Math.max(0, originStart - 16);
+  const to = Math.min(packed.source.length, originEnd + 20);
+  let snippet = packed.source.slice(from, to).replace(/\s+/g, " ").trim();
+  if (from > 0) {
+    snippet = `…${snippet}`;
   }
-  sigunguGroup.disabled = false;
-  sigunguHelp.hidden = true;
-  sigunguAll.hidden = false;
+  if (to < packed.source.length) {
+    snippet = `${snippet}…`;
+  }
+  return snippet;
+}
+
+function findPhrase(packed, phrase, ranges) {
+  const needle = String(phrase || "").replace(/\s+/g, "");
+  if (!needle) {
+    return "";
+  }
+  let from = 0;
+  while (from < packed.compact.length) {
+    const at = packed.compact.indexOf(needle, from);
+    if (at === -1) {
+      return "";
+    }
+    if (!ranges || !rangeBlocked(at, at + needle.length, ranges)) {
+      return excerptAround(packed, at, needle.length);
+    }
+    from = at + 1;
+  }
+  return "";
+}
+
+function phraseExcerpt(facility, phrases, pet, keys) {
+  if (!facility) {
+    return "";
+  }
+  for (const key of keys) {
+    const packed = compactWithMap(facility[key]);
+    if (!packed.compact) {
+      continue;
+    }
+    const ranges = pet ? blockedRanges(packed.compact) : null;
+    for (const phrase of phrases) {
+      const excerpt = findPhrase(packed, phrase, ranges);
+      if (excerpt) {
+        return excerpt;
+      }
+    }
+  }
+  return "";
+}
+
+function animalAllowed(facility) {
+  const compact = String(facility.animalCmgCl || "").replace(/\s+/g, "");
+  if (!compact || compact.includes("불가능")) {
+    return false;
+  }
+  return compact === "가능" || compact.includes("소형견");
+}
+
+function animalExcerpt(facility) {
+  const text = String(facility.animalCmgCl || "").replace(/\s+/g, " ").trim();
+  if (!text) {
+    return "애견동반";
+  }
+  if (text.length > 36) {
+    return `${text.slice(0, 36)}…`;
+  }
+  return text;
+}
+
+function chipExcerpt(facility, chipId) {
+  const chip = CHIPS[chipId];
+  if (!chip || !facility) {
+    return "";
+  }
+  const excerpt = phraseExcerpt(facility, chip.phrases, Boolean(chip.pet), TEXT_KEYS);
+  if (excerpt) {
+    return excerpt;
+  }
+  if (chip.pet && animalAllowed(facility)) {
+    return animalExcerpt(facility);
+  }
+  if (chip.estimated && facility.estimated) {
+    const keyword = phraseExcerpt(facility, ESTIMATE_PHRASES, false, ESTIMATE_KEYS);
+    return keyword || "개별 화장실 추정";
+  }
+  return "";
+}
+
+function activeChipGroups() {
+  return [themeChoices, moodChoices, amenityChoices]
+    .map((container) => checkedValues(container))
+    .filter((values) => values.length > 0);
+}
+
+function placeMatchesChips(facility, chipGroups) {
+  return chipGroups.every((values) => values.some((chipId) => chipExcerpt(facility, chipId) !== ""));
+}
+
+function matchingPlaceIndex(item, chipGroups) {
+  if (chipGroups.length === 0) {
+    return -1;
+  }
+  for (let index = 0; index < item.regionFacilities.length; index += 1) {
+    if (placeMatchesChips(item.regionFacilities[index], chipGroups)) {
+      return index;
+    }
+  }
+  return -1;
+}
+
+function cardExcerpt(facility, chipGroups) {
+  for (const values of chipGroups) {
+    for (const chipId of values) {
+      const excerpt = chipExcerpt(facility, chipId);
+      if (excerpt) {
+        return excerpt;
+      }
+    }
+  }
+  return "";
 }
 
 function currentList() {
   const sidos = checkedValues(sidoChoices);
-  const sigunguKeys = sigunguGroup.disabled ? [] : checkedValues(sigunguChoices);
   const query = normalize(queryEl.value);
   const types = checkedValues(indutyChoices);
   const estimates = checkedValues(estimateChoices);
+  const chipGroups = activeChipGroups();
   return groups.filter((item) => {
     if (sidos.length > 0) {
       const hit = item.places.some((place) => sidos.includes(place.sido));
-      if (!hit) {
-        return false;
-      }
-    }
-    if (sigunguKeys.length > 0) {
-      const hit = item.places.some((place) => sigunguKeys.includes(placeKey(place)));
       if (!hit) {
         return false;
       }
@@ -286,6 +417,9 @@ function currentList() {
       return false;
     }
     if (estimates.length === 1 && estimates[0] === "no" && item.estimated) {
+      return false;
+    }
+    if (chipGroups.length > 0 && !item.regionFacilities.some((facility) => placeMatchesChips(facility, chipGroups))) {
       return false;
     }
     return true;
@@ -363,7 +497,7 @@ function nameValue(name, contentId) {
   return link;
 }
 
-function placeBlock(item, index) {
+function placeBlock(item, index, chipGroups, matchIndex) {
   const facility = item.regionFacilities[index];
   const contentId = facility && facility.contentId ? String(facility.contentId).trim() : "";
   const block = document.createElement("div");
@@ -375,6 +509,12 @@ function placeBlock(item, index) {
   const interior = interiorText(facility);
   if (interior) {
     block.append(fact("내부시설", textValue(interior)));
+  }
+  if (chipGroups.length > 0 && index === matchIndex) {
+    const excerpt = cardExcerpt(facility, chipGroups);
+    if (excerpt) {
+      block.append(fact("문구", textValue(excerpt)));
+    }
   }
   return block;
 }
@@ -454,6 +594,7 @@ function renderResults(list, immediate) {
 
   resultEmpty.hidden = true;
   resultList.hidden = false;
+  const chipGroups = activeChipGroups();
   const start = (page - 1) * PAGE_SIZE;
   const slice = list.slice(start, start + PAGE_SIZE);
   for (const item of slice) {
@@ -473,8 +614,9 @@ function renderResults(list, immediate) {
     badge.append(unit);
     rank.append(rankLabel, badge);
     li.append(rank);
+    const matchIndex = matchingPlaceIndex(item, chipGroups);
     for (let index = 0; index < item.regions.length; index += 1) {
-      li.append(placeBlock(item, index));
+      li.append(placeBlock(item, index, chipGroups, matchIndex));
     }
     resultList.append(li);
   }
@@ -670,9 +812,6 @@ form.addEventListener("change", (event) => {
   if (!(input instanceof HTMLInputElement) || input.type !== "checkbox") {
     return;
   }
-  if (input.name === "sido") {
-    fillSigungu();
-  }
   page = 1;
   render({ immediate: true });
 });
@@ -687,7 +826,6 @@ clearBtn.addEventListener("click", () => {
     input.checked = false;
   }
   queryEl.value = "";
-  fillSigungu();
   page = 1;
   render({ immediate: true });
   const firstSido = sidoChoices.querySelector("input");
@@ -728,7 +866,6 @@ async function init() {
     }
     groups = groupRows(rows);
     fillSido();
-    fillSigungu();
     render({ immediate: true });
   } catch {
     countEl.textContent = "목록을 불러오지 못했습니다. 페이지를 다시 열어 주세요.";

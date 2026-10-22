@@ -216,7 +216,7 @@ def main():
     parser = argparse.ArgumentParser(description="네이버 리뷰 수 수집기")
     parser.add_argument("--file", default=DEFAULT_JSON_PATH, help="수정할 JSON 파일 경로")
     parser.add_argument("--limit", type=int, default=0, help="수집할 개수 제한 (0: 전체)")
-    parser.add_argument("--delay", type=float, default=0.4, help="요청 간 딜레이(초)")
+    parser.add_argument("--delay", type=float, default=2, help="요청 간 딜레이(초)")
     parser.add_argument("--force", action="store_true", help="이미 수집된 항목도 덮어쓰기")
     parser.add_argument("--save-interval", type=int, default=50, help="중간 저장 주기")
     args = parser.parse_args()

@@ -17,6 +17,7 @@ import json
 import time
 import re
 import argparse
+import subprocess
 from datetime import datetime
 import urllib.request
 import urllib.parse
@@ -638,6 +639,7 @@ def main():
     parser.add_argument("--delay", type=float, default=1.0, help="요청 간 딜레이(초)")
     parser.add_argument("--force", action="store_true", help="이미 수집된 항목도 덮어쓰기")
     parser.add_argument("--save-interval", type=int, default=50, help="중간 저장 주기")
+    parser.add_argument("--git-push-interval", type=int, default=0, help="자동 git commit & push 주기 (0: 비활성)")
     args = parser.parse_args()
 
     file_path = os.path.abspath(args.file)
@@ -696,17 +698,55 @@ def main():
             f"매칭: {p_name} ({p_addr}) [검색어: {q_used}]"
         )
 
-        # 중간 저장
+        # 중간 저장 (atomic write)
         if (updated_count % args.save_interval == 0) and updated_count > 0:
-            with open(file_path, "w", encoding="utf-8") as f:
+            tmp_path = file_path + ".tmp"
+            with open(tmp_path, "w", encoding="utf-8") as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
+            os.replace(tmp_path, file_path)
             print(f"  💾 [임시 저장] {idx+1}번째 항목까지 저장 완료")
+
+        if args.git_push_interval > 0 and (updated_count % args.git_push_interval == 0) and updated_count > 0:
+            tmp_path = file_path + ".tmp"
+            with open(tmp_path, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+            os.replace(tmp_path, file_path)
+            repo_dir = os.path.dirname(file_path)
+            try:
+                subprocess.run(["git", "add", file_path], cwd=repo_dir, check=False)
+                subprocess.run(
+                    ["git", "commit", "-m", f"chore: save Apollo-verified Naver Place review checkpoint (up to item {idx+1}/{total_count})"],
+                    cwd=repo_dir,
+                    check=False,
+                )
+                subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=repo_dir, check=False)
+                subprocess.run(["git", "push", "origin", "main"], cwd=repo_dir, check=False)
+                print(f"  🚀 [Git Push] {idx+1}/{total_count} 체크포인트 origin/main 푸시 완료")
+            except Exception as e:
+                print(f"  ⚠️ [Git Push 오류] {e}")
 
         time.sleep(args.delay)
 
-    # 최종 저장
-    with open(file_path, "w", encoding="utf-8") as f:
+    # 최종 저장 (atomic write)
+    tmp_path = file_path + ".tmp"
+    with open(tmp_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+    os.replace(tmp_path, file_path)
+
+    if args.git_push_interval > 0 and updated_count > 0:
+        repo_dir = os.path.dirname(file_path)
+        try:
+            subprocess.run(["git", "add", file_path], cwd=repo_dir, check=False)
+            subprocess.run(
+                ["git", "commit", "-m", f"chore: complete Apollo-verified Naver Place review collection ({total_count}/{total_count})"],
+                cwd=repo_dir,
+                check=False,
+            )
+            subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=repo_dir, check=False)
+            subprocess.run(["git", "push", "origin", "main"], cwd=repo_dir, check=False)
+            print(f"  🚀 [Git Push] 전체 {total_count}개 최종 수집 완료 및 origin/main 푸시 완료")
+        except Exception as e:
+            print(f"  ⚠️ [Git Push 오류] {e}")
 
     elapsed = time.time() - start_time
     print(f"==================================================")

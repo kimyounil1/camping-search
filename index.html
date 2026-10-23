@@ -4,222 +4,307 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>등록 야영장 검색</title>
-  <meta name="description" content="등록 야영장 이름의 상대 검색 관심도와 고캠핑 업종, 개별 화장실 추정. 망상오토캠핑리조트 = 1.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>CAMPER GUIDE · 전국 등록 야영장 큐레이션</title>
+  <meta name="description" content="전국 등록 야영장의 상대 검색 관심도, 네이버 플레이스 리뷰, 고캠핑 업종·시설 및 개별 화장실 추정 큐레이션 가이드.">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip" href="#q">이름 검색으로 이동</a>
+
   <header class="mast">
-    <p class="eyebrow"><span class="blaze" aria-hidden="true"></span>등록부 이름 기준</p>
-    <h1>등록 야영장 검색</h1>
-    <p class="deck">등록된 야영장 이름을 고르고, 그 이름의 상대 관심도를 확인합니다.</p>
-    <div class="review-bar">
-      <span class="review-badge-header">⭐ 네이버 리뷰 연동</span>
-      <span id="review-updated-text" class="review-updated-text"></span>
-      <button type="button" id="open-update-modal" class="btn-review-update">
-        🔄 리뷰 최신화
-      </button>
+    <div class="mast-inner">
+      <div class="brand-group">
+        <span class="ribbon-emblem" aria-hidden="true">🎀</span>
+        <div class="brand-titles">
+          <p class="eyebrow">CAMPER GUIDE · 전국 야영장 큐레이션</p>
+          <h1>등록 야영장 검색</h1>
+        </div>
+      </div>
+
+      <div class="header-search-slot" id="desktop-search-slot"></div>
+
+      <div class="header-sort-pills" role="group" aria-label="빠른 정렬">
+        <button type="button" class="sort-pill" data-sort-pill="interest" aria-pressed="true">관심도순</button>
+        <button type="button" class="sort-pill" data-sort-pill="review" aria-pressed="false">네이버 리뷰순</button>
+        <button type="button" class="sort-pill" data-sort-pill="time" aria-pressed="false">거리/시간순</button>
+      </div>
+
+      <div class="review-bar">
+        <span class="review-badge-header">★ 네이버 리뷰 연동</span>
+        <span id="review-updated-text" class="review-updated-text">리뷰 데이터 2026.10.22</span>
+        <button type="button" id="open-update-modal" class="btn-review-update">
+          최신화
+        </button>
+      </div>
     </div>
   </header>
+
   <main>
     <noscript>
       <p class="caution">목록을 거르려면 자바스크립트가 필요합니다.</p>
     </noscript>
 
-    <div class="finder">
-      <div class="field field-search">
-        <label class="sr-only" for="q">이름 또는 지역</label>
-        <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" enterkeyhint="search" placeholder="이름 또는 지역">
-      </div>
-      <ul id="active-filters" class="active-filters" hidden></ul>
-      <div class="finder-tools">
-        <button type="button" id="open-filters" class="secondary" aria-expanded="false" aria-controls="filter-sheet">
-          필터 <span id="filter-count">0</span>
-        </button>
-        <label class="sort-field">
-          <span>정렬</span>
-          <select id="sort-select" aria-label="결과 정렬">
-            <option value="interest">관심도 높은 순</option>
-            <option value="review">네이버 리뷰 많은 순</option>
-            <option value="time">이동 시간 짧은 순</option>
-          </select>
-        </label>
-      </div>
-    </div>
-
-    <div id="filter-sheet" class="filter-sheet">
-      <div class="sheet-backdrop" id="sheet-backdrop"></div>
-      <div class="sheet-panel" id="sheet-panel" aria-labelledby="sheet-title">
-        <div class="sheet-head">
-          <h2 id="sheet-title">필터</h2>
-          <button type="button" id="close-filters" class="secondary">닫기</button>
+    <div class="finder" id="finder">
+      <div class="finder-bar">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <div class="field field-search">
+          <label class="sr-only" for="q">지역, 캠핑장 이름 검색</label>
+          <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" enterkeyhint="search" placeholder="지역, 캠핑장 이름 검색">
         </div>
-        <form id="filters" aria-describedby="filter-hint">
-          <div class="sheet-body">
-            <p id="filter-hint" class="help">각 묶음은 고르지 않으면 전체입니다. 한 묶음 안에서는 고른 값 중 하나만 맞아도 되고, 묶음끼리는 모두 맞아야 합니다.</p>
-            <fieldset class="choice-group" id="sido-group">
-              <legend>시도</legend>
-              <div class="choices" id="sido-choices"></div>
-            </fieldset>
-            <fieldset class="choice-group" id="induty-group">
-              <legend>업종</legend>
-              <div class="choices" id="induty-choices">
-                <label class="choice"><input type="checkbox" name="induty" value="일반야영장"><span>일반야영장</span></label>
-                <label class="choice"><input type="checkbox" name="induty" value="자동차야영장"><span>자동차야영장</span></label>
-                <label class="choice"><input type="checkbox" name="induty" value="글램핑"><span>글램핑</span></label>
-                <label class="choice"><input type="checkbox" name="induty" value="카라반"><span>카라반</span></label>
-                <label class="choice"><input type="checkbox" name="induty" value="캠프닉"><span>캠프닉</span></label>
-              </div>
-            </fieldset>
-            <fieldset class="choice-group" id="estimate-group">
-              <legend>개별 화장실 추정</legend>
-              <div class="choices" id="estimate-choices">
-                <label class="choice"><input type="checkbox" name="estimate" value="yes"><span>추정</span></label>
-                <label class="choice"><input type="checkbox" name="estimate" value="no"><span>추정 아님</span></label>
-              </div>
-            </fieldset>
-            <p id="chip-note" class="help">테마, 분위기, 시설은 소개와 시설 문구를 따릅니다.</p>
-            <fieldset class="choice-group" id="theme-group">
-              <legend>테마</legend>
-              <div class="choices" id="theme-choices">
-                <label class="choice"><input type="checkbox" name="theme" value="감성"><span>감성</span></label>
-                <label class="choice"><input type="checkbox" name="theme" value="프라이빗"><span>프라이빗</span></label>
-                <label class="choice"><input type="checkbox" name="theme" value="넓은간격"><span>넓은간격</span></label>
-                <label class="choice"><input type="checkbox" name="theme" value="오션뷰"><span>오션뷰</span></label>
-                <label class="choice"><input type="checkbox" name="theme" value="숲속"><span>숲속</span></label>
-                <label class="choice"><input type="checkbox" name="theme" value="해돋이"><span>해돋이</span></label>
-                <label class="choice"><input type="checkbox" name="theme" value="차박"><span>차박</span></label>
-                <label class="choice"><input type="checkbox" name="theme" value="장박"><span>장박</span></label>
-                <label class="choice"><input type="checkbox" name="theme" value="그늘"><span>그늘</span></label>
-                <label class="choice"><input type="checkbox" name="theme" value="매너타임"><span>매너타임</span></label>
-              </div>
-            </fieldset>
-            <fieldset class="choice-group" id="mood-group">
-              <legend>분위기</legend>
-              <div class="choices" id="mood-choices">
-                <label class="choice"><input type="checkbox" name="mood" value="깨끗한"><span>깨끗한</span></label>
-                <label class="choice"><input type="checkbox" name="mood" value="힐링"><span>힐링</span></label>
-                <label class="choice"><input type="checkbox" name="mood" value="조용한"><span>조용한</span></label>
-                <label class="choice"><input type="checkbox" name="mood" value="럭셔리"><span>럭셔리</span></label>
-                <label class="choice"><input type="checkbox" name="mood" value="모던"><span>모던</span></label>
-                <label class="choice"><input type="checkbox" name="mood" value="이색"><span>이색</span></label>
-              </div>
-            </fieldset>
-            <fieldset class="choice-group" id="amenity-group">
-              <legend>시설</legend>
-              <div class="choices" id="amenity-choices">
-                <label class="choice"><input type="checkbox" name="amenity" value="수영장"><span>수영장</span></label>
-                <label class="choice"><input type="checkbox" name="amenity" value="스파"><span>스파</span></label>
-                <label class="choice"><input type="checkbox" name="amenity" value="바비큐"><span>바비큐</span></label>
-                <label class="choice"><input type="checkbox" name="amenity" value="애견동반"><span>애견동반</span></label>
-              </div>
-            </fieldset>
-          </div>
-          <div class="sheet-actions">
-            <button type="button" id="clear" class="secondary">조건 지우기</button>
-            <button type="button" id="apply-filters">결과 보기</button>
-          </div>
-        </form>
+        <button type="button" id="clear-query" class="clear-query-btn" aria-label="검색어 지우기" hidden>×</button>
+        <div class="finder-tools">
+          <button type="button" id="open-filters" class="btn-open-filters" aria-expanded="false" aria-controls="filter-sheet">
+            <span>필터</span>
+            <span id="filter-count">0</span>
+          </button>
+          <label class="sort-field">
+            <span class="sr-only">정렬</span>
+            <select id="sort-select" aria-label="결과 정렬">
+              <option value="interest">관심도 높은 순</option>
+              <option value="review">네이버 리뷰 많은 순</option>
+              <option value="time">이동 시간 짧은 순</option>
+            </select>
+          </label>
+        </div>
       </div>
+
+      <div class="quick-rail" id="quick-rail" role="toolbar" aria-label="빠른 조건 선택">
+        <button type="button" class="rail-chip rail-chip-sort" id="mobile-sort-cycle">
+          <span class="rail-icon" aria-hidden="true">⇅</span>
+          <span id="mobile-sort-label">정렬: 관심도순</span>
+        </button>
+        <button type="button" class="rail-chip rail-chip-ribbon" data-quick-name="estimate" data-quick-value="yes" aria-pressed="false">
+          🎀 개별화장실 추정
+        </button>
+        <button type="button" class="rail-chip" data-quick-name="induty" data-quick-value="자동차야영장" aria-pressed="false">
+          오토캠핑
+        </button>
+        <button type="button" class="rail-chip" data-quick-name="induty" data-quick-value="글램핑" aria-pressed="false">
+          글램핑
+        </button>
+        <button type="button" class="rail-chip" data-quick-name="induty" data-quick-value="카라반" aria-pressed="false">
+          카라반
+        </button>
+        <button type="button" class="rail-chip" data-quick-name="mood" data-quick-value="깨끗한" aria-pressed="false">
+          ✨ 깨끗한
+        </button>
+        <button type="button" class="rail-chip" data-quick-name="theme" data-quick-value="넓은간격" aria-pressed="false">
+          ↔ 넓은간격
+        </button>
+        <button type="button" class="rail-chip" data-quick-name="amenity" data-quick-value="애견동반" aria-pressed="false">
+          🐾 애견동반
+        </button>
+        <button type="button" class="rail-chip" data-quick-name="amenity" data-quick-value="수영장" aria-pressed="false">
+          🏊 수영장
+        </button>
+        <button type="button" class="rail-chip rail-chip-all" id="quick-open-filters">
+          전체 필터 ⚙
+        </button>
+      </div>
+
+      <ul id="active-filters" class="active-filters" hidden></ul>
     </div>
 
     <p id="live" class="sr-only" aria-live="polite"></p>
 
-    <div class="browse" id="browse" data-snap="mid">
-      <section id="map-panel" class="map-panel" aria-labelledby="map-heading">
-        <h2 id="map-heading" class="sr-only">지도</h2>
-        <div class="map-stage">
-          <div id="camp-map" role="region" aria-label="검색 결과 지도"></div>
-          <div id="origin-pill" class="origin-pill" hidden>
-            <span id="origin-label">출발지 없음</span>
-            <a id="origin-nav-link" class="route-nav-btn" href="#" target="_blank" rel="noopener noreferrer" hidden>네이버 지도 길찾기 ↗</a>
-            <button type="button" id="clear-origin" class="secondary">출발지 지우기</button>
+    <div class="workspace-grid">
+      <div id="filter-sheet" class="filter-sheet">
+        <div class="sheet-backdrop" id="sheet-backdrop"></div>
+        <aside class="sheet-panel" id="sheet-panel" aria-labelledby="sheet-title">
+          <div class="sheet-head">
+            <div class="sheet-title-wrap">
+              <h2 id="sheet-title">상세 필터</h2>
+              <span class="sheet-subtitle">원하는 캠핑 조건을 조합하세요</span>
+            </div>
+            <button type="button" id="close-filters" class="secondary btn-sheet-close">닫기</button>
           </div>
-          <div id="marker-dock" class="marker-dock" hidden></div>
-        </div>
-        <p id="map-empty" class="empty" hidden>이 조건에서 좌표가 있는 장소가 없습니다.</p>
-      </section>
+          <form id="filters" aria-describedby="filter-hint">
+            <div class="sheet-body">
+              <div class="filter-sidebar-top">
+                <span class="sidebar-heading">큐레이션 필터</span>
+                <button type="button" id="clear-desktop" class="btn-reset-inline">필터 초기화</button>
+              </div>
+              <p id="filter-hint" class="help">묶음 안에서는 하나만 맞아도 되고, 다른 묶음끼리는 모두 맞아야 합니다.</p>
 
-      <div class="browse-list" id="list-sheet">
-        <div class="list-sheet-bar" id="sheet-grabber">
-          <button type="button" id="sheet-handle" class="sheet-handle" aria-label="목록 높이 전환">
-            <span class="sheet-grip" aria-hidden="true"></span>
-          </button>
-          <div class="list-sheet-meta">
-            <p id="count">목록을 불러오는 중입니다.</p>
-            <div class="snap-controls" role="group" aria-label="목록 시트 크기">
-              <button type="button" id="snap-min" data-snap-target="min" aria-pressed="false">접힘</button>
-              <button type="button" id="snap-mid" data-snap-target="mid" aria-pressed="true">중간</button>
-              <button type="button" id="snap-max" data-snap-target="max" aria-pressed="false">펼침</button>
+              <fieldset class="choice-group choice-group-ribbon" id="estimate-group">
+                <legend>🎀 블루리본 개별 화장실 추정</legend>
+                <div class="choices" id="estimate-choices">
+                  <label class="choice choice-ribbon"><input type="checkbox" name="estimate" value="yes"><span>🎀 개별화장실 추정</span></label>
+                  <label class="choice"><input type="checkbox" name="estimate" value="no"><span>일반 공용 중심</span></label>
+                </div>
+              </fieldset>
+
+              <fieldset class="choice-group" id="induty-group">
+                <legend>캠핑 유형 (업종)</legend>
+                <div class="choices" id="induty-choices">
+                  <label class="choice"><input type="checkbox" name="induty" value="자동차야영장"><span>자동차야영장</span></label>
+                  <label class="choice"><input type="checkbox" name="induty" value="글램핑"><span>글램핑</span></label>
+                  <label class="choice"><input type="checkbox" name="induty" value="카라반"><span>카라반</span></label>
+                  <label class="choice"><input type="checkbox" name="induty" value="일반야영장"><span>일반야영장</span></label>
+                  <label class="choice"><input type="checkbox" name="induty" value="캠프닉"><span>캠프닉</span></label>
+                </div>
+              </fieldset>
+
+              <fieldset class="choice-group" id="sido-group">
+                <legend>지역 (시도)</legend>
+                <div class="choices" id="sido-choices"></div>
+              </fieldset>
+
+              <p id="chip-note" class="help">테마·분위기·시설은 고캠핑 공식 소개와 내부시설 문구를 기반으로 매칭합니다.</p>
+
+              <fieldset class="choice-group" id="theme-group">
+                <legend>테마</legend>
+                <div class="choices" id="theme-choices">
+                  <label class="choice"><input type="checkbox" name="theme" value="감성"><span>감성</span></label>
+                  <label class="choice"><input type="checkbox" name="theme" value="프라이빗"><span>프라이빗</span></label>
+                  <label class="choice"><input type="checkbox" name="theme" value="넓은간격"><span>넓은간격</span></label>
+                  <label class="choice"><input type="checkbox" name="theme" value="오션뷰"><span>오션뷰</span></label>
+                  <label class="choice"><input type="checkbox" name="theme" value="숲속"><span>숲속</span></label>
+                  <label class="choice"><input type="checkbox" name="theme" value="해돋이"><span>해돋이</span></label>
+                  <label class="choice"><input type="checkbox" name="theme" value="차박"><span>차박</span></label>
+                  <label class="choice"><input type="checkbox" name="theme" value="장박"><span>장박</span></label>
+                  <label class="choice"><input type="checkbox" name="theme" value="그늘"><span>그늘</span></label>
+                  <label class="choice"><input type="checkbox" name="theme" value="매너타임"><span>매너타임</span></label>
+                </div>
+              </fieldset>
+
+              <fieldset class="choice-group" id="mood-group">
+                <legend>분위기</legend>
+                <div class="choices" id="mood-choices">
+                  <label class="choice"><input type="checkbox" name="mood" value="깨끗한"><span>깨끗한</span></label>
+                  <label class="choice"><input type="checkbox" name="mood" value="힐링"><span>힐링</span></label>
+                  <label class="choice"><input type="checkbox" name="mood" value="조용한"><span>조용한</span></label>
+                  <label class="choice"><input type="checkbox" name="mood" value="럭셔리"><span>럭셔리</span></label>
+                  <label class="choice"><input type="checkbox" name="mood" value="모던"><span>모던</span></label>
+                  <label class="choice"><input type="checkbox" name="mood" value="이색"><span>이색</span></label>
+                </div>
+              </fieldset>
+
+              <fieldset class="choice-group" id="amenity-group">
+                <legend>시설·서비스</legend>
+                <div class="choices" id="amenity-choices">
+                  <label class="choice"><input type="checkbox" name="amenity" value="수영장"><span>수영장</span></label>
+                  <label class="choice"><input type="checkbox" name="amenity" value="스파"><span>스파</span></label>
+                  <label class="choice"><input type="checkbox" name="amenity" value="바비큐"><span>바비큐</span></label>
+                  <label class="choice"><input type="checkbox" name="amenity" value="애견동반"><span>애견동반</span></label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="sheet-actions">
+              <button type="button" id="clear" class="secondary">조건 초기화</button>
+              <button type="button" id="apply-filters">결과 보기</button>
+            </div>
+          </form>
+        </aside>
+      </div>
+
+      <div class="browse" id="browse" data-snap="mid">
+        <section id="map-panel" class="map-panel" aria-labelledby="map-heading">
+          <h2 id="map-heading" class="sr-only">지도</h2>
+          <div class="map-stage">
+            <div id="camp-map" role="region" aria-label="검색 결과 지도"></div>
+            <div id="map-guide-pill" class="map-guide-pill">
+              <span aria-hidden="true">📍</span>
+              <span>지도 빈 곳을 클릭하면 출발지로 설정됩니다</span>
+            </div>
+            <div id="origin-pill" class="origin-pill" hidden>
+              <span class="origin-dot" aria-hidden="true"></span>
+              <span id="origin-label">출발지 없음</span>
+              <a id="origin-nav-link" class="route-nav-btn" href="#" target="_blank" rel="noopener noreferrer" hidden>길찾기 ↗</a>
+              <button type="button" id="clear-origin" class="secondary">지우기</button>
+            </div>
+            <div id="marker-dock" class="marker-dock" hidden></div>
+          </div>
+          <p id="map-empty" class="empty" hidden>이 조건에서 좌표가 있는 장소가 없습니다.</p>
+        </section>
+
+        <div class="browse-list" id="list-sheet">
+          <div class="list-sheet-bar" id="sheet-grabber">
+            <button type="button" id="sheet-handle" class="sheet-handle" aria-label="목록 높이 전환">
+              <span class="sheet-grip" aria-hidden="true"></span>
+            </button>
+            <div class="list-sheet-meta">
+              <div class="list-meta-left">
+                <p id="count">목록을 불러오는 중입니다.</p>
+              </div>
+              <div class="list-meta-right">
+                <button type="button" id="mobile-open-update" class="btn-sheet-sync" title="네이버 리뷰 최신화 안내">
+                  🔄 최신화
+                </button>
+                <div class="snap-controls" role="group" aria-label="목록 시트 크기">
+                  <button type="button" id="snap-min" data-snap-target="min" aria-pressed="false">접힘</button>
+                  <button type="button" id="snap-mid" data-snap-target="mid" aria-pressed="true">중간</button>
+                  <button type="button" id="snap-max" data-snap-target="max" aria-pressed="false">펼침</button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="list-sheet-scroll" id="list-sheet-scroll">
-          <section id="results" aria-labelledby="results-heading">
-            <h2 id="results-heading" class="sr-only">검색 결과</h2>
-            <p id="result-empty" class="empty" hidden>조건에 맞는 등록 이름이 없습니다. 시도나 검색어를 바꿔 보세요.</p>
-            <ul id="result-list" class="results"></ul>
-          </section>
 
-          <nav class="pager" id="pager" aria-label="쪽 이동" hidden>
-            <button type="button" id="prev">이전</button>
-            <p class="page-field">
-              <label for="page">쪽</label>
-              <input id="page" type="number" inputmode="numeric" min="1" value="1">
-              <span id="page-total">/ 1</span>
-            </p>
-            <p id="range"></p>
-            <button type="button" id="next">다음</button>
-          </nav>
+          <div class="list-sheet-scroll" id="list-sheet-scroll">
+            <section id="results" aria-labelledby="results-heading">
+              <h2 id="results-heading" class="sr-only">검색 결과</h2>
+              <p id="result-empty" class="empty" hidden>조건에 맞는 등록 야영장이 없습니다. 지역이나 필터를 조정해 보세요.</p>
+              <ul id="result-list" class="results"></ul>
+            </section>
 
-          <details class="notes" id="notes">
-            <summary>자료 설명과 상위 10</summary>
-            <section id="top" aria-labelledby="top-heading" hidden>
-              <div class="top-head">
-                <h2 id="top-heading">이 조건의 상위 10</h2>
-                <p id="top-note">막대 길이는 여기 1위의 관심도를 기준으로 합니다.</p>
-              </div>
-              <ol id="top-list"></ol>
-            </section>
-            <section class="about" aria-labelledby="about-heading">
-              <h2 id="about-heading" class="sr-only">관심도와 등록부</h2>
-              <p id="map-count" class="caution">지도를 준비하는 중입니다.</p>
-              <p id="map-note" class="caution">좌표가 있는 장소만 핀으로 표시합니다. 한 번에 최대 100곳입니다.</p>
-              <p id="travel-note" class="caution">지도를 누르면 출발지가 됩니다. 이동 시간은 실시간 교통을 반영하지 않은 도로 예상입니다.</p>
-              <dl class="facts">
-                <div>
-                  <dt>관심도</dt>
-                  <dd>망상오토캠핑리조트 = 1</dd>
+            <nav class="pager" id="pager" aria-label="쪽 이동" hidden>
+              <button type="button" id="prev" class="secondary">← 이전</button>
+              <p class="page-field">
+                <label for="page">페이지</label>
+                <input id="page" type="number" inputmode="numeric" min="1" value="1">
+                <span id="page-total">/ 1</span>
+              </p>
+              <p id="range"></p>
+              <button type="button" id="next" class="secondary">다음 →</button>
+            </nav>
+
+            <details class="notes" id="notes">
+              <summary>데이터 기준 · 추정 방법 및 조건별 상위 10</summary>
+              <section id="top" aria-labelledby="top-heading" hidden>
+                <div class="top-head">
+                  <h2 id="top-heading">이 조건의 상위 10</h2>
+                  <p id="top-note">막대 길이는 현재 조건 1위의 상대 관심도를 기준으로 합니다.</p>
                 </div>
-                <div>
-                  <dt>기간</dt>
-                  <dd>2025-10-01부터 2026-09-30까지</dd>
-                </div>
-                <div>
-                  <dt>조회일</dt>
-                  <dd>2026-10-21</dd>
-                </div>
-                <div class="wide">
-                  <dt>등록부</dt>
-                  <dd>공공데이터포털 <a href="https://www.data.go.kr/data/15037499/fileData.do">data.go.kr 15037499</a>, 파일 2026-09-23. 등록 행 4,672개 가운데 추세가 있는 이름 3,729개를 보여 줍니다. 추세가 비어 있던 이름 891개는 이 목록에 없습니다.</dd>
-                </div>
-                <div class="wide">
-                  <dt>고캠핑 시설</dt>
-                  <dd>한국관광공사 고캠핑 정보 조회서비스, <a href="https://www.data.go.kr/data/15101933/openapi.do">data.go.kr 15101933</a>, 2026-10-21 조회. 그 조회에 없는 이름은 고캠핑 웹사이트 캠핑장 안내에서 2026-10-21에 보완했습니다. 업종은 고캠핑의 업종과 주요시설입니다. 처음 목록은 전체이고, 자동차야영장만 미리 골라 두지 않습니다. 소개와 시설 문구는 2026-10-22에 같은 서비스에서 다시 읽어, 웹사이트로 둔 소개는 바꾸지 않고 나머지 행에만 넣었습니다.</dd>
-                </div>
-              </dl>
-              <p class="caution"><strong>개별 화장실 추정.</strong> 이 표시는 네이버 장소 태그가 아니고, 확인된 개별 화장실도 아닙니다. 화장실 수가 전체 사이트 수의 80% 이상이면 비율입니다. 한줄소개, 소개, 특징에 개별화장실, 개별 화장실, 개별욕실, 개별 욕실, 개별샤워, 개별 샤워, 프라이빗이 있으면 키워드입니다. 전체 사이트는 일반, 자동차, 글램핑, 카라반, 개인 카라반 수를 더하고 빈 값은 0입니다. 글램핑 내부시설과 카라반 내부시설은 시설 문구로만 보여 주며, 그 문구만으로는 추정하지 않습니다.</p>
-              <p class="caution"><strong>주의.</strong> 보물섬, 오로라, 테르메덴, 라라랜드, 국립중앙과학관, 애플망고, 포레스트, 소풍처럼 짧은 이름은 그 야영장이 아닌 검색이 함께 섞입니다.</p>
-            </section>
-          </details>
+                <ol id="top-list"></ol>
+              </section>
+              <section class="about" aria-labelledby="about-heading">
+                <h2 id="about-heading" class="sr-only">관심도와 등록부</h2>
+                <p id="map-count" class="caution">지도를 준비하는 중입니다.</p>
+                <p id="map-note" class="caution">좌표가 있는 장소만 핀으로 표시합니다. 한 번에 최대 100곳입니다.</p>
+                <p id="travel-note" class="caution">지도를 누르면 출발지가 됩니다. 캠핑장을 클릭하면 도로 예상 주행 경로를 표시합니다.</p>
+                <dl class="facts">
+                  <div>
+                    <dt>관심도 기준</dt>
+                    <dd>망상오토캠핑리조트 = 1</dd>
+                  </div>
+                  <div>
+                    <dt>수집 기간</dt>
+                    <dd>2025-10-01 ~ 2026-09-30</dd>
+                  </div>
+                  <div>
+                    <dt>기준 조회일</dt>
+                    <dd>2026-10-21</dd>
+                  </div>
+                  <div class="wide">
+                    <dt>전국 야영장 등록부</dt>
+                    <dd>공공데이터포털 <a href="https://www.data.go.kr/data/15037499/fileData.do" target="_blank" rel="noopener noreferrer">data.go.kr 15037499</a> (2026-09-23). 등록 행 4,672개 가운데 검색 추세가 확인된 이름 3,729개를 수록했습니다.</dd>
+                  </div>
+                  <div class="wide">
+                    <dt>고캠핑 시설 데이터</dt>
+                    <dd>한국관광공사 고캠핑 정보 조회서비스 <a href="https://www.data.go.kr/data/15101933/openapi.do" target="_blank" rel="noopener noreferrer">data.go.kr 15101933</a> 및 고캠핑 웹사이트 안내 기준.</dd>
+                  </div>
+                </dl>
+                <p class="caution"><strong>🎀 개별 화장실 추정 안내:</strong> 화장실 수가 전체 사이트 수의 80% 이상이거나, 공식 소개·특징 문구에 개별화장실·개별욕실·개별샤워·프라이빗 키워드가 포함된 야영장입니다.</p>
+              </section>
+            </details>
+          </div>
         </div>
       </div>
     </div>
   </main>
+
   <dialog id="update-modal" class="modal">
     <div class="modal-card">
       <div class="modal-header">
@@ -246,6 +331,7 @@
       </div>
     </div>
   </dialog>
+
   <script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=87xq6182ef&submodules=geocoder"></script>
   <script src="app.js"></script>
 </body>

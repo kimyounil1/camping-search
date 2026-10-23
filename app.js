@@ -24,15 +24,53 @@ const SIDO_ORDER = [
   "제주특별자치도",
 ];
 
+const SIDO_SHORT = {
+  서울특별시: "서울",
+  부산광역시: "부산",
+  대구광역시: "대구",
+  인천광역시: "인천",
+  광주광역시: "광주",
+  대전광역시: "대전",
+  울산광역시: "울산",
+  세종특별자치시: "세종",
+  경기도: "경기",
+  강원특별자치도: "강원",
+  충청북도: "충북",
+  충청남도: "충남",
+  전북특별자치도: "전북",
+  전라북도: "전북",
+  전남광주통합특별시: "전남·광주",
+  전라남도: "전남",
+  경상북도: "경북",
+  경상남도: "경남",
+  제주특별자치도: "제주",
+};
+
+const INDUTY_SHORT = {
+  자동차야영장: "오토캠핑",
+  일반야영장: "일반야영",
+  글램핑: "글램핑",
+  카라반: "카라반",
+  캠프닉: "캠프닉",
+};
+
+const SORT_LABELS = {
+  interest: "정렬: 관심도순",
+  review: "정렬: 리뷰순",
+  time: "정렬: 시간순",
+};
+
 const form = document.querySelector("#filters");
 const sidoChoices = document.querySelector("#sido-choices");
 const themeChoices = document.querySelector("#theme-choices");
 const moodChoices = document.querySelector("#mood-choices");
 const amenityChoices = document.querySelector("#amenity-choices");
 const queryEl = document.querySelector("#q");
+const clearQueryBtn = document.querySelector("#clear-query");
 const indutyChoices = document.querySelector("#induty-choices");
 const estimateChoices = document.querySelector("#estimate-choices");
 const clearBtn = document.querySelector("#clear");
+const clearDesktopBtn = document.querySelector("#clear-desktop");
 const countEl = document.querySelector("#count");
 const liveEl = document.querySelector("#live");
 const topSection = document.querySelector("#top");
@@ -44,6 +82,7 @@ const resultsSection = document.querySelector("#results");
 const browse = document.querySelector("#browse");
 const mapCount = document.querySelector("#map-count");
 const mapEmpty = document.querySelector("#map-empty");
+const mapGuidePill = document.querySelector("#map-guide-pill");
 const originPill = document.querySelector("#origin-pill");
 const originLabel = document.querySelector("#origin-label");
 const originNavLink = document.querySelector("#origin-nav-link");
@@ -55,7 +94,13 @@ const pageInput = document.querySelector("#page");
 const pageTotal = document.querySelector("#page-total");
 const rangeEl = document.querySelector("#range");
 const sortSelect = document.querySelector("#sort-select");
+const sortPills = [...document.querySelectorAll("[data-sort-pill]")];
+const mobileSortCycleBtn = document.querySelector("#mobile-sort-cycle");
+const mobileSortLabel = document.querySelector("#mobile-sort-label");
+const quickRailChips = [...document.querySelectorAll("[data-quick-name]")];
+const quickOpenFiltersBtn = document.querySelector("#quick-open-filters");
 const openUpdateModalBtn = document.querySelector("#open-update-modal");
+const mobileOpenUpdateBtn = document.querySelector("#mobile-open-update");
 const closeUpdateModalBtn = document.querySelector("#close-update-modal");
 const updateModal = document.querySelector("#update-modal");
 const reviewUpdatedText = document.querySelector("#review-updated-text");
@@ -130,6 +175,12 @@ function splitRegion(region) {
     sido: region.slice(0, space),
     sigungu: region.slice(space + 1),
   };
+}
+
+function shortRegion(region) {
+  const { sido, sigungu } = splitRegion(region);
+  const shortSido = SIDO_SHORT[sido] || sido;
+  return sigungu ? `${shortSido} ${sigungu}` : shortSido;
 }
 
 function groupRows(rows) {
@@ -260,7 +311,10 @@ function fillSido() {
   const current = new Set(checkedValues(sidoChoices));
   sidoChoices.replaceChildren();
   for (const name of orderedSidos()) {
-    sidoChoices.append(choiceBox("sido", name, name, current.has(name)));
+    const display = SIDO_SHORT[name] ? `${SIDO_SHORT[name]} (${name.replace(/특별시|광역시|특별자치시|특별자치도/g, "")})` : name;
+    const box = choiceBox("sido", name, SIDO_SHORT[name] || name, current.has(name));
+    box.title = display;
+    sidoChoices.append(box);
   }
 }
 
@@ -476,7 +530,7 @@ function announce(text, immediate) {
 }
 
 function summaryText(list, start, end) {
-  const count = `일치하는 이름 ${numberFormat.format(list.length)}개`;
+  const count = `검색 결과 ${numberFormat.format(list.length)}곳`;
   if (list.length === 0) {
     return count;
   }
@@ -489,10 +543,13 @@ function interiorText(facility) {
   }
   const parts = [];
   if (facility.glampInnerFclty) {
-    parts.push(`글램핑 ${facility.glampInnerFclty}`);
+    parts.push(`글램핑: ${facility.glampInnerFclty}`);
   }
   if (facility.caravInnerFclty) {
-    parts.push(`카라반 ${facility.caravInnerFclty}`);
+    parts.push(`카라반: ${facility.caravInnerFclty}`);
+  }
+  if (!parts.length && facility.lineIntro) {
+    parts.push(String(facility.lineIntro).trim());
   }
   return parts.join(" · ");
 }
@@ -515,32 +572,6 @@ function nameValue(name, contentId) {
   hint.textContent = " 고캠핑에서 새 탭으로 열기";
   link.append(hint);
   return link;
-}
-
-function reviewValue(naverReview) {
-  const wrap = document.createElement("span");
-  wrap.className = "review-value-wrap";
-
-  const countBadge = document.createElement("span");
-  countBadge.className = "review-count-badge";
-  const total = Number(naverReview.total || 0).toLocaleString("ko-KR");
-  const visitor = naverReview.visitor ? Number(naverReview.visitor).toLocaleString("ko-KR") : null;
-  countBadge.textContent = `네이버 리뷰 ${total}`;
-  if (visitor) {
-    countBadge.title = `네이버 리뷰 ${total}개 (방문자 ${visitor})`;
-  }
-  wrap.append(countBadge);
-
-  if (naverReview.url) {
-    const link = document.createElement("a");
-    link.className = "review-link-btn";
-    link.href = naverReview.url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = "네이버 지도 ↗";
-    wrap.append(link);
-  }
-  return wrap;
 }
 
 function focusPlaceOnMap(item, index) {
@@ -622,38 +653,122 @@ function placeBlock(item, index, chipGroups, matchIndex) {
     });
   }
 
+  // Row 1: Rank badge + Campsite Name + Induty Tags + Blue Ribbon Estimated Tag
   const line1 = document.createElement("div");
-  line1.className = "row-main";
+  line1.className = "row-head";
 
-  const left = document.createElement("div");
-  left.className = "row-left";
+  const titleGroup = document.createElement("div");
+  titleGroup.className = "row-title-group";
   if (index === 0) {
     const badge = document.createElement("span");
-    badge.className = "rank-badge row-rank";
-    badge.textContent = `#${item.rank}`;
-    left.append(badge);
+    badge.className = item.rank <= 10 ? "rank-badge row-rank is-top-rank" : "rank-badge row-rank";
+    badge.textContent = String(item.rank);
+    titleGroup.append(badge);
   }
-  left.append(nameValue(item.name, contentId));
+  titleGroup.append(nameValue(item.name, contentId));
+
+  const tagsGroup = document.createElement("div");
+  tagsGroup.className = "row-tags";
+  const isEstimated = Boolean((facility && facility.estimated) || (index === 0 && item.estimated));
+  if (isEstimated) {
+    const ribbonTag = document.createElement("span");
+    ribbonTag.className = "tag-ribbon";
+    ribbonTag.textContent = "🎀 개별화장실 추정";
+    tagsGroup.append(ribbonTag);
+  }
+  const typeList = (facility && facility.types && facility.types.length ? facility.types : item.types).slice(0, 2);
+  for (const type of typeList) {
+    const typeTag = document.createElement("span");
+    typeTag.className = "tag-induty";
+    typeTag.textContent = INDUTY_SHORT[type] || type;
+    tagsGroup.append(typeTag);
+  }
+
+  line1.append(titleGroup, tagsGroup);
+  block.append(line1);
+
+  // Row 2: Region + Travel Badge + Naver Review Badge + Action Links (고캠핑 / 네이버 플레이스 / 길찾기)
+  const line2 = document.createElement("div");
+  line2.className = "row-meta-bar";
+
+  const metaLeft = document.createElement("div");
+  metaLeft.className = "row-meta-left";
+
   const regionEl = document.createElement("span");
   regionEl.className = "row-region";
-  regionEl.textContent = item.regions[index];
-  left.append(regionEl);
+  const regFull = document.createElement("span");
+  regFull.className = "region-full";
+  regFull.textContent = item.regions[index];
+  const regShort = document.createElement("span");
+  regShort.className = "region-short";
+  regShort.textContent = shortRegion(item.regions[index]);
+  regionEl.append(regFull, regShort);
+  metaLeft.append(regionEl);
 
-  const right = document.createElement("div");
-  right.className = "row-right";
   const travel = travelText({ name: item.name, region: item.regions[index] });
   if (travel) {
     const travelBadge = document.createElement("span");
     travelBadge.className = "travel-badge";
-    travelBadge.textContent = travel;
-    right.append(travelBadge);
-  }
-  if (item.naverReview && (item.naverReview.total > 0 || item.naverReview.url)) {
-    right.append(reviewValue(item.naverReview));
+    travelBadge.textContent = `🚗 ${travel}`;
+    metaLeft.append(travelBadge);
   }
 
-  line1.append(left, right);
-  block.append(line1);
+  if (item.naverReview && (item.naverReview.total > 0 || item.naverReview.url)) {
+    const countBadge = document.createElement("span");
+    countBadge.className = "review-count-badge";
+    const total = Number(item.naverReview.total || 0).toLocaleString("ko-KR");
+    const visitor = item.naverReview.visitor ? Number(item.naverReview.visitor).toLocaleString("ko-KR") : null;
+    const mainSpan = document.createElement("span");
+    mainSpan.className = "review-main";
+    mainSpan.textContent = `★ 네이버 리뷰 ${total}개`;
+    countBadge.append(mainSpan);
+    if (visitor) {
+      const visSpan = document.createElement("span");
+      visSpan.className = "visitor-sub";
+      visSpan.textContent = ` (방문자 ${visitor})`;
+      countBadge.append(visSpan);
+    }
+    metaLeft.append(countBadge);
+  }
+
+  const actionsRight = document.createElement("div");
+  actionsRight.className = "row-actions";
+
+  if (contentId) {
+    const goLink = document.createElement("a");
+    goLink.className = "action-link action-gocamping";
+    goLink.href = `${CAMP_PAGE}${encodeURIComponent(contentId)}`;
+    goLink.target = "_blank";
+    goLink.rel = "noopener noreferrer";
+    goLink.textContent = "고캠핑 ↗";
+    actionsRight.append(goLink);
+  }
+
+  if (item.naverReview && item.naverReview.url) {
+    const naverLink = document.createElement("a");
+    naverLink.className = "action-link action-naver";
+    naverLink.href = item.naverReview.url;
+    naverLink.target = "_blank";
+    naverLink.rel = "noopener noreferrer";
+    naverLink.textContent = "N플레이스 ↗";
+    actionsRight.append(naverLink);
+  }
+
+  if (isRouteTarget) {
+    const navHref = naverDirectionsUrl(placeRef);
+    if (navHref) {
+      const routeLink = document.createElement("a");
+      routeLink.className = "action-link action-directions";
+      routeLink.href = navHref;
+      routeLink.target = "_blank";
+      routeLink.rel = "noopener noreferrer";
+      routeLink.textContent = "길찾기 ↗";
+      actionsRight.append(routeLink);
+    }
+  }
+
+  line2.append(metaLeft, actionsRight);
+  block.append(line2);
 
   if (isRouteTarget) {
     const routeBar = document.createElement("div");
@@ -675,6 +790,7 @@ function placeBlock(item, index, chipGroups, matchIndex) {
     block.append(routeBar);
   }
 
+  // Row 3: Facility / Chip Excerpt
   const subParts = [];
   if (chipGroups.length > 0 && index === matchIndex) {
     const excerpt = cardExcerpt(facility, chipGroups);
@@ -687,10 +803,10 @@ function placeBlock(item, index, chipGroups, matchIndex) {
     subParts.push(interior);
   }
   if (subParts.length > 0) {
-    const line2 = document.createElement("p");
-    line2.className = "row-sub";
-    line2.textContent = subParts.join(" · ");
-    block.append(line2);
+    const line3 = document.createElement("p");
+    line3.className = "row-sub";
+    line3.textContent = subParts.join(" · ");
+    block.append(line3);
   }
 
   return block;
@@ -792,7 +908,7 @@ function renderResults(list, immediate) {
 
   const end = start + slice.length;
   pager.hidden = false;
-  rangeEl.textContent = `${numberFormat.format(start + 1)}–${numberFormat.format(end)}번째 이름`;
+  rangeEl.textContent = `${numberFormat.format(start + 1)}–${numberFormat.format(end)}번째`;
   pageInput.value = String(page);
   pageInput.max = String(pages);
   pageTotal.textContent = `/ ${numberFormat.format(pages)}`;
@@ -860,9 +976,9 @@ function ensureMap() {
     });
     campInfo = new window.naver.maps.InfoWindow({
       content: "",
-      maxWidth: 280,
+      maxWidth: 300,
       backgroundColor: "#ffffff",
-      borderColor: "#b7c9bf",
+      borderColor: "#cbd5e1",
       borderWidth: 1,
     });
     window.naver.maps.Event.addListener(campMap, "click", (event) => {
@@ -999,10 +1115,10 @@ function reviewHtml(naverReview) {
   }
   const total = Number(naverReview.total || 0).toLocaleString("ko-KR");
   const visitor = naverReview.visitor ? Number(naverReview.visitor).toLocaleString("ko-KR") : null;
-  const label = visitor ? `네이버 리뷰 ${total}개 (방문자 ${visitor})` : `네이버 리뷰 ${total}개`;
+  const label = visitor ? `★ 네이버 리뷰 ${total}개 (방문자 ${visitor})` : `★ 네이버 리뷰 ${total}개`;
   const badge = `<span class="review-count-badge">${escapeHtml(label)}</span>`;
   const mapLink = naverReview.url
-    ? `<a class="review-link-btn" href="${escapeHtml(naverReview.url)}" target="_blank" rel="noopener noreferrer">네이버 지도 ↗</a>`
+    ? `<a class="action-link action-naver" href="${escapeHtml(naverReview.url)}" target="_blank" rel="noopener noreferrer">N플레이스 ↗</a>`
     : "";
   return `<div class="map-place-review review-value-wrap">${badge}${mapLink}</div>`;
 }
@@ -1022,7 +1138,7 @@ function infoHtml(place) {
     return `<div class="map-card">${name}${region}${review}${time}${navBtn}</div>`;
   }
   const href = `${CAMP_PAGE}${place.contentId}`;
-  const link = `<a class="map-link" href="${href}" target="_blank" rel="noopener noreferrer">고캠핑에서 보기<span class="sr-only">, ${escapeHtml(place.name)}</span></a>`;
+  const link = `<a class="map-link" href="${href}" target="_blank" rel="noopener noreferrer">고캠핑 상세 ↗<span class="sr-only">, ${escapeHtml(place.name)}</span></a>`;
   return `<div class="map-card">${name}${region}${review}${time}<div class="map-card-links">${navBtn}${link}</div></div>`;
 }
 
@@ -1128,20 +1244,24 @@ function renderMap(list) {
     bounds.extend(new window.naver.maps.LatLng(origin.lat, origin.lng));
   }
   if (origin && routeBoundsLast && routeMainLine) {
-    current.fitBounds(routeBoundsLast, { top: 44, right: 32, bottom: 28, left: 32 });
+    current.fitBounds(routeBoundsLast, { top: 52, right: 32, bottom: 32, left: 32 });
     return;
   }
   if (shown.length === 1 && !origin) {
     current.setCenter(bounds.getCenter());
     current.setZoom(13);
   } else {
-    current.fitBounds(bounds, 32);
+    current.fitBounds(bounds, 36);
   }
 }
 
 function render(options) {
   const immediate = Boolean(options && options.immediate);
   const list = currentList();
+  if (clearQueryBtn) {
+    clearQueryBtn.hidden = queryEl.value.trim().length === 0;
+  }
+  syncSort();
   renderActiveFilters();
   renderTop(list);
   renderResults(orderedList(list), immediate);
@@ -1178,19 +1298,73 @@ queryEl.addEventListener("input", () => {
   render({ immediate: false });
 });
 
+if (clearQueryBtn) {
+  clearQueryBtn.addEventListener("click", () => {
+    queryEl.value = "";
+    page = 1;
+    render({ immediate: true });
+    queryEl.focus();
+  });
+}
+
+function setSortMode(value) {
+  sortMode = value === "review" || value === "time" ? value : "interest";
+  syncSort();
+  page = 1;
+  render({ immediate: true });
+}
+
 if (sortSelect) {
   sortSelect.addEventListener("change", () => {
-    const value = sortSelect.value;
-    sortMode = value === "review" || value === "time" ? value : "interest";
+    setSortMode(sortSelect.value);
+  });
+}
+
+for (const pill of sortPills) {
+  pill.addEventListener("click", () => {
+    setSortMode(pill.dataset.sortPill);
+  });
+}
+
+if (mobileSortCycleBtn) {
+  mobileSortCycleBtn.addEventListener("click", () => {
+    const next = sortMode === "interest" ? "review" : sortMode === "review" ? "time" : "interest";
+    setSortMode(next);
+  });
+}
+
+for (const chip of quickRailChips) {
+  chip.addEventListener("click", () => {
+    const name = chip.dataset.quickName;
+    const val = chip.dataset.quickValue;
+    const input = form.querySelector(`input[name="${name}"][value="${val}"]`);
+    if (!input) {
+      return;
+    }
+    input.checked = !input.checked;
     page = 1;
     render({ immediate: true });
   });
 }
 
-if (openUpdateModalBtn && updateModal) {
-  openUpdateModalBtn.addEventListener("click", () => {
-    updateModal.showModal();
+if (quickOpenFiltersBtn) {
+  quickOpenFiltersBtn.addEventListener("click", () => {
+    openFilterSheet();
   });
+}
+
+function openReviewModal() {
+  if (updateModal && typeof updateModal.showModal === "function") {
+    updateModal.showModal();
+  }
+}
+
+if (openUpdateModalBtn) {
+  openUpdateModalBtn.addEventListener("click", openReviewModal);
+}
+
+if (mobileOpenUpdateBtn) {
+  mobileOpenUpdateBtn.addEventListener("click", openReviewModal);
 }
 
 if (closeUpdateModalBtn && updateModal) {
@@ -1211,13 +1385,17 @@ clearOriginBtn.addEventListener("click", () => {
   clearOrigin();
 });
 
-clearBtn.addEventListener("click", () => {
+function resetAllFilters() {
   for (const input of form.querySelectorAll('input[type="checkbox"]')) {
     input.checked = false;
   }
   queryEl.value = "";
   page = 1;
   render({ immediate: true });
+}
+
+clearBtn.addEventListener("click", () => {
+  resetAllFilters();
   const firstSido = sidoChoices.querySelector("input");
   if (firstSido) {
     firstSido.focus();
@@ -1225,6 +1403,12 @@ clearBtn.addEventListener("click", () => {
     queryEl.focus();
   }
 });
+
+if (clearDesktopBtn) {
+  clearDesktopBtn.addEventListener("click", () => {
+    resetAllFilters();
+  });
+}
 
 prevBtn.addEventListener("click", () => {
   page -= 1;
@@ -1250,10 +1434,22 @@ function choiceLabel(input) {
   return text ? text.textContent : input.value;
 }
 
+function syncQuickRail() {
+  for (const chip of quickRailChips) {
+    const name = chip.dataset.quickName;
+    const val = chip.dataset.quickValue;
+    const input = form.querySelector(`input[name="${name}"][value="${val}"]`);
+    const active = Boolean(input && input.checked);
+    chip.setAttribute("aria-pressed", active ? "true" : "false");
+    chip.classList.toggle("is-active", active);
+  }
+}
+
 function renderActiveFilters() {
   const checked = [...form.querySelectorAll('input[type="checkbox"]:checked')];
   filterCountEl.textContent = String(checked.length);
   openFiltersBtn.setAttribute("aria-label", checked.length > 0 ? `필터, ${checked.length}개 선택` : "필터");
+  syncQuickRail();
   activeFilters.replaceChildren();
   if (checked.length === 0) {
     activeFilters.hidden = true;
@@ -1385,7 +1581,25 @@ if (sheetGrabber) {
   }, { passive: true });
 }
 
+const desktopSearchSlot = document.querySelector("#desktop-search-slot");
+const finderEl = document.querySelector("#finder");
+const finderBarEl = document.querySelector(".finder-bar");
+
+function syncSearchSlot() {
+  if (!desktopSearchSlot || !finderEl || !finderBarEl) {
+    return;
+  }
+  if (phoneQuery.matches) {
+    if (finderBarEl.parentElement !== finderEl) {
+      finderEl.prepend(finderBarEl);
+    }
+  } else if (finderBarEl.parentElement !== desktopSearchSlot) {
+    desktopSearchSlot.append(finderBarEl);
+  }
+}
+
 phoneQuery.addEventListener("change", () => {
+  syncSearchSlot();
   if (phoneQuery.matches) {
     notesEl.open = false;
     closeFilterSheet();
@@ -1398,6 +1612,7 @@ phoneQuery.addEventListener("change", () => {
   relayoutMap(true);
 });
 
+syncSearchSlot();
 if (!phoneQuery.matches) {
   notesEl.open = true;
 }
@@ -1482,6 +1697,12 @@ function formatCoord(lng, lat) {
 function syncSort() {
   if (sortSelect) {
     sortSelect.value = sortMode;
+  }
+  for (const pill of sortPills) {
+    pill.setAttribute("aria-pressed", pill.dataset.sortPill === sortMode ? "true" : "false");
+  }
+  if (mobileSortLabel) {
+    mobileSortLabel.textContent = SORT_LABELS[sortMode] || SORT_LABELS.interest;
   }
 }
 
@@ -1575,7 +1796,7 @@ async function drawDrivingRoute(place, options) {
   const current = ensureMap();
   if (sig === routeSignature && routeMainLine && current) {
     if (fitBounds && routeBoundsLast) {
-      current.fitBounds(routeBoundsLast, { top: 44, right: 32, bottom: 28, left: 32 });
+      current.fitBounds(routeBoundsLast, { top: 52, right: 32, bottom: 32, left: 32 });
     }
     return;
   }
@@ -1639,7 +1860,7 @@ async function drawDrivingRoute(place, options) {
       routeMainLine = new window.naver.maps.Polyline({
         map: mapInstance,
         path,
-        strokeColor: "#2563eb",
+        strokeColor: "#1d4ed8",
         strokeOpacity: 0.96,
         strokeWeight: 5,
         strokeLineCap: "round",
@@ -1668,7 +1889,7 @@ async function drawDrivingRoute(place, options) {
       }
       routeBoundsLast = bounds;
       if (fitBounds) {
-        mapInstance.fitBounds(bounds, { top: 44, right: 32, bottom: 28, left: 32 });
+        mapInstance.fitBounds(bounds, { top: 52, right: 32, bottom: 32, left: 32 });
       }
     }
   } catch (error) {
@@ -1711,6 +1932,9 @@ function updateOriginUi() {
     if (originPill) {
       originPill.hidden = true;
     }
+    if (mapGuidePill) {
+      mapGuidePill.hidden = false;
+    }
     if (originNavLink) {
       originNavLink.hidden = true;
       originNavLink.removeAttribute("href");
@@ -1718,6 +1942,9 @@ function updateOriginUi() {
     originLabel.textContent = "출발지 없음";
     clearOriginBtn.hidden = true;
     return;
+  }
+  if (mapGuidePill) {
+    mapGuidePill.hidden = true;
   }
   if (originPill) {
     originPill.hidden = false;
@@ -1736,14 +1963,14 @@ function updateOriginUi() {
     originNavLink.hidden = true;
   }
   if (travelState === "loading") {
-    originLabel.textContent = `출발지 ${origin.label} · 계산 중`;
+    originLabel.textContent = `출발지: ${origin.label} · 계산 중`;
     return;
   }
   if (travelState === "error") {
-    originLabel.textContent = `출발지 ${origin.label} · 시간 오류`;
+    originLabel.textContent = `출발지: ${origin.label} · 시간 오류`;
     return;
   }
-  originLabel.textContent = `출발지 ${origin.label} · ${numberFormat.format(travelTimes.size)}곳`;
+  originLabel.textContent = `출발지: ${origin.label} (${numberFormat.format(travelTimes.size)}곳)`;
 }
 
 function holdOriginClick() {
@@ -2007,7 +2234,6 @@ async function requestTravel() {
   refreshOpenCampCard();
 }
 
-
 async function init() {
   try {
     const response = await fetch(resourceUrl("camping-search-rank-all.json"));
@@ -2029,7 +2255,7 @@ async function init() {
       }
     }
     if (latestDate && reviewUpdatedText) {
-      reviewUpdatedText.textContent = `기준: ${latestDate}`;
+      reviewUpdatedText.textContent = `리뷰 데이터 ${latestDate.replace(/-/g, ".")}`;
     }
 
     fillSido();

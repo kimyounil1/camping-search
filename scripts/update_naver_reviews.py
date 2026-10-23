@@ -673,12 +673,9 @@ def main():
         rank = item.get("rank", idx + 1)
         region = item.get("region", "")
 
-        # 이어하기 검사: 검증된 placeName 및 placeAddr가 있는 항목만 스킵
+        # 이어하기 검사: 이미 수집된 항목(nr이 dict이고 placeName 키가 포함된 새 스키마 항목)이면 스킵
         nr = item.get("naverReview")
-        if not args.force and nr and (
-            (nr.get("placeId") and nr.get("placeName") and nr.get("placeAddr"))
-            or (nr.get("updatedAt") == today_str and nr.get("placeName") is not None)
-        ):
+        if not args.force and isinstance(nr, dict) and "placeName" in nr:
             skipped_count += 1
             continue
 

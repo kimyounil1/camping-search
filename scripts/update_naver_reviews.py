@@ -5,7 +5,7 @@
 네이버 플레이스 리뷰 수(방문자 리뷰 + 블로그 리뷰) 자동 수집 및 JSON 업데이트 스크립트
 
 사용법:
-  python3 scripts/update_naver_reviews.py                 # 전체 업데이트 (기존 수집 항목 스킵 후 이어하기)
+  python3 scripts/update_naver_reviews.py                 # 전체 업데이트 (기존 검증된 수집 항목 스킵 후 이어하기)
   python3 scripts/update_naver_reviews.py --limit 10       # 상위 10개만 테스트
   python3 scripts/update_naver_reviews.py --force          # 기존 수집된 리뷰도 강제 최신화
   python3 scripts/update_naver_reviews.py --delay 1.0      # 딜레이 1.0초 설정
@@ -44,8 +44,12 @@ GENERIC_WORDS = [
 
 CAMP_CATEGORY_KEYWORDS = [
     "캠핑", "야영", "글램핑", "카라반", "펜션", "리조트", "콘도", "민박",
-    "숙박", "휴양림", "야외", "관광농원", "농원", "게스트하우스", "한옥",
+    "숙박", "휴양림", "야외", "관광농원", "농원", "게스트하우스", "한옥", "바베큐", "바비큐",
 ]
+
+SUB_FACILITY_SUFFIXES = (
+    "개수대", "관리실", "화장실", "샤워장", "매점", "주차장", "분리수거장", "안내소", "매표소", "입구",
+)
 
 REV_NUM_PATTERN = r"(\d+(?:\.\d+)?\s*만(?![가-힣])|\d{1,3}(?:,\d{3})+|\d+)"
 
@@ -123,9 +127,127 @@ def clean_addr_for_query(addr1):
     addr = re.sub(r"\([^)]*\)", " ", addr1)
     addr = addr.split(",")[0].strip()
     addr = re.sub(r"\s+등\s*\d+\s*필지.*$", "", addr)
+    addr = re.sub(r"\s+외\s*\d+\s*필지.*$", "", addr)
     addr = re.sub(r"\s+앞\s*공유수면.*$", "", addr)
     addr = re.sub(r"\s+일원$", "", addr)
     return re.sub(r"\s+", " ", addr).strip()
+
+
+def extract_road_or_lot_tokens(addr1):
+    if not addr1:
+        return []
+    s = re.sub(r"\([^)]*\)", " ", addr1)
+    tokens = []
+    for m in re.finditer(r"([가-힣0-9]+(?:로|길)\d*(?:번길)?)\s*(\d+(?:-\d+)?)", s):
+        tokens.append((m.group(1), m.group(2)))
+    for m in re.finditer(r"([가-힣0-9]+[리동가])\s*(산?\s*\d+(?:-\d+)?)", s):
+        tokens.append((m.group(1), re.sub(r"\s+", "", m.group(2))))
+    return tokens
+
+
+def candidate_matches_exact_addr(addr1, cand):
+    tokens = extract_road_or_lot_tokens(addr1)
+    if not tokens:
+        return False
+    cand_addr_str = " ".join([
+        cand.get("placeAddr") or "",
+        cand.get("roadAddress") or "",
+        cand.get("jibunAddress") or "",
+    ])
+    for street_or_ri, num in tokens:
+        num_digits = re.sub(r"^산", "", num)
+        has_san = num.startswith("산")
+        if has_san:
+            pattern = re.escape(street_or_ri) + r"\s*산\s*" + re.escape(num_digits) + r"(?!\d)"
+        else:
+            pattern = re.escape(street_or_ri) + r"\s*" + re.escape(num_digits) + r"(?!\d)"
+        if re.search(pattern, cand_addr_str):
+            return True
+    return False
+
+
+def extract_eupmyeon(addr1):
+    if not addr1:
+        return ""
+    for part in addr1.split()[1:4]:
+        if re.search(r"[읍면]$", part) and len(part) >= 2:
+            return part
+    return ""
+
+
+def candidate_matches_region(region_str, addr1, cand_addr_text):
+    if not region_str and not addr1:
+        return True
+    if not cand_addr_text:
+        return False
+    sido_short, sigungu = clean_region(region_str)
+    sigungu_short = re.sub(r"[시군구]$", "", sigungu) if len(sigungu) >= 2 else sigungu
+    tokens = [t for t in [sigungu, sigungu_short] if t and len(t) >= 2]
+    if addr1:
+        parts = addr1.split()
+        if len(parts) >= 3:
+            eupmyeon = re.sub(r"[읍면동]$", "", parts[2])
+            if len(eupmyeon) >= 2:
+                tokens.append(eupmyeon)
+    if tokens:
+        if not any(t in cand_addr_text for t in tokens):
+            return False
+    if sido_short and sido_short not in ("전남", "광주"):
+        other_sidos = [
+            s for s in ["강원", "경기", "충북", "충남", "전북", "전남", "경북", "경남", "서울", "인천", "대전", "대구", "부산", "울산", "광주", "세종", "제주"]
+            if s != sido_short
+        ]
+        if sido_short not in cand_addr_text and any(os_name in cand_addr_text for os_name in other_sidos):
+            return False
+    return True
+
+
+def extract_road_name_only(addr1):
+    if not addr1:
+        return ""
+    s = re.sub(r"\([^)]*\)", " ", addr1)
+    m = re.search(r"([가-힣0-9]+(?:로|길)\d*(?:번길)?)", s)
+    return m.group(1) if m else ""
+
+
+def name_matches_title(target_name, region_str, place_title, addr1="", cand_addr=""):
+    if not place_title:
+        return False
+    clean_pt = re.sub(r"<[^>]+>", "", place_title).strip()
+    if any(clean_pt.endswith(suf) for suf in SUB_FACILITY_SUFFIXES):
+        return False
+
+    # If target has eup/myeon in addr1 and cand_addr specifies a DIFFERENT eup/myeon, reject!
+    target_em = extract_eupmyeon(addr1)
+    cand_em = extract_eupmyeon(cand_addr)
+    if target_em and cand_em and target_em != cand_em:
+        return False
+
+    core_target = extract_core_name(target_name, region_str)
+    core_place = extract_core_name(clean_pt, region_str)
+    full_target = re.sub(r"[^가-힣a-zA-Z0-9]", "", target_name or "").lower()
+    full_place = re.sub(r"[^가-힣a-zA-Z0-9]", "", clean_pt or "").lower()
+
+    if not core_target or not full_place:
+        return False
+
+    # If both target and candidate have road names and they are different roads,
+    # only allow if core_target == core_place AND full_target != core_target (or road is same)
+    target_road = extract_road_name_only(addr1)
+    cand_road = extract_road_name_only(cand_addr)
+    if target_road and cand_road and target_road != cand_road:
+        # When roads differ inside the same sigungu/eupmyeon, only accept if the full name matches or core_target >= 4 chars and exact match without generic word mismatch
+        if full_target != full_place and len(core_target) <= 4:
+            return False
+
+    if core_target == core_place or full_target == full_place:
+        return True
+    if len(core_target) >= 4 and len(core_place) >= 4:
+        if core_place.startswith(core_target) and len(core_place) - len(core_target) <= 1:
+            return True
+        if core_target.startswith(core_place) and len(core_target) - len(core_place) <= 1:
+            return True
+    return False
 
 
 def build_search_queries(item):
@@ -144,6 +266,7 @@ def build_search_queries(item):
     compact_name = re.sub(r"\s+", "", name)
 
     queries = []
+    # When facility.addr1 is available and the camp name is short/generic, address search is high precision
     if has_cat:
         if loc:
             queries.append((f"{loc} {name}", False))
@@ -212,45 +335,6 @@ def extract_counts_from_text(txt):
     return tot, vis, blog
 
 
-def region_matches_text(region_str, addr1, text):
-    if not region_str and not addr1:
-        return True
-    sido_short, sigungu = clean_region(region_str)
-    sigungu_short = re.sub(r"[시군구]$", "", sigungu) if len(sigungu) >= 2 else sigungu
-    tokens = [t for t in [sigungu, sigungu_short] if t and len(t) >= 2]
-    if addr1:
-        parts = addr1.split()
-        if len(parts) >= 3:
-            eupmyeon = re.sub(r"[읍면동]$", "", parts[2])
-            if len(eupmyeon) >= 2:
-                tokens.append(eupmyeon)
-    if tokens:
-        return any(t in text for t in tokens)
-    if sido_short:
-        return sido_short in text
-    return True
-
-
-def name_matches_title(target_name, region_str, place_title):
-    if not place_title:
-        return False
-    core_target = extract_core_name(target_name, region_str)
-    core_place = extract_core_name(place_title, region_str)
-    full_target = re.sub(r"[^가-힣a-zA-Z0-9]", "", target_name or "").lower()
-    full_place = re.sub(r"[^가-힣a-zA-Z0-9]", "", place_title or "").lower()
-
-    if not core_target or not full_place:
-        return False
-    if core_target == core_place or full_target == full_place:
-        return True
-    if len(core_target) >= 3 and len(core_place) >= 3:
-        if core_place.startswith(core_target) and len(core_place) - len(core_target) <= 2:
-            return True
-        if core_target.startswith(core_place) and len(core_target) - len(core_place) <= 2:
-            return True
-    return False
-
-
 def fetch_html(query):
     encoded = urllib.parse.quote(query)
     url = f"https://m.search.naver.com/search.naver?query={encoded}"
@@ -262,15 +346,183 @@ def fetch_html(query):
         return None
 
 
+def extract_apollo_candidates(html):
+    """Extract structured candidate places from Naver search __APOLLO_STATE__ JSON."""
+    if not html:
+        return []
+    candidates = []
+    seen = set()
+
+    def to_int(x):
+        if x is None:
+            return 0
+        if isinstance(x, int):
+            return x
+        s = re.sub(r"[^\d]", "", str(x))
+        return int(s) if s else 0
+
+    for m in re.finditer(r"__APOLLO_STATE__\s*=\s*\{", html):
+        start = m.end() - 1
+        depth = 0
+        in_str = False
+        esc = False
+        end_idx = None
+        for i in range(start, len(html)):
+            ch = html[i]
+            if in_str:
+                if esc:
+                    esc = False
+                elif ch == "\\":
+                    esc = True
+                elif ch == '"':
+                    in_str = False
+            else:
+                if ch == '"':
+                    in_str = True
+                elif ch == "{":
+                    depth += 1
+                elif ch == "}":
+                    depth -= 1
+                    if depth == 0:
+                        end_idx = i + 1
+                        break
+        if not end_idx:
+            continue
+        raw_json = html[start:end_idx]
+        try:
+            st = json.loads(raw_json)
+        except Exception:
+            continue
+
+        for k, v in st.items():
+            if not isinstance(v, dict):
+                continue
+            tn = v.get("__typename", "")
+            if tn not in ("PlaceDetailBase", "AccommodationSearchItem", "PlaceListBusinessesItem", "PlaceSummary"):
+                continue
+            pid = str(v.get("id") or "").strip()
+            if not pid or not pid.isdigit() or pid in seen:
+                continue
+            seen.add(pid)
+
+            raw_name = v.get("normalizedName") or v.get("name") or ""
+            clean_name = re.sub(r"<[^>]+>", "", raw_name).strip()
+            if not clean_name:
+                continue
+
+            common = (v.get("commonAddress") or "").strip()
+            road = (v.get("roadAddress") or "").strip()
+            jibun = (v.get("address") or "").strip()
+            full_addr = (v.get("fullAddress") or "").strip()
+
+            if full_addr:
+                place_addr = full_addr
+            elif common and road and not road.startswith(common):
+                place_addr = f"{common} {road}".strip()
+            elif common and jibun and not jibun.startswith(common):
+                place_addr = f"{common} {jibun}".strip()
+            else:
+                place_addr = (road or jibun or common).strip()
+
+            # Clean trailing "지도" in roadAddress if present
+            place_addr = re.sub(r"\s+지도$", "", place_addr).strip()
+
+            vis_raw = (
+                v.get("visitorReviewsTotal")
+                if v.get("visitorReviewsTotal") is not None
+                else (
+                    v.get("visitorReviewCount")
+                    if v.get("visitorReviewCount") is not None
+                    else v.get("placeReviewCount")
+                )
+            )
+            blog_raw = (
+                v.get("cafeBlogReviewsTotal")
+                if v.get("cafeBlogReviewsTotal") is not None
+                else v.get("blogCafeReviewCount")
+            )
+            vis = to_int(vis_raw)
+            blog = to_int(blog_raw)
+
+            candidates.append({
+                "placeId": pid,
+                "placeName": clean_name,
+                "placeAddr": place_addr,
+                "roadAddress": road,
+                "jibunAddress": jibun,
+                "commonAddress": common,
+                "category": (v.get("category") or "").strip(),
+                "visitor": vis,
+                "blog": blog,
+                "total": vis + blog,
+                "typename": tn,
+            })
+
+    return candidates
+
+
 def parse_naver_search_html(html, item, is_addr_query=False):
     if not html:
         return None
-    soup = BeautifulSoup(html, "html.parser")
     target_name = item.get("name", "").strip()
     region_str = item.get("region", "").strip()
     addr1 = (item.get("facility") or {}).get("addr1") or ""
 
-    # 1. Single-place detail card (div.place_section with /home link)
+    # 1. Primary: Structured Apollo State candidates (exact per-place id, name, address, visitor & blog counts)
+    apollo_candidates = extract_apollo_candidates(html)
+    # Prefer exact address matches first, then name matches
+    best_match = None
+    for cand in apollo_candidates:
+        pname = cand["placeName"]
+        if any(pname.endswith(suf) for suf in SUB_FACILITY_SUFFIXES):
+            continue
+        addr_blob = " ".join([
+            cand.get("placeAddr") or "",
+            cand.get("commonAddress") or "",
+            cand.get("roadAddress") or "",
+            cand.get("jibunAddress") or "",
+        ]).strip()
+
+        if not candidate_matches_region(region_str, addr1, addr_blob):
+            continue
+
+        exact_addr_ok = bool(addr1 and candidate_matches_exact_addr(addr1, cand))
+        name_ok = name_matches_title(target_name, region_str, pname, addr1=addr1, cand_addr=addr_blob)
+
+        if is_addr_query:
+            cat_txt = (cand.get("category") or "") + " " + pname
+            is_camp_cat = any(k in cat_txt for k in CAMP_CATEGORY_KEYWORDS)
+            if not (exact_addr_ok and (name_ok or is_camp_cat)):
+                continue
+        else:
+            if not name_ok:
+                continue
+            # When the target name is very short (core <= 2 chars, e.g. '문', '솔', '포레스트') and we have a road/lot address,
+            # require either exact_addr_ok or exact normalized name match if another place on the same street exists
+            core_t = extract_core_name(target_name, region_str)
+            if len(core_t) <= 1 and addr1 and not exact_addr_ok:
+                continue
+
+        result = {
+            "total": cand["total"],
+            "visitor": cand["visitor"],
+            "blog": cand["blog"],
+            "placeId": cand["placeId"],
+            "placeName": pname,
+            "placeAddr": cand["placeAddr"],
+            "url": f"https://m.place.naver.com/place/{cand['placeId']}/home",
+        }
+        # If both name and exact address match, return immediately
+        if name_ok and exact_addr_ok:
+            return result
+        if not best_match:
+            best_match = result
+
+    if best_match:
+        return best_match
+
+    # 2. Fallback: Single-place detail card DOM (only if Apollo state was absent)
+    soup = BeautifulSoup(html, "html.parser")
     place_sections = soup.find_all("div", class_="place_section")
     by_pid = {}
     for sec in place_sections:
@@ -279,21 +531,23 @@ def parse_naver_search_html(html, item, is_addr_query=False):
             if m:
                 pid = m.group(1)
                 sub = m.group(2) or ""
-                info = by_pid.setdefault(pid, {"sections": [], "title": "", "links": []})
+                info = by_pid.setdefault(pid, {"sections": [], "title": ""})
                 if sec not in info["sections"]:
                     info["sections"].append(sec)
                 a_txt = a.get_text(" ", strip=True)
-                info["links"].append((sub, a_txt, a["href"]))
                 if sub == "home" and not info["title"] and a_txt:
                     info["title"] = a_txt
 
     for pid, info in by_pid.items():
-        if not info["title"]:
+        pname = info["title"]
+        if not pname or any(pname.endswith(suf) for suf in SUB_FACILITY_SUFFIXES):
             continue
         combined_txt = " ".join(s.get_text(" ", strip=True) for s in info["sections"])
-        if not region_matches_text(region_str, addr1, combined_txt):
+        m_addr = re.search(r"주소\s+(.+?)(?:\s+지도|\s+내비게이션|\s+거리뷰|\s+전화번호|$)", combined_txt)
+        place_addr = m_addr.group(1).strip() if m_addr else ""
+        if not candidate_matches_region(region_str, addr1, place_addr or combined_txt):
             continue
-        if not is_addr_query and not name_matches_title(target_name, region_str, info["title"]):
+        if not name_matches_title(target_name, region_str, pname, addr1=addr1, cand_addr=place_addr):
             continue
         tot, vis, blog = extract_counts_from_text(combined_txt)
         return {
@@ -301,79 +555,9 @@ def parse_naver_search_html(html, item, is_addr_query=False):
             "visitor": vis,
             "blog": blog,
             "placeId": pid,
-            "placeTitle": info["title"],
+            "placeName": pname,
+            "placeAddr": place_addr,
             "url": f"https://m.place.naver.com/place/{pid}/home",
-        }
-
-    # 2. Multi-place list items (li.VLTHu, li.Fh8nG, li.tTqjI, or leaf li with place link)
-    candidates = []
-    seen_li_pids = set()
-    for li in soup.find_all("li"):
-        if li.find("li"):
-            continue
-        li_classes = li.get("class") or []
-        # Skip photo/keyword/review sub-items of a single place card
-        if any(c in li_classes for c in ("WGRis", "avHEe", "dMBJX", "r5ckD", "Fvms5")):
-            continue
-        pid = None
-        title = ""
-        title_el = li.find(class_=re.compile(r"YwYLL|place_bluelink|CHC5F|title"))
-        if title_el:
-            title = title_el.get_text(" ", strip=True)
-        for a in li.find_all("a", href=True):
-            m = re.search(r"m\.place\.naver\.com/(?:accommodation|place|attraction|restaurant)/(\d+)(?:/([a-zA-Z0-9_]+))?", a["href"])
-            if m:
-                sub = m.group(2) or ""
-                if sub in ("photo", "review", "location", "room", "booking"):
-                    if not pid:
-                        pid = m.group(1)
-                    continue
-                pid = m.group(1)
-                a_txt = a.get_text(" ", strip=True)
-                if not title and a_txt:
-                    # strip trailing badges like 네이버페이 예약 톡톡
-                    cleaned_t = re.sub(r"\s*(?:네이버페이|예약|톡톡|N예약).*$", "", a_txt).strip()
-                    title = cleaned_t or a_txt
-                break
-        if not pid or pid in seen_li_pids:
-            continue
-        seen_li_pids.add(pid)
-        li_txt = li.get_text(" ", strip=True)
-        tot, vis, blog = extract_counts_from_text(li_txt)
-        candidates.append({
-            "pid": pid,
-            "title": title,
-            "text": li_txt,
-            "total": tot,
-            "visitor": vis,
-            "blog": blog,
-            "is_addr_card": "VLTHu" in li_classes or bool(li.attrs.get("data-loc_adr-doc-id")),
-        })
-
-    for cand in candidates:
-        title = cand["title"]
-        li_txt = cand["text"]
-        # Check region if region info appears in the card text
-        has_any_sido = any(s in li_txt for s in ["강원", "경기", "충북", "충남", "전북", "전남", "경북", "경남", "서울", "인천", "대전", "대구", "부산", "울산", "광주", "세종", "제주"])
-        if has_any_sido and not region_matches_text(region_str, addr1, li_txt):
-            continue
-
-        if is_addr_query:
-            # On an exact address search, accept if name matches OR if it's an address-matched place with camp/lodging category
-            is_camp_cat = any(k in li_txt for k in CAMP_CATEGORY_KEYWORDS)
-            if not (name_matches_title(target_name, region_str, title) or (cand["is_addr_card"] and is_camp_cat)):
-                continue
-        else:
-            if not name_matches_title(target_name, region_str, title):
-                continue
-
-        return {
-            "total": cand["total"],
-            "visitor": cand["visitor"],
-            "blog": cand["blog"],
-            "placeId": cand["pid"],
-            "placeTitle": title,
-            "url": f"https://m.place.naver.com/place/{cand['pid']}/home",
         }
 
     return None
@@ -392,10 +576,10 @@ def fetch_campsite_review(item):
         res = parse_naver_search_html(html, item, is_addr_query=is_addr)
         if res:
             res["matchedQuery"] = q
-            # If we found a place via address search or list card that didn't display its review count directly,
-            # try follow-up queries to trigger its single-place card on Naver search!
-            if res["total"] == 0 and res.get("placeTitle"):
-                pt = res["placeTitle"]
+            # If we found a verified place (e.g. via address search) whose list item had 0 inline review count,
+            # query its discovered placeName in the same region to trigger its PlaceDetailBase / AccommodationSearchItem!
+            if res["total"] == 0 and res.get("placeName"):
+                pt = res["placeName"]
                 addr1 = (item.get("facility") or {}).get("addr1") or ""
                 addr_parts = addr1.split()
                 eupmyeon = addr_parts[2] if len(addr_parts) >= 3 and re.search(r"[읍면동]$", addr_parts[2]) else ""
@@ -422,9 +606,10 @@ def fetch_campsite_review(item):
                         res["total"] = res2["total"]
                         res["visitor"] = res2["visitor"]
                         res["blog"] = res2["blog"]
+                        if res2.get("placeAddr"):
+                            res["placeAddr"] = res2["placeAddr"]
                         res["matchedQuery"] = f"{q} -> {fq}"
                         break
-            res.pop("placeTitle", None)
             if res["total"] > 0:
                 return res
             if not best_place_only:
@@ -439,6 +624,8 @@ def fetch_campsite_review(item):
         "visitor": 0,
         "blog": 0,
         "placeId": None,
+        "placeName": None,
+        "placeAddr": None,
         "url": None,
         "matchedQuery": queries[0][0] if queries else "",
     }
@@ -486,12 +673,11 @@ def main():
         rank = item.get("rank", idx + 1)
         region = item.get("region", "")
 
-        # 이어하기 검사: 이미 유효한 naverReview(placeId 존재 또는 오늘 갱신됨)가 있고 force가 아니면 스킵
+        # 이어하기 검사: 검증된 placeName 및 placeAddr가 있는 항목만 스킵
         nr = item.get("naverReview")
         if not args.force and nr and (
-            (nr.get("total", 0) > 0 and nr.get("placeId"))
-            or nr.get("placeId")
-            or nr.get("updatedAt") == today_str
+            (nr.get("placeId") and nr.get("placeName") and nr.get("placeAddr"))
+            or (nr.get("updatedAt") == today_str and nr.get("placeName") is not None)
         ):
             skipped_count += 1
             continue
@@ -503,8 +689,15 @@ def main():
 
         total_rev = review_info.get("total", 0)
         vis_rev = review_info.get("visitor", 0)
+        blog_rev = review_info.get("blog", 0)
+        p_name = review_info.get("placeName") or "-"
+        p_addr = review_info.get("placeAddr") or "-"
         q_used = review_info.get("matchedQuery", "")
-        print(f"[{idx+1}/{target_count}] ({rank}위) {name} ({region}) -> 리뷰 {total_rev}개 (방문자 {vis_rev}) [검색어: {q_used}]")
+        print(
+            f"[{idx+1}/{target_count}] ({rank}위) {name} ({region}) -> "
+            f"리뷰 {total_rev}개 (방문자 {vis_rev}, 블로그 {blog_rev}) | "
+            f"매칭: {p_name} ({p_addr}) [검색어: {q_used}]"
+        )
 
         # 중간 저장
         if (updated_count % args.save_interval == 0) and updated_count > 0:

@@ -27005,7 +27005,17 @@
     },
     "lat": 37.2086499992224,
     "lng": 127.998295446702,
-    "naverReview": null
+    "naverReview": {
+      "total": 233,
+      "visitor": 32,
+      "blog": 201,
+      "placeId": "35408275",
+      "placeName": "별수하캠핑장",
+      "placeAddr": "충북 제천시 백운면 운학3길 19",
+      "url": "https://m.place.naver.com/place/35408275/home",
+      "matchedQuery": "제천시 별수하캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 628,
@@ -27035,7 +27045,17 @@
       "addr1": "인천광역시 옹진군 영흥면 선재로186번길 86-22",
       "tel": "010-8663-0052"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 217,
+      "visitor": 1,
+      "blog": 216,
+      "placeId": "1010408228",
+      "placeName": "선재오토캠핑장",
+      "placeAddr": "인천 옹진군 영흥면 선재로186번길 86-37",
+      "url": "https://m.place.naver.com/place/1010408228/home",
+      "matchedQuery": "옹진군 선재오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 629,
@@ -27068,7 +27088,17 @@
       "addr1": "경상남도 사천시 서포면 용궁로 124",
       "tel": "070-8988-4000"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 686,
+      "visitor": 310,
+      "blog": 376,
+      "placeId": "1200308117",
+      "placeName": "비토국민여가캠핑장",
+      "placeAddr": "경남 사천시 서포면 용궁로 132 관리사무실",
+      "url": "https://m.place.naver.com/place/1200308117/home",
+      "matchedQuery": "사천시 비토 국민여가캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 630,
@@ -27100,7 +27130,17 @@
     },
     "lat": 37.7212947,
     "lng": 127.5098162,
-    "naverReview": null
+    "naverReview": {
+      "total": 1647,
+      "visitor": 1337,
+      "blog": 310,
+      "placeId": "1626558285",
+      "placeName": "리버위드 글램핑",
+      "placeAddr": "강원 춘천시 남면 박암관천길 899",
+      "url": "https://m.place.naver.com/place/1626558285/home",
+      "matchedQuery": "춘천시 리버위드 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 631,
@@ -27132,7 +27172,17 @@
     },
     "lat": 37.8546307,
     "lng": 127.40107,
-    "naverReview": null
+    "naverReview": {
+      "total": 1345,
+      "visitor": 865,
+      "blog": 480,
+      "placeId": "1470254174",
+      "placeName": "포쉬 카라반",
+      "placeAddr": "경기 가평군 조종면 연인산로 670-272 포쉬카라반",
+      "url": "https://m.place.naver.com/place/1470254174/home",
+      "matchedQuery": "가평군 포쉬카라반",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 632,
@@ -27164,7 +27214,17 @@
     },
     "lat": 36.8379760130741,
     "lng": 127.666871950826,
-    "naverReview": null
+    "naverReview": {
+      "total": 946,
+      "visitor": 804,
+      "blog": 142,
+      "placeId": "1866953045",
+      "placeName": "개차반캠핑장",
+      "placeAddr": "충북 괴산군 사리면 소매1길 102 개차반캠핑장",
+      "url": "https://m.place.naver.com/place/1866953045/home",
+      "matchedQuery": "괴산군 개차반캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 633,
@@ -27199,7 +27259,17 @@
     },
     "lat": 37.3241008,
     "lng": 126.6806875,
-    "naverReview": null
+    "naverReview": {
+      "total": 1594,
+      "visitor": 1261,
+      "blog": 333,
+      "placeId": "1183088888",
+      "placeName": "웨이브파크 카라반",
+      "placeAddr": "경기 시흥시 거북섬둘레길 42 웨이브파크 카라반",
+      "url": "https://m.place.naver.com/place/1183088888/home",
+      "matchedQuery": "시흥시 웨이브파크 카라반",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 634,
@@ -27233,7 +27303,17 @@
     },
     "lat": 36.9701571,
     "lng": 126.335676,
-    "naverReview": null
+    "naverReview": {
+      "total": 1140,
+      "visitor": 710,
+      "blog": 430,
+      "placeId": "1218121402",
+      "placeName": "서산벌천포캠핑장",
+      "placeAddr": "충남 서산시 대산읍 벌천포길 93-25",
+      "url": "https://m.place.naver.com/place/1218121402/home",
+      "matchedQuery": "충남 서산시 대산읍 벌천포길 93-25 -> 서산시 서산벌천포캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 635,
@@ -27264,7 +27344,17 @@
     },
     "lat": 37.9566202,
     "lng": 127.1230004,
-    "naverReview": null
+    "naverReview": {
+      "total": 1180,
+      "visitor": 966,
+      "blog": 214,
+      "placeId": "1707431471",
+      "placeName": "포천그린별캠핑장",
+      "placeAddr": "경기 포천시 신북면 탑신로 1431 포천그린별캠핑장",
+      "url": "https://m.place.naver.com/place/1707431471/home",
+      "matchedQuery": "포천시 포천그린별캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 636,
@@ -27293,7 +27383,17 @@
       "featureNm": "",
       "addr1": "경기도 가평군 북면 가화로 2670-71"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 8,
+      "visitor": 0,
+      "blog": 8,
+      "placeId": "2006436513",
+      "placeName": "캠프 고요숲",
+      "placeAddr": "경기 가평군 북면 가화로 2670-49 캠프 고요숲",
+      "url": "https://m.place.naver.com/place/2006436513/home",
+      "matchedQuery": "가평군 캠프 고요숲",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 637,
@@ -27324,7 +27424,17 @@
       "addr1": "충청남도 공주시 반포면 동학사1로 46",
       "tel": "041-960-1111"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 6816,
+      "visitor": 3040,
+      "blog": 3776,
+      "placeId": "338042803",
+      "placeName": "계룡산글램핑 파크오브드림",
+      "placeAddr": "충남 공주시 반포면 동학사1로 46 파크오브드림",
+      "url": "https://m.place.naver.com/place/338042803/home",
+      "matchedQuery": "공주시 계룡산글램핑 파크오브드림",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 638,
@@ -27357,7 +27467,17 @@
     },
     "lat": 33.2584306,
     "lng": 126.349892,
-    "naverReview": null
+    "naverReview": {
+      "total": 2099,
+      "visitor": 2053,
+      "blog": 46,
+      "placeId": "1646682182",
+      "placeName": "코티지캠핑",
+      "placeAddr": "제주 서귀포시 안덕면 감산서로 55 코티지캠핑",
+      "url": "https://m.place.naver.com/place/1646682182/home",
+      "matchedQuery": "서귀포시 코티지 캠핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 639,
@@ -27388,7 +27508,17 @@
     },
     "lat": 36.9506283,
     "lng": 127.9815072,
-    "naverReview": null
+    "naverReview": {
+      "total": 368,
+      "visitor": 0,
+      "blog": 368,
+      "placeId": "1115073293",
+      "placeName": "재오개 캠핑장",
+      "placeAddr": "충북 충주시 살미면 충주호수로 1870-5 재오개 캠핑장",
+      "url": "https://m.place.naver.com/place/1115073293/home",
+      "matchedQuery": "충주시 재오개캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 640,
@@ -27424,7 +27554,17 @@
     },
     "lat": 36.6490703711109,
     "lng": 128.061621210306,
-    "naverReview": null
+    "naverReview": {
+      "total": 64,
+      "visitor": 27,
+      "blog": 37,
+      "placeId": "1916360835",
+      "placeName": "문경또또캠핑장",
+      "placeAddr": "경북 문경시 가은읍 왕능강변길 71",
+      "url": "https://m.place.naver.com/place/1916360835/home",
+      "matchedQuery": "문경시 문경또또캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 641,
@@ -27453,7 +27593,17 @@
       "addr1": "경기도 파주시 적성면 윗배우니길 441-42",
       "tel": "031-958-9558"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "placeName": null,
+      "placeAddr": null,
+      "url": null,
+      "matchedQuery": "파주시 산머루농원캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 642,
@@ -27481,7 +27631,17 @@
       "featureNm": "",
       "addr1": "강원특별자치도 영월군 무릉도원면 무릉법흥로 1208-56"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 335,
+      "visitor": 1,
+      "blog": 334,
+      "placeId": "37798027",
+      "placeName": "영월캠프",
+      "placeAddr": "강원특별자치도 영월군 무릉도원면 무릉법흥로 1208-56",
+      "url": "https://m.place.naver.com/place/37798027/home",
+      "matchedQuery": "영월군 영월캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 643,
@@ -27516,7 +27676,17 @@
     },
     "lat": 35.698633,
     "lng": 128.8242261,
-    "naverReview": null
+    "naverReview": {
+      "total": 1921,
+      "visitor": 1647,
+      "blog": 274,
+      "placeId": "1733538121",
+      "placeName": "돌담숲",
+      "placeAddr": "경북 청도군 매전면 청려로 3180",
+      "url": "https://m.place.naver.com/place/1733538121/home",
+      "matchedQuery": "청도군 돌담숲",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 644,
@@ -27545,7 +27715,17 @@
       "addr1": "강원특별자치도 횡성군 둔내면 경강로궁종1길 121-7",
       "tel": "0507-1358-2916"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 114,
+      "visitor": 0,
+      "blog": 114,
+      "placeId": "1746080195",
+      "placeName": "도모횡성",
+      "placeAddr": "강원 횡성군 둔내면 경강로궁종1길 121-7",
+      "url": "https://m.place.naver.com/place/1746080195/home",
+      "matchedQuery": "횡성군 도모 횡성 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 645,
@@ -27580,7 +27760,17 @@
     },
     "lat": 36.0777955,
     "lng": 129.1700704,
-    "naverReview": null
+    "naverReview": {
+      "total": 133,
+      "visitor": 10,
+      "blog": 123,
+      "placeId": "37993426",
+      "placeName": "봉좌마을 캠핑장",
+      "placeAddr": "경북 포항시 북구 기계면 봉계길 46",
+      "url": "https://m.place.naver.com/place/37993426/home",
+      "matchedQuery": "포항시 봉좌마을 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 646,
@@ -27616,7 +27806,17 @@
     },
     "lat": 37.2676913,
     "lng": 127.515463,
-    "naverReview": null
+    "naverReview": {
+      "total": 61,
+      "visitor": 29,
+      "blog": 32,
+      "placeId": "37127600",
+      "placeName": "청암관광농원글램핑장",
+      "placeAddr": "경기 이천시 부발읍 황무로1720번길 74",
+      "url": "https://m.place.naver.com/place/37127600/home",
+      "matchedQuery": "이천시 청암관광농원 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 647,
@@ -27649,7 +27849,17 @@
     },
     "lat": 34.5104408,
     "lng": 127.4570399,
-    "naverReview": null
+    "naverReview": {
+      "total": 269,
+      "visitor": 154,
+      "blog": 115,
+      "placeId": "1096227311",
+      "placeName": "형제섬캠프타운",
+      "placeAddr": "전남광주 고흥군 동일면 우주로 2468-12",
+      "url": "https://m.place.naver.com/place/1096227311/home",
+      "matchedQuery": "고흥군 형제섬캠프타운",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 648,
@@ -27681,7 +27891,17 @@
       "featureNm": "",
       "addr1": "경기도 가평군 조종면 연인산로 296"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 5,
+      "visitor": 0,
+      "blog": 5,
+      "placeId": "35118117",
+      "placeName": "메기의추억캠핑장",
+      "placeAddr": "경기 가평군 조종면 연인산로 296",
+      "url": "https://m.place.naver.com/place/35118117/home",
+      "matchedQuery": "가평군 메기의 추억 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 649,
@@ -27711,7 +27931,17 @@
       "addr1": "충청남도 부여군 세도면 인세로 40-3",
       "tel": "041-832-1996"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 18,
+      "visitor": 0,
+      "blog": 18,
+      "placeId": "1529767525",
+      "placeName": "교육가족체험장",
+      "placeAddr": "충남 부여군 세도면 인세로 40-3",
+      "url": "https://m.place.naver.com/place/1529767525/home",
+      "matchedQuery": "부여군 부여교육가족체험장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 650,
@@ -27742,7 +27972,17 @@
     },
     "lat": 36.7536552863057,
     "lng": 126.132033885952,
-    "naverReview": null
+    "naverReview": {
+      "total": 302,
+      "visitor": 41,
+      "blog": 261,
+      "placeId": "36547689",
+      "placeName": "어은돌힐링캠핑장",
+      "placeAddr": "충남 태안군 소원면 연들길 84",
+      "url": "https://m.place.naver.com/place/36547689/home",
+      "matchedQuery": "태안군 어은돌힐링캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 651,
@@ -27772,7 +28012,17 @@
       "addr1": "경기도 연천군 미산면 어삼로 419",
       "tel": "031-835-7394"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 494,
+      "visitor": 1,
+      "blog": 493,
+      "placeId": "32521180",
+      "placeName": "평화강변수목캠핑장",
+      "placeAddr": "경기 연천군 미산면 어삼로 415-17",
+      "url": "https://m.place.naver.com/place/32521180/home",
+      "matchedQuery": "연천군 평화강변수목 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 652,
@@ -27804,7 +28054,17 @@
     },
     "lat": 36.9752549538789,
     "lng": 127.032559225259,
-    "naverReview": null
+    "naverReview": {
+      "total": 247,
+      "visitor": 17,
+      "blog": 230,
+      "placeId": "1365436798",
+      "placeName": "내리캠핑장",
+      "placeAddr": "경기 평택시 팽성읍 내리길 64-23 내리캠핑장",
+      "url": "https://m.place.naver.com/place/1365436798/home",
+      "matchedQuery": "평택시 내리 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 653,
@@ -27836,7 +28096,17 @@
     },
     "lat": 36.4091488,
     "lng": 126.5981631,
-    "naverReview": null
+    "naverReview": {
+      "total": 19,
+      "visitor": 0,
+      "blog": 19,
+      "placeId": "1083380578",
+      "placeName": "보령교육가족체험장",
+      "placeAddr": "충남 보령시 주포면 향교말길 129",
+      "url": "https://m.place.naver.com/place/1083380578/home",
+      "matchedQuery": "보령시 보령교육가족체험장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 654,
@@ -27866,7 +28136,17 @@
     },
     "lat": 37.8024065120794,
     "lng": 128.005453578303,
-    "naverReview": null
+    "naverReview": {
+      "total": 40,
+      "visitor": 19,
+      "blog": 21,
+      "placeId": "2093474653",
+      "placeName": "오페라비앙",
+      "placeAddr": "강원특별자치도 홍천군 내촌면 아홉사리로 164-30",
+      "url": "https://m.place.naver.com/place/2093474653/home",
+      "matchedQuery": "홍천군 오페라 비앙",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 655,
@@ -27898,7 +28178,17 @@
     },
     "lat": 38.0103067173771,
     "lng": 127.797555507496,
-    "naverReview": null
+    "naverReview": {
+      "total": 907,
+      "visitor": 341,
+      "blog": 566,
+      "placeId": "1245635948",
+      "placeName": "국립화천숲속야영장",
+      "placeAddr": "강원 화천군 간동면 배후령길 1144",
+      "url": "https://m.place.naver.com/place/1245635948/home",
+      "matchedQuery": "화천군 국립화천숲속야영장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 656,
@@ -27931,7 +28221,17 @@
     },
     "lat": 34.9329227904967,
     "lng": 127.873923270744,
-    "naverReview": null
+    "naverReview": {
+      "total": 76,
+      "visitor": 0,
+      "blog": 76,
+      "placeId": "1375161635",
+      "placeName": "덕신야영장",
+      "placeAddr": "경남 남해군 설천면 남해대로 4110-9",
+      "url": "https://m.place.naver.com/place/1375161635/home",
+      "matchedQuery": "남해군 덕신야영장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 657,
@@ -27963,7 +28263,17 @@
     },
     "lat": 37.8588053,
     "lng": 128.8533563,
-    "naverReview": null
+    "naverReview": {
+      "total": 2394,
+      "visitor": 123,
+      "blog": 2271,
+      "placeId": "35413658",
+      "placeName": "연곡해변솔향기캠핑장",
+      "placeAddr": "강원 강릉시 연곡면 해안로 1282",
+      "url": "https://m.place.naver.com/place/35413658/home",
+      "matchedQuery": "강릉시 연곡해변 솔향기캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 658,
@@ -27997,7 +28307,17 @@
     },
     "lat": 37.7915549,
     "lng": 126.8001595,
-    "naverReview": null
+    "naverReview": {
+      "total": 1463,
+      "visitor": 995,
+      "blog": 468,
+      "placeId": "1689610384",
+      "placeName": "해브펀 캠핑어라운드",
+      "placeAddr": "경기 파주시 월롱면 도감로 130 해브펀 캠핑어라운드",
+      "url": "https://m.place.naver.com/place/1689610384/home",
+      "matchedQuery": "파주시 해브펀 캠핑 어라운드",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 659,
@@ -28028,7 +28348,17 @@
     },
     "lat": 37.5529934951406,
     "lng": 127.448496237649,
-    "naverReview": null
+    "naverReview": {
+      "total": 118,
+      "visitor": 43,
+      "blog": 75,
+      "placeId": "2084457337",
+      "placeName": "마중마을힐링캠프",
+      "placeAddr": "경기 양평군 옥천면 사기막길25번길 55-5",
+      "url": "https://m.place.naver.com/place/2084457337/home",
+      "matchedQuery": "양평군 마중마을힐링캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 660,
@@ -28057,7 +28387,17 @@
       "featureNm": "",
       "addr1": "경기도 가평군 청평면 호반로 740"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 5,
+      "visitor": 1,
+      "blog": 4,
+      "placeId": "1867597480",
+      "placeName": "풀빌라온",
+      "placeAddr": "경기 가평군 청평면 호반로 740",
+      "url": "https://m.place.naver.com/place/1867597480/home",
+      "matchedQuery": "경기도 가평군 청평면 호반로 740 -> 가평군 풀빌라온",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 661,
@@ -28091,7 +28431,17 @@
     },
     "lat": 37.8276783,
     "lng": 126.7603775,
-    "naverReview": null
+    "naverReview": {
+      "total": 343,
+      "visitor": 266,
+      "blog": 77,
+      "placeId": "1846704091",
+      "placeName": "파주 옥돌캠핑장",
+      "placeAddr": "경기 파주시 월롱면 엘지로 438-235 파주 옥돌캠핑장",
+      "url": "https://m.place.naver.com/place/1846704091/home",
+      "matchedQuery": "파주시 파주 옥돌캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 662,
@@ -28123,7 +28473,17 @@
     },
     "lat": 37.7003183111794,
     "lng": 126.94718868993,
-    "naverReview": null
+    "naverReview": {
+      "total": 219,
+      "visitor": 75,
+      "blog": 144,
+      "placeId": "21626930",
+      "placeName": "일영무두리캠핑장",
+      "placeAddr": "경기 양주시 장흥면 유원지로 176-77 일영무두리캠핑장",
+      "url": "https://m.place.naver.com/place/21626930/home",
+      "matchedQuery": "양주시 일영무두리캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 663,
@@ -28157,7 +28517,17 @@
     },
     "lat": 36.1434222037675,
     "lng": 128.959856250476,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "2025281793",
+      "placeName": "별들의캠핑",
+      "placeAddr": "경상북도 영천시 화북면 배나무정길 142-1",
+      "url": "https://m.place.naver.com/place/2025281793/home",
+      "matchedQuery": "경상북도 영천시 화북면 배나무정길 142-1",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 664,
@@ -28191,7 +28561,17 @@
     },
     "lat": 37.9339118,
     "lng": 127.5567259,
-    "naverReview": null
+    "naverReview": {
+      "total": 377,
+      "visitor": 195,
+      "blog": 182,
+      "placeId": "1696256521",
+      "placeName": "가평자작나무글램핑",
+      "placeAddr": "경기 가평군 북면 화악산로 729-17",
+      "url": "https://m.place.naver.com/place/1696256521/home",
+      "matchedQuery": "가평군 가평자작나무글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 665,
@@ -28223,7 +28603,17 @@
     },
     "lat": 37.5403901015011,
     "lng": 127.769181901117,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "2001805610",
+      "placeName": "양평몽캠핑장",
+      "placeAddr": "경기도 양평군 청운면 경강로 4882 양평몽캠핑장",
+      "url": "https://m.place.naver.com/place/2001805610/home",
+      "matchedQuery": "경기 양평군 청운면 경강로 4882",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 666,
@@ -28255,7 +28645,17 @@
     },
     "lat": 37.2827113,
     "lng": 126.455218,
-    "naverReview": null
+    "naverReview": {
+      "total": 89,
+      "visitor": 12,
+      "blog": 77,
+      "placeId": "1247141083",
+      "placeName": "영흥도어울림캠핑장",
+      "placeAddr": "인천 옹진군 영흥면 영흥서로 452-67",
+      "url": "https://m.place.naver.com/place/1247141083/home",
+      "matchedQuery": "옹진군 영흥도어울림캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 667,
@@ -28286,7 +28686,17 @@
     },
     "lat": 37.9436828,
     "lng": 127.1290861,
-    "naverReview": null
+    "naverReview": {
+      "total": 457,
+      "visitor": 343,
+      "blog": 114,
+      "placeId": "1316541824",
+      "placeName": "금동휴양림캠프2",
+      "placeAddr": "경기 포천시 신북면 탑신로1112번길 7-40",
+      "url": "https://m.place.naver.com/place/1316541824/home",
+      "matchedQuery": "포천시 금동휴양림캠프2",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 668,
@@ -28317,7 +28727,17 @@
       "addr1": "강원특별자치도 원주시 신림면 신림황둔로 1072",
       "tel": "010-9069-5930"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 349,
+      "visitor": 52,
+      "blog": 297,
+      "placeId": "34922871",
+      "placeName": "한스캠핑장",
+      "placeAddr": "강원 원주시 신림면 신림황둔로 1072",
+      "url": "https://m.place.naver.com/place/34922871/home",
+      "matchedQuery": "원주시 한스캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 669,
@@ -28352,7 +28772,17 @@
     },
     "lat": 37.8561492,
     "lng": 127.2464364,
-    "naverReview": null
+    "naverReview": {
+      "total": 3207,
+      "visitor": 2901,
+      "blog": 306,
+      "placeId": "1992277916",
+      "placeName": "스푼 글램핑 카라반",
+      "placeAddr": "경기 포천시 군내면 청군로2985번길 202 스푼글램핑",
+      "url": "https://m.place.naver.com/place/1992277916/home",
+      "matchedQuery": "경기 포천시 군내면 청군로2985번길 202 -> 포천시 스푼 글램핑 카라반",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 670,
@@ -28381,7 +28811,17 @@
       "addr1": "경상북도 청도군 운문면 오진리 1007 외2 (1007-1 , 998-12)",
       "tel": "010-4097-5039"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 90,
+      "visitor": 1,
+      "blog": 89,
+      "placeId": "1544929983",
+      "placeName": "청도 별빛마을",
+      "placeAddr": "경상북도 청도군 운문면 운문로 1738",
+      "url": "https://m.place.naver.com/place/1544929983/home",
+      "matchedQuery": "청도군 별빛마을",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 671,
@@ -28415,7 +28855,17 @@
     },
     "lat": 37.9013491624623,
     "lng": 127.311104600786,
-    "naverReview": null
+    "naverReview": {
+      "total": 701,
+      "visitor": 553,
+      "blog": 148,
+      "placeId": "1297131878",
+      "placeName": "운악산글램핑",
+      "placeAddr": "경기 포천시 화현면 화동로432번길 92-131 운악산글램핑",
+      "url": "https://m.place.naver.com/place/1297131878/home",
+      "matchedQuery": "포천시 운악산 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 672,
@@ -28449,7 +28899,17 @@
     },
     "lat": 37.2831253493295,
     "lng": 127.303597412168,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1944320663",
+      "placeName": "유정호숫길캠핑장",
+      "placeAddr": "경기도 광주시 도척면 도척로 977 유정호숫길캠핑장",
+      "url": "https://m.place.naver.com/place/1944320663/home",
+      "matchedQuery": "경기도 광주시 도척면 도척로 977",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 673,
@@ -28480,7 +28940,17 @@
       "addr1": "인천광역시 옹진군 영흥면 영흥서로 527-26",
       "tel": "010-2496-6796"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 822,
+      "visitor": 706,
+      "blog": 116,
+      "placeId": "1528174801",
+      "placeName": "하늘빛",
+      "placeAddr": "인천광역시 옹진군 영흥면 영흥서로 527-26",
+      "url": "https://m.place.naver.com/place/1528174801/home",
+      "matchedQuery": "옹진군 하늘빛",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 674,
@@ -28512,7 +28982,17 @@
     },
     "lat": 35.7835746,
     "lng": 129.4906609,
-    "naverReview": null
+    "naverReview": {
+      "total": 322,
+      "visitor": 19,
+      "blog": 303,
+      "placeId": "1692042896",
+      "placeName": "나정고운모래해변 오토캠핑장",
+      "placeAddr": "경북 경주시 감포읍 동해안로 1976",
+      "url": "https://m.place.naver.com/place/1692042896/home",
+      "matchedQuery": "경주시 나정고운모래해변 오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 675,
@@ -28541,7 +29021,17 @@
       "addr1": "강원특별자치도 원주시 신림면 재사동길 10-38",
       "tel": "010-8862-8107"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 574,
+      "visitor": 39,
+      "blog": 535,
+      "placeId": "32769405",
+      "placeName": "강원도힐링캠핑장",
+      "placeAddr": "강원 원주시 신림면 재사동길 10-38",
+      "url": "https://m.place.naver.com/place/32769405/home",
+      "matchedQuery": "강원특별자치도 원주시 신림면 재사동길 10-38",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 676,
@@ -28575,7 +29065,17 @@
     },
     "lat": 37.6226436471799,
     "lng": 126.534727718919,
-    "naverReview": null
+    "naverReview": {
+      "total": 304,
+      "visitor": 193,
+      "blog": 111,
+      "placeId": "1278927850",
+      "placeName": "강화카라반캠핑장",
+      "placeAddr": "인천 강화군 길상면 해안남로65번길 15-1",
+      "url": "https://m.place.naver.com/place/1278927850/home",
+      "matchedQuery": "강화군 강화카라반캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 677,
@@ -28605,7 +29105,17 @@
       "addr1": "충청남도 청양군 대치면 칠갑산로 668-21",
       "tel": "041-943-3828"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 83,
+      "visitor": 14,
+      "blog": 69,
+      "placeId": "12351430",
+      "placeName": "고목정 팬션&캠핑",
+      "placeAddr": "충청남도 청양군 대치면 칠갑산로 668-21",
+      "url": "https://m.place.naver.com/place/12351430/home",
+      "matchedQuery": "충청남도 청양군 대치면 칠갑산로 668-21",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 678,
@@ -28634,7 +29144,17 @@
       "featureNm": "",
       "addr1": "경기도 안산시 단원구 연목이길 31-21 (대부북동)"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 1229,
+      "visitor": 895,
+      "blog": 334,
+      "placeId": "1480607119",
+      "placeName": "푸른섬캠핑장",
+      "placeAddr": "경기 안산시 단원구 연목이길 31-21",
+      "url": "https://m.place.naver.com/place/1480607119/home",
+      "matchedQuery": "안산시 푸른섬 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 679,
@@ -28667,7 +29187,17 @@
     },
     "lat": 34.3094904882346,
     "lng": 126.521068963475,
-    "naverReview": null
+    "naverReview": {
+      "total": 278,
+      "visitor": 24,
+      "blog": 254,
+      "placeId": "13419238",
+      "placeName": "땅끝오토캠핑장",
+      "placeAddr": "전남광주 해남군 송지면 갈산길 25-5",
+      "url": "https://m.place.naver.com/place/13419238/home",
+      "matchedQuery": "해남군 땅끝오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 680,
@@ -28696,7 +29226,17 @@
       "addr1": "경상북도 포항시 남구 장기면 영암길 70",
       "tel": "054-283-0109"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 334,
+      "visitor": 29,
+      "blog": 305,
+      "placeId": "37633506",
+      "placeName": "백경오토캠핑장",
+      "placeAddr": "경북 포항시 남구 장기면 영암길 70",
+      "url": "https://m.place.naver.com/place/37633506/home",
+      "matchedQuery": "포항시 백경오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 681,
@@ -28728,7 +29268,17 @@
     },
     "lat": 37.3961219,
     "lng": 126.4248224,
-    "naverReview": null
+    "naverReview": {
+      "total": 1331,
+      "visitor": 879,
+      "blog": 452,
+      "placeId": "37130253",
+      "placeName": "섬뜰아래",
+      "placeAddr": "인천 영종구 대무의로 229 섬뜰아래",
+      "url": "https://m.place.naver.com/place/37130253/home",
+      "matchedQuery": "영종구 섬뜰아래 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 682,
@@ -28761,7 +29311,17 @@
     },
     "lat": 37.9156311624017,
     "lng": 126.966273182504,
-    "naverReview": null
+    "naverReview": {
+      "total": 70,
+      "visitor": 0,
+      "blog": 70,
+      "placeId": "1626238406",
+      "placeName": "신암저수지숲속야영장",
+      "placeAddr": "경기 양주시 남면 감악산로514번길 242",
+      "url": "https://m.place.naver.com/place/1626238406/home",
+      "matchedQuery": "양주시 신암저수지 숲속야영장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 683,
@@ -28793,7 +29353,17 @@
     },
     "lat": 35.524271,
     "lng": 128.9333173,
-    "naverReview": null
+    "naverReview": {
+      "total": 388,
+      "visitor": 142,
+      "blog": 246,
+      "placeId": "1208042148",
+      "placeName": "은하수리조트",
+      "placeAddr": "경남 밀양시 단장면 표충로 1106 은하수리조트",
+      "url": "https://m.place.naver.com/place/1208042148/home",
+      "matchedQuery": "밀양시 은하수 리조트",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 684,
@@ -28822,7 +29392,17 @@
       "addr1": "경상남도 양산시 원동면 어영길 202",
       "tel": "010-7545-2453"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 84,
+      "visitor": 1,
+      "blog": 83,
+      "placeId": "1014973800",
+      "placeName": "청수가든 캠핑장",
+      "placeAddr": "경남 양산시 원동면 영포리 713-1",
+      "url": "https://m.place.naver.com/place/1014973800/home",
+      "matchedQuery": "양산시 청수가든 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 685,
@@ -28854,7 +29434,17 @@
     },
     "lat": 36.7335154,
     "lng": 126.1309267,
-    "naverReview": null
+    "naverReview": {
+      "total": 134,
+      "visitor": 55,
+      "blog": 79,
+      "placeId": "1761018001",
+      "placeName": "파도와노을캠핑장",
+      "placeAddr": "충남 태안군 소원면 아치내길 60-70",
+      "url": "https://m.place.naver.com/place/1761018001/home",
+      "matchedQuery": "태안군 파도와노을캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 686,
@@ -28888,7 +29478,17 @@
     },
     "lat": 36.5799212911422,
     "lng": 126.98550899066,
-    "naverReview": null
+    "naverReview": {
+      "total": 66,
+      "visitor": 60,
+      "blog": 6,
+      "placeId": "2044533591",
+      "placeName": "우주라이크",
+      "placeAddr": "충청남도 공주시 유구읍 구계연종길 116",
+      "url": "https://m.place.naver.com/place/2044533591/home",
+      "matchedQuery": "공주시 우주라이크",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 687,
@@ -28920,7 +29520,17 @@
     },
     "lat": 37.6572809184535,
     "lng": 128.30798223962,
-    "naverReview": null
+    "naverReview": {
+      "total": 292,
+      "visitor": 50,
+      "blog": 242,
+      "placeId": "36909255",
+      "placeName": "평창반딧불캠핑장",
+      "placeAddr": "강원 평창군 봉평면 흥정리 93-12",
+      "url": "https://m.place.naver.com/place/36909255/home",
+      "matchedQuery": "평창군 평창 반딧불캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 688,
@@ -28951,7 +29561,17 @@
       "featureNm": "",
       "addr1": "충청남도 금산군 남이면 진악로 138-2"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 419,
+      "visitor": 344,
+      "blog": 75,
+      "placeId": "1088492660",
+      "placeName": "진악산오토캠핑장",
+      "placeAddr": "충남 금산군 남이면 진악로 138-2 하금리 485",
+      "url": "https://m.place.naver.com/place/1088492660/home",
+      "matchedQuery": "금산군 진악산오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 689,
@@ -28982,7 +29602,17 @@
     },
     "lat": 37.6472432,
     "lng": 127.433658,
-    "naverReview": null
+    "naverReview": {
+      "total": 574,
+      "visitor": 387,
+      "blog": 187,
+      "placeId": "1033974787",
+      "placeName": "양평온누리캠핑장",
+      "placeAddr": "경기 양평군 서종면 갈문길 29-1",
+      "url": "https://m.place.naver.com/place/1033974787/home",
+      "matchedQuery": "양평군 양평온누리캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 690,
@@ -29012,7 +29642,17 @@
       "addr1": "경상남도 고성군 하일면 용태리 479",
       "tel": "010-9131-8560"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 168,
+      "visitor": 0,
+      "blog": 168,
+      "placeId": "1175772209",
+      "placeName": "고성잔디캠핑장",
+      "placeAddr": "경남 고성군 하일면 공룡로 1287",
+      "url": "https://m.place.naver.com/place/1175772209/home",
+      "matchedQuery": "고성군 고성잔디캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 691,
@@ -29042,7 +29682,17 @@
       "addr1": "경기도 양평군 용문면 갈지길41번길 41-52",
       "tel": "031-771-1886"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 1090,
+      "visitor": 844,
+      "blog": 246,
+      "placeId": "35939874",
+      "placeName": "양평드림캠핑장",
+      "placeAddr": "경기 양평군 용문면 갈지길41번길 41-52",
+      "url": "https://m.place.naver.com/place/35939874/home",
+      "matchedQuery": "양평군 양평드림캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 692,
@@ -29074,7 +29724,17 @@
     },
     "lat": 38.1338482105654,
     "lng": 127.62751438948,
-    "naverReview": null
+    "naverReview": {
+      "total": 1007,
+      "visitor": 837,
+      "blog": 170,
+      "placeId": "1879710185",
+      "placeName": "만산동국민여가캠핑장",
+      "placeAddr": "강원 화천군 상서면 구운리 1174",
+      "url": "https://m.place.naver.com/place/1879710185/home",
+      "matchedQuery": "화천군 만산동 국민여가 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 693,
@@ -29105,7 +29765,17 @@
     },
     "lat": 37.7648855721467,
     "lng": 127.371296998525,
-    "naverReview": null
+    "naverReview": {
+      "total": 2,
+      "visitor": 0,
+      "blog": 2,
+      "placeId": "2040852046",
+      "placeName": "헤이븐캠프",
+      "placeAddr": "경기 가평군 상면 임초밤안골로18번길 33",
+      "url": "https://m.place.naver.com/place/2040852046/home",
+      "matchedQuery": "가평군 헤이븐캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 694,
@@ -29136,7 +29806,17 @@
     },
     "lat": 38.1294784,
     "lng": 128.6201176,
-    "naverReview": null
+    "naverReview": {
+      "total": 142,
+      "visitor": 77,
+      "blog": 65,
+      "placeId": "1285835065",
+      "placeName": "양양한스오토캠핑장",
+      "placeAddr": "강원 양양군 강현면 용호길 11 양양한스오토캠핑장",
+      "url": "https://m.place.naver.com/place/1285835065/home",
+      "matchedQuery": "양양군 양양한스오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 695,
@@ -29170,7 +29850,17 @@
     },
     "lat": 36.8359859558156,
     "lng": 126.150870327282,
-    "naverReview": null
+    "naverReview": {
+      "total": 88,
+      "visitor": 31,
+      "blog": 57,
+      "placeId": "1722943482",
+      "placeName": "구름포해변캠핑장",
+      "placeAddr": "충남 태안군 소원면 의항리 154",
+      "url": "https://m.place.naver.com/place/1722943482/home",
+      "matchedQuery": "태안군 구름포해변캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 696,
@@ -29199,7 +29889,17 @@
       "featureNm": "",
       "addr1": "충청북도 청주시 상당구 미원면 운암계원로 628"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 467,
+      "visitor": 17,
+      "blog": 450,
+      "placeId": "19398910",
+      "placeName": "금관숲캠핑장",
+      "placeAddr": "충북 청주시 상당구 미원면 운암계원로 628",
+      "url": "https://m.place.naver.com/place/19398910/home",
+      "matchedQuery": "청주시 금관숲캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 697,
@@ -29229,7 +29929,17 @@
       "addr1": "울산광역시 울주군 삼남읍 교동리 1232-2",
       "tel": "052-229-9601"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 266,
+      "visitor": 10,
+      "blog": 256,
+      "placeId": "1429026482",
+      "placeName": "작천정달빛야영장",
+      "placeAddr": "울산 울주군 삼남읍 교동리 1522-1",
+      "url": "https://m.place.naver.com/place/1429026482/home",
+      "matchedQuery": "울주군 작천정달빛야영장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 698,
@@ -29264,7 +29974,17 @@
     },
     "lat": 36.1853984,
     "lng": 126.9456531,
-    "naverReview": null
+    "naverReview": {
+      "total": 356,
+      "visitor": 250,
+      "blog": 106,
+      "placeId": "1167255022",
+      "placeName": "너른뜰캠핑장",
+      "placeAddr": "충남 부여군 세도면 대흥로 163",
+      "url": "https://m.place.naver.com/place/1167255022/home",
+      "matchedQuery": "부여군 너른뜰캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 699,
@@ -29292,7 +30012,17 @@
       "featureNm": "",
       "addr1": "강원특별자치도 홍천군 서면 개야로 304-229"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 183,
+      "visitor": 76,
+      "blog": 107,
+      "placeId": "33705488",
+      "placeName": "두미리관광농원",
+      "placeAddr": "강원 홍천군 서면 개야로 304-229",
+      "url": "https://m.place.naver.com/place/33705488/home",
+      "matchedQuery": "홍천군 두미리관광농원 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 700,
@@ -29324,7 +30054,17 @@
     },
     "lat": 36.110194702513,
     "lng": 126.607985610718,
-    "naverReview": null
+    "naverReview": {
+      "total": 276,
+      "visitor": 169,
+      "blog": 107,
+      "placeId": "1144705315",
+      "placeName": "별빛갯벌 캠핑장",
+      "placeAddr": "충남 서천군 비인면 갯벌체험로 805",
+      "url": "https://m.place.naver.com/place/1144705315/home",
+      "matchedQuery": "서천군 별빛갯벌캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 701,
@@ -29354,7 +30094,17 @@
       "addr1": "경상북도 김천시 남면 우장길 448",
       "tel": "010-7402-4555"
     },
-    "naverReview": null,
+    "naverReview": {
+      "total": 462,
+      "visitor": 350,
+      "blog": 112,
+      "placeId": "1961285063",
+      "placeName": "금오산힐링캠프",
+      "placeAddr": "경북 김천시 남면 우장길 442-15 금오산힐링캠프",
+      "url": "https://m.place.naver.com/place/1961285063/home",
+      "matchedQuery": "김천시 금오산 힐링캠프",
+      "updatedAt": "2026-10-23"
+    },
     "lat": 36.0998652,
     "lng": 128.2764332
   },
@@ -29386,7 +30136,17 @@
       "addr1": "경상북도 김천시 남면 우장길 448",
       "tel": "010-7402-4555"
     },
-    "naverReview": null,
+    "naverReview": {
+      "total": 462,
+      "visitor": 350,
+      "blog": 112,
+      "placeId": "1961285063",
+      "placeName": "금오산힐링캠프",
+      "placeAddr": "경북 김천시 남면 우장길 442-15 금오산힐링캠프",
+      "url": "https://m.place.naver.com/place/1961285063/home",
+      "matchedQuery": "김천시 금오산힐링캠프",
+      "updatedAt": "2026-10-23"
+    },
     "lat": 36.0998652,
     "lng": 128.2764332
   },
@@ -29420,7 +30180,17 @@
     },
     "lat": 35.5706571,
     "lng": 127.5309908,
-    "naverReview": null
+    "naverReview": {
+      "total": 67,
+      "visitor": 10,
+      "blog": 57,
+      "placeId": "1666939380",
+      "placeName": "장수방화동캠핑장",
+      "placeAddr": "전북 장수군 번암면 사암리 64",
+      "url": "https://m.place.naver.com/place/1666939380/home",
+      "matchedQuery": "장수군 장수방화동캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 704,
@@ -29451,7 +30221,17 @@
       "featureNm": "",
       "addr1": "경기도 가평군 조종면 명지산로 337-62"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 137,
+      "visitor": 46,
+      "blog": 91,
+      "placeId": "1053463348",
+      "placeName": "솔바람캠핑장",
+      "placeAddr": "경기 가평군 조종면 명지산로 337-62",
+      "url": "https://m.place.naver.com/place/1053463348/home",
+      "matchedQuery": "가평 솔바람캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 705,
@@ -29483,7 +30263,17 @@
     },
     "lat": 37.9621769153323,
     "lng": 127.527880067543,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "2020057077",
+      "placeName": "유토피아 힐링 캠핑장",
+      "placeAddr": "경기도 가평군 북면 화악산로 1246 유토피아힐링캠핑장",
+      "url": "https://m.place.naver.com/place/2020057077/home",
+      "matchedQuery": "경기 가평군 북면 화악산로 1246",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 706,
@@ -29514,7 +30304,17 @@
     },
     "lat": 35.9297837238673,
     "lng": 127.26884594753,
-    "naverReview": null
+    "naverReview": {
+      "total": 95,
+      "visitor": 55,
+      "blog": 40,
+      "placeId": "1427330280",
+      "placeName": "캠프더쉼",
+      "placeAddr": "전북 완주군 동상면 송광수만로 1079-15 캠프더쉼",
+      "url": "https://m.place.naver.com/place/1427330280/home",
+      "matchedQuery": "완주군 캠프더쉼",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 707,
@@ -29543,7 +30343,17 @@
       "addr1": "강원특별자치도 화천군 화천읍 비수구미길 145-145",
       "tel": "070-7727-1292"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 90,
+      "visitor": 1,
+      "blog": 89,
+      "placeId": "1004839950",
+      "placeName": "평화의댐 오토캠핑장",
+      "placeAddr": "강원 화천군 화천읍 동촌리 2905-2",
+      "url": "https://m.place.naver.com/place/1004839950/home",
+      "matchedQuery": "화천군 평화의댐 오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 708,
@@ -29575,7 +30385,17 @@
     },
     "lat": 36.1113909,
     "lng": 128.9055079,
-    "naverReview": null
+    "naverReview": {
+      "total": 70,
+      "visitor": 3,
+      "blog": 67,
+      "placeId": "1709599821",
+      "placeName": "별밤캠프",
+      "placeAddr": "경북 영천시 화북면 천문로 2149-127 별밤캠프",
+      "url": "https://m.place.naver.com/place/1709599821/home",
+      "matchedQuery": "영천시 별밤캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 709,
@@ -29609,7 +30429,17 @@
     },
     "lat": 38.1715472,
     "lng": 127.4600097,
-    "naverReview": null
+    "naverReview": {
+      "total": 593,
+      "visitor": 390,
+      "blog": 203,
+      "placeId": "1199602024",
+      "placeName": "이루다 글램핑",
+      "placeAddr": "강원 철원군 근남면 하오재로 1203-16 이루다글램핑",
+      "url": "https://m.place.naver.com/place/1199602024/home",
+      "matchedQuery": "철원군 이루다글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 710,
@@ -29640,7 +30470,17 @@
     },
     "lat": 36.4607133451387,
     "lng": 127.338916313089,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "2005402559",
+      "placeName": "바람재오토캠핑장",
+      "placeAddr": "세종특별자치시 금남면 바람재로 658",
+      "url": "https://m.place.naver.com/place/2005402559/home",
+      "matchedQuery": "세종특별자치시 금남면 바람재로 658",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 711,
@@ -29671,7 +30511,17 @@
     },
     "lat": 35.0303959,
     "lng": 127.786691,
-    "naverReview": null
+    "naverReview": {
+      "total": 139,
+      "visitor": 47,
+      "blog": 92,
+      "placeId": "1237088724",
+      "placeName": "해달별캠핑장 하동점",
+      "placeAddr": "경남 하동군 고전면 공설운동장로 626 1층",
+      "url": "https://m.place.naver.com/place/1237088724/home",
+      "matchedQuery": "경남 하동군 고전면 공설운동장로 626 -> 하동군 해달별캠핑장 하동점",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 712,
@@ -29704,7 +30554,17 @@
     },
     "lat": 35.4946002,
     "lng": 128.5486027,
-    "naverReview": null
+    "naverReview": {
+      "total": 269,
+      "visitor": 82,
+      "blog": 187,
+      "placeId": "1810783302",
+      "placeName": "옥천1382",
+      "placeAddr": "경상남도 창녕군 창녕읍 전평길 15-807",
+      "url": "https://m.place.naver.com/place/1810783302/home",
+      "matchedQuery": "창녕군 옥천1382 카라반",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 713,
@@ -29737,7 +30597,17 @@
     },
     "lat": 35.7612030199968,
     "lng": 127.724000013918,
-    "naverReview": null
+    "naverReview": {
+      "total": 436,
+      "visitor": 11,
+      "blog": 425,
+      "placeId": "35413683",
+      "placeName": "거창국민여가캠핑장 미리내숲",
+      "placeAddr": "경남 거창군 북상면 덕유월성로 1312-96 거창군월성청소년수련원",
+      "url": "https://m.place.naver.com/place/35413683/home",
+      "matchedQuery": "경상남도 거창군 북상면 덕유월성로 1312-96 -> 거창군 거창국민여가캠핑장 미리내숲",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 714,
@@ -29770,7 +30640,17 @@
     },
     "lat": 37.8830861169451,
     "lng": 126.964033555828,
-    "naverReview": null
+    "naverReview": {
+      "total": 77,
+      "visitor": 28,
+      "blog": 49,
+      "placeId": "1403782283",
+      "placeName": "양주 구암 캠핑장",
+      "placeAddr": "경기 양주시 남면 휴암로284번길 91-47",
+      "url": "https://m.place.naver.com/place/1403782283/home",
+      "matchedQuery": "양주시 양주 구암 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 715,
@@ -29802,7 +30682,17 @@
     },
     "lat": 34.9186753,
     "lng": 128.0211419,
-    "naverReview": null
+    "naverReview": {
+      "total": 1877,
+      "visitor": 1454,
+      "blog": 423,
+      "placeId": "1455441350",
+      "placeName": "버드하우스캠핑장",
+      "placeAddr": "경남 남해군 창선면 서부로 1455-10",
+      "url": "https://m.place.naver.com/place/1455441350/home",
+      "matchedQuery": "남해군 버드하우스 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 716,
@@ -29835,7 +30725,17 @@
     },
     "lat": 37.4275606,
     "lng": 128.38587,
-    "naverReview": null
+    "naverReview": {
+      "total": 70,
+      "visitor": 9,
+      "blog": 61,
+      "placeId": "1865480707",
+      "placeName": "평창국민여가캠핑장",
+      "placeAddr": "강원 평창군 방림면 뇌운계곡로 829",
+      "url": "https://m.place.naver.com/place/1865480707/home",
+      "matchedQuery": "평창군 평창 국민여가캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 717,
@@ -29867,7 +30767,17 @@
       "addr1": "전북특별자치도 정읍시 종황길 92 (내장동)",
       "tel": "010-4110-9930"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 434,
+      "visitor": 170,
+      "blog": 264,
+      "placeId": "98622088",
+      "placeName": "자두마을",
+      "placeAddr": "전북 정읍시 종황길 92",
+      "url": "https://m.place.naver.com/place/98622088/home",
+      "matchedQuery": "전북특별자치도 정읍시 종황길 92 -> 정읍시 자두마을",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 718,
@@ -29898,7 +30808,17 @@
     },
     "lat": 36.53464348543,
     "lng": 127.33364018691,
-    "naverReview": null
+    "naverReview": {
+      "total": 40,
+      "visitor": 25,
+      "blog": 15,
+      "placeId": "1055756995",
+      "placeName": "루트 247",
+      "placeAddr": "세종 연동면 원합강1길 85-11",
+      "url": "https://m.place.naver.com/place/1055756995/home",
+      "matchedQuery": "연동면 루트 247",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 719,
@@ -29931,7 +30851,17 @@
     },
     "lat": 37.6635193896637,
     "lng": 127.380099049955,
-    "naverReview": null
+    "naverReview": {
+      "total": 589,
+      "visitor": 471,
+      "blog": 118,
+      "placeId": "2077333239",
+      "placeName": "더 글램 글램핑",
+      "placeAddr": "경기 가평군 청평면 북한강로 1587 더 글램",
+      "url": "https://m.place.naver.com/place/2077333239/home",
+      "matchedQuery": "가평군 더 글램",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 720,
@@ -29963,7 +30893,17 @@
     },
     "lat": 37.7597767785297,
     "lng": 127.278318964424,
-    "naverReview": null
+    "naverReview": {
+      "total": 287,
+      "visitor": 136,
+      "blog": 151,
+      "placeId": "1158572896",
+      "placeName": "더스타일",
+      "placeAddr": "경기도 남양주시 수동면 비룡로 1673 더스타일",
+      "url": "https://m.place.naver.com/place/1158572896/home",
+      "matchedQuery": "남양주시 더 스타일",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 721,
@@ -29992,7 +30932,17 @@
       "featureNm": "",
       "addr1": "경기도 가평군 설악면 가마소길 17-270"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 137,
+      "visitor": 58,
+      "blog": 79,
+      "placeId": "35418762",
+      "placeName": "맑은물소리캠핑장",
+      "placeAddr": "경기 가평군 설악면 가마소길 17-270",
+      "url": "https://m.place.naver.com/place/35418762/home",
+      "matchedQuery": "가평군 맑은물소리캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 722,
@@ -30023,7 +30973,17 @@
     },
     "lat": 35.6101781896942,
     "lng": 126.582366271517,
-    "naverReview": null
+    "naverReview": {
+      "total": 707,
+      "visitor": 340,
+      "blog": 367,
+      "placeId": "36826660",
+      "placeName": "내소힐링캠프",
+      "placeAddr": "전북 부안군 진서면 석포리 314-3",
+      "url": "https://m.place.naver.com/place/36826660/home",
+      "matchedQuery": "부안군 내소힐링캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 723,
@@ -30058,7 +31018,17 @@
     },
     "lat": 37.0299961,
     "lng": 128.180043,
-    "naverReview": null
+    "naverReview": {
+      "total": 170,
+      "visitor": 10,
+      "blog": 160,
+      "placeId": "1204112145",
+      "placeName": "람보캠핑장",
+      "placeAddr": "충북 제천시 금성면 청풍호로37길 25 람보캠핑장",
+      "url": "https://m.place.naver.com/place/1204112145/home",
+      "matchedQuery": "제천시 람보 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 724,
@@ -30094,7 +31064,17 @@
     },
     "lat": 37.1586486565969,
     "lng": 126.742919788574,
-    "naverReview": null
+    "naverReview": {
+      "total": 727,
+      "visitor": 427,
+      "blog": 300,
+      "placeId": "1369648885",
+      "placeName": "화성 리프레시글램핑&카라반",
+      "placeAddr": "경기 화성시 만세구 서신면 안벼슬길102번길 205 화성 리프레시글램핑",
+      "url": "https://m.place.naver.com/place/1369648885/home",
+      "matchedQuery": "경기 화성시 서신면 안벼슬길102번길 205 -> 화성시 화성 리프레시글램핑&카라반",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 725,
@@ -30129,7 +31109,17 @@
     },
     "lat": 37.8978328,
     "lng": 127.4972267,
-    "naverReview": null
+    "naverReview": {
+      "total": 212,
+      "visitor": 134,
+      "blog": 78,
+      "placeId": "1871588874",
+      "placeName": "백허그캠핑장",
+      "placeAddr": "경기 가평군 북면 백둔로 61-41 백허그캠핑장",
+      "url": "https://m.place.naver.com/place/1871588874/home",
+      "matchedQuery": "가평군 백허그 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 726,
@@ -30161,7 +31151,17 @@
     },
     "lat": 37.692614,
     "lng": 127.9564658,
-    "naverReview": null
+    "naverReview": {
+      "total": 125,
+      "visitor": 34,
+      "blog": 91,
+      "placeId": "1765159790",
+      "placeName": "수타사힐링캠프",
+      "placeAddr": "강원 홍천군 영귀미면 수타사로 372-12 수타사힐링캠프",
+      "url": "https://m.place.naver.com/place/1765159790/home",
+      "matchedQuery": "홍천군 수타사 힐링 캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 727,
@@ -30190,7 +31190,17 @@
       "addr1": "충청북도 영동군 황간면 월류봉길 57",
       "tel": "010-2541-7966"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 155,
+      "visitor": 5,
+      "blog": 150,
+      "placeId": "32890934",
+      "placeName": "달이머무는집",
+      "placeAddr": "충북 영동군 황간면 월류봉길 57",
+      "url": "https://m.place.naver.com/place/32890934/home",
+      "matchedQuery": "영동군 달이머무는집 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 728,
@@ -30223,7 +31233,17 @@
     },
     "lat": 35.3336173,
     "lng": 126.864034,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "placeName": null,
+      "placeAddr": null,
+      "url": null,
+      "matchedQuery": "장성군 라온 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 729,
@@ -30253,7 +31273,17 @@
       "featureNm": "",
       "addr1": "경상북도 포항시 남구 구룡포읍 동해안로 4166-17"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 2070,
+      "visitor": 1454,
+      "blog": 616,
+      "placeId": "1823281203",
+      "placeName": "포에스카라반파크",
+      "placeAddr": "경북 포항시 남구 구룡포읍 동해안로 4166-17 포에스카라반파크",
+      "url": "https://m.place.naver.com/place/1823281203/home",
+      "matchedQuery": "포항시 포에스카라반파크",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 730,
@@ -30262,7 +31292,17 @@
     "interest": 0.0663,
     "same_name_rows": 1,
     "facility": null,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "placeName": null,
+      "placeAddr": null,
+      "url": null,
+      "matchedQuery": "평창군 라피 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 731,
@@ -30293,7 +31333,17 @@
       "addr1": "강원특별자치도 삼척시 원덕읍 삼척로 1698",
       "tel": "033-575-1765"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 620,
+      "visitor": 471,
+      "blog": 149,
+      "placeId": "1266818071",
+      "placeName": "캠프오슬로",
+      "placeAddr": "강원 삼척시 원덕읍 삼척로 1698 사용하시는 네비에서 캠프오슬로 또는 삼척로 1698을 입력해주세요.",
+      "url": "https://m.place.naver.com/place/1266818071/home",
+      "matchedQuery": "삼척시 캠프오슬로",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 732,
@@ -30325,7 +31375,17 @@
     },
     "lat": 35.6786745,
     "lng": 126.5303407,
-    "naverReview": null
+    "naverReview": {
+      "total": 25,
+      "visitor": 1,
+      "blog": 24,
+      "placeId": "2094854435",
+      "placeName": "변산해수욕장 캠핑장",
+      "placeAddr": "전북 부안군 변산면 변산로 2100",
+      "url": "https://m.place.naver.com/place/2094854435/home",
+      "matchedQuery": "전북 부안군 변산면 변산로 2100 -> 변산해수욕장 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 733,
@@ -30353,7 +31413,17 @@
       "featureNm": "",
       "addr1": "충청남도 공주시 사곡면 구름재길 4"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "2054559459",
+      "placeName": "이숲캠핑장",
+      "placeAddr": "충청남도 공주시 사곡면 구름재길 4",
+      "url": "https://m.place.naver.com/place/2054559459/home",
+      "matchedQuery": "충청남도 공주시 사곡면 구름재길 4",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 734,
@@ -30384,7 +31454,17 @@
     },
     "lat": 35.8529294366697,
     "lng": 127.429977085101,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "placeName": null,
+      "placeAddr": null,
+      "url": null,
+      "matchedQuery": "진안군 숲속 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 735,
@@ -30415,7 +31495,17 @@
     },
     "lat": 36.9963374,
     "lng": 128.7306273,
-    "naverReview": null
+    "naverReview": {
+      "total": 118,
+      "visitor": 4,
+      "blog": 114,
+      "placeId": "36936105",
+      "placeName": "숲속캠핑장",
+      "placeAddr": "경북 봉화군 물야면 오록3길 63-315",
+      "url": "https://m.place.naver.com/place/36936105/home",
+      "matchedQuery": "봉화군 숲속캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 735,
@@ -30446,7 +31536,17 @@
     },
     "lat": 35.8529294366697,
     "lng": 127.429977085101,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "placeName": null,
+      "placeAddr": null,
+      "url": null,
+      "matchedQuery": "진안군 숲속캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 736,
@@ -30475,7 +31575,17 @@
       "addr1": "경상남도 거창군 북상면 송계사길 63-107",
       "tel": "010-3881-2109"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 991,
+      "visitor": 794,
+      "blog": 197,
+      "placeId": "1091542074",
+      "placeName": "산중오토캠핑장",
+      "placeAddr": "경남 거창군 북상면 송계사길 63-107",
+      "url": "https://m.place.naver.com/place/1091542074/home",
+      "matchedQuery": "거창군 산중오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 737,
@@ -30507,7 +31617,17 @@
     },
     "lat": 36.8849707,
     "lng": 127.3644199,
-    "naverReview": null
+    "naverReview": {
+      "total": 220,
+      "visitor": 36,
+      "blog": 184,
+      "placeId": "1322656815",
+      "placeName": "진천포레스트캠핑장",
+      "placeAddr": "충북 진천군 백곡면 백곡로 778 진천포레스트캠핑장",
+      "url": "https://m.place.naver.com/place/1322656815/home",
+      "matchedQuery": "진천군 진천포레스트캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 738,
@@ -30539,7 +31659,17 @@
     },
     "lat": 35.6485437082611,
     "lng": 129.066568225893,
-    "naverReview": null
+    "naverReview": {
+      "total": 434,
+      "visitor": 253,
+      "blog": 181,
+      "placeId": "1887437165",
+      "placeName": "캠프 포레스트",
+      "placeAddr": "경북 경주시 산내면 문복로 106 캠프 포레스트",
+      "url": "https://m.place.naver.com/place/1887437165/home",
+      "matchedQuery": "경주시 캠프 포레스트",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 739,
@@ -30570,7 +31700,17 @@
     },
     "lat": 35.4896730203951,
     "lng": 129.115575474596,
-    "naverReview": null
+    "naverReview": {
+      "total": 94,
+      "visitor": 40,
+      "blog": 54,
+      "placeId": "1599164112",
+      "placeName": "루트113 베이스캠프",
+      "placeAddr": "울산 울주군 삼동면 보삼길 113",
+      "url": "https://m.place.naver.com/place/1599164112/home",
+      "matchedQuery": "울주군 루트113 베이스캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 740,
@@ -30600,7 +31740,17 @@
     },
     "lat": 36.8215512,
     "lng": 127.3412673,
-    "naverReview": null
+    "naverReview": {
+      "total": 386,
+      "visitor": 109,
+      "blog": 277,
+      "placeId": "1164332115",
+      "placeName": "아우내관광농원캠핑장",
+      "placeAddr": "충남 천안시 동남구 병천면 관성3길 267-40 1동",
+      "url": "https://m.place.naver.com/place/1164332115/home",
+      "matchedQuery": "충남 천안시 동남구 병천면 관성3길 267-40 -> 천안시 아우내관광농원캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 741,
@@ -30629,7 +31779,17 @@
       "addr1": "경상북도 청도군 운문면 신원리 398번지",
       "tel": "010-4145-8984"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 4,
+      "visitor": 0,
+      "blog": 4,
+      "placeId": "1635186789",
+      "placeName": "조은자리캠핑장수영장",
+      "placeAddr": "경상북도 청도군 운문면 신원리 398",
+      "url": "https://m.place.naver.com/place/1635186789/home",
+      "matchedQuery": "경상북도 청도군 운문면 신원리 398번지 -> 청도군 조은자리캠핑장수영장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 742,
@@ -30661,7 +31821,17 @@
     },
     "lat": 34.9864608,
     "lng": 126.9127905,
-    "naverReview": null
+    "naverReview": {
+      "total": 130,
+      "visitor": 1,
+      "blog": 129,
+      "placeId": "1247481444",
+      "placeName": "화순고인돌오토캠핑장",
+      "placeAddr": "전남광주 화순군 도곡면 고인돌1로 139",
+      "url": "https://m.place.naver.com/place/1247481444/home",
+      "matchedQuery": "화순군 화순 고인돌 오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 743,
@@ -30693,7 +31863,17 @@
     },
     "lat": 38.3116696,
     "lng": 128.5386255,
-    "naverReview": null
+    "naverReview": {
+      "total": 82,
+      "visitor": 3,
+      "blog": 79,
+      "placeId": "35413633",
+      "placeName": "자작도해수욕장캠핑장",
+      "placeAddr": "강원 고성군 죽왕면 삼포해변길 94",
+      "url": "https://m.place.naver.com/place/35413633/home",
+      "matchedQuery": "강원 고성군 죽왕면 삼포해변길 94 -> 자작도해수욕장캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 744,
@@ -30726,7 +31906,17 @@
     },
     "lat": 35.57498,
     "lng": 128.792855,
-    "naverReview": null
+    "naverReview": {
+      "total": 1346,
+      "visitor": 1027,
+      "blog": 319,
+      "placeId": "1717939951",
+      "placeName": "캠프안단테",
+      "placeAddr": "경북 청도군 청도읍 청매로 283-47 캠프안단테",
+      "url": "https://m.place.naver.com/place/1717939951/home",
+      "matchedQuery": "청도군 캠프 안단테",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 745,
@@ -30762,7 +31952,17 @@
     },
     "lat": 37.1151040147618,
     "lng": 128.292337902853,
-    "naverReview": null
+    "naverReview": {
+      "total": 737,
+      "visitor": 688,
+      "blog": 49,
+      "placeId": "2070286373",
+      "placeName": "소소캠프",
+      "placeAddr": "충북 제천시 의병대로 986",
+      "url": "https://m.place.naver.com/place/2070286373/home",
+      "matchedQuery": "제천시 소소캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 746,
@@ -30793,7 +31993,17 @@
     },
     "lat": 37.2437786043272,
     "lng": 126.615491827782,
-    "naverReview": null
+    "naverReview": {
+      "total": 603,
+      "visitor": 563,
+      "blog": 40,
+      "placeId": "2053069153",
+      "placeName": "곰돌이캠핑장",
+      "placeAddr": "경기 안산시 단원구 영전로 329",
+      "url": "https://m.place.naver.com/place/2053069153/home",
+      "matchedQuery": "경기 안산시 단원구 영전로 329 -> 곰돌이캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 747,
@@ -30826,7 +32036,17 @@
     },
     "lat": 38.176688638413,
     "lng": 127.670985305747,
-    "naverReview": null
+    "naverReview": {
+      "total": 32,
+      "visitor": 16,
+      "blog": 16,
+      "placeId": "2020085663",
+      "placeName": "곰돌이캠핑장",
+      "placeAddr": "강원특별자치도 화천군 상서면 가둔지길 10-13 곰돌이캠핑장",
+      "url": "https://m.place.naver.com/place/2020085663/home",
+      "matchedQuery": "화천 곰돌이캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 748,
@@ -30854,7 +32074,17 @@
       "featureNm": "",
       "addr1": "충청남도 공주시 유구읍 구계연종길 473"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 353,
+      "visitor": 224,
+      "blog": 129,
+      "placeId": "1560117988",
+      "placeName": "연종 캠핑장",
+      "placeAddr": "충남 공주시 유구읍 구계연종길 473 연종캠핑장",
+      "url": "https://m.place.naver.com/place/1560117988/home",
+      "matchedQuery": "공주시 연종 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 749,
@@ -30885,7 +32115,17 @@
     },
     "lat": 37.4399144,
     "lng": 127.8924615,
-    "naverReview": null
+    "naverReview": {
+      "total": 741,
+      "visitor": 527,
+      "blog": 214,
+      "placeId": "1136023254",
+      "placeName": "칠봉 두루뭉 캠핑장",
+      "placeAddr": "강원 원주시 호저면 산현리 513-17",
+      "url": "https://m.place.naver.com/place/1136023254/home",
+      "matchedQuery": "원주시 칠봉두루뭉캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 750,
@@ -30914,7 +32154,17 @@
       "addr1": "충청남도 공주시 정안면 광정장터길 88",
       "tel": "041-856-0030"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 639,
+      "visitor": 322,
+      "blog": 317,
+      "placeId": "1245835564",
+      "placeName": "정안글램핑",
+      "placeAddr": "충남 공주시 정안면 광정장터길 88",
+      "url": "https://m.place.naver.com/place/1245835564/home",
+      "matchedQuery": "공주시 정안 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 751,
@@ -30942,7 +32192,17 @@
       "featureNm": "",
       "addr1": "경기도 파주시 소라지로 215 (송촌동)"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 789,
+      "visitor": 291,
+      "blog": 498,
+      "placeId": "2077381440",
+      "placeName": "한강캠핑",
+      "placeAddr": "경기도 파주시 소라지로 215",
+      "url": "https://m.place.naver.com/place/2077381440/home",
+      "matchedQuery": "파주시 한강캠핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 752,
@@ -30972,7 +32232,17 @@
       "addr1": "강원특별자치도 양양군 현북면 검소길 117",
       "tel": "010-2000-4949"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 672,
+      "visitor": 595,
+      "blog": 77,
+      "placeId": "1894174324",
+      "placeName": "양양포레스트캠핑장",
+      "placeAddr": "강원 양양군 현북면 검소길 117 양양포레스트캠핑장",
+      "url": "https://m.place.naver.com/place/1894174324/home",
+      "matchedQuery": "양양군 양양 포레스트캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 753,
@@ -31008,7 +32278,17 @@
     },
     "lat": 37.7510684,
     "lng": 127.3663017,
-    "naverReview": null
+    "naverReview": {
+      "total": 770,
+      "visitor": 401,
+      "blog": 369,
+      "placeId": "1139203207",
+      "placeName": "리틀포레스트캠핑",
+      "placeAddr": "경기 가평군 상면 임초밤안골로 230",
+      "url": "https://m.place.naver.com/place/1139203207/home",
+      "matchedQuery": "가평군 리틀 포레스트 캠핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 754,
@@ -31040,7 +32320,17 @@
     },
     "lat": 35.1590776,
     "lng": 128.4013007,
-    "naverReview": null
+    "naverReview": {
+      "total": 871,
+      "visitor": 669,
+      "blog": 202,
+      "placeId": "1843531593",
+      "placeName": "평암189캠핑장",
+      "placeAddr": "경남 창원시 마산합포구 진전면 평암로 372-8",
+      "url": "https://m.place.naver.com/place/1843531593/home",
+      "matchedQuery": "창원시 평암189캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 755,
@@ -31204,7 +32494,17 @@
       "featureNm": "",
       "addr1": "경기도 가평군 상면 물골길 102"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 3154,
+      "visitor": 2506,
+      "blog": 648,
+      "placeId": "1203920209",
+      "placeName": "핀란드캠핑성 글램핑",
+      "placeAddr": "경기도 가평군 상면 물골길 102 핀란드캠핑성",
+      "url": "https://m.place.naver.com/place/1203920209/home",
+      "matchedQuery": "가평군 핀란드캠핑성",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 757,
@@ -31235,7 +32535,17 @@
     },
     "lat": 35.3916427845064,
     "lng": 126.831317543679,
-    "naverReview": null
+    "naverReview": {
+      "total": 80,
+      "visitor": 61,
+      "blog": 19,
+      "placeId": "2052951839",
+      "placeName": "장성레이크글램핑",
+      "placeAddr": "전남광주통합특별시 장성군 북이면 수성로 166 장성레이크글램핑",
+      "url": "https://m.place.naver.com/place/2052951839/home",
+      "matchedQuery": "장성군 장성레이크 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 758,
@@ -31266,7 +32576,17 @@
     },
     "lat": 35.6779448806279,
     "lng": 128.984715386255,
-    "naverReview": null
+    "naverReview": {
+      "total": 74,
+      "visitor": 36,
+      "blog": 38,
+      "placeId": "1020254826",
+      "placeName": "청도 포레스테이",
+      "placeAddr": "경북 청도군 운문면 운문로 1328-11 1층",
+      "url": "https://m.place.naver.com/place/1020254826/home",
+      "matchedQuery": "청도군 포레스테이 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 759,
@@ -31300,7 +32620,17 @@
     },
     "lat": 35.3308948,
     "lng": 127.4514518,
-    "naverReview": null
+    "naverReview": {
+      "total": 633,
+      "visitor": 504,
+      "blog": 129,
+      "placeId": "33647652",
+      "placeName": "지리산오토캠핑장",
+      "placeAddr": "전남광주통합특별시 구례군 산동면 수락폭포로 170-5",
+      "url": "https://m.place.naver.com/place/33647652/home",
+      "matchedQuery": "구례군 지리산오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 760,
@@ -31331,7 +32661,17 @@
     },
     "lat": 37.6010933310507,
     "lng": 127.494674238424,
-    "naverReview": null
+    "naverReview": {
+      "total": 378,
+      "visitor": 195,
+      "blog": 183,
+      "placeId": "1900996149",
+      "placeName": "밤벌캠핑장",
+      "placeAddr": "경기도 가평군 설악면 어비산길 15-23 밤벌캠핑장",
+      "url": "https://m.place.naver.com/place/1900996149/home",
+      "matchedQuery": "가평군 밤벌캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 761,
@@ -31362,7 +32702,17 @@
       "addr1": "경기도 안산시 단원구 서위매봉길 14 (대부북동)",
       "tel": "032-885-4461"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 1650,
+      "visitor": 1266,
+      "blog": 384,
+      "placeId": "1870930765",
+      "placeName": "홀리데이캠핑파크 대부도점",
+      "placeAddr": "경기 안산시 단원구 서위매봉길 14",
+      "url": "https://m.place.naver.com/place/1870930765/home",
+      "matchedQuery": "경기도 안산시 단원구 서위매봉길 14 -> 안산시 홀리데이캠핑파크 대부도점",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 762,
@@ -31394,7 +32744,17 @@
     },
     "lat": 37.1959296060371,
     "lng": 126.911740307573,
-    "naverReview": null
+    "naverReview": {
+      "total": 96,
+      "visitor": 53,
+      "blog": 43,
+      "placeId": "2079251517",
+      "placeName": "화성기천캠핑장",
+      "placeAddr": "경기 화성시 효행구 봉담읍 건달산로 269 2차선으로 직진 하시면 씨스페이스 편의점으로 오세요",
+      "url": "https://m.place.naver.com/place/2079251517/home",
+      "matchedQuery": "화성시 화성기천캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 763,
@@ -31427,7 +32787,17 @@
     },
     "lat": 34.671961,
     "lng": 127.0929786,
-    "naverReview": null
+    "naverReview": {
+      "total": 382,
+      "visitor": 192,
+      "blog": 190,
+      "placeId": "32965071",
+      "placeName": "율포오토캠핑리조트",
+      "placeAddr": "전남광주 보성군 회천면 충의로 52",
+      "url": "https://m.place.naver.com/place/32965071/home",
+      "matchedQuery": "전남광주통합특별시 보성군 회천면 충의로 52 -> 보성군 율포오토캠핑리조트",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 764,
@@ -31459,7 +32829,17 @@
     },
     "lat": 35.4934736,
     "lng": 128.5328649,
-    "naverReview": null
+    "naverReview": {
+      "total": 104,
+      "visitor": 8,
+      "blog": 96,
+      "placeId": "1253591110",
+      "placeName": "화왕산오토캠핑장",
+      "placeAddr": "경남 창녕군 계성면 계성화왕산로 235",
+      "url": "https://m.place.naver.com/place/1253591110/home",
+      "matchedQuery": "창녕군 화왕산오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 765,
@@ -31488,7 +32868,17 @@
       "addr1": "경상남도 통영시 용남면 분덕길 156",
       "tel": "010-4945-7192"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 752,
+      "visitor": 657,
+      "blog": 95,
+      "placeId": "1091615090",
+      "placeName": "통영오토캠핑장",
+      "placeAddr": "경상남도 통영시 용남면 분덕길 156",
+      "url": "https://m.place.naver.com/place/1091615090/home",
+      "matchedQuery": "통영시 통영오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 766,
@@ -31519,7 +32909,17 @@
     },
     "lat": 38.1961647,
     "lng": 127.47897,
-    "naverReview": null
+    "naverReview": {
+      "total": 183,
+      "visitor": 89,
+      "blog": 94,
+      "placeId": "1904228662",
+      "placeName": "매월대폭포캠핑장",
+      "placeAddr": "강원특별자치도 철원군 근남면 매월동길 133",
+      "url": "https://m.place.naver.com/place/1904228662/home",
+      "matchedQuery": "철원군 매월대폭포 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 767,
@@ -31551,7 +32951,17 @@
     },
     "lat": 34.8005495,
     "lng": 128.474536,
-    "naverReview": null
+    "naverReview": {
+      "total": 456,
+      "visitor": 350,
+      "blog": 106,
+      "placeId": "1262627794",
+      "placeName": "한산도 통제영 테마마을 오토캠핑장",
+      "placeAddr": "경남 통영시 한산면 한산일주로 171",
+      "url": "https://m.place.naver.com/place/1262627794/home",
+      "matchedQuery": "경상남도 통영시 한산면 한산일주로 171 -> 통영시 한산도 통제영 테마마을 오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 768,
@@ -31584,7 +32994,17 @@
     },
     "lat": 36.6153947,
     "lng": 126.953126,
-    "naverReview": null
+    "naverReview": {
+      "total": 115,
+      "visitor": 61,
+      "blog": 54,
+      "placeId": "1933081158",
+      "placeName": "반하면오토캠핑장",
+      "placeAddr": "충남 공주시 유구읍 명곡2길 149-6",
+      "url": "https://m.place.naver.com/place/1933081158/home",
+      "matchedQuery": "공주시 반하면 오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 769,
@@ -31617,7 +33037,17 @@
       "addr1": "충청북도 충주시 동량면 호반로 696-1",
       "tel": "070-8266-7781"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "placeName": null,
+      "placeAddr": null,
+      "url": null,
+      "matchedQuery": "충주시 충주호캠핑월드",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 770,
@@ -31649,7 +33079,17 @@
     },
     "lat": 34.4330206,
     "lng": 127.4931576,
-    "naverReview": null
+    "naverReview": {
+      "total": 353,
+      "visitor": 0,
+      "blog": 353,
+      "placeId": "87698239",
+      "placeName": "나로힐링캠핑장",
+      "placeAddr": "전남광주 고흥군 봉래면 우주로 3810-12 3810-7",
+      "url": "https://m.place.naver.com/place/87698239/home",
+      "matchedQuery": "고흥군 나로힐링캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 771,
@@ -31683,7 +33123,17 @@
     },
     "lat": 37.1310462,
     "lng": 127.2957396,
-    "naverReview": null
+    "naverReview": {
+      "total": 242,
+      "visitor": 25,
+      "blog": 217,
+      "placeId": "35742784",
+      "placeName": "용인반딧불캠핑장",
+      "placeAddr": "경기 용인시 처인구 원삼면 보개원삼로1517번길 153",
+      "url": "https://m.place.naver.com/place/35742784/home",
+      "matchedQuery": "용인시 용인반딧불캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 772,
@@ -31715,7 +33165,17 @@
     },
     "lat": 35.2669472,
     "lng": 127.8563873,
-    "naverReview": null
+    "naverReview": {
+      "total": 1075,
+      "visitor": 889,
+      "blog": 186,
+      "placeId": "1346966241",
+      "placeName": "지리산 자양보오토캠핑장",
+      "placeAddr": "경남 산청군 시천면 남명로 392-23",
+      "url": "https://m.place.naver.com/place/1346966241/home",
+      "matchedQuery": "경남 산청군 시천면 남명로 392-23 -> 산청군 지리산 자양보오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 773,
@@ -31746,7 +33206,17 @@
     },
     "lat": 37.8734589754518,
     "lng": 127.107886071261,
-    "naverReview": null
+    "naverReview": {
+      "total": 52,
+      "visitor": 39,
+      "blog": 13,
+      "placeId": "2087896252",
+      "placeName": "칠봉산캠프",
+      "placeAddr": "경기 동두천시 천보산로 412-31 1층",
+      "url": "https://m.place.naver.com/place/2087896252/home",
+      "matchedQuery": "동두천시 칠봉산캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 774,
@@ -31777,7 +33247,17 @@
     },
     "lat": 37.1120099195619,
     "lng": 128.11268084418,
-    "naverReview": null
+    "naverReview": {
+      "total": 92,
+      "visitor": 26,
+      "blog": 66,
+      "placeId": "1529839896",
+      "placeName": "리아띠캠핑장",
+      "placeAddr": "충북 제천시 봉양읍 국사봉로 287",
+      "url": "https://m.place.naver.com/place/1529839896/home",
+      "matchedQuery": "제천시 리아띠캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 775,
@@ -31811,7 +33291,17 @@
     },
     "lat": 37.2675010036663,
     "lng": 126.560124817783,
-    "naverReview": null
+    "naverReview": {
+      "total": 1443,
+      "visitor": 1111,
+      "blog": 332,
+      "placeId": "1105604400",
+      "placeName": "해솔길캠핑장",
+      "placeAddr": "경기 안산시 단원구 연목이길 11-1",
+      "url": "https://m.place.naver.com/place/1105604400/home",
+      "matchedQuery": "안산시 해솔길캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 776,
@@ -31843,7 +33333,17 @@
     },
     "lat": 35.3519289880162,
     "lng": 127.55544328163,
-    "naverReview": null
+    "naverReview": {
+      "total": 540,
+      "visitor": 6,
+      "blog": 534,
+      "placeId": "13475805",
+      "placeName": "달궁자동차야영장",
+      "placeAddr": "전북 남원시 산내면 덕동리 289",
+      "url": "https://m.place.naver.com/place/13475805/home",
+      "matchedQuery": "남원시 달궁야영장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 777,
@@ -31877,7 +33377,17 @@
     },
     "lat": 37.5113797,
     "lng": 127.658887,
-    "naverReview": null
+    "naverReview": {
+      "total": 313,
+      "visitor": 112,
+      "blog": 201,
+      "placeId": "1240608222",
+      "placeName": "스테이네이처",
+      "placeAddr": "경기 양평군 단월면 곱다니길 97",
+      "url": "https://m.place.naver.com/place/1240608222/home",
+      "matchedQuery": "양평군 스테이네이처",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 778,
@@ -31906,7 +33416,17 @@
       "addr1": "경기도 양평군 청운면 삼백골길 45",
       "tel": "0505-325-7575"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 239,
+      "visitor": 34,
+      "blog": 205,
+      "placeId": "21884525",
+      "placeName": "금물산 하늘소 캠프",
+      "placeAddr": "경기 양평군 청운면 삼백골길 45",
+      "url": "https://m.place.naver.com/place/21884525/home",
+      "matchedQuery": "양평군 금물산하늘소캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 779,
@@ -31934,7 +33454,17 @@
       "featureNm": "",
       "addr1": "경상북도 포항시 북구 송라면 해안로 2952"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 111,
+      "visitor": 85,
+      "blog": 26,
+      "placeId": "1415485486",
+      "placeName": "솔밭캠핑장",
+      "placeAddr": "경북 포항시 북구 송라면 해안로 2952",
+      "url": "https://m.place.naver.com/place/1415485486/home",
+      "matchedQuery": "포항시 솔밭캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 779,
@@ -31965,7 +33495,17 @@
     },
     "lat": 37.2718557552402,
     "lng": 126.455916207212,
-    "naverReview": null
+    "naverReview": {
+      "total": 1,
+      "visitor": 0,
+      "blog": 1,
+      "placeId": "1282480679",
+      "placeName": "영흥레져솔밭캠핑장관리소",
+      "placeAddr": "인천광역시 옹진군 영흥면 영흥로 708-26",
+      "url": "https://m.place.naver.com/place/1282480679/home",
+      "matchedQuery": "인천 옹진군 영흥면 영흥로 708-26 -> 옹진군 영흥레져솔밭캠핑장관리소",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 779,
@@ -31996,7 +33536,17 @@
     },
     "lat": 36.0976057,
     "lng": 127.2641852,
-    "naverReview": null
+    "naverReview": {
+      "total": 92,
+      "visitor": 57,
+      "blog": 35,
+      "placeId": "1088775048",
+      "placeName": "솔밭캠핑장",
+      "placeAddr": "전북 완주군 운주면 운주로 243-68",
+      "url": "https://m.place.naver.com/place/1088775048/home",
+      "matchedQuery": "완주군 솔밭캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 780,
@@ -32024,7 +33574,17 @@
       "featureNm": "",
       "addr1": "강원특별자치도 인제군 북면 만해로 221"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 174,
+      "visitor": 61,
+      "blog": 113,
+      "placeId": "35452496",
+      "placeName": "구만동펜션오토캠핑장",
+      "placeAddr": "강원특별자치도 인제군 북면 만해로 221",
+      "url": "https://m.place.naver.com/place/35452496/home",
+      "matchedQuery": "인제군 구만동오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 781,
@@ -32058,7 +33618,17 @@
     },
     "lat": 35.6676437072433,
     "lng": 128.167779284698,
-    "naverReview": null
+    "naverReview": {
+      "total": 78,
+      "visitor": 43,
+      "blog": 35,
+      "placeId": "2062583502",
+      "placeName": "별빛대가야캠핑장",
+      "placeAddr": "경상북도 고령군 쌍림면 산주리 583-1",
+      "url": "https://m.place.naver.com/place/2062583502/home",
+      "matchedQuery": "고령군 별빛대가야캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 782,
@@ -32087,7 +33657,17 @@
       "addr1": "인천광역시 강화군 삼산면 매음리 897-2",
       "tel": "010-9177-2030"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 1302,
+      "visitor": 960,
+      "blog": 342,
+      "placeId": "1660394453",
+      "placeName": "민머루잼머",
+      "placeAddr": "인천 강화군 삼산면 어류정길198번길 6 23007 민머루잼머",
+      "url": "https://m.place.naver.com/place/1660394453/home",
+      "matchedQuery": "강화군 민머루 잼머",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 783,
@@ -32117,7 +33697,17 @@
       "featureNm": "",
       "addr1": "인천광역시 옹진군 영흥면 영흥로685번길 76"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 819,
+      "visitor": 591,
+      "blog": 228,
+      "placeId": "1491046551",
+      "placeName": "코코로망스",
+      "placeAddr": "인천 옹진군 영흥면 영흥로685번길 76 코코로망스",
+      "url": "https://m.place.naver.com/place/1491046551/home",
+      "matchedQuery": "옹진군 코코로망스 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 784,
@@ -32148,7 +33738,17 @@
     },
     "lat": 37.0521916160824,
     "lng": 126.759485766609,
-    "naverReview": null
+    "naverReview": {
+      "total": 103,
+      "visitor": 40,
+      "blog": 63,
+      "placeId": "1183769155",
+      "placeName": "휘게캠피크",
+      "placeAddr": "경기 화성시 만세구 우정읍 궁평항로 81-70",
+      "url": "https://m.place.naver.com/place/1183769155/home",
+      "matchedQuery": "화성시 휘게캠피크 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 785,
@@ -32179,7 +33779,17 @@
     },
     "lat": 37.0359535,
     "lng": 127.1754463,
-    "naverReview": null
+    "naverReview": {
+      "total": 154,
+      "visitor": 105,
+      "blog": 49,
+      "placeId": "1304392417",
+      "placeName": "대이산 숲속 캠프",
+      "placeAddr": "경기 안성시 양성면 성하길 76 대이산숲속캠프",
+      "url": "https://m.place.naver.com/place/1304392417/home",
+      "matchedQuery": "안성시 대이산 숲속 캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 786,
@@ -32210,7 +33820,17 @@
       "addr1": "대구광역시 달성군 옥포읍 옥포로111길 95-17",
       "tel": "053-616-1844"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 365,
+      "visitor": 50,
+      "blog": 315,
+      "placeId": "35966079",
+      "placeName": "오투글램핑",
+      "placeAddr": "대구 달성군 옥포읍 옥포로111길 95-17 오투글램핑",
+      "url": "https://m.place.naver.com/place/35966079/home",
+      "matchedQuery": "달성군 오투글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 787,
@@ -32241,7 +33861,17 @@
     },
     "lat": 37.345278,
     "lng": 128.195825,
-    "naverReview": null
+    "naverReview": {
+      "total": 85,
+      "visitor": 2,
+      "blog": 83,
+      "placeId": "363316542",
+      "placeName": "무릉도원캠핑장",
+      "placeAddr": "강원 영월군 무릉도원면 고일길 15-5",
+      "url": "https://m.place.naver.com/place/363316542/home",
+      "matchedQuery": "영월군 무릉도원 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 788,
@@ -32272,7 +33902,17 @@
     },
     "lat": 35.0114448439051,
     "lng": 128.049283760687,
-    "naverReview": null
+    "naverReview": {
+      "total": 198,
+      "visitor": 176,
+      "blog": 22,
+      "placeId": "1471406797",
+      "placeName": "석양길518",
+      "placeAddr": "경남 사천시 용현면 석양길 530",
+      "url": "https://m.place.naver.com/place/1471406797/home",
+      "matchedQuery": "사천시 석양길 518 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 789,
@@ -32307,7 +33947,17 @@
     },
     "lat": 36.641891,
     "lng": 126.302381,
-    "naverReview": null
+    "naverReview": {
+      "total": 80,
+      "visitor": 31,
+      "blog": 49,
+      "placeId": "1064502969",
+      "placeName": "캠핑스테이 청포대",
+      "placeAddr": "충남 태안군 남면 청포대길 88 캠핑스테이 청포대",
+      "url": "https://m.place.naver.com/place/1064502969/home",
+      "matchedQuery": "태안군 캠핑스테이 청포대",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 790,
@@ -32338,7 +33988,17 @@
     },
     "lat": 37.7742312,
     "lng": 127.3939722,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "placeName": null,
+      "placeAddr": null,
+      "url": null,
+      "matchedQuery": "가평군 디자인랩 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 791,
@@ -32371,7 +34031,17 @@
     },
     "lat": 38.0088769865378,
     "lng": 127.058860391302,
-    "naverReview": null
+    "naverReview": {
+      "total": 1600,
+      "visitor": 476,
+      "blog": 1124,
+      "placeId": "12917377",
+      "placeName": "한탄강관광지 오토캠핑장",
+      "placeAddr": "경기도 연천군 전곡읍 선사로 76 한탄강관광지",
+      "url": "https://m.place.naver.com/place/12917377/home",
+      "matchedQuery": "연천군 한탄강관광지오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 792,
@@ -32400,7 +34070,17 @@
       "addr1": "경상북도 울진군 근남면 구산리 산 127",
       "tel": "010-8861-4861"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 193,
+      "visitor": 44,
+      "blog": 149,
+      "placeId": "1732869768",
+      "placeName": "왕피천숲속캠핑장",
+      "placeAddr": "경북 울진군 근남면 왕피천로 840",
+      "url": "https://m.place.naver.com/place/1732869768/home",
+      "matchedQuery": "울진군 왕피천 숲속 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 793,
@@ -32432,7 +34112,17 @@
     },
     "lat": 35.9809304799939,
     "lng": 129.313940976244,
-    "naverReview": null
+    "naverReview": {
+      "total": 86,
+      "visitor": 0,
+      "blog": 86,
+      "placeId": "1704095426",
+      "placeName": "포항국민여가캠핑장",
+      "placeAddr": "경북 포항시 남구 연일읍 중명길 180",
+      "url": "https://m.place.naver.com/place/1704095426/home",
+      "matchedQuery": "포항시 포항국민여가캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 794,
@@ -32463,7 +34153,17 @@
     },
     "lat": 34.5730760110429,
     "lng": 127.667086610241,
-    "naverReview": null
+    "naverReview": {
+      "total": 1,
+      "visitor": 0,
+      "blog": 1,
+      "placeId": "1013100894",
+      "placeName": "개도 섬섬캠핑장",
+      "placeAddr": "전남광주통합특별시 여수시 화정면 개도리 1810",
+      "url": "https://m.place.naver.com/place/1013100894/home",
+      "matchedQuery": "여수시 개도 섬섬캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 795,
@@ -32494,7 +34194,17 @@
     },
     "lat": 36.1107689640296,
     "lng": 128.313565559836,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "placeName": null,
+      "placeAddr": null,
+      "url": null,
+      "matchedQuery": "구미시 금오산 야영장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 796,
@@ -32525,7 +34235,17 @@
     },
     "lat": 37.1908134169778,
     "lng": 126.807977462838,
-    "naverReview": null
+    "naverReview": {
+      "total": 181,
+      "visitor": 129,
+      "blog": 52,
+      "placeId": "1486878952",
+      "placeName": "남양캠핑장",
+      "placeAddr": "경기 화성시 만세구 남양읍 신남서길71번길 4 남양 캠핑장",
+      "url": "https://m.place.naver.com/place/1486878952/home",
+      "matchedQuery": "화성시 남양캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 797,
@@ -32554,7 +34274,17 @@
       "addr1": "강원특별자치도 평창군 봉평면 전나무골길 224-10",
       "tel": "010-9263-0452"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 292,
+      "visitor": 12,
+      "blog": 280,
+      "placeId": "32646785",
+      "placeName": "마가리캠핑장",
+      "placeAddr": "강원 평창군 봉평면 전나무골길 224-10",
+      "url": "https://m.place.naver.com/place/32646785/home",
+      "matchedQuery": "평창군 마가리 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 798,
@@ -32586,7 +34316,17 @@
     },
     "lat": 37.3361225145212,
     "lng": 128.195592804509,
-    "naverReview": null
+    "naverReview": {
+      "total": 218,
+      "visitor": 0,
+      "blog": 218,
+      "placeId": "615202257",
+      "placeName": "요기는캠핑장",
+      "placeAddr": "강원 영월군 무릉도원면 도원운학로 1524-45 요기는캠핑장",
+      "url": "https://m.place.naver.com/place/615202257/home",
+      "matchedQuery": "영월군 요기는캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 799,
@@ -32616,7 +34356,17 @@
       "addr1": "강원특별자치도 춘천시 동내면 순환대로 808-42",
       "tel": "010-8430-7454"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 1012,
+      "visitor": 748,
+      "blog": 264,
+      "placeId": "1067314319",
+      "placeName": "춘천 신촌 캠프장",
+      "placeAddr": "강원 춘천시 동내면 순환대로 808-42",
+      "url": "https://m.place.naver.com/place/1067314319/home",
+      "matchedQuery": "춘천시 춘천 신촌 캠프장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 800,
@@ -32650,7 +34400,17 @@
     },
     "lat": 34.5051709,
     "lng": 126.9101566,
-    "naverReview": null
+    "naverReview": {
+      "total": 442,
+      "visitor": 203,
+      "blog": 239,
+      "placeId": "1680934512",
+      "placeName": "땡땡이글램핑",
+      "placeAddr": "전남광주 장흥군 대덕읍 신흥1길 5-55",
+      "url": "https://m.place.naver.com/place/1680934512/home",
+      "matchedQuery": "장흥군 땡땡이글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 801,
@@ -32659,7 +34419,17 @@
     "interest": 0.0599,
     "same_name_rows": 1,
     "facility": null,
-    "naverReview": null
+    "naverReview": {
+      "total": 52,
+      "visitor": 12,
+      "blog": 40,
+      "placeId": "1463522250",
+      "placeName": "시간의바깥",
+      "placeAddr": "경상남도 남해군 이동면 보리암로 154",
+      "url": "https://m.place.naver.com/place/1463522250/home",
+      "matchedQuery": "남해군 시간의바깥 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 802,
@@ -32694,7 +34464,17 @@
     },
     "lat": 37.4781217154782,
     "lng": 127.728331984681,
-    "naverReview": null
+    "naverReview": {
+      "total": 53,
+      "visitor": 26,
+      "blog": 27,
+      "placeId": "2083142054",
+      "placeName": "아늑캠핑장",
+      "placeAddr": "경기 양평군 양동면 양동로 1023",
+      "url": "https://m.place.naver.com/place/2083142054/home",
+      "matchedQuery": "양평군 아늑캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 803,
@@ -32725,7 +34505,17 @@
     },
     "lat": 35.5492481351007,
     "lng": 128.936058453824,
-    "naverReview": null
+    "naverReview": {
+      "total": 160,
+      "visitor": 74,
+      "blog": 86,
+      "placeId": "1083017025",
+      "placeName": "캠핑도래",
+      "placeAddr": "경남 밀양시 단장면 도래재로 332 캠핑도래",
+      "url": "https://m.place.naver.com/place/1083017025/home",
+      "matchedQuery": "밀양시 캠핑 도래",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 804,
@@ -32757,7 +34547,17 @@
       "featureNm": "",
       "addr1": "경기도 포천시 일동면 윗갈기1길 60"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 2263,
+      "visitor": 1900,
+      "blog": 363,
+      "placeId": "1075323776",
+      "placeName": "더설렘글램핑",
+      "placeAddr": "경기도 포천시 일동면 윗갈기1길 60 더설렘글램핑",
+      "url": "https://m.place.naver.com/place/1075323776/home",
+      "matchedQuery": "포천시 더설렘 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 805,
@@ -32789,7 +34589,17 @@
     },
     "lat": 37.6892145673857,
     "lng": 127.230005263272,
-    "naverReview": null
+    "naverReview": {
+      "total": 5,
+      "visitor": 0,
+      "blog": 5,
+      "placeId": "2033424448",
+      "placeName": "마실캠핑장",
+      "placeAddr": "경기도 남양주시 오남읍 팔현로216번길 24-1",
+      "url": "https://m.place.naver.com/place/2033424448/home",
+      "matchedQuery": "남양주시 마실 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 806,
@@ -32821,7 +34631,17 @@
     },
     "lat": 37.9599592,
     "lng": 126.8710915,
-    "naverReview": null
+    "naverReview": {
+      "total": 1486,
+      "visitor": 1184,
+      "blog": 302,
+      "placeId": "1415660783",
+      "placeName": "마실캠핑장",
+      "placeAddr": "경기 파주시 적성면 국사로 271",
+      "url": "https://m.place.naver.com/place/1415660783/home",
+      "matchedQuery": "파주시 마실캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 807,
@@ -32850,7 +34670,17 @@
       "addr1": "강원특별자치도 홍천군 서면 한서로 1031-11",
       "tel": "010-5203-3593"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 507,
+      "visitor": 151,
+      "blog": 356,
+      "placeId": "32769393",
+      "placeName": "비발디캠핑파크",
+      "placeAddr": "강원 홍천군 서면 한서로 1045-29 비발디캠핑파크",
+      "url": "https://m.place.naver.com/place/32769393/home",
+      "matchedQuery": "홍천군 비발디 캠핑파크",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 808,
@@ -32883,7 +34713,17 @@
     },
     "lat": 37.4483077409346,
     "lng": 127.046426134566,
-    "naverReview": null
+    "naverReview": {
+      "total": 379,
+      "visitor": 139,
+      "blog": 240,
+      "placeId": "1319743061",
+      "placeName": "서울서초글램핑청계산장",
+      "placeAddr": "서울 서초구 청계산로 140-94",
+      "url": "https://m.place.naver.com/place/1319743061/home",
+      "matchedQuery": "서초구 서울 서초 글램핑 청계산장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 809,
@@ -32914,7 +34754,17 @@
     },
     "lat": 37.4261787,
     "lng": 128.0634619,
-    "naverReview": null
+    "naverReview": {
+      "total": 337,
+      "visitor": 83,
+      "blog": 254,
+      "placeId": "37122412",
+      "placeName": "한다리골 캠핑장",
+      "placeAddr": "강원 원주시 소초면 백교길 84-15",
+      "url": "https://m.place.naver.com/place/37122412/home",
+      "matchedQuery": "원주시 한다리골캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 810,
@@ -32946,7 +34796,17 @@
     },
     "lat": 37.2685787914488,
     "lng": 128.217001057742,
-    "naverReview": null
+    "naverReview": {
+      "total": 38,
+      "visitor": 18,
+      "blog": 20,
+      "placeId": "2014534244",
+      "placeName": "미꾸라지캠핑장",
+      "placeAddr": "강원특별자치도 영월군 주천면 솔치로 318",
+      "url": "https://m.place.naver.com/place/2014534244/home",
+      "matchedQuery": "영월군 미꾸라지 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 811,
@@ -32975,7 +34835,17 @@
       "addr1": "충청남도 논산시 벌곡면 수락로237번길 26-96",
       "tel": "041-733-0867"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 39,
+      "visitor": 0,
+      "blog": 39,
+      "placeId": "34762116",
+      "placeName": "에버그린캠핑장",
+      "placeAddr": "충남 논산시 벌곡면 수락로237번길 26-98",
+      "url": "https://m.place.naver.com/place/34762116/home",
+      "matchedQuery": "논산시 에버그린 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 812,
@@ -33007,7 +34877,17 @@
     },
     "lat": 36.6830251963508,
     "lng": 127.806526177265,
-    "naverReview": null
+    "naverReview": {
+      "total": 527,
+      "visitor": 93,
+      "blog": 434,
+      "placeId": "13427007",
+      "placeName": "화양동야영장",
+      "placeAddr": "충북 괴산군 청천면 화양로 733-38",
+      "url": "https://m.place.naver.com/place/13427007/home",
+      "matchedQuery": "괴산군 화양동야영장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 813,
@@ -33040,7 +34920,17 @@
     },
     "lat": 36.7675100923177,
     "lng": 126.884327696301,
-    "naverReview": null
+    "naverReview": {
+      "total": 361,
+      "visitor": 204,
+      "blog": 157,
+      "placeId": "1508139430",
+      "placeName": "하루글램핑",
+      "placeAddr": "충남 아산시 선장면 삼봉산길 28-7",
+      "url": "https://m.place.naver.com/place/1508139430/home",
+      "matchedQuery": "아산시 하루글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 814,
@@ -33074,7 +34964,17 @@
     },
     "lat": 38.0643824786917,
     "lng": 127.127391478322,
-    "naverReview": null
+    "naverReview": {
+      "total": 1411,
+      "visitor": 503,
+      "blog": 908,
+      "placeId": "653310851",
+      "placeName": "연천재인폭포오토캠핑장",
+      "placeAddr": "경기 연천군 연천읍 고문리 113-7",
+      "url": "https://m.place.naver.com/place/653310851/home",
+      "matchedQuery": "연천군 연천재인폭포오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 815,
@@ -33103,7 +35003,17 @@
       "featureNm": "",
       "addr1": "충청남도 태안군 원북면 옥파로 1021"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 4,
+      "visitor": 3,
+      "blog": 1,
+      "placeId": "1622027611",
+      "placeName": "솔마루펜션",
+      "placeAddr": "충청남도 태안군 원북면 옥파로 1021",
+      "url": "https://m.place.naver.com/place/1622027611/home",
+      "matchedQuery": "충청남도 태안군 원북면 옥파로 1021 -> 태안군 솔마루펜션",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 816,
@@ -33135,7 +35045,17 @@
     },
     "lat": 34.6638838,
     "lng": 127.5784409,
-    "naverReview": null
+    "naverReview": {
+      "total": 739,
+      "visitor": 578,
+      "blog": 161,
+      "placeId": "1824747181",
+      "placeName": "자매로카라반캠핑장",
+      "placeAddr": "전남광주통합특별시 여수시 화양면 자매로 170",
+      "url": "https://m.place.naver.com/place/1824747181/home",
+      "matchedQuery": "여수시 여수자매로캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 817,
@@ -33165,7 +35085,17 @@
       "featureNm": "",
       "addr1": "경기도 가평군 상면 수목원로 238-106"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 221,
+      "visitor": 31,
+      "blog": 190,
+      "placeId": "983581155",
+      "placeName": "온더락캠핑장",
+      "placeAddr": "경기 가평군 상면 수목원로 238-106 주택1",
+      "url": "https://m.place.naver.com/place/983581155/home",
+      "matchedQuery": "가평군 온더락캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 818,
@@ -33198,7 +35128,17 @@
     },
     "lat": 37.7275960435335,
     "lng": 127.297191385763,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "placeName": null,
+      "placeAddr": null,
+      "url": null,
+      "matchedQuery": "남양주시 벨하우스 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 819,
@@ -33232,7 +35172,17 @@
     },
     "lat": 37.9814614,
     "lng": 127.4474625,
-    "naverReview": null
+    "naverReview": {
+      "total": 6095,
+      "visitor": 3280,
+      "blog": 2815,
+      "placeId": "21868859",
+      "placeName": "가평명지산카라반글램핑",
+      "placeAddr": "경기 가평군 북면 가화로 2932-23 가평명지산카라반글램핑",
+      "url": "https://m.place.naver.com/place/21868859/home",
+      "matchedQuery": "가평군 가평명지산카라반글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 820,
@@ -33261,7 +35211,17 @@
       "addr1": "경상북도 울진군 울진읍 대흥리 76",
       "tel": "054-781-1002"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 151,
+      "visitor": 103,
+      "blog": 48,
+      "placeId": "1860899570",
+      "placeName": "불영계곡캠핑장",
+      "placeAddr": "경상북도 울진군 울진읍 불영계곡로 2758",
+      "url": "https://m.place.naver.com/place/1860899570/home",
+      "matchedQuery": "울진군 불영계곡 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 821,
@@ -33294,7 +35254,17 @@
     },
     "lat": 35.5217640132366,
     "lng": 129.017492275282,
-    "naverReview": null
+    "naverReview": {
+      "total": 1054,
+      "visitor": 743,
+      "blog": 311,
+      "placeId": "1275935483",
+      "placeName": "캠프포레",
+      "placeAddr": "경남 양산시 원동면 청수골길 106 캠프포레",
+      "url": "https://m.place.naver.com/place/1275935483/home",
+      "matchedQuery": "양산시 캠프포레",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 822,
@@ -33329,7 +35299,17 @@
     },
     "lat": 34.8611511,
     "lng": 127.3408829,
-    "naverReview": null
+    "naverReview": {
+      "total": 356,
+      "visitor": 285,
+      "blog": 71,
+      "placeId": "1383230103",
+      "placeName": "산들바람 글램핑",
+      "placeAddr": "전남광주 보성군 벌교읍 조정래길 248-5 산들바람글램핑",
+      "url": "https://m.place.naver.com/place/1383230103/home",
+      "matchedQuery": "보성군 산들바람 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 823,
@@ -33360,7 +35340,17 @@
     },
     "lat": 35.2785738383088,
     "lng": 128.92490214972,
-    "naverReview": null
+    "naverReview": {
+      "total": 26,
+      "visitor": 0,
+      "blog": 26,
+      "placeId": "1461364901",
+      "placeName": "상동숲속야영장",
+      "placeAddr": "경남 김해시 상동면 장척로462번길 111",
+      "url": "https://m.place.naver.com/place/1461364901/home",
+      "matchedQuery": "김해시 상동 숲속야영장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 824,
@@ -33391,7 +35381,17 @@
     },
     "lat": 37.641440946874,
     "lng": 127.606742171158,
-    "naverReview": null
+    "naverReview": {
+      "total": 64,
+      "visitor": 27,
+      "blog": 37,
+      "placeId": "2085717308",
+      "placeName": "온온",
+      "placeAddr": "경기도 양평군 단월면 물레골길 24-13 (석산리191)",
+      "url": "https://m.place.naver.com/place/2085717308/home",
+      "matchedQuery": "양평군 온온 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 825,
@@ -33422,7 +35422,17 @@
     },
     "lat": 36.1065014,
     "lng": 126.8101946,
-    "naverReview": null
+    "naverReview": {
+      "total": 717,
+      "visitor": 534,
+      "blog": 183,
+      "placeId": "1821935324",
+      "placeName": "블루아일랜드캠핑장",
+      "placeAddr": "충남 서천군 한산면 송마길 171 블루아일랜드캠핑장",
+      "url": "https://m.place.naver.com/place/1821935324/home",
+      "matchedQuery": "서천군 블루아일랜드 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 826,
@@ -33454,7 +35464,17 @@
     },
     "lat": 35.9747099074189,
     "lng": 127.41608438212,
-    "naverReview": null
+    "naverReview": {
+      "total": 14,
+      "visitor": 11,
+      "blog": 3,
+      "placeId": "2093681234",
+      "placeName": "운일암반일암국민여가캠핑장",
+      "placeAddr": "전북특별자치도 진안군 주천면 동상주천로 1996-13",
+      "url": "https://m.place.naver.com/place/2093681234/home",
+      "matchedQuery": "진안군 운일암반일암 국민여가캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 827,
@@ -33486,7 +35506,17 @@
       "featureNm": "",
       "addr1": "경상북도 포항시 남구 구룡포읍 일출로 465"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 1209,
+      "visitor": 963,
+      "blog": 246,
+      "placeId": "1301161592",
+      "placeName": "웨이브글램핑",
+      "placeAddr": "경북 포항시 남구 구룡포읍 일출로 465",
+      "url": "https://m.place.naver.com/place/1301161592/home",
+      "matchedQuery": "포항시 웨이브 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 828,
@@ -33517,7 +35547,17 @@
       "featureNm": "",
       "addr1": "경상남도 밀양시 산외면 산외강변로 309"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 663,
+      "visitor": 321,
+      "blog": 342,
+      "placeId": "1224214142",
+      "placeName": "가온빌리지",
+      "placeAddr": "경남 밀양시 산외면 산외강변로 309",
+      "url": "https://m.place.naver.com/place/1224214142/home",
+      "matchedQuery": "밀양시 가온빌리지 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 829,
@@ -33548,7 +35588,17 @@
       "addr1": "경상남도 거창군 위천면 거차1길 23-18",
       "tel": "054-945-8800"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 660,
+      "visitor": 445,
+      "blog": 215,
+      "placeId": "1761354108",
+      "placeName": "거창서핑파크",
+      "placeAddr": "경남 거창군 위천면 거차1길 23-18",
+      "url": "https://m.place.naver.com/place/1761354108/home",
+      "matchedQuery": "거창군 거창서핑파크",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 830,
@@ -33580,7 +35630,17 @@
     },
     "lat": 37.3103966169252,
     "lng": 129.286203517663,
-    "naverReview": null
+    "naverReview": {
+      "total": 45,
+      "visitor": 0,
+      "blog": 45,
+      "placeId": "1824269059",
+      "placeName": "문암해변캠핑장",
+      "placeAddr": "강원 삼척시 근덕면 초곡리 319-1",
+      "url": "https://m.place.naver.com/place/1824269059/home",
+      "matchedQuery": "삼척시 문암해변캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 831,
@@ -33611,7 +35671,17 @@
     },
     "lat": 33.4496935533912,
     "lng": 126.623480431252,
-    "naverReview": null
+    "naverReview": {
+      "total": 5,
+      "visitor": 1,
+      "blog": 4,
+      "placeId": "1421132776",
+      "placeName": "봉아름 캠핑장",
+      "placeAddr": "제주특별자치도 제주시 명림로 453 (봉개동)",
+      "url": "https://m.place.naver.com/place/1421132776/home",
+      "matchedQuery": "제주시 봉아름 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 832,
@@ -33643,7 +35713,17 @@
     },
     "lat": 37.1214901,
     "lng": 128.2965596,
-    "naverReview": null
+    "naverReview": {
+      "total": 566,
+      "visitor": 459,
+      "blog": 107,
+      "placeId": "1120169532",
+      "placeName": "가마실캠핑장",
+      "placeAddr": "충청북도 제천시 의병대로61길 50",
+      "url": "https://m.place.naver.com/place/1120169532/home",
+      "matchedQuery": "제천시 가마실캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 833,
@@ -33672,7 +35752,17 @@
       "featureNm": "",
       "addr1": "강원특별자치도 홍천군 서면 모곡로 365-139"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 2299,
+      "visitor": 1797,
+      "blog": 502,
+      "placeId": "33451826",
+      "placeName": "산으로캠핑장",
+      "placeAddr": "강원 홍천군 서면 모곡로 365-139 1층",
+      "url": "https://m.place.naver.com/place/33451826/home",
+      "matchedQuery": "홍천군 산으로 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 834,
@@ -33703,7 +35793,17 @@
       "addr1": "울산광역시 동구 등대로 80-61",
       "tel": "052-209-4530"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 843,
+      "visitor": 113,
+      "blog": 730,
+      "placeId": "923438136",
+      "placeName": "대왕암공원오토캠핑장",
+      "placeAddr": "울산광역시 동구 일산동 909",
+      "url": "https://m.place.naver.com/place/923438136/home",
+      "matchedQuery": "동구 대왕암공원 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 835,
@@ -33734,7 +35834,17 @@
     },
     "lat": 35.6816436,
     "lng": 128.7753079,
-    "naverReview": null
+    "naverReview": {
+      "total": 563,
+      "visitor": 366,
+      "blog": 197,
+      "placeId": "1212120904",
+      "placeName": "린하우스",
+      "placeAddr": "경상북도 청도군 청도읍 운산3길 47 린하우스",
+      "url": "https://m.place.naver.com/place/1212120904/home",
+      "matchedQuery": "청도군 린하우스 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 836,
@@ -33767,7 +35877,17 @@
     },
     "lat": 35.0318145,
     "lng": 127.9850116,
-    "naverReview": null
+    "naverReview": {
+      "total": 214,
+      "visitor": 17,
+      "blog": 197,
+      "placeId": "1682164119",
+      "placeName": "사천5901캠핑장",
+      "placeAddr": "경남 사천시 서포면 조도로 208",
+      "url": "https://m.place.naver.com/place/1682164119/home",
+      "matchedQuery": "사천시 사천5901캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 837,
@@ -33798,7 +35918,17 @@
     },
     "lat": 33.4175616,
     "lng": 126.3949476,
-    "naverReview": null
+    "naverReview": {
+      "total": 73,
+      "visitor": 0,
+      "blog": 73,
+      "placeId": "1076317632",
+      "placeName": "캠핑스토리",
+      "placeAddr": "제주 제주시 애월읍 하소로 746 캠핑스토리",
+      "url": "https://m.place.naver.com/place/1076317632/home",
+      "matchedQuery": "제주시 캠핑스토리",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 838,
@@ -33829,7 +35959,17 @@
     },
     "lat": 36.8359940618627,
     "lng": 126.153282875795,
-    "naverReview": null
+    "naverReview": {
+      "total": 39,
+      "visitor": 16,
+      "blog": 23,
+      "placeId": "2002213056",
+      "placeName": "구름포숲속야영장",
+      "placeAddr": "충청남도 태안군 소원면 구름포길 106 구름포숲속야영장",
+      "url": "https://m.place.naver.com/place/2002213056/home",
+      "matchedQuery": "태안군 구름포숲속야영장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 839,
@@ -33860,7 +36000,17 @@
     },
     "lat": 38.0441198,
     "lng": 127.0575714,
-    "naverReview": null
+    "naverReview": {
+      "total": 295,
+      "visitor": 128,
+      "blog": 167,
+      "placeId": "1371376042",
+      "placeName": "스톤브룩 캠핑장",
+      "placeAddr": "경기 연천군 군남면 진은로606번길 110",
+      "url": "https://m.place.naver.com/place/1371376042/home",
+      "matchedQuery": "연천군 스톤브룩 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 840,
@@ -33894,7 +36044,17 @@
     },
     "lat": 36.628369,
     "lng": 126.9694092,
-    "naverReview": null
+    "naverReview": {
+      "total": 533,
+      "visitor": 413,
+      "blog": 120,
+      "placeId": "1184842516",
+      "placeName": "녹수원글램핑",
+      "placeAddr": "충남 공주시 유구읍 덕곡리 15-2",
+      "url": "https://m.place.naver.com/place/1184842516/home",
+      "matchedQuery": "공주시 녹수원글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 841,
@@ -33926,7 +36086,17 @@
     },
     "lat": 34.8674533,
     "lng": 128.4682022,
-    "naverReview": null
+    "naverReview": {
+      "total": 127,
+      "visitor": 47,
+      "blog": 80,
+      "placeId": "1940128328",
+      "placeName": "해간도캠핑장",
+      "placeAddr": "경남 통영시 용남면 해간길 55",
+      "url": "https://m.place.naver.com/place/1940128328/home",
+      "matchedQuery": "통영시 해간도캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 842,
@@ -33955,7 +36125,17 @@
       "addr1": "경기도 포천시 이동면 화동로 2530",
       "tel": "02-2116-0547"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 193,
+      "visitor": 133,
+      "blog": 60,
+      "placeId": "1968539463",
+      "placeName": "넓은마당캠핑장",
+      "placeAddr": "경기 포천시 이동면 화동로 2530 넓은마당캠핑장",
+      "url": "https://m.place.naver.com/place/1968539463/home",
+      "matchedQuery": "포천시 넓은마당캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 843,
@@ -33988,7 +36168,17 @@
     },
     "lat": 37.7622588096223,
     "lng": 127.36457655051,
-    "naverReview": null
+    "naverReview": {
+      "total": 4633,
+      "visitor": 3792,
+      "blog": 841,
+      "placeId": "1831235671",
+      "placeName": "더플래츠글램핑",
+      "placeAddr": "경기 가평군 상면 수목원로 181-28 더플래츠글램핑",
+      "url": "https://m.place.naver.com/place/1831235671/home",
+      "matchedQuery": "가평군 더 플래츠 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 844,
@@ -34021,7 +36211,17 @@
     },
     "lat": 36.2015016949696,
     "lng": 128.472586967198,
-    "naverReview": null
+    "naverReview": {
+      "total": 134,
+      "visitor": 77,
+      "blog": 57,
+      "placeId": "1667477128",
+      "placeName": "송백농원",
+      "placeAddr": "경북 구미시 산동읍 송백로 674-1 송백농원",
+      "url": "https://m.place.naver.com/place/1667477128/home",
+      "matchedQuery": "구미시 송백농원 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 845,
@@ -34053,7 +36253,17 @@
     },
     "lat": 36.490951,
     "lng": 127.860038,
-    "naverReview": null
+    "naverReview": {
+      "total": 74,
+      "visitor": 1,
+      "blog": 73,
+      "placeId": "1450415269",
+      "placeName": "삼가농촌체험관",
+      "placeAddr": "충청북도 보은군 속리산면 삼가구병길 9 수정초등학교삼가분교",
+      "url": "https://m.place.naver.com/place/1450415269/home",
+      "matchedQuery": "보은군 삼가농촌체험관 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 846,
@@ -34086,7 +36296,17 @@
     },
     "lat": 37.5873931297802,
     "lng": 126.509679652838,
-    "naverReview": null
+    "naverReview": {
+      "total": 842,
+      "visitor": 637,
+      "blog": 205,
+      "placeId": "32489800",
+      "placeName": "동검도노을캠핑장",
+      "placeAddr": "인천 강화군 길상면 동검길 159-13",
+      "url": "https://m.place.naver.com/place/32489800/home",
+      "matchedQuery": "강화군 동검도노을캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 847,
@@ -34115,7 +36335,17 @@
       "addr1": "강원특별자치도 홍천군 서면 마곡길 220",
       "tel": "033-436-1001"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 455,
+      "visitor": 312,
+      "blog": 143,
+      "placeId": "35103652",
+      "placeName": "몬테리오글램핑",
+      "placeAddr": "강원특별자치도 홍천군 서면 마곡리 121-6",
+      "url": "https://m.place.naver.com/place/35103652/home",
+      "matchedQuery": "홍천군 몬테리오 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 848,
@@ -34144,7 +36374,17 @@
       "addr1": "경상남도 김해시 생림면 인제로 545-59",
       "tel": "055-311-3325"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 516,
+      "visitor": 110,
+      "blog": 406,
+      "placeId": "36886245",
+      "placeName": "천문대오토캠핑장",
+      "placeAddr": "경남 김해시 생림면 인제로 545-59",
+      "url": "https://m.place.naver.com/place/36886245/home",
+      "matchedQuery": "김해시 천문대오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 849,
@@ -34178,7 +36418,17 @@
     },
     "lat": 37.3696206,
     "lng": 128.1780646,
-    "naverReview": null
+    "naverReview": {
+      "total": 356,
+      "visitor": 206,
+      "blog": 150,
+      "placeId": "1979825779",
+      "placeName": "월현포레스트",
+      "placeAddr": "강원 횡성군 강림면 월안길 251",
+      "url": "https://m.place.naver.com/place/1979825779/home",
+      "matchedQuery": "횡성군 월현 포레스트",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 850,
@@ -34207,7 +36457,17 @@
       "featureNm": "",
       "addr1": "경기도 화성시 송산면 송산서로420번길 102-20"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 156,
+      "visitor": 11,
+      "blog": 145,
+      "placeId": "1682094241",
+      "placeName": "탄도호캠핑장",
+      "placeAddr": "경기 화성시 만세구 송산면 송산서로420번길 102-20",
+      "url": "https://m.place.naver.com/place/1682094241/home",
+      "matchedQuery": "화성시 탄도호캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 851,
@@ -34239,7 +36499,17 @@
     },
     "lat": 37.1022071721775,
     "lng": 128.682775428121,
-    "naverReview": null
+    "naverReview": {
+      "total": 330,
+      "visitor": 114,
+      "blog": 216,
+      "placeId": "15538161",
+      "placeName": "내리계곡솔밭캠핑장",
+      "placeAddr": "강원특별자치도 영월군 김삿갓면 내리계곡로 1039-18",
+      "url": "https://m.place.naver.com/place/15538161/home",
+      "matchedQuery": "영월군 내리계곡 솔밭캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 852,
@@ -34271,7 +36541,17 @@
     },
     "lat": 35.8027531,
     "lng": 128.7616304,
-    "naverReview": null
+    "naverReview": {
+      "total": 1174,
+      "visitor": 1069,
+      "blog": 105,
+      "placeId": "1597121485",
+      "placeName": "산으로간캠프",
+      "placeAddr": "경북 경산시 삼성현로 578-9 산으로간캠프",
+      "url": "https://m.place.naver.com/place/1597121485/home",
+      "matchedQuery": "경산시 산으로간 캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 853,
@@ -34302,7 +36582,17 @@
     },
     "lat": 37.6903335078303,
     "lng": 127.688009953352,
-    "naverReview": null
+    "naverReview": {
+      "total": 802,
+      "visitor": 473,
+      "blog": 329,
+      "placeId": "1606180093",
+      "placeName": "에잇시즌즈",
+      "placeAddr": "강원 홍천군 서면 팔봉산로 909-19 에잇시즌즈",
+      "url": "https://m.place.naver.com/place/1606180093/home",
+      "matchedQuery": "홍천군 에잇시즌즈 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 854,
@@ -34334,7 +36624,17 @@
     },
     "lat": 37.8879128,
     "lng": 127.278306,
-    "naverReview": null
+    "naverReview": {
+      "total": 780,
+      "visitor": 585,
+      "blog": 195,
+      "placeId": "1022829340",
+      "placeName": "꿈드림 글램핑",
+      "placeAddr": "경기 포천시 화현면 봉화로 447 꿈드림 글램핑",
+      "url": "https://m.place.naver.com/place/1022829340/home",
+      "matchedQuery": "포천시 꿈드림 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 855,
@@ -34365,7 +36665,17 @@
     },
     "lat": 36.0463833213351,
     "lng": 128.610643479653,
-    "naverReview": null
+    "naverReview": {
+      "total": 59,
+      "visitor": 35,
+      "blog": 24,
+      "placeId": "2002490332",
+      "placeName": "캠프팔공",
+      "placeAddr": "경북 칠곡군 가산면 가산로 1215 캠프팔공",
+      "url": "https://m.place.naver.com/place/2002490332/home",
+      "matchedQuery": "칠곡군 캠프 팔공",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 856,
@@ -34396,7 +36706,17 @@
     },
     "lat": 36.0528422352038,
     "lng": 128.646515846892,
-    "naverReview": null
+    "naverReview": {
+      "total": 56,
+      "visitor": 20,
+      "blog": 36,
+      "placeId": "1569604494",
+      "placeName": "한밤터",
+      "placeAddr": "대구광역시 군위군 부계면 한밤8길 147 한밤터",
+      "url": "https://m.place.naver.com/place/1569604494/home",
+      "matchedQuery": "군위군 한밤터 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 857,
@@ -34428,7 +36748,17 @@
     },
     "lat": 36.760471,
     "lng": 127.8951925,
-    "naverReview": null
+    "naverReview": {
+      "total": 188,
+      "visitor": 25,
+      "blog": 163,
+      "placeId": "1029968229",
+      "placeName": "솔밭캠프",
+      "placeAddr": "충북 괴산군 칠성면 쌍곡로 322",
+      "url": "https://m.place.naver.com/place/1029968229/home",
+      "matchedQuery": "괴산군 솔밭캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 858,
@@ -34460,7 +36790,17 @@
     },
     "lat": 37.8291163,
     "lng": 126.7207168,
-    "naverReview": null
+    "naverReview": {
+      "total": 161,
+      "visitor": 63,
+      "blog": 98,
+      "placeId": "1654342273",
+      "placeName": "자유로캠핑장",
+      "placeAddr": "경기 파주시 탄현면 자유로 3902-66",
+      "url": "https://m.place.naver.com/place/1654342273/home",
+      "matchedQuery": "파주시 자유로캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 859,
@@ -34494,7 +36834,17 @@
     },
     "lat": 37.8472754,
     "lng": 127.3775713,
-    "naverReview": null
+    "naverReview": {
+      "total": 246,
+      "visitor": 27,
+      "blog": 219,
+      "placeId": "32456443",
+      "placeName": "캠핑어클락",
+      "placeAddr": "경기 가평군 조종면 연인산로474번길 27 캠핑어클락",
+      "url": "https://m.place.naver.com/place/32456443/home",
+      "matchedQuery": "가평군 캠핑어클락",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 860,
@@ -34522,7 +36872,17 @@
       "featureNm": "",
       "addr1": "경상북도 영양군 본신로 213-0"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 497,
+      "visitor": 199,
+      "blog": 298,
+      "placeId": "38692698",
+      "placeName": "영양수비별빛캠핑장",
+      "placeAddr": "경북 영양군 수비면 본신로 213",
+      "url": "https://m.place.naver.com/place/38692698/home",
+      "matchedQuery": "영양군 영양수비별빛캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 861,
@@ -34554,7 +36914,17 @@
     },
     "lat": 37.7225978663583,
     "lng": 128.237141840958,
-    "naverReview": null
+    "naverReview": {
+      "total": 139,
+      "visitor": 101,
+      "blog": 38,
+      "placeId": "2091037400",
+      "placeName": "용오름밸리캠핑장",
+      "placeAddr": "강원특별자치도 홍천군 서석면 검산길 278 1층",
+      "url": "https://m.place.naver.com/place/2091037400/home",
+      "matchedQuery": "홍천군 용오름밸리 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 862,
@@ -34582,7 +36952,17 @@
       "featureNm": "",
       "addr1": "울산광역시 동구 주전해안길 300 (주전동)"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 268,
+      "visitor": 19,
+      "blog": 249,
+      "placeId": "1510316025",
+      "placeName": "주전패밀리캠핑장",
+      "placeAddr": "울산 동구 주전해안길 300",
+      "url": "https://m.place.naver.com/place/1510316025/home",
+      "matchedQuery": "동구 주전패밀리캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 863,
@@ -34612,7 +36992,17 @@
       "featureNm": "",
       "addr1": "전북특별자치도 순창군 복흥면 용지길 7-50"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 258,
+      "visitor": 23,
+      "blog": 235,
+      "placeId": "33703283",
+      "placeName": "웅이네캠핑장",
+      "placeAddr": "전북 순창군 복흥면 용지길 7-50",
+      "url": "https://m.place.naver.com/place/33703283/home",
+      "matchedQuery": "순창군 웅이네캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 864,
@@ -34644,7 +37034,17 @@
     },
     "lat": 35.9274821,
     "lng": 128.1051477,
-    "naverReview": null
+    "naverReview": {
+      "total": 241,
+      "visitor": 62,
+      "blog": 179,
+      "placeId": "35458106",
+      "placeName": "별고을오토캠핑장",
+      "placeAddr": "경북 성주군 금수강산면 성주로 660",
+      "url": "https://m.place.naver.com/place/35458106/home",
+      "matchedQuery": "성주군 별고을오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 865,
@@ -34678,7 +37078,17 @@
     },
     "lat": 37.7834203,
     "lng": 127.0018803,
-    "naverReview": null
+    "naverReview": {
+      "total": 307,
+      "visitor": 237,
+      "blog": 70,
+      "placeId": "1149771444",
+      "placeName": "봄이오는캠프",
+      "placeAddr": "경기 양주시 백석읍 양주산성로 469-55 봄이오는캠프",
+      "url": "https://m.place.naver.com/place/1149771444/home",
+      "matchedQuery": "양주시 봄이오는 캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 866,
@@ -34711,7 +37121,17 @@
     },
     "lat": 35.2732000420517,
     "lng": 127.77880484089,
-    "naverReview": null
+    "naverReview": {
+      "total": 171,
+      "visitor": 9,
+      "blog": 162,
+      "placeId": "2088628160",
+      "placeName": "지리산 당근 오토캠핑장",
+      "placeAddr": "경상남도 산청군 시천면 지리산대로 855",
+      "url": "https://m.place.naver.com/place/2088628160/home",
+      "matchedQuery": "산청군 지리산 당근 오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 867,
@@ -34742,7 +37162,17 @@
     },
     "lat": 35.3550812,
     "lng": 127.9176326,
-    "naverReview": null
+    "naverReview": {
+      "total": 350,
+      "visitor": 172,
+      "blog": 178,
+      "placeId": "1996114317",
+      "placeName": "캠프627",
+      "placeAddr": "경남 산청군 단성면 호암로1320번길 90-31",
+      "url": "https://m.place.naver.com/place/1996114317/home",
+      "matchedQuery": "산청군 캠프627",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 868,
@@ -34777,7 +37207,17 @@
     },
     "lat": 37.7606896848712,
     "lng": 127.570289101048,
-    "naverReview": null
+    "naverReview": {
+      "total": 198,
+      "visitor": 161,
+      "blog": 37,
+      "placeId": "1339489846",
+      "placeName": "캠프나인",
+      "placeAddr": "강원 춘천시 남면 충효로 1752 캠프나인",
+      "url": "https://m.place.naver.com/place/1339489846/home",
+      "matchedQuery": "춘천시 캠프나인",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 869,
@@ -34807,7 +37247,17 @@
       "addr1": "경기도 파주시 광탄면 기산리 471-2",
       "tel": "031-957-8010"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 953,
+      "visitor": 717,
+      "blog": 236,
+      "placeId": "1956354117",
+      "placeName": "파주 기산캠프",
+      "placeAddr": "경기 파주시 광탄면 기산로 207-31 광탄면 기산리 471-2",
+      "url": "https://m.place.naver.com/place/1956354117/home",
+      "matchedQuery": "파주시 파주기산캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 870,
@@ -34839,7 +37289,17 @@
     },
     "lat": 36.4639208,
     "lng": 128.0649903,
-    "naverReview": null
+    "naverReview": {
+      "total": 52,
+      "visitor": 23,
+      "blog": 29,
+      "placeId": "1415049398",
+      "placeName": "가족캠핑장",
+      "placeAddr": "경북 상주시 외서면 채릉산로 655 가족캠핑장",
+      "url": "https://m.place.naver.com/place/1415049398/home",
+      "matchedQuery": "상주시 가족캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 871,
@@ -34868,7 +37328,17 @@
       "addr1": "경기도 포천시 영중면 호국로3296번길 31-46",
       "tel": "010-9520-8136"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 169,
+      "visitor": 33,
+      "blog": 136,
+      "placeId": "1811833156",
+      "placeName": "레이크문캠핑장",
+      "placeAddr": "경기 포천시 영중면 호국로3296번길 31-46 포천 레이크문캠핑장",
+      "url": "https://m.place.naver.com/place/1811833156/home",
+      "matchedQuery": "포천시 레이크문캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 872,
@@ -34900,7 +37370,17 @@
       "addr1": "경기도 양평군 지평면 옥현리 1504-5",
       "tel": "1666-5492-"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 1182,
+      "visitor": 593,
+      "blog": 589,
+      "placeId": "32862772",
+      "placeName": "양평수목원캠핑장",
+      "placeAddr": "경기도 양평군 지평면 옥현리 1503-1",
+      "url": "https://m.place.naver.com/place/32862772/home",
+      "matchedQuery": "경기 양평수목원 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 873,
@@ -34932,7 +37412,17 @@
     },
     "lat": 35.9597889,
     "lng": 127.3068406,
-    "naverReview": null
+    "naverReview": {
+      "total": 581,
+      "visitor": 448,
+      "blog": 133,
+      "placeId": "1647873538",
+      "placeName": "동상힐링캠핑장",
+      "placeAddr": "전북 완주군 동상면 동상주천로 160-27",
+      "url": "https://m.place.naver.com/place/1647873538/home",
+      "matchedQuery": "완주군 동상 힐링 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 874,
@@ -34961,7 +37451,17 @@
       "addr1": "경기도 파주시 파주읍 통일로 1604-26",
       "tel": "010-3016-3540"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 166,
+      "visitor": 16,
+      "blog": 150,
+      "placeId": "1863302702",
+      "placeName": "따봉캠핑장",
+      "placeAddr": "경기 파주시 파주읍 통일로 1604-26",
+      "url": "https://m.place.naver.com/place/1863302702/home",
+      "matchedQuery": "파주시 따봉캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 875,
@@ -34993,7 +37493,17 @@
     },
     "lat": 35.3580771,
     "lng": 127.6813458,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "placeName": null,
+      "placeAddr": null,
+      "url": null,
+      "matchedQuery": "함양군 백무동야영장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 876,
@@ -35022,7 +37532,17 @@
       "addr1": "전북특별자치도 완주군 운주면 금고당로 1070-14",
       "tel": "010-3337-8260"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 228,
+      "visitor": 79,
+      "blog": 149,
+      "placeId": "288020547",
+      "placeName": "로뎀하우스",
+      "placeAddr": "전북특별자치도 완주군 운주면 금고당로 1070-10",
+      "url": "https://m.place.naver.com/place/288020547/home",
+      "matchedQuery": "완주군 로뎀하우스 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 877,
@@ -35055,7 +37575,17 @@
     },
     "lat": 35.6658549,
     "lng": 129.0026709,
-    "naverReview": null
+    "naverReview": {
+      "total": 126,
+      "visitor": 12,
+      "blog": 114,
+      "placeId": "30808825",
+      "placeName": "배너미오토캠핑장",
+      "placeAddr": "경북 청도군 운문면 운문로 1051",
+      "url": "https://m.place.naver.com/place/30808825/home",
+      "matchedQuery": "청도군 배너미오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 878,
@@ -35086,7 +37616,17 @@
     },
     "lat": 36.7024877,
     "lng": 126.2327666,
-    "naverReview": null
+    "naverReview": {
+      "total": 877,
+      "visitor": 375,
+      "blog": 502,
+      "placeId": "1755102203",
+      "placeName": "캠핑드림 캠핑장",
+      "placeAddr": "충남 태안군 근흥면 용신리 638",
+      "url": "https://m.place.naver.com/place/1755102203/home",
+      "matchedQuery": "태안군 캠핑드림캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 879,
@@ -35118,7 +37658,17 @@
     },
     "lat": 35.924679,
     "lng": 127.759496,
-    "naverReview": null
+    "naverReview": {
+      "total": 2156,
+      "visitor": 1475,
+      "blog": 681,
+      "placeId": "30850375",
+      "placeName": "무주눈꽃 덕유캠프",
+      "placeAddr": "전북 무주군 설천면 구천동로 1262-4 덕유캠프",
+      "url": "https://m.place.naver.com/place/30850375/home",
+      "matchedQuery": "무주군 무주눈꽃 덕유캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 880,
@@ -35147,7 +37697,17 @@
       "addr1": "경기도 안산시 단원구 대부남동 559-106",
       "tel": "010-4032-3379"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 2833,
+      "visitor": 2369,
+      "blog": 464,
+      "placeId": "13037160",
+      "placeName": "비치캠핑장",
+      "placeAddr": "경기 안산시 단원구 장불길 35",
+      "url": "https://m.place.naver.com/place/13037160/home",
+      "matchedQuery": "안산시 비치캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 881,
@@ -35180,7 +37740,17 @@
     },
     "lat": 35.3212687,
     "lng": 127.9031091,
-    "naverReview": null
+    "naverReview": {
+      "total": 445,
+      "visitor": 100,
+      "blog": 345,
+      "placeId": "1490868244",
+      "placeName": "더예감스테이",
+      "placeAddr": "경남 산청군 단성면 호암로 702-22 더예감스테이",
+      "url": "https://m.place.naver.com/place/1490868244/home",
+      "matchedQuery": "산청군 더예감스테이 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 882,
@@ -35213,7 +37783,17 @@
     },
     "lat": 33.3002409928156,
     "lng": 126.584767758792,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": "1379855925",
+      "placeName": "돈내코야영장",
+      "placeAddr": "제주특별자치도 서귀포시 돈내코로 114",
+      "url": "https://m.place.naver.com/place/1379855925/home",
+      "matchedQuery": "제주특별자치도 서귀포시 돈내코로 114",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 883,
@@ -35247,7 +37827,17 @@
     },
     "lat": 34.937322,
     "lng": 128.369922,
-    "naverReview": null
+    "naverReview": {
+      "total": 395,
+      "visitor": 289,
+      "blog": 106,
+      "placeId": "35136434",
+      "placeName": "흙내음글램핑",
+      "placeAddr": "경남 통영시 도산면 원산길 338",
+      "url": "https://m.place.naver.com/place/35136434/home",
+      "matchedQuery": "통영시 흙내음 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 884,
@@ -35280,7 +37870,17 @@
     },
     "lat": 35.3373625160723,
     "lng": 126.948172249509,
-    "naverReview": null
+    "naverReview": {
+      "total": 857,
+      "visitor": 628,
+      "blog": 229,
+      "placeId": "1697695674",
+      "placeName": "담양대나무골캠핑장",
+      "placeAddr": "전남광주 담양군 월산면 가산길 364",
+      "url": "https://m.place.naver.com/place/1697695674/home",
+      "matchedQuery": "담양군 담양대나무골캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 885,
@@ -35310,7 +37910,17 @@
       "addr1": "경상남도 산청군 단성면 방목리 627",
       "tel": "010-7587-5864"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 491,
+      "visitor": 166,
+      "blog": 325,
+      "placeId": "21905038",
+      "placeName": "경호강캠핑장",
+      "placeAddr": "경남 산청군 단성면 호암로1320번길 88-1",
+      "url": "https://m.place.naver.com/place/21905038/home",
+      "matchedQuery": "산청군 경호강 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 886,
@@ -35339,7 +37949,17 @@
       "featureNm": "",
       "addr1": "경상북도 포항시 북구 송라면 보경로 307"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 96,
+      "visitor": 0,
+      "blog": 96,
+      "placeId": "340200590",
+      "placeName": "보경사힐링캠핑장",
+      "placeAddr": "경북 포항시 북구 송라면 보경로 307",
+      "url": "https://m.place.naver.com/place/340200590/home",
+      "matchedQuery": "포항시 보경사힐링캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 887,
@@ -35371,7 +37991,17 @@
     },
     "lat": 35.0655166110977,
     "lng": 128.464294767951,
-    "naverReview": null
+    "naverReview": {
+      "total": 48,
+      "visitor": 14,
+      "blog": 34,
+      "placeId": "2053755737",
+      "placeName": "초록바다캠핑장",
+      "placeAddr": "경상남도 고성군 동해면 외산로 591",
+      "url": "https://m.place.naver.com/place/2053755737/home",
+      "matchedQuery": "고성군 초록바다 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 888,
@@ -35405,7 +38035,17 @@
     },
     "lat": 33.3212670215964,
     "lng": 126.638535431584,
-    "naverReview": null
+    "naverReview": {
+      "total": 9,
+      "visitor": 0,
+      "blog": 9,
+      "placeId": "1479935872",
+      "placeName": "기린 캠프랜드",
+      "placeAddr": "제주 서귀포시 남원읍 서성로 391",
+      "url": "https://m.place.naver.com/place/1479935872/home",
+      "matchedQuery": "서귀포시 기린 캠프랜드",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 889,
@@ -35437,7 +38077,17 @@
     },
     "lat": 35.9489008163705,
     "lng": 127.95427307283,
-    "naverReview": null
+    "naverReview": {
+      "total": 72,
+      "visitor": 0,
+      "blog": 72,
+      "placeId": "1049830921",
+      "placeName": "국립김천숲속야영장",
+      "placeAddr": "경북 김천시 대덕면 조룡길 865",
+      "url": "https://m.place.naver.com/place/1049830921/home",
+      "matchedQuery": "김천시 국립김천숲속야영장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 890,
@@ -35466,7 +38116,17 @@
       "addr1": "울산광역시 울주군 상북면 배내로 1064-4",
       "tel": "052-254-9822"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 423,
+      "visitor": 198,
+      "blog": 225,
+      "placeId": "21834479",
+      "placeName": "들살이오토캠핑장",
+      "placeAddr": "울산 울주군 상북면 배내로 1064-4",
+      "url": "https://m.place.naver.com/place/21834479/home",
+      "matchedQuery": "울주군 들살이오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 891,
@@ -35497,7 +38157,17 @@
     },
     "lat": 37.0527371,
     "lng": 126.7592065,
-    "naverReview": null
+    "naverReview": {
+      "total": 85,
+      "visitor": 1,
+      "blog": 84,
+      "placeId": "1946297102",
+      "placeName": "매향오토캠핑장",
+      "placeAddr": "경기 화성시 만세구 우정읍 궁평항로 81-22",
+      "url": "https://m.place.naver.com/place/1946297102/home",
+      "matchedQuery": "화성시 매향 오토 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 892,
@@ -35530,7 +38200,17 @@
     },
     "lat": 37.9013297619162,
     "lng": 127.460367206046,
-    "naverReview": null
+    "naverReview": {
+      "total": 478,
+      "visitor": 187,
+      "blog": 291,
+      "placeId": "13116674",
+      "placeName": "연인산다목적캠핑장",
+      "placeAddr": "경기도 가평군 북면 백둔로 441 연인산캠핑장",
+      "url": "https://m.place.naver.com/place/13116674/home",
+      "matchedQuery": "가평군 연인산 다목적 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 893,
@@ -35564,7 +38244,17 @@
     },
     "lat": 35.0941925,
     "lng": 126.4768727,
-    "naverReview": null
+    "naverReview": {
+      "total": 506,
+      "visitor": 355,
+      "blog": 151,
+      "placeId": "2077213896",
+      "placeName": "장년길40 글램핑",
+      "placeAddr": "전남광주통합특별시 함평군 함평읍 장년길 40 장년길40글램핑",
+      "url": "https://m.place.naver.com/place/2077213896/home",
+      "matchedQuery": "함평군 장년길40 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 894,
@@ -35599,7 +38289,17 @@
     },
     "lat": 37.7448598,
     "lng": 126.5323266,
-    "naverReview": null
+    "naverReview": {
+      "total": 385,
+      "visitor": 322,
+      "blog": 63,
+      "placeId": "1863092590",
+      "placeName": "구르미의오션",
+      "placeAddr": "경기도 김포시 월곶면 문수산로 174-19 구르미의오션",
+      "url": "https://m.place.naver.com/place/1863092590/home",
+      "matchedQuery": "김포시 구르미의 오션 카라반",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 895,
@@ -35631,7 +38331,17 @@
       "addr1": "경기도 가평군 조종면 운악청계로333번길 55-51",
       "tel": "010-8933-1958"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 716,
+      "visitor": 462,
+      "blog": 254,
+      "placeId": "1911005559",
+      "placeName": "녹천캠핑장",
+      "placeAddr": "경기 가평군 조종면 운악청계로333번길 55-51",
+      "url": "https://m.place.naver.com/place/1911005559/home",
+      "matchedQuery": "가평군 녹천캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 896,
@@ -35663,7 +38373,17 @@
     },
     "lat": 37.2186810432583,
     "lng": 126.557753674636,
-    "naverReview": null
+    "naverReview": {
+      "total": 154,
+      "visitor": 96,
+      "blog": 58,
+      "placeId": "1553334438",
+      "placeName": "젤리캠핑장",
+      "placeAddr": "경기 안산시 단원구 중우물1길 12",
+      "url": "https://m.place.naver.com/place/1553334438/home",
+      "matchedQuery": "안산시 젤리캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 897,
@@ -35694,7 +38414,17 @@
     },
     "lat": 37.6688263,
     "lng": 126.3751375,
-    "naverReview": null
+    "naverReview": {
+      "total": 125,
+      "visitor": 29,
+      "blog": 96,
+      "placeId": "1841346050",
+      "placeName": "해그림캠핑장",
+      "placeAddr": "인천 강화군 삼산면 삼산동로 165",
+      "url": "https://m.place.naver.com/place/1841346050/home",
+      "matchedQuery": "강화군 해그림 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 898,
@@ -35725,7 +38455,17 @@
     },
     "lat": 37.9112782449396,
     "lng": 128.500402425648,
-    "naverReview": null
+    "naverReview": {
+      "total": 267,
+      "visitor": 153,
+      "blog": 114,
+      "placeId": "1170574905",
+      "placeName": "갈천오토캠핑장",
+      "placeAddr": "강원특별자치도 양양군 서면 구룡령로 1103-12",
+      "url": "https://m.place.naver.com/place/1170574905/home",
+      "matchedQuery": "양양군 갈천 오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 899,
@@ -35757,7 +38497,17 @@
     },
     "lat": 35.3558369,
     "lng": 128.1577606,
-    "naverReview": null
+    "naverReview": {
+      "total": 210,
+      "visitor": 163,
+      "blog": 47,
+      "placeId": "1812395226",
+      "placeName": "산들캠핑파크&글램핑",
+      "placeAddr": "경남 의령군 칠곡면 한티로5남길 53-6",
+      "url": "https://m.place.naver.com/place/1812395226/home",
+      "matchedQuery": "의령군 산들캠핑파크",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 900,
@@ -35791,7 +38541,17 @@
     },
     "lat": 34.9997713,
     "lng": 127.5927966,
-    "naverReview": null
+    "naverReview": {
+      "total": 1663,
+      "visitor": 1438,
+      "blog": 225,
+      "placeId": "1881349765",
+      "placeName": "호수도도글램핑장",
+      "placeAddr": "전남광주 광양시 봉강면 성불로 144",
+      "url": "https://m.place.naver.com/place/1881349765/home",
+      "matchedQuery": "광양시 호수도도글램핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 901,
@@ -35823,7 +38583,17 @@
     },
     "lat": 35.8091133700329,
     "lng": 127.775627149437,
-    "naverReview": null
+    "naverReview": {
+      "total": 136,
+      "visitor": 3,
+      "blog": 133,
+      "placeId": "1832775021",
+      "placeName": "달빛고운병곡캠핑장",
+      "placeAddr": "경남 거창군 북상면 병곡길 449",
+      "url": "https://m.place.naver.com/place/1832775021/home",
+      "matchedQuery": "거창군 달빛고운 병곡캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 902,
@@ -35855,7 +38625,17 @@
       "addr1": "경기도 포천시 이동면 성장로1289번길 204",
       "tel": "031-532-3330"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 3084,
+      "visitor": 2560,
+      "blog": 524,
+      "placeId": "1478617699",
+      "placeName": "아쿠아마린글램핑",
+      "placeAddr": "경기 포천시 이동면 성장로1289번길 204",
+      "url": "https://m.place.naver.com/place/1478617699/home",
+      "matchedQuery": "포천시 아쿠아마린 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 903,
@@ -35888,7 +38668,17 @@
     },
     "lat": 37.6367069405002,
     "lng": 126.550817852217,
-    "naverReview": null
+    "naverReview": {
+      "total": 102,
+      "visitor": 48,
+      "blog": 54,
+      "placeId": "2081828840",
+      "placeName": "코브노마드",
+      "placeAddr": "경기도 김포시 대곶면 약암로 937-26 COVE Nomad",
+      "url": "https://m.place.naver.com/place/2081828840/home",
+      "matchedQuery": "김포시 코브 노마드",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 904,
@@ -35917,7 +38707,17 @@
       "addr1": "강원특별자치도 홍천군 동면 후동길128번길 53",
       "tel": "010-3702-9629"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "placeName": null,
+      "placeAddr": null,
+      "url": null,
+      "matchedQuery": "홍천군 캠프 인디오",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 905,
@@ -35947,7 +38747,17 @@
       "addr1": "강원특별자치도 횡성군 서원면 경강로 646-30",
       "tel": "033-345-2775"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 502,
+      "visitor": 7,
+      "blog": 495,
+      "placeId": "31155976",
+      "placeName": "라라솔캠핑장&펜션",
+      "placeAddr": "강원특별자치도 횡성군 서원면 경강로 646-30",
+      "url": "https://m.place.naver.com/place/31155976/home",
+      "matchedQuery": "횡성군 라라솔캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 906,
@@ -35979,7 +38789,17 @@
     },
     "lat": 36.6589051495752,
     "lng": 127.756105766891,
-    "naverReview": null
+    "naverReview": {
+      "total": 136,
+      "visitor": 41,
+      "blog": 95,
+      "placeId": "1937251263",
+      "placeName": "후평숲캠핑장",
+      "placeAddr": "충북 괴산군 청천면 후평도원로 129-19 후평숲캠핑장",
+      "url": "https://m.place.naver.com/place/1937251263/home",
+      "matchedQuery": "괴산군 후평숲캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 907,
@@ -36012,7 +38832,17 @@
     },
     "lat": 37.3898390631358,
     "lng": 126.762820390784,
-    "naverReview": null
+    "naverReview": {
+      "total": 232,
+      "visitor": 10,
+      "blog": 222,
+      "placeId": "37411920",
+      "placeName": "갯골캠핑장",
+      "placeAddr": "경기 시흥시 동서로 137-71",
+      "url": "https://m.place.naver.com/place/37411920/home",
+      "matchedQuery": "시흥시 갯골캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 908,
@@ -36040,7 +38870,17 @@
       "featureNm": "",
       "addr1": "경기도 안산시 단원구 부흥로 232-21 (대부남동)"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 1182,
+      "visitor": 923,
+      "blog": 259,
+      "placeId": "103034982",
+      "placeName": "대부도 아라뜰캠핑장",
+      "placeAddr": "경기 안산시 단원구 부흥로 232-21",
+      "url": "https://m.place.naver.com/place/103034982/home",
+      "matchedQuery": "안산시 대부도 아라뜰 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 909,
@@ -36070,7 +38910,17 @@
       "featureNm": "",
       "addr1": "경상남도 남해군 이동면 남해대로 1607"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 1153,
+      "visitor": 749,
+      "blog": 404,
+      "placeId": "1763628760",
+      "placeName": "노랑카라반",
+      "placeAddr": "경남 남해군 이동면 남해대로 1607",
+      "url": "https://m.place.naver.com/place/1763628760/home",
+      "matchedQuery": "남해군 노랑카라반",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 910,
@@ -36100,7 +38950,17 @@
       "addr1": "경기도 이천시 마장면 이장로60번길 34-42",
       "tel": "031-0272-0001"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 609,
+      "visitor": 385,
+      "blog": 224,
+      "placeId": "1753260749",
+      "placeName": "스테이272",
+      "placeAddr": "경기도 이천시 마장면 이장로60번길 34-42",
+      "url": "https://m.place.naver.com/place/1753260749/home",
+      "matchedQuery": "이천시 스테이 272 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 911,
@@ -36129,7 +38989,17 @@
       "addr1": "경상남도 함양군 안의면 용추계곡로 13-1",
       "tel": "055-964-0056"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 109,
+      "visitor": 6,
+      "blog": 103,
+      "placeId": "36768957",
+      "placeName": "용추그린하우스",
+      "placeAddr": "경상남도 함양군 안의면 용추계곡로 13-1 용추레조트",
+      "url": "https://m.place.naver.com/place/36768957/home",
+      "matchedQuery": "함양군 용추그린하우스 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 912,
@@ -36160,7 +39030,17 @@
     },
     "lat": 35.5867721,
     "lng": 128.8005027,
-    "naverReview": null
+    "naverReview": {
+      "total": 208,
+      "visitor": 10,
+      "blog": 198,
+      "placeId": "1896080636",
+      "placeName": "벨 캠핑장",
+      "placeAddr": "경북 청도군 매전면 청매로 418-21",
+      "url": "https://m.place.naver.com/place/1896080636/home",
+      "matchedQuery": "청도군 벨캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 913,
@@ -36192,7 +39072,17 @@
     },
     "lat": 37.6010370242657,
     "lng": 127.423068130502,
-    "naverReview": null
+    "naverReview": {
+      "total": 422,
+      "visitor": 317,
+      "blog": 105,
+      "placeId": "1379219555",
+      "placeName": "양평힐링계곡캠핑장",
+      "placeAddr": "경기도 양평군 서종면 중미산로 772-27",
+      "url": "https://m.place.naver.com/place/1379219555/home",
+      "matchedQuery": "경기도 양평군 서종면 중미산로 772-27 -> 양평 서종면 양평힐링계곡캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 914,
@@ -36223,7 +39113,17 @@
     },
     "lat": 37.4642355,
     "lng": 128.1019177,
-    "naverReview": null
+    "naverReview": {
+      "total": 165,
+      "visitor": 19,
+      "blog": 146,
+      "placeId": "1932904236",
+      "placeName": "새말캠핑장",
+      "placeAddr": "강원 횡성군 우천면 봉화로 281",
+      "url": "https://m.place.naver.com/place/1932904236/home",
+      "matchedQuery": "횡성군 새말캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 915,
@@ -36254,7 +39154,17 @@
     },
     "lat": 34.846905635806,
     "lng": 128.721596040915,
-    "naverReview": null
+    "naverReview": {
+      "total": 57,
+      "visitor": 40,
+      "blog": 17,
+      "placeId": "2092090019",
+      "placeName": "옥돌캠핑장",
+      "placeAddr": "경상남도 거제시 일운면 옥림길 135",
+      "url": "https://m.place.naver.com/place/2092090019/home",
+      "matchedQuery": "거제시 옥돌캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 916,
@@ -36283,7 +39193,17 @@
       "addr1": "경기도 양주시 광적면 부흥로34번길 17",
       "tel": "031-871-9708"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 1719,
+      "visitor": 1517,
+      "blog": 202,
+      "placeId": "36684318",
+      "placeName": "범산골캠핑장",
+      "placeAddr": "경기 양주시 광적면 부흥로34번길 17 범산골캠핑장",
+      "url": "https://m.place.naver.com/place/36684318/home",
+      "matchedQuery": "양주시 범산골캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 917,
@@ -36315,7 +39235,17 @@
       "addr1": "충청남도 태안군 남면 진산1길 277-112",
       "tel": "0507-1319-3396"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 132,
+      "visitor": 20,
+      "blog": 112,
+      "placeId": "1186953490",
+      "placeName": "도담오토캠핑장",
+      "placeAddr": "충남 태안군 남면 진산1길 277-116 도담오토캠핑장",
+      "url": "https://m.place.naver.com/place/1186953490/home",
+      "matchedQuery": "태안군 도담오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 918,
@@ -36344,7 +39274,17 @@
       "addr1": "경상남도 밀양시 단장면 바드리길 7",
       "tel": "055-351-1033"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 266,
+      "visitor": 43,
+      "blog": 223,
+      "placeId": "32480830",
+      "placeName": "밀양표충오토캠핑장",
+      "placeAddr": "경남 밀양시 단장면 바드리길 7",
+      "url": "https://m.place.naver.com/place/32480830/home",
+      "matchedQuery": "밀양시 밀양표충오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 919,
@@ -36373,7 +39313,17 @@
       "addr1": "경기도 의정부시 산곡동 603번지",
       "tel": "070-4189-2787"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 94,
+      "visitor": 16,
+      "blog": 78,
+      "placeId": "1091808880",
+      "placeName": "수락캠핑장",
+      "placeAddr": "경기 의정부시 송산로971번길 133-5",
+      "url": "https://m.place.naver.com/place/1091808880/home",
+      "matchedQuery": "의정부시 수락 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 920,
@@ -36404,7 +39354,17 @@
     },
     "lat": 37.2019262,
     "lng": 128.5041327,
-    "naverReview": null
+    "naverReview": {
+      "total": 181,
+      "visitor": 18,
+      "blog": 163,
+      "placeId": "20308037",
+      "placeName": "동강오토캠핑장",
+      "placeAddr": "강원특별자치도 영월군 영월읍 둥글바위길 33 동강변",
+      "url": "https://m.place.naver.com/place/20308037/home",
+      "matchedQuery": "영월군 영월 동강오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 921,
@@ -36439,7 +39399,17 @@
     },
     "lat": 35.7894513,
     "lng": 127.037422,
-    "naverReview": null
+    "naverReview": {
+      "total": 62,
+      "visitor": 22,
+      "blog": 40,
+      "placeId": "2045147600",
+      "placeName": "대율저수지오토캠핑장",
+      "placeAddr": "전북특별자치도 김제시 금구면 대화리 358-18 대율저수지 오토캠핑장",
+      "url": "https://m.place.naver.com/place/2045147600/home",
+      "matchedQuery": "김제시 대율저수지 오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 922,
@@ -36477,7 +39447,17 @@
     },
     "lat": 37.0073826883039,
     "lng": 128.122883809354,
-    "naverReview": null
+    "naverReview": {
+      "total": 300,
+      "visitor": 210,
+      "blog": 90,
+      "placeId": "1251132262",
+      "placeName": "레이크힐캠프",
+      "placeAddr": "충북 제천시 청풍면 청풍명월로 770",
+      "url": "https://m.place.naver.com/place/1251132262/home",
+      "matchedQuery": "제천시 레이크힐 캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 923,
@@ -36509,7 +39489,17 @@
     },
     "lat": 37.2267142,
     "lng": 126.869957,
-    "naverReview": null
+    "naverReview": {
+      "total": 1291,
+      "visitor": 1027,
+      "blog": 264,
+      "placeId": "1319980784",
+      "placeName": "엘리캠핑",
+      "placeAddr": "경기도 화성시 효행구 비봉면 미륵골로 108-17",
+      "url": "https://m.place.naver.com/place/1319980784/home",
+      "matchedQuery": "화성시 엘리캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 924,
@@ -36545,7 +39535,17 @@
     },
     "lat": 38.1619799,
     "lng": 127.1896317,
-    "naverReview": null
+    "naverReview": {
+      "total": 157,
+      "visitor": 121,
+      "blog": 36,
+      "placeId": "1741941903",
+      "placeName": "담터라온글램핑",
+      "placeAddr": "강원 철원군 동송읍 담터길 352",
+      "url": "https://m.place.naver.com/place/1741941903/home",
+      "matchedQuery": "철원군 담터라온글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 925,
@@ -36580,7 +39580,17 @@
     },
     "lat": 36.1955792,
     "lng": 127.26351,
-    "naverReview": null
+    "naverReview": {
+      "total": 75,
+      "visitor": 26,
+      "blog": 49,
+      "placeId": "1780648579",
+      "placeName": "큰마당오토캠핑장",
+      "placeAddr": "충남 논산시 벌곡면 수락로 901-35 큰마당오토캠핑장",
+      "url": "https://m.place.naver.com/place/1780648579/home",
+      "matchedQuery": "논산시 큰마당 오토 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 926,
@@ -36609,7 +39619,17 @@
       "addr1": "경기도 가평군 상면 항사리 523",
       "tel": "010-9174-4484"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 321,
+      "visitor": 6,
+      "blog": 315,
+      "placeId": "35366061",
+      "placeName": "파머스힐캠핑장",
+      "placeAddr": "경기 가평군 상면 한사간길 85-52 파머스힐캠핑장",
+      "url": "https://m.place.naver.com/place/35366061/home",
+      "matchedQuery": "가평 파머스힐캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 927,
@@ -36640,7 +39660,17 @@
       "addr1": "강원특별자치도 춘천시 서면 경춘로 1068",
       "tel": "033-261-3174"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 354,
+      "visitor": 237,
+      "blog": 117,
+      "placeId": "33373810",
+      "placeName": "하이드 온 부쉬",
+      "placeAddr": "강원특별자치도 춘천시 서면 경춘로 1068 하이드온부쉬",
+      "url": "https://m.place.naver.com/place/33373810/home",
+      "matchedQuery": "춘천시 하이드온부쉬",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 928,
@@ -36673,7 +39703,17 @@
     },
     "lat": 36.0948795,
     "lng": 128.4903101,
-    "naverReview": null
+    "naverReview": {
+      "total": 575,
+      "visitor": 403,
+      "blog": 172,
+      "placeId": "1254872998",
+      "placeName": "논논캠프",
+      "placeAddr": "경북 칠곡군 가산면 학하들안3길 36",
+      "url": "https://m.place.naver.com/place/1254872998/home",
+      "matchedQuery": "칠곡군 논논캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 929,
@@ -36704,7 +39744,17 @@
     },
     "lat": 35.986733,
     "lng": 126.724831,
-    "naverReview": null
+    "naverReview": {
+      "total": 361,
+      "visitor": 281,
+      "blog": 80,
+      "placeId": "1807511121",
+      "placeName": "버드오토캠핑장",
+      "placeAddr": "전북 군산시 강변로 3",
+      "url": "https://m.place.naver.com/place/1807511121/home",
+      "matchedQuery": "군산시 버드오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 930,
@@ -36736,7 +39786,17 @@
     },
     "lat": 35.586111664433,
     "lng": 129.118161543926,
-    "naverReview": null
+    "naverReview": {
+      "total": 71,
+      "visitor": 0,
+      "blog": 71,
+      "placeId": "1095749948",
+      "placeName": "화장산캠핑장",
+      "placeAddr": "울산 울주군 상북면 향산다개로 136-116",
+      "url": "https://m.place.naver.com/place/1095749948/home",
+      "matchedQuery": "울주군 화장산 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 931,
@@ -36768,7 +39828,17 @@
     },
     "lat": 36.8067614,
     "lng": 127.8252917,
-    "naverReview": null
+    "naverReview": {
+      "total": 86,
+      "visitor": 63,
+      "blog": 23,
+      "placeId": "1309068743",
+      "placeName": "괴강국민여가캠핑장",
+      "placeAddr": "충북 괴산군 괴산읍 충민로검승3길 10 캠핑장 관리사무소",
+      "url": "https://m.place.naver.com/place/1309068743/home",
+      "matchedQuery": "괴산군 괴강국민여가캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 932,
@@ -36800,7 +39870,17 @@
     },
     "lat": 38.0286409067069,
     "lng": 127.327842281134,
-    "naverReview": null
+    "naverReview": {
+      "total": 9,
+      "visitor": 2,
+      "blog": 7,
+      "placeId": "2081815997",
+      "placeName": "캠프 몽림",
+      "placeAddr": "경기 포천시 이동면 새낭로 582 1층",
+      "url": "https://m.place.naver.com/place/2081815997/home",
+      "matchedQuery": "포천시 캠프 몽림",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 933,
@@ -36832,7 +39912,17 @@
     },
     "lat": 36.2275624677146,
     "lng": 127.441141853492,
-    "naverReview": null
+    "naverReview": {
+      "total": 1,
+      "visitor": 0,
+      "blog": 1,
+      "placeId": "1998256387",
+      "placeName": "달빛소나타",
+      "placeAddr": "대전광역시 동구 산내로 459-83 (하소동)",
+      "url": "https://m.place.naver.com/place/1998256387/home",
+      "matchedQuery": "대전 달빛소나타 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 934,
@@ -36863,7 +39953,17 @@
     },
     "lat": 36.096238938303,
     "lng": 128.776644766907,
-    "naverReview": null
+    "naverReview": {
+      "total": 83,
+      "visitor": 11,
+      "blog": 72,
+      "placeId": "1733780499",
+      "placeName": "스테이700",
+      "placeAddr": "대구 군위군 삼국유사면 화산길 619-64",
+      "url": "https://m.place.naver.com/place/1733780499/home",
+      "matchedQuery": "군위군 스테이700 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 935,
@@ -36893,7 +39993,17 @@
       "featureNm": "",
       "addr1": "경상북도 포항시 북구 흥해읍 암각화길 41"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 251,
+      "visitor": 1,
+      "blog": 250,
+      "placeId": "11876080",
+      "placeName": "칠포오토캠핑장",
+      "placeAddr": "경북 포항시 북구 흥해읍 암각화길 41",
+      "url": "https://m.place.naver.com/place/11876080/home",
+      "matchedQuery": "포항시 칠포오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 936,
@@ -36925,7 +40035,17 @@
     },
     "lat": 37.7204822,
     "lng": 127.7524583,
-    "naverReview": null
+    "naverReview": {
+      "total": 372,
+      "visitor": 256,
+      "blog": 116,
+      "placeId": "1666231805",
+      "placeName": "캠핑중DOG",
+      "placeAddr": "강원 홍천군 북방면 팔봉산로 1802",
+      "url": "https://m.place.naver.com/place/1666231805/home",
+      "matchedQuery": "홍천군 캠핑중DOG",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 937,
@@ -36955,7 +40075,17 @@
       "addr1": "강원특별자치도 평창군 방림면 삼형제길 279-61",
       "tel": "010-3795-9243"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 991,
+      "visitor": 774,
+      "blog": 217,
+      "placeId": "1281498281",
+      "placeName": "코뿔소글램핑",
+      "placeAddr": "강원 평창군 방림면 삼형제길 279-61 코뿔소글램핑",
+      "url": "https://m.place.naver.com/place/1281498281/home",
+      "matchedQuery": "평창군 코뿔소글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 938,
@@ -36984,7 +40114,17 @@
       "featureNm": "",
       "addr1": "경기도 가평군 북면 가화로 2697-125"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 382,
+      "visitor": 58,
+      "blog": 324,
+      "placeId": "11068795",
+      "placeName": "자우림",
+      "placeAddr": "경기도 가평군 북면 가화로 2697-137",
+      "url": "https://m.place.naver.com/place/11068795/home",
+      "matchedQuery": "가평군 자우림캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 939,
@@ -37016,7 +40156,17 @@
     },
     "lat": 38.0121800992052,
     "lng": 127.004716690439,
-    "naverReview": null
+    "naverReview": {
+      "total": 39,
+      "visitor": 18,
+      "blog": 21,
+      "placeId": "2049093748",
+      "placeName": "여우별캠핑장",
+      "placeAddr": "경기도 연천군 미산면 마동로196번길 77-44",
+      "url": "https://m.place.naver.com/place/2049093748/home",
+      "matchedQuery": "연천군 여우별 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 940,
@@ -37050,7 +40200,17 @@
     },
     "lat": 37.216701,
     "lng": 128.050998,
-    "naverReview": null
+    "naverReview": {
+      "total": 78,
+      "visitor": 15,
+      "blog": 63,
+      "placeId": "1084306423",
+      "placeName": "캠핑포에버",
+      "placeAddr": "강원 원주시 신림면 석동구미길 102 캠핑포에버",
+      "url": "https://m.place.naver.com/place/1084306423/home",
+      "matchedQuery": "원주시 캠핑 포에버",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 941,
@@ -37081,7 +40241,17 @@
     },
     "lat": 36.853116,
     "lng": 126.852476,
-    "naverReview": null
+    "naverReview": {
+      "total": 130,
+      "visitor": 89,
+      "blog": 41,
+      "placeId": "1816202648",
+      "placeName": "인주캠핑장",
+      "placeAddr": "충남 아산시 인주면 대음북길 39 인주캠핑장",
+      "url": "https://m.place.naver.com/place/1816202648/home",
+      "matchedQuery": "아산시 인주캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 942,
@@ -37110,7 +40280,17 @@
       "addr1": "강원특별자치도 홍천군 내면 구룡령로 6928",
       "tel": "033-435-8181"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 984,
+      "visitor": 863,
+      "blog": 121,
+      "placeId": "33292557",
+      "placeName": "샘골솔밭야영장",
+      "placeAddr": "강원 홍천군 내면 구룡령로 6928 샘골솔밭야영장",
+      "url": "https://m.place.naver.com/place/33292557/home",
+      "matchedQuery": "홍천군 샘골솔밭야영장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 943,
@@ -37142,7 +40322,17 @@
     },
     "lat": 35.9720178,
     "lng": 128.4852755,
-    "naverReview": null
+    "naverReview": {
+      "total": 108,
+      "visitor": 7,
+      "blog": 101,
+      "placeId": "1349375084",
+      "placeName": "낙화담캠핑장",
+      "placeAddr": "경북 칠곡군 지천면 지천로 395-70",
+      "url": "https://m.place.naver.com/place/1349375084/home",
+      "matchedQuery": "칠곡군 낙화담캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 944,
@@ -37174,7 +40364,17 @@
     },
     "lat": 35.3147295376754,
     "lng": 127.05875435645,
-    "naverReview": null
+    "naverReview": {
+      "total": 275,
+      "visitor": 21,
+      "blog": 254,
+      "placeId": "34348029",
+      "placeName": "마루한캠핑장",
+      "placeAddr": "전남광주 담양군 금성면 상신기길 108 마루한캠핑장",
+      "url": "https://m.place.naver.com/place/34348029/home",
+      "matchedQuery": "담양군 마루한캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 945,
@@ -37207,7 +40407,17 @@
     },
     "lat": 37.4570309168459,
     "lng": 126.77204489776,
-    "naverReview": null
+    "naverReview": {
+      "total": 1970,
+      "visitor": 1574,
+      "blog": 396,
+      "placeId": "1683482854",
+      "placeName": "에제르파크 바베큐장",
+      "placeAddr": "인천 남동구 만의골로 155 에제르파크 바베큐장",
+      "url": "https://m.place.naver.com/place/1683482854/home",
+      "matchedQuery": "남동구 에제르파크 바베큐장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 946,
@@ -37238,7 +40448,17 @@
     },
     "lat": 38.3805665417239,
     "lng": 128.47321108221,
-    "naverReview": null
+    "naverReview": {
+      "total": 20,
+      "visitor": 13,
+      "blog": 7,
+      "placeId": "2033935848",
+      "placeName": "앞마당",
+      "placeAddr": "강원특별자치도 고성군 간성읍 간성로30번길 6-29 앞마당",
+      "url": "https://m.place.naver.com/place/2033935848/home",
+      "matchedQuery": "고성군 앞마당 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 947,
@@ -37267,7 +40487,17 @@
       "addr1": "충청북도 보은군 탄부면 사직1길 34",
       "tel": "070-8650-6375"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 1180,
+      "visitor": 638,
+      "blog": 542,
+      "placeId": "36383663",
+      "placeName": "어라운드빌리지",
+      "placeAddr": "충북 보은군 탄부면 사직1길 34 어라운드빌리지",
+      "url": "https://m.place.naver.com/place/36383663/home",
+      "matchedQuery": "보은군 어라운드빌리지 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 948,
@@ -37297,7 +40527,17 @@
       "addr1": "경기도 가평군 가평읍 문화로 131",
       "tel": "031-8078-8057"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "placeName": null,
+      "placeAddr": null,
+      "url": null,
+      "matchedQuery": "가평군 산장관광지 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 949,
@@ -37328,7 +40568,17 @@
     },
     "lat": 35.7022971,
     "lng": 129.4185013,
-    "naverReview": null
+    "naverReview": {
+      "total": 70,
+      "visitor": 20,
+      "blog": 50,
+      "placeId": "1097015607",
+      "placeName": "하이스토리 캠핑장",
+      "placeAddr": "경북 경주시 양남면 갈골마을길 41-1",
+      "url": "https://m.place.naver.com/place/1097015607/home",
+      "matchedQuery": "경주시 하이스토리 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 950,
@@ -37359,7 +40609,17 @@
     },
     "lat": 35.4253147,
     "lng": 127.031918,
-    "naverReview": null
+    "naverReview": {
+      "total": 229,
+      "visitor": 169,
+      "blog": 60,
+      "placeId": "1781120112",
+      "placeName": "거목글램핑",
+      "placeAddr": "전남광주 담양군 용면 가마골로 394 거목글램핑",
+      "url": "https://m.place.naver.com/place/1781120112/home",
+      "matchedQuery": "담양군 거목 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 951,
@@ -37392,7 +40652,17 @@
       "addr1": "경기도 이천시 모가면 진상미로1385번길 221-6",
       "tel": "031-635-9500"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 2435,
+      "visitor": 2065,
+      "blog": 370,
+      "placeId": "1333875896",
+      "placeName": "인휴글램핑",
+      "placeAddr": "경기도 이천시 모가면 진상미로1385번길 221-6",
+      "url": "https://m.place.naver.com/place/1333875896/home",
+      "matchedQuery": "이천시 이천 인휴 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 952,
@@ -37423,7 +40693,17 @@
     },
     "lat": 36.9328933956325,
     "lng": 127.615938323319,
-    "naverReview": null
+    "naverReview": {
+      "total": 28,
+      "visitor": 15,
+      "blog": 13,
+      "placeId": "2071643038",
+      "placeName": "소노글램핑",
+      "placeAddr": "충청북도 음성군 음성읍 동음로 319",
+      "url": "https://m.place.naver.com/place/2071643038/home",
+      "matchedQuery": "음성군 소노글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 953,
@@ -37451,7 +40731,17 @@
       "featureNm": "",
       "addr1": "강원특별자치도 영월군 김삿갓면 내리계곡로 1199"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 459,
+      "visitor": 264,
+      "blog": 195,
+      "placeId": "37081456",
+      "placeName": "자연펜션캠핑장",
+      "placeAddr": "강원 영월군 김삿갓면 내리계곡로 1199",
+      "url": "https://m.place.naver.com/place/37081456/home",
+      "matchedQuery": "영월군 자연펜션캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 954,
@@ -37484,7 +40774,17 @@
     },
     "lat": 37.1192428695235,
     "lng": 128.078338506768,
-    "naverReview": null
+    "naverReview": {
+      "total": 50,
+      "visitor": 23,
+      "blog": 27,
+      "placeId": "1072080305",
+      "placeName": "오차드블리스",
+      "placeAddr": "충청북도 제천시 봉양읍 의암로 232",
+      "url": "https://m.place.naver.com/place/1072080305/home",
+      "matchedQuery": "제천시 오차드블리스 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 955,
@@ -37520,7 +40820,17 @@
     },
     "lat": 36.5851376905276,
     "lng": 127.697763562393,
-    "naverReview": null
+    "naverReview": {
+      "total": 1002,
+      "visitor": 840,
+      "blog": 162,
+      "placeId": "1452564767",
+      "placeName": "일상화글램핑",
+      "placeAddr": "충북 보은군 산외면 성암가고로 235-6 내북초이식폐교 일상화글램핑",
+      "url": "https://m.place.naver.com/place/1452564767/home",
+      "matchedQuery": "보은군 일상화 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 956,
@@ -37550,7 +40860,17 @@
       "addr1": "인천광역시 강화군 하점면 고려산로497번길 54",
       "tel": "010-6426-4691"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 313,
+      "visitor": 73,
+      "blog": 240,
+      "placeId": "1050964767",
+      "placeName": "고려산힐링캠프",
+      "placeAddr": "인천 강화군 하점면 고려산로497번길 54",
+      "url": "https://m.place.naver.com/place/1050964767/home",
+      "matchedQuery": "강화군 고려산 힐링캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 957,
@@ -37581,7 +40901,17 @@
     },
     "lat": 37.0553303,
     "lng": 127.4472319,
-    "naverReview": null
+    "naverReview": {
+      "total": 332,
+      "visitor": 52,
+      "blog": 280,
+      "placeId": "1716024992",
+      "placeName": "히든캠프",
+      "placeAddr": "경기 안성시 죽산면 용설호수길 170-1",
+      "url": "https://m.place.naver.com/place/1716024992/home",
+      "matchedQuery": "안성시 히든캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 958,
@@ -37610,7 +40940,17 @@
       "addr1": "경상북도 울진군 기성면 구산리 산 70",
       "tel": "054-788-9355"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 192,
+      "visitor": 0,
+      "blog": 192,
+      "placeId": "1498015050",
+      "placeName": "구산오토캠핑장",
+      "placeAddr": "경북 울진군 기성면 구산리 산70",
+      "url": "https://m.place.naver.com/place/1498015050/home",
+      "matchedQuery": "울진군 구산오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 959,
@@ -37639,7 +40979,17 @@
       "addr1": "경상북도 칠곡군 가산면 학하4길 57-105",
       "tel": "054-971-9860"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 54,
+      "visitor": 15,
+      "blog": 39,
+      "placeId": "1174973346",
+      "placeName": "가산수피아 캠핑장",
+      "placeAddr": "경북 칠곡군 가산면 학하들안2길 105",
+      "url": "https://m.place.naver.com/place/1174973346/home",
+      "matchedQuery": "칠곡군 가산수피아 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 960,
@@ -37670,7 +41020,17 @@
     },
     "lat": 37.2411795,
     "lng": 126.4744529,
-    "naverReview": null
+    "naverReview": {
+      "total": 416,
+      "visitor": 302,
+      "blog": 114,
+      "placeId": "35458071",
+      "placeName": "레인보우캠핑장",
+      "placeAddr": "인천 옹진군 영흥면 영흥남로9번길 355-20 레인보우캠핑장",
+      "url": "https://m.place.naver.com/place/35458071/home",
+      "matchedQuery": "옹진군 레인보우 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 961,
@@ -37700,7 +41060,17 @@
       "addr1": "경기도 포천시 신북면 청신로1059번길 115",
       "tel": "031-544-3575"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 790,
+      "visitor": 466,
+      "blog": 324,
+      "placeId": "1592508396",
+      "placeName": "레인보우캠핑장",
+      "placeAddr": "경기 포천시 신북면 청신로1059번길 115 레인보우",
+      "url": "https://m.place.naver.com/place/1592508396/home",
+      "matchedQuery": "포천시 레인보우캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 962,
@@ -37731,7 +41101,17 @@
     },
     "lat": 37.9686787,
     "lng": 127.4157684,
-    "naverReview": null
+    "naverReview": {
+      "total": 181,
+      "visitor": 50,
+      "blog": 131,
+      "placeId": "1586363369",
+      "placeName": "캠핑플레이",
+      "placeAddr": "경기 가평군 북면 논남기길 468-33 캠핑플레이",
+      "url": "https://m.place.naver.com/place/1586363369/home",
+      "matchedQuery": "가평군 캠핑플레이",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 962,
@@ -37763,7 +41143,17 @@
     },
     "lat": 37.5313021553619,
     "lng": 127.233928290274,
-    "naverReview": null
+    "naverReview": {
+      "total": 61,
+      "visitor": 34,
+      "blog": 27,
+      "placeId": "2081035231",
+      "placeName": "캠핑플레이",
+      "placeAddr": "경기 하남시 검단산로250번길 152",
+      "url": "https://m.place.naver.com/place/2081035231/home",
+      "matchedQuery": "하남시 캠핑플레이",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 963,
@@ -37795,7 +41185,17 @@
     },
     "lat": 37.3068414,
     "lng": 128.530809,
-    "naverReview": null
+    "naverReview": {
+      "total": 69,
+      "visitor": 39,
+      "blog": 30,
+      "placeId": "1408419364",
+      "placeName": "코끼리마을",
+      "placeAddr": "강원 평창군 미탄면 평창동강로 416-55",
+      "url": "https://m.place.naver.com/place/1408419364/home",
+      "matchedQuery": "강원 평창군 미탄면 평창동강로 416-55 -> 평창군 코끼리마을",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 964,
@@ -37827,7 +41227,17 @@
     },
     "lat": 35.4875384,
     "lng": 129.1171908,
-    "naverReview": null
+    "naverReview": {
+      "total": 178,
+      "visitor": 111,
+      "blog": 67,
+      "placeId": "1734578142",
+      "placeName": "캠핑온유",
+      "placeAddr": "울산 울주군 삼동면 보삼길 134 캠핑온유",
+      "url": "https://m.place.naver.com/place/1734578142/home",
+      "matchedQuery": "울주군 캠핑온유",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 965,
@@ -37861,7 +41271,17 @@
     },
     "lat": 35.3684247,
     "lng": 129.3486329,
-    "naverReview": null
+    "naverReview": {
+      "total": 708,
+      "visitor": 485,
+      "blog": 223,
+      "placeId": "1853046600",
+      "placeName": "헤이캠프클럽",
+      "placeAddr": "울산 울주군 서생면 잿골길 72 헤이캠프클럽",
+      "url": "https://m.place.naver.com/place/1853046600/home",
+      "matchedQuery": "울주군 헤이캠프클럽",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 966,
@@ -37870,7 +41290,17 @@
     "interest": 0.0477,
     "same_name_rows": 1,
     "facility": null,
-    "naverReview": null
+    "naverReview": {
+      "total": 319,
+      "visitor": 174,
+      "blog": 145,
+      "placeId": "1609746526",
+      "placeName": "보문카라반파크",
+      "placeAddr": "경북 경주시 경감로 466-311",
+      "url": "https://m.place.naver.com/place/1609746526/home",
+      "matchedQuery": "경주시 보문카라반파크",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 967,
@@ -37900,7 +41330,17 @@
       "addr1": "경상남도 거창군 북상면 덕유월성로 1588-9",
       "tel": "010-3130-8982"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 527,
+      "visitor": 350,
+      "blog": 177,
+      "placeId": "35085376",
+      "placeName": "월성오토캠핑장",
+      "placeAddr": "경남 거창군 북상면 덕유월성로 1588-9",
+      "url": "https://m.place.naver.com/place/35085376/home",
+      "matchedQuery": "거창군 월성오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 968,
@@ -37931,7 +41371,17 @@
     },
     "lat": 37.2916871675452,
     "lng": 128.200247478497,
-    "naverReview": null
+    "naverReview": {
+      "total": 87,
+      "visitor": 0,
+      "blog": 87,
+      "placeId": "1345430940",
+      "placeName": "키즈락캠핑장",
+      "placeAddr": "강원 원주시 신림면 송계로 369",
+      "url": "https://m.place.naver.com/place/1345430940/home",
+      "matchedQuery": "강원특별자치도 원주시 신림면 송계로 369 -> 원주시 키즈락캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 969,
@@ -37960,7 +41410,17 @@
       "featureNm": "",
       "addr1": "충청북도 영동군 상촌면 물한계곡로 1034"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 107,
+      "visitor": 95,
+      "blog": 12,
+      "placeId": "2012251641",
+      "placeName": "레인보우 관광농원 캠핑장",
+      "placeAddr": "충청북도 영동군 상촌면 물한계곡로 1034 레인보우 관광농원 캠핑장",
+      "url": "https://m.place.naver.com/place/2012251641/home",
+      "matchedQuery": "영동군 레인보우 관광농원 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 970,
@@ -37989,7 +41449,17 @@
       "addr1": "경기도 양평군 화서로 532-6",
       "tel": "031-774-8500"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 1494,
+      "visitor": 1162,
+      "blog": 332,
+      "placeId": "37848913",
+      "placeName": "서종힐링캠핑장",
+      "placeAddr": "경기 양평군 서종면 화서로 532-6 서종힐링캠핑장",
+      "url": "https://m.place.naver.com/place/37848913/home",
+      "matchedQuery": "양평군 서종힐링캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 971,
@@ -38024,7 +41494,17 @@
     },
     "lat": 36.9843271440776,
     "lng": 128.119158067296,
-    "naverReview": null
+    "naverReview": {
+      "total": 9,
+      "visitor": 5,
+      "blog": 4,
+      "placeId": "1133844440",
+      "placeName": "청풍호반 캠핑장",
+      "placeAddr": "충북 제천시 청풍면 용곡길 218",
+      "url": "https://m.place.naver.com/place/1133844440/home",
+      "matchedQuery": "제천시 청풍호반 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 972,
@@ -38058,7 +41538,17 @@
     },
     "lat": 37.0996733523393,
     "lng": 128.057818216445,
-    "naverReview": null
+    "naverReview": {
+      "total": 78,
+      "visitor": 6,
+      "blog": 72,
+      "placeId": "2040669713",
+      "placeName": "높은달캠핑장",
+      "placeAddr": "충청북도 제천시 백운면 애련로10길 19 높은달캠핑",
+      "url": "https://m.place.naver.com/place/2040669713/home",
+      "matchedQuery": "제천시 높은달캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 973,
@@ -38089,7 +41579,17 @@
     },
     "lat": 35.8889477,
     "lng": 129.5247927,
-    "naverReview": null
+    "naverReview": {
+      "total": 108,
+      "visitor": 15,
+      "blog": 93,
+      "placeId": "1516034397",
+      "placeName": "해송피크닉장",
+      "placeAddr": "경북 포항시 남구 장기면 동해안로 3450",
+      "url": "https://m.place.naver.com/place/1516034397/home",
+      "matchedQuery": "포항시 해송피크닉장 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 974,
@@ -38122,7 +41622,17 @@
     },
     "lat": 37.8348945,
     "lng": 128.1019097,
-    "naverReview": null
+    "naverReview": {
+      "total": 3869,
+      "visitor": 746,
+      "blog": 3123,
+      "placeId": "1777531989",
+      "placeName": "알지캠프266",
+      "placeAddr": "강원 홍천군 내촌면 광석로 262 알지캠프266",
+      "url": "https://m.place.naver.com/place/1777531989/home",
+      "matchedQuery": "홍천군 알지캠프266",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 975,
@@ -38155,7 +41665,17 @@
     },
     "lat": 34.6030215,
     "lng": 126.7367324,
-    "naverReview": null
+    "naverReview": {
+      "total": 1045,
+      "visitor": 827,
+      "blog": 218,
+      "placeId": "1564574215",
+      "placeName": "림스글램핑",
+      "placeAddr": "전남광주 강진군 강진읍 해강로 1038-30",
+      "url": "https://m.place.naver.com/place/1564574215/home",
+      "matchedQuery": "강진군 림스 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 976,
@@ -38188,7 +41708,17 @@
       "addr1": "경상남도 거제시 장목면 옥포대첩로 1279-3",
       "tel": "010-6697-2876"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 265,
+      "visitor": 138,
+      "blog": 127,
+      "placeId": "1871421209",
+      "placeName": "매미캠프",
+      "placeAddr": "경남 거제시 장목면 옥포대첩로 1279-3 매미캠프",
+      "url": "https://m.place.naver.com/place/1871421209/home",
+      "matchedQuery": "거제시 매미캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 977,
@@ -38221,7 +41751,17 @@
     },
     "lat": 35.4035954,
     "lng": 126.8996964,
-    "naverReview": null
+    "naverReview": {
+      "total": 206,
+      "visitor": 119,
+      "blog": 87,
+      "placeId": "620607855",
+      "placeName": "애플글램핑",
+      "placeAddr": "전남광주 장성군 북하면 담장로 1279",
+      "url": "https://m.place.naver.com/place/620607855/home",
+      "matchedQuery": "장성군 애플 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 978,
@@ -38253,7 +41793,17 @@
     },
     "lat": 35.6246419346969,
     "lng": 127.781556860939,
-    "naverReview": null
+    "naverReview": {
+      "total": 222,
+      "visitor": 23,
+      "blog": 199,
+      "placeId": "662435689",
+      "placeName": "농월정 오토캠핑장",
+      "placeAddr": "경남 함양군 안의면 농월정길 9-35 농월정 오토캠핑장",
+      "url": "https://m.place.naver.com/place/662435689/home",
+      "matchedQuery": "함양군 농월정오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 979,
@@ -38285,7 +41835,17 @@
     },
     "lat": 37.1097398,
     "lng": 128.6709712,
-    "naverReview": null
+    "naverReview": {
+      "total": 240,
+      "visitor": 6,
+      "blog": 234,
+      "placeId": "37081965",
+      "placeName": "예다움캠핑장",
+      "placeAddr": "강원 영월군 김삿갓면 내리계곡로 1162-1",
+      "url": "https://m.place.naver.com/place/37081965/home",
+      "matchedQuery": "영월군 예다움 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 980,
@@ -38317,7 +41877,17 @@
     },
     "lat": 37.017529573643,
     "lng": 127.134201161747,
-    "naverReview": null
+    "naverReview": {
+      "total": 266,
+      "visitor": 181,
+      "blog": 85,
+      "placeId": "1765225444",
+      "placeName": "모닥모닥",
+      "placeAddr": "경기 평택시 이화로 266-7 평택시 월곡동 373",
+      "url": "https://m.place.naver.com/place/1765225444/home",
+      "matchedQuery": "평택시 모닥모닥",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 981,
@@ -38349,7 +41919,17 @@
     },
     "lat": 35.8906368924732,
     "lng": 128.017689767471,
-    "naverReview": null
+    "naverReview": {
+      "total": 72,
+      "visitor": 37,
+      "blog": 35,
+      "placeId": "2072169373",
+      "placeName": "캠핑요기야",
+      "placeAddr": "경북 김천시 증산면 수도길 208-48",
+      "url": "https://m.place.naver.com/place/2072169373/home",
+      "matchedQuery": "김천시 캠핑요기야",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 982,
@@ -38385,7 +41965,17 @@
     },
     "lat": 36.3658213,
     "lng": 127.2575499,
-    "naverReview": null
+    "naverReview": {
+      "total": 1245,
+      "visitor": 717,
+      "blog": 528,
+      "placeId": "1000952114",
+      "placeName": "베스트필드 글램핑",
+      "placeAddr": "충청남도 공주시 반포면 동학사1로 65 베스트필드",
+      "url": "https://m.place.naver.com/place/1000952114/home",
+      "matchedQuery": "공주시 베스트필드 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 983,
@@ -38415,7 +42005,17 @@
       "addr1": "강원특별자치도 원주시 신림면 성남로 194",
       "tel": "010-2612-1134"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 233,
+      "visitor": 5,
+      "blog": 228,
+      "placeId": "36609578",
+      "placeName": "치악신림오토캠핑장",
+      "placeAddr": "강원 원주시 신림면 성남로 194",
+      "url": "https://m.place.naver.com/place/36609578/home",
+      "matchedQuery": "원주시 치악신림오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 984,
@@ -38448,7 +42048,17 @@
     },
     "lat": 35.9727065,
     "lng": 127.9814267,
-    "naverReview": null
+    "naverReview": {
+      "total": 105,
+      "visitor": 1,
+      "blog": 104,
+      "placeId": "1019429299",
+      "placeName": "부항댐생태휴양펜션",
+      "placeAddr": "경북 김천시 부항면 부항댐길 777",
+      "url": "https://m.place.naver.com/place/1019429299/home",
+      "matchedQuery": "김천시 부항댐 생태휴양펜션",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 985,
@@ -38480,7 +42090,17 @@
     },
     "lat": 38.0905758,
     "lng": 128.654679,
-    "naverReview": null
+    "naverReview": {
+      "total": 241,
+      "visitor": 197,
+      "blog": 44,
+      "placeId": "1838237064",
+      "placeName": "양양캠프장",
+      "placeAddr": "강원 양양군 손양면 송평길 28 T Map에서 양양 송포초등학교로 검색해주세요...",
+      "url": "https://m.place.naver.com/place/1838237064/home",
+      "matchedQuery": "양양군 양양캠프장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 986,
@@ -38512,7 +42132,17 @@
     },
     "lat": 37.9382210431449,
     "lng": 127.275972301942,
-    "naverReview": null
+    "naverReview": {
+      "total": 40,
+      "visitor": 4,
+      "blog": 36,
+      "placeId": "2098819740",
+      "placeName": "캠프운악Hi",
+      "placeAddr": "경기 포천시 일동면 영일로 665-5",
+      "url": "https://m.place.naver.com/place/2098819740/home",
+      "matchedQuery": "포천시 캠프운악Hi",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 987,
@@ -38544,7 +42174,17 @@
     },
     "lat": 37.354338319534,
     "lng": 127.507041566974,
-    "naverReview": null
+    "naverReview": {
+      "total": 1615,
+      "visitor": 1460,
+      "blog": 155,
+      "placeId": "783594478",
+      "placeName": "두리캠핑장",
+      "placeAddr": "경기 여주시 흥천면 이여로 778-10",
+      "url": "https://m.place.naver.com/place/783594478/home",
+      "matchedQuery": "여주시 두리캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 987,
@@ -38577,7 +42217,17 @@
     },
     "lat": 37.5705242,
     "lng": 126.7630615,
-    "naverReview": null
+    "naverReview": {
+      "total": 227,
+      "visitor": 6,
+      "blog": 221,
+      "placeId": "35452547",
+      "placeName": "두리생태공원오토캠핑장",
+      "placeAddr": "인천 계양구 귤현동 28-1",
+      "url": "https://m.place.naver.com/place/35452547/home",
+      "matchedQuery": "인천시 계양구 귤현동 28-1 -> 계양구 두리생태공원오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 988,
@@ -38608,7 +42258,17 @@
     },
     "lat": 37.5919079,
     "lng": 127.5114138,
-    "naverReview": null
+    "naverReview": {
+      "total": 69,
+      "visitor": 3,
+      "blog": 66,
+      "placeId": "1950457694",
+      "placeName": "한알캠핑장",
+      "placeAddr": "경기 가평군 설악면 어비산길 211",
+      "url": "https://m.place.naver.com/place/1950457694/home",
+      "matchedQuery": "가평군 한알캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 989,
@@ -38640,7 +42300,17 @@
     },
     "lat": 35.8177416,
     "lng": 126.3688876,
-    "naverReview": null
+    "naverReview": {
+      "total": 120,
+      "visitor": 1,
+      "blog": 119,
+      "placeId": "1660876594",
+      "placeName": "관리도캠핑장",
+      "placeAddr": "전북 군산시 옥도면 관리도길 60-19",
+      "url": "https://m.place.naver.com/place/1660876594/home",
+      "matchedQuery": "군산시 관리도캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 990,
@@ -38671,7 +42341,17 @@
     },
     "lat": 38.0515654,
     "lng": 127.389925,
-    "naverReview": null
+    "naverReview": {
+      "total": 136,
+      "visitor": 72,
+      "blog": 64,
+      "placeId": "1503595456",
+      "placeName": "숲속도마치계곡캠핑장",
+      "placeAddr": "경기 포천시 이동면 화동로 2318-36",
+      "url": "https://m.place.naver.com/place/1503595456/home",
+      "matchedQuery": "포천시 숲속도마치계곡캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 991,
@@ -38702,7 +42382,17 @@
       "addr1": "강원특별자치도 평창군 용평면 운두령로 767-17",
       "tel": "033-332-1115"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 391,
+      "visitor": 37,
+      "blog": 354,
+      "placeId": "31499774",
+      "placeName": "용골송어와캠핑",
+      "placeAddr": "강원 평창군 용평면 운두령로 767-17 용골캠핑장",
+      "url": "https://m.place.naver.com/place/31499774/home",
+      "matchedQuery": "평창군 용골송어와 캠핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 992,
@@ -38737,7 +42427,17 @@
     },
     "lat": 37.444456493046,
     "lng": 127.349791098258,
-    "naverReview": null
+    "naverReview": {
+      "total": 325,
+      "visitor": 310,
+      "blog": 15,
+      "placeId": "2034694543",
+      "placeName": "어반스트림",
+      "placeAddr": "경기 광주시 퇴촌면 천진암로 834-18 어반스트림",
+      "url": "https://m.place.naver.com/place/2034694543/home",
+      "matchedQuery": "광주시 어반스트림 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 993,
@@ -38766,7 +42466,17 @@
       "addr1": "경기도 파주시 파평면 장승배기로 390-217",
       "tel": "010-5267-8229"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 414,
+      "visitor": 99,
+      "blog": 315,
+      "placeId": "32848710",
+      "placeName": "율곡캠핑장",
+      "placeAddr": "경기 파주시 파평면 장승배기로 390-217 율곡캠핑장",
+      "url": "https://m.place.naver.com/place/32848710/home",
+      "matchedQuery": "파주시 율곡 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 994,
@@ -38796,7 +42506,17 @@
       "addr1": "경기도 포천시 군내면 선정비로 58",
       "tel": "031-535-5001"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 404,
+      "visitor": 29,
+      "blog": 375,
+      "placeId": "38511190",
+      "placeName": "폴라데이 캠핑장",
+      "placeAddr": "경기 포천시 군내면 선정비로 58",
+      "url": "https://m.place.naver.com/place/38511190/home",
+      "matchedQuery": "포천시 폴라데이 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 995,
@@ -38829,7 +42549,17 @@
     },
     "lat": 37.4708557,
     "lng": 127.8930241,
-    "naverReview": null
+    "naverReview": {
+      "total": 138,
+      "visitor": 1,
+      "blog": 137,
+      "placeId": "31311482",
+      "placeName": "횡성초보캠핑장",
+      "placeAddr": "강원 횡성군 서원면 취석2길 187",
+      "url": "https://m.place.naver.com/place/31311482/home",
+      "matchedQuery": "횡성군 횡성초보캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 996,
@@ -38860,7 +42590,17 @@
     },
     "lat": 38.543611,
     "lng": 128.405619,
-    "naverReview": null
+    "naverReview": {
+      "total": 233,
+      "visitor": 1,
+      "blog": 232,
+      "placeId": "1694594827",
+      "placeName": "명파해변오토캠핑장",
+      "placeAddr": "강원 고성군 현내면 명파4길 47",
+      "url": "https://m.place.naver.com/place/1694594827/home",
+      "matchedQuery": "고성군 명파 해변 오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 997,
@@ -38892,7 +42632,17 @@
     },
     "lat": 37.6478265,
     "lng": 127.3761017,
-    "naverReview": null
+    "naverReview": {
+      "total": 177,
+      "visitor": 89,
+      "blog": 88,
+      "placeId": "1432650165",
+      "placeName": "숲이야캠핑장",
+      "placeAddr": "경기 양평군 서종면 무드리2길 41-20 숲이야캠핑장",
+      "url": "https://m.place.naver.com/place/1432650165/home",
+      "matchedQuery": "양평군 숲이야 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 998,
@@ -38923,7 +42673,17 @@
     },
     "lat": 37.1300742764567,
     "lng": 126.682320637141,
-    "naverReview": null
+    "naverReview": {
+      "total": 29,
+      "visitor": 16,
+      "blog": 13,
+      "placeId": "2020451351",
+      "placeName": "궁평오솔로캠핑장",
+      "placeAddr": "경기도 화성시 만세구 서신면 백미리 277-32",
+      "url": "https://m.place.naver.com/place/2020451351/home",
+      "matchedQuery": "화성시 궁평 오솔로 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 999,
@@ -38954,7 +42714,17 @@
       "addr1": "충청남도 서천군 마서면 원한성길104번길 23-20",
       "tel": "041-951-2030"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 409,
+      "visitor": 161,
+      "blog": 248,
+      "placeId": "1440869230",
+      "placeName": "서천오션플레이스",
+      "placeAddr": "충남 서천군 마서면 원한성길104번길 23-20",
+      "url": "https://m.place.naver.com/place/1440869230/home",
+      "matchedQuery": "서천군 서천 오션플레이스 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1000,
@@ -38985,7 +42755,17 @@
     },
     "lat": 37.3552714,
     "lng": 128.1522911,
-    "naverReview": null
+    "naverReview": {
+      "total": 102,
+      "visitor": 0,
+      "blog": 102,
+      "placeId": "1090408518",
+      "placeName": "월강캠프",
+      "placeAddr": "강원 횡성군 강림면 월강길 100 1215-1, 1216",
+      "url": "https://m.place.naver.com/place/1090408518/home",
+      "matchedQuery": "횡성군 월강캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1001,
@@ -39018,7 +42798,17 @@
     },
     "lat": 37.4205599,
     "lng": 126.9291516,
-    "naverReview": null
+    "naverReview": {
+      "total": 0,
+      "visitor": 0,
+      "blog": 0,
+      "placeId": null,
+      "placeName": null,
+      "placeAddr": null,
+      "url": null,
+      "matchedQuery": "안양시 지맨 카라반파크",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1002,
@@ -39052,7 +42842,17 @@
     },
     "lat": 37.1253013288688,
     "lng": 129.052668429783,
-    "naverReview": null
+    "naverReview": {
+      "total": 41,
+      "visitor": 11,
+      "blog": 30,
+      "placeId": "1736922826",
+      "placeName": "고원힐링캠핑장",
+      "placeAddr": "강원특별자치도 태백시 머리골길 72",
+      "url": "https://m.place.naver.com/place/1736922826/home",
+      "matchedQuery": "태백시 고원힐링캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1003,
@@ -39082,7 +42882,17 @@
       "featureNm": "",
       "addr1": "강원특별자치도 홍천군 서석면 검산리 106"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 615,
+      "visitor": 401,
+      "blog": 214,
+      "placeId": "1585356462",
+      "placeName": "그린필로우",
+      "placeAddr": "강원특별자치도 홍천군 서석면 마리소리길 182 그린필로우",
+      "url": "https://m.place.naver.com/place/1585356462/home",
+      "matchedQuery": "홍천군 그린필로우 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1004,
@@ -39115,7 +42925,17 @@
     },
     "lat": 37.5842782451127,
     "lng": 126.515505230926,
-    "naverReview": null
+    "naverReview": {
+      "total": 523,
+      "visitor": 425,
+      "blog": 98,
+      "placeId": "1516531838",
+      "placeName": "하늘바다글램핑",
+      "placeAddr": "인천 강화군 길상면 동검길65번길 138-29",
+      "url": "https://m.place.naver.com/place/1516531838/home",
+      "matchedQuery": "강화군 하늘바다글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1005,
@@ -39146,7 +42966,17 @@
     },
     "lat": 37.8150176805703,
     "lng": 127.009454800094,
-    "naverReview": null
+    "naverReview": {
+      "total": 31,
+      "visitor": 20,
+      "blog": 11,
+      "placeId": "2047656557",
+      "placeName": "광백레이크캠핑장",
+      "placeAddr": "경기도 양주시 백석읍 부흥로 1013-352",
+      "url": "https://m.place.naver.com/place/2047656557/home",
+      "matchedQuery": "양주시 광백레이크 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1006,
@@ -39175,7 +43005,17 @@
       "addr1": "경기도 가평군 북면 가화로 2411-32",
       "tel": "010-4815-7033"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 802,
+      "visitor": 653,
+      "blog": 149,
+      "placeId": "1512643838",
+      "placeName": "용소캠핑장",
+      "placeAddr": "경기 가평군 북면 가화로 2411-32 용소캠핑장",
+      "url": "https://m.place.naver.com/place/1512643838/home",
+      "matchedQuery": "가평군 용소캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1007,
@@ -39205,7 +43045,17 @@
       "addr1": "경기도 가평군 설악면 유명산길 124-29",
       "tel": "031-585-5340"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 141,
+      "visitor": 33,
+      "blog": 108,
+      "placeId": "1061198676",
+      "placeName": "유명산라온캠핑장",
+      "placeAddr": "경기 가평군 설악면 유명산길 124-34",
+      "url": "https://m.place.naver.com/place/1061198676/home",
+      "matchedQuery": "가평군 유명산라온캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1008,
@@ -39237,7 +43087,17 @@
     },
     "lat": 36.8119599,
     "lng": 127.6659405,
-    "naverReview": null
+    "naverReview": {
+      "total": 283,
+      "visitor": 137,
+      "blog": 146,
+      "placeId": "36893742",
+      "placeName": "모래재캠핑장",
+      "placeAddr": "충북 괴산군 사리면 모래재로 483-10 모래재캠핑장",
+      "url": "https://m.place.naver.com/place/36893742/home",
+      "matchedQuery": "괴산군 모래재캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1009,
@@ -39269,7 +43129,17 @@
     },
     "lat": 37.2887630565324,
     "lng": 127.699793625088,
-    "naverReview": null
+    "naverReview": {
+      "total": 487,
+      "visitor": 178,
+      "blog": 309,
+      "placeId": "30820901",
+      "placeName": "여주참숯마을캠핑장",
+      "placeAddr": "경기 여주시 강천면 걸촌동길 40 여주참숯마을",
+      "url": "https://m.place.naver.com/place/30820901/home",
+      "matchedQuery": "여주시 여주참숯마을 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1010,
@@ -39305,7 +43175,17 @@
     },
     "lat": 35.2336843,
     "lng": 127.8229352,
-    "naverReview": null
+    "naverReview": {
+      "total": 602,
+      "visitor": 367,
+      "blog": 235,
+      "placeId": "1104404759",
+      "placeName": "시즌글램핑",
+      "placeAddr": "경남 산청군 시천면 내공길 109-25",
+      "url": "https://m.place.naver.com/place/1104404759/home",
+      "matchedQuery": "산청군 시즌글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1011,
@@ -39335,7 +43215,17 @@
       "addr1": "경기도 연천군 군남면 군남로 373",
       "tel": "031-833-1142"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 230,
+      "visitor": 1,
+      "blog": 229,
+      "placeId": "32769498",
+      "placeName": "아띠캠핑장",
+      "placeAddr": "경기 연천군 군남면 군남로 373",
+      "url": "https://m.place.naver.com/place/32769498/home",
+      "matchedQuery": "연천군 아띠캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1012,
@@ -39364,7 +43254,17 @@
       "addr1": "인천광역시 강화군 삼산면 매음리 897번지",
       "tel": "010-4394-7100"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 1403,
+      "visitor": 1235,
+      "blog": 168,
+      "placeId": "1898565315",
+      "placeName": "헬로카라반",
+      "placeAddr": "인천 강화군 삼산면 어류정길198번길 8",
+      "url": "https://m.place.naver.com/place/1898565315/home",
+      "matchedQuery": "강화군 헬로 카라반",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1013,
@@ -39395,7 +43295,17 @@
     },
     "lat": 36.7557590462455,
     "lng": 128.074420095491,
-    "naverReview": null
+    "naverReview": {
+      "total": 204,
+      "visitor": 189,
+      "blog": 15,
+      "placeId": "2064486415",
+      "placeName": "모닥 글램핑",
+      "placeAddr": "경상북도 문경시 문경읍 새재1길 45-6 모닥 글램핑",
+      "url": "https://m.place.naver.com/place/2064486415/home",
+      "matchedQuery": "문경시 모닥 글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1014,
@@ -39424,7 +43334,17 @@
       "featureNm": "",
       "addr1": "인천광역시 강화군 하점면 고려산로377번길 33"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 623,
+      "visitor": 329,
+      "blog": 294,
+      "placeId": "1201687400",
+      "placeName": "스톤캠핑장",
+      "placeAddr": "인천 강화군 하점면 고려산로377번길 33",
+      "url": "https://m.place.naver.com/place/1201687400/home",
+      "matchedQuery": "강화군 스톤 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1015,
@@ -39456,7 +43376,17 @@
     },
     "lat": 37.1027268,
     "lng": 127.7699622,
-    "naverReview": null
+    "naverReview": {
+      "total": 49,
+      "visitor": 0,
+      "blog": 49,
+      "placeId": "1690131697",
+      "placeName": "이른아침캠핑장",
+      "placeAddr": "충북 충주시 앙성면 가곡로 1191",
+      "url": "https://m.place.naver.com/place/1690131697/home",
+      "matchedQuery": "충주시 이른아침 캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1016,
@@ -39490,7 +43420,17 @@
     },
     "lat": 35.6838315171821,
     "lng": 128.56543894505,
-    "naverReview": null
+    "naverReview": {
+      "total": 286,
+      "visitor": 177,
+      "blog": 109,
+      "placeId": "1243936511",
+      "placeName": "에이스캠프",
+      "placeAddr": "경북 청도군 각북면 낙산1길 159",
+      "url": "https://m.place.naver.com/place/1243936511/home",
+      "matchedQuery": "청도군 에이스캠프",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1017,
@@ -39563,7 +43503,17 @@
       "addr1": "울산광역시 울주군 상북면 삽재4길5",
       "tel": "010-3080-4388"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 943,
+      "visitor": 812,
+      "blog": 131,
+      "placeId": "35326408",
+      "placeName": "천리안캠프힐",
+      "placeAddr": "울산 울주군 상북면 삽재4길 5",
+      "url": "https://m.place.naver.com/place/35326408/home",
+      "matchedQuery": "울주군 천리안 캠프힐",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1019,
@@ -39592,7 +43542,17 @@
       "featureNm": "",
       "addr1": "경상남도 밀양시 단장면 고례리 1491 외 1필지"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 379,
+      "visitor": 45,
+      "blog": 334,
+      "placeId": "711325360",
+      "placeName": "물안개 오토캠핑장",
+      "placeAddr": "경남 밀양시 단장면 고례로 823-10",
+      "url": "https://m.place.naver.com/place/711325360/home",
+      "matchedQuery": "밀양시 물안개 오토캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1020,
@@ -39623,7 +43583,17 @@
     },
     "lat": 35.5443964251486,
     "lng": 128.053734980168,
-    "naverReview": null
+    "naverReview": {
+      "total": 28,
+      "visitor": 8,
+      "blog": 20,
+      "placeId": "2054700429",
+      "placeName": "텐잘남파크",
+      "placeAddr": "경남 합천군 대병면 합천호수로 525",
+      "url": "https://m.place.naver.com/place/2054700429/home",
+      "matchedQuery": "합천군 텐잘남파크",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1021,
@@ -39651,7 +43621,17 @@
       "featureNm": "",
       "addr1": "충청북도 괴산군 청천면 후평도원로 484"
     },
-    "naverReview": null
+    "naverReview": {
+      "total": 315,
+      "visitor": 106,
+      "blog": 209,
+      "placeId": "1102400302",
+      "placeName": "승암159캠핑장",
+      "placeAddr": "충북 괴산군 청천면 후평도원로 484 1층",
+      "url": "https://m.place.naver.com/place/1102400302/home",
+      "matchedQuery": "괴산군 승암159캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1022,
@@ -39682,7 +43662,17 @@
     },
     "lat": 37.6483474,
     "lng": 127.845764,
-    "naverReview": null
+    "naverReview": {
+      "total": 200,
+      "visitor": 12,
+      "blog": 188,
+      "placeId": "1210269023",
+      "placeName": "홍천높은터캠핑장",
+      "placeAddr": "강원 홍천군 홍천읍 높은터로 233 장전평리 910 (홍천높은터캠핑장)",
+      "url": "https://m.place.naver.com/place/1210269023/home",
+      "matchedQuery": "홍천군 홍천높은터캠핑장",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1023,
@@ -39716,7 +43706,17 @@
     },
     "lat": 36.0884556,
     "lng": 128.474735,
-    "naverReview": null
+    "naverReview": {
+      "total": 279,
+      "visitor": 162,
+      "blog": 117,
+      "placeId": "35297864",
+      "placeName": "가산글램핑",
+      "placeAddr": "경북 칠곡군 가산면 학하2길 54-55 1층",
+      "url": "https://m.place.naver.com/place/35297864/home",
+      "matchedQuery": "칠곡군 가산글램핑",
+      "updatedAt": "2026-10-23"
+    }
   },
   {
     "rank": 1024,

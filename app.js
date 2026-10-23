@@ -666,14 +666,14 @@ function placeBlock(item, index, chipGroups, matchIndex, displayOrder) {
   const titleGroup = document.createElement("div");
   titleGroup.className = "row-title-group";
   if (index === 0) {
-    const primaryRank = sortMode === "interest" ? item.rank : displayOrder;
+    const primaryRank = displayOrder;
     const badge = document.createElement("span");
     badge.className = primaryRank <= 10 ? "rank-badge row-rank is-top-rank" : "rank-badge row-rank";
     badge.textContent = String(primaryRank);
     titleGroup.append(badge);
   }
   titleGroup.append(nameValue(item.name, contentId));
-  if (index === 0 && sortMode !== "interest") {
+  if (index === 0 && (sortMode !== "interest" || item.rank !== displayOrder)) {
     const interestTag = document.createElement("span");
     interestTag.className = "tag-interest-rank";
     interestTag.textContent = `관심도 #${item.rank}`;
@@ -836,13 +836,13 @@ function renderTop(list) {
   topHeading.textContent = shown.length === 10 ? "이 조건의 상위 10" : `이 조건의 상위 ${shown.length}`;
   const maxInterest = shown[0].interest > 0 ? shown[0].interest : 1;
   topList.replaceChildren();
-  for (const item of shown) {
+  shown.forEach((item, idx) => {
     const li = document.createElement("li");
     li.className = "top-item";
 
     const badge = document.createElement("span");
     badge.className = "rank-badge";
-    badge.append(document.createTextNode(String(item.rank)));
+    badge.append(document.createTextNode(String(idx + 1)));
     const unit = document.createElement("span");
     unit.className = "sr-only";
     unit.textContent = "위";
@@ -873,7 +873,7 @@ function renderTop(list) {
 
     li.append(badge, name, interest, regions, bar);
     topList.append(li);
-  }
+  });
 }
 
 function renderResults(list, immediate) {

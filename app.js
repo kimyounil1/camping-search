@@ -183,60 +183,65 @@ function shortRegion(region) {
   return sigungu ? `${shortSido} ${sigungu}` : shortSido;
 }
 
-function groupRows(rows) {
-  const map = new Map();
-  for (const row of rows) {
-    let item = map.get(row.name);
-    if (!item) {
-      item = {
-        rank: row.rank,
-        name: row.name,
-        interestText: Number(row.interest).toFixed(4),
-        interest: Number(row.interest),
-        sameNameRows: row.same_name_rows,
-        naverReview: row.naverReview || null,
-        regions: [],
-        regionFacilities: [],
-        coords: [],
-        seen: new Set(),
-      };
-      map.set(row.name, item);
-    } else if (!item.naverReview && row.naverReview) {
-      item.naverReview = row.naverReview;
-    } else if (item.naverReview && row.naverReview && (row.naverReview.total || 0) > (item.naverReview.total || 0)) {
-      item.naverReview = row.naverReview;
-    }
-    if (!item.seen.has(row.region)) {
-      item.seen.add(row.region);
-      item.regions.push(row.region);
-      item.regionFacilities.push(row.facility || null);
-      item.coords.push(placeCoord(row));
-    }
+function sanitizeNaverReview(raw) {
+  if (!raw || typeof raw !== "object") {
+    return null;
   }
+  const placeId = raw.placeId ? String(raw.placeId).trim() : "";
+  if (!placeId) {
+    return null;
+  }
+  const visitor = Math.max(0, Number(raw.visitor) || 0);
+  const blog = Math.max(0, Number(raw.blog) || 0);
+  const vbSum = visitor + blog;
+  let total = Math.max(0, Number(raw.total) || 0);
+  if (total >= 10000 && vbSum < total) {
+    total = vbSum;
+  } else if (vbSum > total) {
+    total = vbSum;
+  }
+  const url = raw.url ? String(raw.url).trim() : `https://m.place.naver.com/place/${placeId}/home`;
+  return {
+    placeId,
+    total,
+    visitor,
+    blog,
+    url,
+    updatedAt: raw.updatedAt || "",
+  };
+}
 
+function groupRows(rows) {
   const list = [];
-  for (const item of map.values()) {
-    item.places = item.regions.map(splitRegion);
-    item.facilities = collapseFacilities(item);
-    item.hasFacility = item.facilities.length > 0;
-    item.estimated = item.facilities.some((facility) => facility.estimated);
-    item.types = [];
-    const notes = [];
-    for (const facility of item.facilities) {
-      for (const type of facility.types || []) {
-        if (!item.types.includes(type)) {
-          item.types.push(type);
-        }
-      }
-      if (facility.locationNote) {
-        notes.push(facility.locationNote);
-      }
-    }
-    item.reviewTotal = item.naverReview ? (item.naverReview.total || 0) : 0;
-    item.haystack = normalize(`${item.name} ${item.regions.join(" ")} ${notes.join(" ")}`);
+  rows.forEach((row, idx) => {
+    const contentId = row.facility && row.facility.contentId ? String(row.facility.contentId).trim() : "";
+    const rowKey = `${row.name}__${row.region}__${contentId || idx}`;
+    const naverReview = sanitizeNaverReview(row.naverReview);
+    const facility = row.facility || null;
+    const coord = placeCoord(row);
+    const item = {
+      rowKey,
+      rank: row.rank,
+      name: row.name,
+      region: row.region,
+      interestText: Number(row.interest).toFixed(4),
+      interest: Number(row.interest),
+      sameNameRows: row.same_name_rows,
+      naverReview,
+      regions: [row.region],
+      regionFacilities: [facility],
+      coords: [coord],
+      places: [splitRegion(row.region)],
+      facilities: facility ? [facility] : [],
+      hasFacility: Boolean(facility),
+      estimated: Boolean(facility && facility.estimated),
+      types: facility && Array.isArray(facility.types) ? [...facility.types] : [],
+      reviewTotal: naverReview && naverReview.total > 0 ? naverReview.total : 0,
+      haystack: normalize(`${row.name} ${row.region} ${facility && facility.locationNote ? facility.locationNote : ""}`),
+    };
     list.push(item);
-  }
-  list.sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name, "ko"));
+  });
+  list.sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name, "ko") || a.region.localeCompare(b.region, "ko"));
   return list;
 }
 
@@ -624,10 +629,11 @@ function focusPlaceOnMap(item, index) {
   }
 }
 
-function placeBlock(item, index, chipGroups, matchIndex) {
+function placeBlock(item, index, chipGroups, matchIndex, displayOrder) {
   const facility = item.regionFacilities[index];
   const contentId = facility && facility.contentId ? String(facility.contentId).trim() : "";
   const placeRef = {
+    rowKey: item.rowKey,
     rank: item.rank,
     name: item.name,
     region: item.regions[index],
@@ -653,19 +659,26 @@ function placeBlock(item, index, chipGroups, matchIndex) {
     });
   }
 
-  // Row 1: Rank badge + Campsite Name + Induty Tags + Blue Ribbon Estimated Tag
+  // Row 1: Rank badge + Campsite Name + Induty Tags + Estimated Tag
   const line1 = document.createElement("div");
   line1.className = "row-head";
 
   const titleGroup = document.createElement("div");
   titleGroup.className = "row-title-group";
   if (index === 0) {
+    const primaryRank = sortMode === "interest" ? item.rank : displayOrder;
     const badge = document.createElement("span");
-    badge.className = item.rank <= 10 ? "rank-badge row-rank is-top-rank" : "rank-badge row-rank";
-    badge.textContent = String(item.rank);
+    badge.className = primaryRank <= 10 ? "rank-badge row-rank is-top-rank" : "rank-badge row-rank";
+    badge.textContent = String(primaryRank);
     titleGroup.append(badge);
   }
   titleGroup.append(nameValue(item.name, contentId));
+  if (index === 0 && sortMode !== "interest") {
+    const interestTag = document.createElement("span");
+    interestTag.className = "tag-interest-rank";
+    interestTag.textContent = `관심도 #${item.rank}`;
+    titleGroup.append(interestTag);
+  }
 
   const tagsGroup = document.createElement("div");
   tagsGroup.className = "row-tags";
@@ -673,7 +686,7 @@ function placeBlock(item, index, chipGroups, matchIndex) {
   if (isEstimated) {
     const ribbonTag = document.createElement("span");
     ribbonTag.className = "tag-ribbon";
-    ribbonTag.textContent = "🎀 개별화장실 추정";
+    ribbonTag.textContent = "개별화장실 추정";
     tagsGroup.append(ribbonTag);
   }
   const typeList = (facility && facility.types && facility.types.length ? facility.types : item.types).slice(0, 2);
@@ -713,11 +726,11 @@ function placeBlock(item, index, chipGroups, matchIndex) {
     metaLeft.append(travelBadge);
   }
 
-  if (item.naverReview && (item.naverReview.total > 0 || item.naverReview.url)) {
+  if (item.naverReview && item.naverReview.placeId && item.naverReview.total > 0) {
     const countBadge = document.createElement("span");
     countBadge.className = "review-count-badge";
-    const total = Number(item.naverReview.total || 0).toLocaleString("ko-KR");
-    const visitor = item.naverReview.visitor ? Number(item.naverReview.visitor).toLocaleString("ko-KR") : null;
+    const total = Number(item.naverReview.total).toLocaleString("ko-KR");
+    const visitor = item.naverReview.visitor > 0 ? Number(item.naverReview.visitor).toLocaleString("ko-KR") : null;
     const mainSpan = document.createElement("span");
     mainSpan.className = "review-main";
     mainSpan.textContent = `★ 네이버 리뷰 ${total}개`;
@@ -744,7 +757,7 @@ function placeBlock(item, index, chipGroups, matchIndex) {
     actionsRight.append(goLink);
   }
 
-  if (item.naverReview && item.naverReview.url) {
+  if (item.naverReview && item.naverReview.placeId && item.naverReview.url) {
     const naverLink = document.createElement("a");
     naverLink.className = "action-link action-naver";
     naverLink.href = item.naverReview.url;
@@ -890,7 +903,8 @@ function renderResults(list, immediate) {
   const chipGroups = activeChipGroups();
   const start = (page - 1) * PAGE_SIZE;
   const slice = list.slice(start, start + PAGE_SIZE);
-  for (const item of slice) {
+  slice.forEach((item, offset) => {
+    const displayOrder = start + offset + 1;
     const li = document.createElement("li");
     const hasActiveRoute = Boolean(
       origin &&
@@ -901,10 +915,10 @@ function renderResults(list, immediate) {
     li.className = hasActiveRoute ? "result is-active-route" : "result";
     const matchIndex = matchingPlaceIndex(item, chipGroups);
     for (let index = 0; index < item.regions.length; index += 1) {
-      li.append(placeBlock(item, index, chipGroups, matchIndex));
+      li.append(placeBlock(item, index, chipGroups, matchIndex, displayOrder));
     }
     resultList.append(li);
-  }
+  });
 
   const end = start + slice.length;
   pager.hidden = false;
@@ -1110,16 +1124,23 @@ function refreshOpenCampCard() {
 }
 
 function reviewHtml(naverReview) {
-  if (!naverReview || (!(naverReview.total > 0) && !naverReview.url)) {
+  if (!naverReview || !naverReview.placeId) {
     return "";
   }
-  const total = Number(naverReview.total || 0).toLocaleString("ko-KR");
-  const visitor = naverReview.visitor ? Number(naverReview.visitor).toLocaleString("ko-KR") : null;
-  const label = visitor ? `★ 네이버 리뷰 ${total}개 (방문자 ${visitor})` : `★ 네이버 리뷰 ${total}개`;
-  const badge = `<span class="review-count-badge">${escapeHtml(label)}</span>`;
+  const hasCount = naverReview.total > 0;
+  let badge = "";
+  if (hasCount) {
+    const total = Number(naverReview.total).toLocaleString("ko-KR");
+    const visitor = naverReview.visitor > 0 ? Number(naverReview.visitor).toLocaleString("ko-KR") : null;
+    const label = visitor ? `★ 네이버 리뷰 ${total}개 (방문자 ${visitor})` : `★ 네이버 리뷰 ${total}개`;
+    badge = `<span class="review-count-badge">${escapeHtml(label)}</span>`;
+  }
   const mapLink = naverReview.url
     ? `<a class="action-link action-naver" href="${escapeHtml(naverReview.url)}" target="_blank" rel="noopener noreferrer">N플레이스 ↗</a>`
     : "";
+  if (!badge && !mapLink) {
+    return "";
+  }
   return `<div class="map-place-review review-value-wrap">${badge}${mapLink}</div>`;
 }
 

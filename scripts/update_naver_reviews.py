@@ -670,7 +670,8 @@ def main():
     parser.add_argument("--file", default=DEFAULT_JSON_PATH, help="수정할 JSON 파일 경로")
     parser.add_argument("--limit", type=int, default=0, help="수집할 개수 제한 (0: 전체)")
     parser.add_argument("--delay", type=float, default=1.0, help="요청 간 딜레이(초)")
-    parser.add_argument("--force", action="store_true", help="이미 수집된 항목도 덮어쓰기")
+    parser.add_argument("--force", action="store_true", help="오늘 이미 수집된 항목도 강제 재수집")
+    parser.add_argument("--rediscover", action="store_true", help="기존 placeId가 있어도 처음부터 키워드/주소 검색 재수행")
     parser.add_argument("--recheck-zero-place", action="store_true", help="placeId가 있으나 리뷰 수가 0이거나 불완전한 항목만 재점검")
     parser.add_argument("--save-interval", type=int, default=50, help="중간 저장 주기")
     parser.add_argument("--git-push-interval", type=int, default=0, help="자동 git commit & push 주기 (0: 비활성)")
@@ -709,7 +710,7 @@ def main():
         rank = item.get("rank", idx + 1)
         region = item.get("region", "")
 
-        # 이어하기 검사: 이미 수집된 항목(nr이 dict이고 placeName 키가 포함된 새 스키마 항목)이면 스킵
+        # 이어하기 검사: 오늘(today_str) 이미 새 스키마로 수집/갱신된 항목이면 스킵
         nr = item.get("naverReview")
         if args.recheck_zero_place:
             if not (
@@ -719,18 +720,20 @@ def main():
             ):
                 skipped_count += 1
                 continue
-        elif not args.force and isinstance(nr, dict) and "placeName" in nr:
+        elif not args.force and isinstance(nr, dict) and "placeName" in nr and nr.get("updatedAt") == today_str:
             skipped_count += 1
             continue
 
-        if args.recheck_zero_place and isinstance(nr, dict) and nr.get("placeId"):
+        if isinstance(nr, dict) and nr.get("placeId") and "placeName" in nr and not args.rediscover:
             pid = str(nr["placeId"]).strip()
             direct_cand = fetch_place_detail_by_id(pid)
             if direct_cand:
                 review_info = dict(nr)
-                review_info["total"] = direct_cand["total"]
-                review_info["visitor"] = direct_cand["visitor"]
-                review_info["blog"] = direct_cand["blog"]
+                # Zero-regression guard: 기존에 양수 리뷰가 있었는데 일시적 오류로 0이 반환되면 기존 값 유지
+                if direct_cand["total"] > 0 or nr.get("total", 0) == 0:
+                    review_info["total"] = direct_cand["total"]
+                    review_info["visitor"] = direct_cand["visitor"]
+                    review_info["blog"] = direct_cand["blog"]
                 if direct_cand.get("placeName") and not review_info.get("placeName"):
                     review_info["placeName"] = direct_cand["placeName"]
                 if direct_cand.get("placeAddr") and not review_info.get("placeAddr"):
@@ -739,11 +742,21 @@ def main():
                 if f"place:{pid}" not in old_q:
                     review_info["matchedQuery"] = f"{old_q} -> place:{pid}" if old_q else f"place:{pid}"
             else:
-                review_info = fetch_campsite_review(item)
-                if not review_info.get("placeId"):
+                if nr.get("total", 0) > 0:
                     review_info = dict(nr)
+                else:
+                    review_info = fetch_campsite_review(item)
+                    if not review_info.get("placeId"):
+                        review_info = dict(nr)
         else:
             review_info = fetch_campsite_review(item)
+            if (
+                isinstance(nr, dict)
+                and nr.get("placeId")
+                and nr.get("total", 0) > 0
+                and review_info.get("total", 0) == 0
+            ):
+                review_info = dict(nr)
 
         review_info["updatedAt"] = today_str
         item["naverReview"] = review_info

@@ -37,8 +37,8 @@
       "placeName": "보물섬 캠핑장",
       "placeAddr": "강원 평창군 봉평면 거품소길 349-6",
       "url": "https://m.place.naver.com/place/38403622/home",
-      "matchedQuery": "평창군 보물섬 캠핑장",
-      "updatedAt": "2026-10-23"
+      "matchedQuery": "평창군 보물섬 캠핑장 -> place:38403622",
+      "updatedAt": "2026-10-26"
     }
   },
   {
@@ -82,8 +82,8 @@
       "placeName": "오로라글램핑 펜션",
       "placeAddr": "대전 서구 장안로 604",
       "url": "https://m.place.naver.com/place/1414386665/home",
-      "matchedQuery": "대전 서구 장안로 604 -> 서구 오로라글램핑 펜션",
-      "updatedAt": "2026-10-23"
+      "matchedQuery": "대전 서구 장안로 604 -> 서구 오로라글램핑 펜션 -> place:1414386665",
+      "updatedAt": "2026-10-26"
     }
   },
   {
@@ -116,15 +116,15 @@
     "lat": 37.1950683,
     "lng": 127.4460406,
     "naverReview": {
-      "total": 34189,
-      "visitor": 26703,
-      "blog": 7486,
+      "total": 34193,
+      "visitor": 26702,
+      "blog": 7491,
       "placeId": "11701945",
       "placeName": "이천 테르메덴",
       "placeAddr": "경기 이천시 모가면 사실로 984",
       "url": "https://m.place.naver.com/place/11701945/home",
-      "matchedQuery": "이천시 테르메덴",
-      "updatedAt": "2026-10-23"
+      "matchedQuery": "이천시 테르메덴 -> place:11701945",
+      "updatedAt": "2026-10-26"
     }
   },
   {
@@ -166,8 +166,8 @@
       "placeName": "라라랜드 카라반",
       "placeAddr": "충청남도 금산군 제원면 신안사로 487 라라랜드 카라반",
       "url": "https://m.place.naver.com/place/1945940720/home",
-      "matchedQuery": "금산군 라라랜드",
-      "updatedAt": "2026-10-23"
+      "matchedQuery": "금산군 라라랜드 -> place:1945940720",
+      "updatedAt": "2026-10-26"
     }
   },
   {
@@ -201,15 +201,15 @@
     "lat": 37.1049467213734,
     "lng": 128.047044728271,
     "naverReview": {
-      "total": 86,
+      "total": 87,
       "visitor": 9,
-      "blog": 77,
+      "blog": 78,
       "placeId": "2077197452",
       "placeName": "라라랜드 제천점",
       "placeAddr": "충북 제천시 백운면 애련로 748-56 라라랜드 제천점",
       "url": "https://m.place.naver.com/place/2077197452/home",
-      "matchedQuery": "충청북도 제천시 백운면 애련로 748-56 -> 제천시 라라랜드 제천점",
-      "updatedAt": "2026-10-23"
+      "matchedQuery": "충청북도 제천시 백운면 애련로 748-56 -> 제천시 라라랜드 제천점 -> place:2077197452",
+      "updatedAt": "2026-10-26"
     }
   },
   {

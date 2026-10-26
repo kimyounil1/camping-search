@@ -172,7 +172,7 @@ def extract_eupmyeon(addr1):
         return ""
     for part in addr1.split()[1:4]:
         if re.search(r"[읍면]$", part) and len(part) >= 2:
-            return part
+            return re.sub(r"[읍면]$", "", part)
     return ""
 
 
@@ -345,6 +345,26 @@ def fetch_html(query):
             return resp.read().decode("utf-8", errors="ignore")
     except Exception:
         return None
+
+
+def fetch_place_detail_by_id(place_id):
+    """Fetch visitor and blog review counts directly from m.place.naver.com/place/{place_id}/home."""
+    if not place_id:
+        return None
+    url = f"https://m.place.naver.com/place/{place_id}/home"
+    req = urllib.request.Request(url, headers=HEADERS)
+    try:
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            html = resp.read().decode("utf-8", errors="ignore")
+    except Exception:
+        return None
+    if not html:
+        return None
+    cands = extract_apollo_candidates(html)
+    for c in cands:
+        if str(c.get("placeId")) == str(place_id):
+            return c
+    return None
 
 
 def extract_apollo_candidates(html):
@@ -577,8 +597,21 @@ def fetch_campsite_review(item):
         res = parse_naver_search_html(html, item, is_addr_query=is_addr)
         if res:
             res["matchedQuery"] = q
-            # If we found a verified place (e.g. via address search) whose list item had 0 inline review count,
-            # query its discovered placeName in the same region to trigger its PlaceDetailBase / AccommodationSearchItem!
+            # If we found a verified place (e.g. via address search or DOM fallback) whose inline review count is 0
+            # or incomplete (total != visitor + blog), fetch its exact PlaceDetailBase directly from m.place.naver.com!
+            if res.get("placeId") and (
+                res["total"] == 0 or res["total"] != (res.get("visitor", 0) + res.get("blog", 0))
+            ):
+                time.sleep(0.15)
+                direct_cand = fetch_place_detail_by_id(res["placeId"])
+                if direct_cand and direct_cand["total"] > 0:
+                    res["total"] = direct_cand["total"]
+                    res["visitor"] = direct_cand["visitor"]
+                    res["blog"] = direct_cand["blog"]
+                    if direct_cand.get("placeAddr") and not res.get("placeAddr"):
+                        res["placeAddr"] = direct_cand["placeAddr"]
+                    res["matchedQuery"] = f"{q} -> place:{res['placeId']}"
+
             if res["total"] == 0 and res.get("placeName"):
                 pt = res["placeName"]
                 addr1 = (item.get("facility") or {}).get("addr1") or ""
@@ -638,6 +671,7 @@ def main():
     parser.add_argument("--limit", type=int, default=0, help="수집할 개수 제한 (0: 전체)")
     parser.add_argument("--delay", type=float, default=1.0, help="요청 간 딜레이(초)")
     parser.add_argument("--force", action="store_true", help="이미 수집된 항목도 덮어쓰기")
+    parser.add_argument("--recheck-zero-place", action="store_true", help="placeId가 있으나 리뷰 수가 0이거나 불완전한 항목만 재점검")
     parser.add_argument("--save-interval", type=int, default=50, help="중간 저장 주기")
     parser.add_argument("--git-push-interval", type=int, default=0, help="자동 git commit & push 주기 (0: 비활성)")
     args = parser.parse_args()
@@ -677,11 +711,40 @@ def main():
 
         # 이어하기 검사: 이미 수집된 항목(nr이 dict이고 placeName 키가 포함된 새 스키마 항목)이면 스킵
         nr = item.get("naverReview")
-        if not args.force and isinstance(nr, dict) and "placeName" in nr:
+        if args.recheck_zero_place:
+            if not (
+                isinstance(nr, dict)
+                and nr.get("placeId")
+                and (nr.get("total", 0) == 0 or nr.get("total", 0) != (nr.get("visitor", 0) + nr.get("blog", 0)))
+            ):
+                skipped_count += 1
+                continue
+        elif not args.force and isinstance(nr, dict) and "placeName" in nr:
             skipped_count += 1
             continue
 
-        review_info = fetch_campsite_review(item)
+        if args.recheck_zero_place and isinstance(nr, dict) and nr.get("placeId"):
+            pid = str(nr["placeId"]).strip()
+            direct_cand = fetch_place_detail_by_id(pid)
+            if direct_cand:
+                review_info = dict(nr)
+                review_info["total"] = direct_cand["total"]
+                review_info["visitor"] = direct_cand["visitor"]
+                review_info["blog"] = direct_cand["blog"]
+                if direct_cand.get("placeName") and not review_info.get("placeName"):
+                    review_info["placeName"] = direct_cand["placeName"]
+                if direct_cand.get("placeAddr") and not review_info.get("placeAddr"):
+                    review_info["placeAddr"] = direct_cand["placeAddr"]
+                old_q = review_info.get("matchedQuery", "")
+                if f"place:{pid}" not in old_q:
+                    review_info["matchedQuery"] = f"{old_q} -> place:{pid}" if old_q else f"place:{pid}"
+            else:
+                review_info = fetch_campsite_review(item)
+                if not review_info.get("placeId"):
+                    review_info = dict(nr)
+        else:
+            review_info = fetch_campsite_review(item)
+
         review_info["updatedAt"] = today_str
         item["naverReview"] = review_info
         updated_count += 1

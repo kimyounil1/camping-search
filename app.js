@@ -183,6 +183,37 @@ function shortRegion(region) {
   return sigungu ? `${shortSido} ${sigungu}` : shortSido;
 }
 
+function isMobileEnv() {
+  if (phoneQuery && phoneQuery.matches) {
+    return true;
+  }
+  const ua = typeof navigator !== "undefined" && navigator.userAgent ? navigator.userAgent : "";
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua);
+}
+
+function naverPlaceUrl(naverReview) {
+  if (!naverReview) {
+    return "";
+  }
+  const placeId = naverReview.placeId ? String(naverReview.placeId).trim() : "";
+  if (!placeId) {
+    return naverReview.url ? String(naverReview.url).trim() : "";
+  }
+  return isMobileEnv()
+    ? `https://m.place.naver.com/place/${encodeURIComponent(placeId)}/home`
+    : `https://map.naver.com/p/entry/place/${encodeURIComponent(placeId)}`;
+}
+
+function syncNaverPlaceLinks(root = document) {
+  const links = root.querySelectorAll("a.action-naver[data-place-id]");
+  for (const link of links) {
+    const placeId = link.getAttribute("data-place-id");
+    if (placeId) {
+      link.href = naverPlaceUrl({ placeId });
+    }
+  }
+}
+
 function sanitizeNaverReview(raw) {
   if (!raw || typeof raw !== "object") {
     return null;
@@ -817,14 +848,21 @@ function placeBlock(item, index, chipGroups, matchIndex, displayOrder) {
     actionsRight.append(goLink);
   }
 
-  if (item.naverReview && item.naverReview.placeId && item.naverReview.url) {
+  if (item.naverReview && item.naverReview.placeId) {
     const naverLink = document.createElement("a");
     naverLink.className = "action-link action-naver";
-    naverLink.href = item.naverReview.url;
+    naverLink.dataset.placeId = item.naverReview.placeId;
+    naverLink.href = naverPlaceUrl(item.naverReview);
     naverLink.target = "_blank";
     naverLink.rel = "noopener noreferrer";
     naverLink.textContent = "N플레이스 ↗";
+    const syncHref = () => {
+      naverLink.href = naverPlaceUrl(item.naverReview);
+    };
+    naverLink.addEventListener("pointerdown", syncHref);
+    naverLink.addEventListener("auxclick", syncHref);
     naverLink.addEventListener("click", (event) => {
+      syncHref();
       event.stopPropagation();
     });
     actionsRight.append(naverLink);
@@ -1205,8 +1243,9 @@ function reviewHtml(naverReview) {
     const label = visitor ? `★ 네이버 리뷰 ${total}개 (방문자 ${visitor})` : `★ 네이버 리뷰 ${total}개`;
     badge = `<span class="review-count-badge">${escapeHtml(label)}</span>`;
   }
-  const mapLink = naverReview.url
-    ? `<a class="action-link action-naver" href="${escapeHtml(naverReview.url)}" target="_blank" rel="noopener noreferrer">N플레이스 ↗</a>`
+  const placeHref = naverPlaceUrl(naverReview);
+  const mapLink = placeHref
+    ? `<a class="action-link action-naver" data-place-id="${escapeHtml(naverReview.placeId)}" href="${escapeHtml(placeHref)}" target="_blank" rel="noopener noreferrer">N플레이스 ↗</a>`
     : "";
   if (!badge && !mapLink) {
     return "";
@@ -1693,6 +1732,8 @@ function syncSearchSlot() {
 
 phoneQuery.addEventListener("change", () => {
   syncSearchSlot();
+  syncNaverPlaceLinks();
+  refreshOpenCampCard();
   if (phoneQuery.matches) {
     notesEl.open = false;
     closeFilterSheet();

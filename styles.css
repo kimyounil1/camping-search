@@ -815,14 +815,38 @@ button:disabled {
   white-space: nowrap;
 }
 
-a.result-name {
+a.result-name,
+button.result-name {
   color: var(--ink);
   text-decoration: none;
 }
 
-a.result-name:hover {
+button.result-name {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  text-align: left;
+  cursor: pointer;
+}
+
+a.result-name:hover,
+button.result-name:hover,
+.place[data-has-coord="true"]:hover .result-name {
   color: var(--ribbon-blue);
   text-decoration: underline;
+}
+
+button.result-name:focus-visible {
+  outline: 2px solid var(--ribbon-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .tag-interest-rank {
@@ -1909,7 +1933,8 @@ a.result-name:hover {
     font-size: 0.72rem;
   }
 
-  .result-name {
+  .result-name,
+  button.result-name {
     font-size: 0.9375rem; /* 15px */
     font-weight: 800;
   }

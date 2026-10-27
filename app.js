@@ -559,24 +559,35 @@ function interiorText(facility) {
   return parts.join(" · ");
 }
 
-function nameValue(name, contentId) {
-  if (!contentId) {
+function nameValue(item, index) {
+  const name = item.name;
+  const hasCoord = Boolean(item.coords && item.coords[index]);
+  if (!hasCoord) {
     const span = document.createElement("span");
     span.className = "result-name";
     span.textContent = name;
     return span;
   }
-  const link = document.createElement("a");
-  link.className = "result-name";
-  link.href = `${CAMP_PAGE}${encodeURIComponent(contentId)}`;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-  link.append(document.createTextNode(name));
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "result-name result-name-btn";
+  btn.append(document.createTextNode(name));
   const hint = document.createElement("span");
   hint.className = "sr-only";
-  hint.textContent = " 고캠핑에서 새 탭으로 열기";
-  link.append(hint);
-  return link;
+  hint.textContent = " 지도에서 위치 보기";
+  btn.append(hint);
+  btn.addEventListener("click", (event) => {
+    event.stopPropagation();
+    focusPlaceOnMap(item, index);
+  });
+  return btn;
+}
+
+function clearFocusedMarker() {
+  if (focusedTempMarker) {
+    focusedTempMarker.setMap(null);
+    focusedTempMarker = null;
+  }
 }
 
 function focusPlaceOnMap(item, index) {
@@ -587,6 +598,7 @@ function focusPlaceOnMap(item, index) {
   const facility = item.regionFacilities[index];
   const rawId = facility && facility.contentId ? String(facility.contentId).trim() : "";
   const place = {
+    rowKey: item.rowKey,
     rank: item.rank,
     name: item.name,
     region: item.regions[index],
@@ -600,6 +612,7 @@ function focusPlaceOnMap(item, index) {
     setSnap("mid");
   }
   if (origin) {
+    clearFocusedMarker();
     selectedRoutePlace = place;
     activeRoutePlace = place;
     if (campInfo) {
@@ -615,17 +628,61 @@ function focusPlaceOnMap(item, index) {
   }
   const position = new window.naver.maps.LatLng(place.lat, place.lng);
   current.setCenter(position);
-  if (typeof current.getZoom === "function" && current.getZoom() < 11) {
-    current.setZoom(11);
+  if (typeof current.getZoom === "function" && current.getZoom() < 12) {
+    current.setZoom(12);
   }
-  if (campInfo) {
-    const matched = campMarkers.find((entry) => entry.__placeKey === `${place.name}\t${place.region}`);
-    campInfo.setContent(infoHtml(place));
-    if (matched) {
-      campInfo.open(current, matched);
-    } else {
-      campInfo.open(current, position);
+  let matched = campMarkers.find(
+    (entry) => entry.__placeKey === (place.rowKey || `${place.name}\t${place.region}`),
+  );
+  if (!matched) {
+    clearFocusedMarker();
+    focusedTempMarker = new window.naver.maps.Marker({
+      position,
+      map: current,
+      title: `${place.name}, ${place.region}`,
+      zIndex: 18000,
+    });
+    focusedTempMarker.__placeKey = place.rowKey || `${place.name}\t${place.region}`;
+    const focusedMarkerRef = focusedTempMarker;
+    window.naver.maps.Event.addListener(focusedMarkerRef, "click", () => {
+      holdOriginClick();
+      dockPlace = place;
+      if (origin) {
+        clearFocusedMarker();
+        selectedRoutePlace = place;
+        activeRoutePlace = place;
+        renderResults(orderedList(currentList()), true);
+        drawDrivingRoute(place, { fitBounds: true });
+        return;
+      }
+      if (phoneQuery.matches && browse && browse.dataset.snap === "min") {
+        if (campInfo) {
+          campInfo.close();
+        }
+        showMarkerDock(place);
+        return;
+      }
+      hideMarkerDock();
+      if (campInfo) {
+        campInfo.setContent(infoHtml(place));
+        campInfo.open(current, focusedMarkerRef);
+      }
+    });
+    matched = focusedTempMarker;
+  } else {
+    clearFocusedMarker();
+  }
+  if (phoneQuery.matches && browse && browse.dataset.snap === "min") {
+    if (campInfo) {
+      campInfo.close();
     }
+    showMarkerDock(place);
+    return;
+  }
+  hideMarkerDock();
+  if (campInfo) {
+    campInfo.setContent(infoHtml(place));
+    campInfo.open(current, matched);
   }
 }
 
@@ -672,7 +729,7 @@ function placeBlock(item, index, chipGroups, matchIndex, displayOrder) {
     badge.textContent = String(primaryRank);
     titleGroup.append(badge);
   }
-  titleGroup.append(nameValue(item.name, contentId));
+  titleGroup.append(nameValue(item, index));
   if (index === 0 && (sortMode !== "interest" || item.rank !== displayOrder)) {
     const interestTag = document.createElement("span");
     interestTag.className = "tag-interest-rank";
@@ -754,6 +811,9 @@ function placeBlock(item, index, chipGroups, matchIndex, displayOrder) {
     goLink.target = "_blank";
     goLink.rel = "noopener noreferrer";
     goLink.textContent = "고캠핑 ↗";
+    goLink.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
     actionsRight.append(goLink);
   }
 
@@ -764,6 +824,9 @@ function placeBlock(item, index, chipGroups, matchIndex, displayOrder) {
     naverLink.target = "_blank";
     naverLink.rel = "noopener noreferrer";
     naverLink.textContent = "N플레이스 ↗";
+    naverLink.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
     actionsRight.append(naverLink);
   }
 
@@ -776,6 +839,9 @@ function placeBlock(item, index, chipGroups, matchIndex, displayOrder) {
       routeLink.target = "_blank";
       routeLink.rel = "noopener noreferrer";
       routeLink.textContent = "길찾기 ↗";
+      routeLink.addEventListener("click", (event) => {
+        event.stopPropagation();
+      });
       actionsRight.append(routeLink);
     }
   }
@@ -798,6 +864,9 @@ function placeBlock(item, index, chipGroups, matchIndex, displayOrder) {
       navLink.target = "_blank";
       navLink.rel = "noopener noreferrer";
       navLink.textContent = "네이버 지도 길찾기 ↗";
+      navLink.addEventListener("click", (event) => {
+        event.stopPropagation();
+      });
       routeBar.append(navLink);
     }
     block.append(routeBar);
@@ -937,6 +1006,7 @@ const DRIVING_TABLE = "https://router.project-osrm.org/table/v1/driving/";
 const DRIVING_ROUTE = "https://router.project-osrm.org/route/v1/driving/";
 let campMap = null;
 let campMarkers = [];
+let focusedTempMarker = null;
 let campInfo = null;
 let mapBroken = false;
 let pinKey = "\0";
@@ -1174,6 +1244,7 @@ function pinPlaces(list) {
       const facility = item.regionFacilities[index];
       const rawId = facility && facility.contentId ? String(facility.contentId).trim() : "";
       places.push({
+        rowKey: item.rowKey,
         rank: item.rank,
         name: item.name,
         region: item.regions[index],
@@ -1207,6 +1278,7 @@ function renderMap(list) {
     return;
   }
   pinKey = key;
+  clearFocusedMarker();
   for (const marker of campMarkers) {
     marker.setMap(null);
   }
@@ -1231,7 +1303,7 @@ function renderMap(list) {
       title: `${place.name}, ${place.region}`,
       zIndex: Math.max(1, 10000 - place.rank),
     });
-    marker.__placeKey = `${place.name}\t${place.region}`;
+    marker.__placeKey = place.rowKey || `${place.name}\t${place.region}`;
     window.naver.maps.Event.addListener(marker, "click", () => {
       holdOriginClick();
       dockPlace = place;
